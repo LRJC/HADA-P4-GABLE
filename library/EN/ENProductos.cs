@@ -1,12 +1,14 @@
 ﻿using System;
+using library.CAD;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace library.EN
+
 {
-    class ENProgramas
+    class ENProductos
     {
         public string id_producto
         {
@@ -91,9 +93,9 @@ namespace library.EN
         private string genProducto;
         private string imaProducto;
 
-        public ENProgramas() { }
+        public ENProductos() { }
 
-        public ENProgramas(string idProducto, string nomProducto, string descProducto, int preProducto, string genProducto, string imaProducto)//Pablo
+        public ENProductos(string idProducto, string nomProducto, string descProducto, int preProducto, string genProducto, string imaProducto)//Pablo
         {
             id_producto = idProducto;
             nom_producto = nomProducto;
@@ -104,8 +106,8 @@ namespace library.EN
         }
         public bool readProducto()//Pablo
         {
-            CADproductos cpro = new CADproductos();
-            return cpro.readProducto(this);
+            CADProductos cpro = new CADProductos();
+            return cpro.readProductos(this);
         }
 
 
