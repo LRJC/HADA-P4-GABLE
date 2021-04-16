@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CAD\Class1.cs" />
-    <Compile Include="EN\Class2.cs" />
+    <Compile Include="CAD\CADBuscador.cs" />
+    <Compile Include="CAD\CADModificarCuenta.cs" />
+    <Compile Include="EN\ENBuscador.cs" />
+    <Compile Include="EN\ENModificarCuenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

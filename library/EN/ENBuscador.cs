@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace library.CAD
+namespace library.EN
 {
-    class Class1
+    class ENBuscador
     {
-        dgfjkasfladf;
     }
 }
