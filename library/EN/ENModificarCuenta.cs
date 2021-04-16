@@ -8,13 +8,40 @@ namespace library.EN
 {
     public class ENModificarCuenta
     {
+        private string _nombre;
+        public string nombre 
+        { 
+            get { return _nombre; }
+            set { _nombre = value; }
+        }
+        
         public ENModificarCuenta() { }
 
-        public ENModificarCuenta() { }
 
-        public bool createModificarCuenta() { }
-        public bool readModificarCuenta() { }
-        public bool updateModificarCuenta() { }
-        public bool deleteModificarCuenta() { }
+        public bool createModificarCuenta() 
+        {
+            CADModificarCuenta mod = new CADModificarCuenta();
+            if (mod.createModificarCuenta()) return true;
+            return false;
+        }
+        public bool readModificarCuenta() 
+        {
+            CADModificarCuenta mod = new CADModificarCuenta();
+            if (mod.createModificarCuenta()) return true;
+            return false;
+
+        }
+        public bool updateModificarCuenta() 
+        {
+            CADModificarCuenta mod = new CADModificarCuenta();
+            if (mod.createModificarCuenta()) return true;
+            return false;
+        }
+        public bool deleteModificarCuenta() 
+        {
+            CADModificarCuenta mod = new CADModificarCuenta();
+            if (mod.createModificarCuenta()) return true;
+            return false;
+        }
     }
 }

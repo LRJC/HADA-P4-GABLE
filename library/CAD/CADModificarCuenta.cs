@@ -8,5 +8,11 @@ namespace library
 {
     public class CADModificarCuenta
     {
+        public CADModificarCuenta();
+        
+        public bool createModificarCuenta() { }
+        public bool readModificarCuenta() { }
+        public bool updateModificarCuenta() { }
+        public bool deleteModificarCuenta() { }
     }
 }
