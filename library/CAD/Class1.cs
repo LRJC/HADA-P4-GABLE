@@ -8,5 +8,6 @@ namespace library.CAD
 {
     class Class1
     {
+        dgfjkasfladf;
     }
 }
