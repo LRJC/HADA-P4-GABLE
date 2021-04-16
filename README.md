@@ -8,46 +8,46 @@
 * ALEJANDRO LATORRE
 * PABLO SANCHEZ
 
-### DESCRIPCIÓN
--La tienda online GABLE es un portal de compraventa de juegos de mesa donde puedes encontrar una gran variedad de productos como juegos tradicionales, juegos de rol, de estrategia y muchos más!!!!
-Como cliente, navega por nuestra página y descubre miles de juegos.
+### DESCRIPCIÃ“N
+-La tienda online GABLE es un portal de compraventa de juegos de mesa donde puedes encontrar una gran variedad de productos como juegos tradicionales, juegos de rol, de estrategia y muchos mÃ¡s!!!!
+Como cliente, navega por nuestra pÃ¡gina y descubre miles de juegos.
 
 ### PARTE PUBLICA
--En la parte pública de la pagina, podras loggearte como usuario, o registrarte si no lo estás. Habrá un buscador donde podras teclear tu solicitud. Tambien habra una opción de carrito. Se mostraran los productos con mejor valoración del portal.
+-En la parte pÃºblica de la pagina, podras loggearte como usuario, o registrarte si no lo estÃ¡s. HabrÃ¡ un buscador donde podras teclear tu solicitud. Tambien habra una opciÃ³n de carrito. Se mostraran los productos con mejor valoraciÃ³n del portal.
 
 ### LISTADO ENTIDADES PUBLICAS
-* Registrarse: En la página principal habría un botón para registrarse. Al hacer click, nos llevará a una página donde tendremos que rellenar un formulario con los datos del usuario. Estos datos serán del tipo nombre, apellidos, mail, dirección, fecha nacimiento, contraseña de usuario, ...
+* Registrarse: En la pÃ¡gina principal habrÃ­a un botÃ³n para registrarse. Al hacer click, nos llevarÃ¡ a una pÃ¡gina donde tendremos que rellenar un formulario con los datos del usuario. Estos datos serÃ¡n del tipo nombre, apellidos, mail, direcciÃ³n, fecha nacimiento, contraseÃ±a de usuario, ...
 
-* Loggear en la página: En la página principal habría un botón para loggearte como usuario, que nos dirigirá a un formulario donde tendremos que introducir el mail y la contraseña del usuario. Si los datos son correctos, se te redirige a la página principal, teniendo acceso también a la parte privada. Habrá un botón que te redirigirá al formulario de registro, en el caso de que no estés registrado.
+* Loggear en la pÃ¡gina: En la pÃ¡gina principal habrÃ­a un botÃ³n para loggearte como usuario, que nos dirigirÃ¡ a un formulario donde tendremos que introducir el mail y la contraseÃ±a del usuario. Si los datos son correctos, se te redirige a la pÃ¡gina principal, teniendo acceso tambiÃ©n a la parte privada. HabrÃ¡ un botÃ³n que te redirigirÃ¡ al formulario de registro, en el caso de que no estÃ©s registrado.
 
-* Buscador: En todas las páginas habrá un buscador, donde se podrá buscar por filtros y etiquetas, redireccionandote a las páginas correspondientes según la búsqueda.
+* Buscador: En todas las pÃ¡ginas habrÃ¡ un buscador, donde se podrÃ¡ buscar por filtros y etiquetas, redireccionandote a las pÃ¡ginas correspondientes segÃºn la bÃºsqueda.
 
-* Carrito: En la página principal hay un botón donde te redirecciona al carrito. Además, en las páginas de los productos, habrá un botón "añadir al carrito", que añadirá el producto. En el caso de que intentes comprar, se te redirigirá a una página de login.
+* Carrito: En la pÃ¡gina principal hay un botÃ³n donde te redirecciona al carrito. AdemÃ¡s, en las pÃ¡ginas de los productos, habrÃ¡ un botÃ³n "aÃ±adir al carrito", que aÃ±adirÃ¡ el producto. En el caso de que intentes comprar, se te redirigirÃ¡ a una pÃ¡gina de login.
 
-* Producto: En la página principal se mostrarán varias listas de productos en forma de imagen, en los cuales podremos hacer click, redireccionándonos a otra página donde se muestra una descripción del producto, una serie de valoraciones, y el precio del mismo.
+* Producto: En la pÃ¡gina principal se mostrarÃ¡n varias listas de productos en forma de imagen, en los cuales podremos hacer click, redireccionÃ¡ndonos a otra pÃ¡gina donde se muestra una descripciÃ³n del producto, una serie de valoraciones, y el precio del mismo.
 
-* Volver a página de inicio: Se volverá a la página de inicio pinchando en el logo/título de la misma.
+* Volver a pÃ¡gina de inicio: Se volverÃ¡ a la pÃ¡gina de inicio pinchando en el logo/tÃ­tulo de la misma.
 
 ### PARTE PRIVADA
--En esta parte puedes comprar lo que has metido en el carrito, modificar tus datos personales de la cuenta, ... Además, si estás registrado como vendedor, tendrás la opción de poder subir tu producto al portal. También podrás valorar los productos que has comprado. Puedes cerrar sesión para volver a la parte pública del portal. Al hacer una compra, aparecerá un formulario donde se piden los datos de compra, como la dirección de envío, el número de tarjeta, ...
+-En esta parte puedes comprar lo que has metido en el carrito, modificar tus datos personales de la cuenta, ... AdemÃ¡s, si estÃ¡s registrado como vendedor, tendrÃ¡s la opciÃ³n de poder subir tu producto al portal. TambiÃ©n podrÃ¡s valorar los productos que has comprado. Puedes cerrar sesiÃ³n para volver a la parte pÃºblica del portal. Al hacer una compra, aparecerÃ¡ un formulario donde se piden los datos de compra, como la direcciÃ³n de envÃ­o, el nÃºmero de tarjeta, ...
 
 ### LISTADO ENTIDADES PRIVADAS
-* Comprar: Una vez accedido al carrito, habrá un botón de comprar, que te redirige a una página, donde tendrás que introducir los datos bancarios o no según hayas comprado anteriormente en el portal.
+* Comprar: Una vez accedido al carrito, habrÃ¡ un botÃ³n de comprar, que te redirige a una pÃ¡gina, donde tendrÃ¡s que introducir los datos bancarios o no segÃºn hayas comprado anteriormente en el portal.
 
-* Modificar/Eliminar cuenta: En esta opción se podrá cambiar contraseña, mail, datos bancarios, ... Tendremos la opción de eliminar la cuenta.
+* Modificar/Eliminar cuenta: En esta opciÃ³n se podrÃ¡ cambiar contraseÃ±a, mail, datos bancarios, ... Tendremos la opciÃ³n de eliminar la cuenta.
 
-* Salir de la cuenta: Botón para cerrar la sesión. Te redirige a la parte pública, a la página principal.
+* Salir de la cuenta: BotÃ³n para cerrar la sesiÃ³n. Te redirige a la parte pÃºblica, a la pÃ¡gina principal.
 
-* Vender: Aparece un botón para subir productos a la página. Al hacer click se chequea que el usuario tenga cuenta bancaria anexada. De no tenerla, se te redirige a un formulario donde debes introducirla.
+* Vender: Aparece un botÃ³n para subir productos a la pÃ¡gina. Al hacer click se chequea que el usuario tenga cuenta bancaria anexada. De no tenerla, se te redirige a un formulario donde debes introducirla.
 
-* Valoración del producto: Constará de comentarios de usuarios y de una valoración numérica del 1 al 5.
+* ValoraciÃ³n del producto: ConstarÃ¡ de comentarios de usuarios y de una valoraciÃ³n numÃ©rica del 1 al 5.
 
-* Datos de compra y venta: Como ya hemos mencionado anteriormente, los datos serian la cuenta bancaria, la tarjeta de crédito/débito, dirección de envío, dirección de facturación.
+* Datos de compra y venta: Como ya hemos mencionado anteriormente, los datos serian la cuenta bancaria, la tarjeta de crÃ©dito/dÃ©bito, direcciÃ³n de envÃ­o, direcciÃ³n de facturaciÃ³n.
 
 ### FUTURAS MEJORAS
 * Historial de compras
-* Pasar de página(opcional) o scroll
+* Pasar de pÃ¡gina(opcional) o scroll
 * Imagen usuario
 * Anuncios
 
-## URL BASE DE DATOS-> https://docs.google.com/drawings/d/1o06KPCh6sdh4MCQP7veMk_XLr4Ymw5BEIy78VTAHILg/edit?usp=sharing
+## LAS BASE DE DATOS ESTA SUBIDA AL REPO EN LA RAMA DEVELOP
