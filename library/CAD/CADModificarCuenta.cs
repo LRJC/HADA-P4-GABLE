@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace library.CAD
+namespace library
 {
-    class CADModificarCuenta
+    public class CADModificarCuenta
     {
     }
 }

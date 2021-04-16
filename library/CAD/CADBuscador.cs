@@ -4,9 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace library.CAD
+namespace library
 {
-    class CADBuscador
+    public class CADBuscador
     {
+        public bool createBuscador()
+        {
+            return false;
+        }
+        public bool readBuscador()
+        {
+            return false;
+        }
+        public bool updateBuscador()
+        {
+            return false;
+        }
+        public bool deleteBuscador()
+        {
+            return false;
+        }
     }
 }
