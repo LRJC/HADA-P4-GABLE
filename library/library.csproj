@@ -53,6 +53,8 @@
     <Compile Include="EN\ENLogin.cs" />
     <Compile Include="EN\ENProductos.cs" />
     <Compile Include="EN\ENValoraciones.cs" />
+    <Compile Include="CAD\CADInfoPagos.cs" />
+    <Compile Include="EN\ENInfoPagos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
