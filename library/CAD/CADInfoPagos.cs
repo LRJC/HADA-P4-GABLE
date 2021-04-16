@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace library.CAD
 {
-    class Class1
+    class CADInfoPagos
     {
     }
 }

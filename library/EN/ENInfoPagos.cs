@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace library.EN
 {
-    class Class2
+    class ENInfoPagos
     {
     }
 }
