@@ -8,5 +8,7 @@ namespace library.CAD
 {
     class CADInfoPagos
     {
+        public CADInfoPagos() { }
+
     }
 }
