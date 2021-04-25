@@ -43,8 +43,6 @@
   <ItemGroup>
     <Compile Include="CAD\CADProductos.cs" />
     <Compile Include="CAD\CADValoraciones.cs" />
-    <Compile Include="CAD\Class1.cs" />
-    <Compile Include="EN\Class2.cs" />
     <Compile Include="EN\ENProductos.cs" />
     <Compile Include="EN\ENValoraciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
