@@ -10,11 +10,11 @@ namespace library.EN
 {
     class ENProductos
     {
-        public string id_producto
+        public int id_producto
         {
             get
             {
-                return new string(idProducto.ToCharArray());
+                return idProducto;
             }
             set
             {
@@ -60,16 +60,29 @@ namespace library.EN
             }
         }
 
-        public string gen_producto
+        public string tipo_producto
         {
             get
             {
-                return new string(genProducto.ToCharArray());
+                return new string(tipoProducto.ToCharArray());
             }
 
             set
             {
-                genProducto = value;
+                tipoProducto = value;
+            }
+        }
+
+        public string marca_producto
+        {
+            get
+            {
+                return new string(marcaProducto.ToCharArray());
+            }
+
+            set
+            {
+                marcaProducto = value;
             }
         }
 
@@ -86,22 +99,24 @@ namespace library.EN
         }
 
 
-        private string idProducto;
+        private int idProducto;
         private string nomProducto;
         private string descProducto;
         private int preProducto;
-        private string genProducto;
+        private string tipoProducto;
+        private string marcaProducto;
         private string imaProducto;
 
         public ENProductos() { }
 
-        public ENProductos(string idProducto, string nomProducto, string descProducto, int preProducto, string genProducto, string imaProducto)//Pablo
+        public ENProductos(int idProducto, string nomProducto, string descProducto, int preProducto, string tipoProducto, string imaProducto,string marcaProducto)//Pablo
         {
             id_producto = idProducto;
             nom_producto = nomProducto;
             desc_producto = descProducto;
             pre_producto = preProducto;
-            gen_producto = genProducto;
+            tipo_producto = tipoProducto;
+            marca_producto = marcaProducto;
             ImageLocation = imaProducto;
         }
         public bool readProducto()//Pablo
