@@ -9,16 +9,16 @@ namespace library.EN
 {
     class ENValoraciones
     {
-        public string id_val
+        public string usuaro_id
         {
             get
             {
-                return new string(idVal.ToCharArray());
+                return new string(usuario.ToCharArray());
             }
 
             set
             {
-                idVal = value;
+                usuario = value;
             }
         }
 
@@ -48,16 +48,30 @@ namespace library.EN
             }
         }
 
+        public int producto_id
+        {
+            get
+            {
+                return producto;
+            }
 
-        private string idVal;
+            set
+            {
+                producto = value;
+            }
+        }
+
+        private string usuario;
+        private int producto;
         private string texto;
         private int puntos;
 
         public ENValoraciones() { }
 
-        public ENValoraciones(string idVal, string texto, int puntos)
+        public ENValoraciones(string usuario, string texto, int puntos, int producto)
         {
-            id_val = idVal;
+            producto_id = producto;
+            usuaro_id = usuario;
             tex_val = texto;
             pun_val = puntos;
         }
