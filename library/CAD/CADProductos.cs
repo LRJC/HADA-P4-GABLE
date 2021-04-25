@@ -9,6 +9,6 @@ namespace library.CAD
 {
     class CADProductos
     {
-        public bool readProductos(ENProductos en) { }//Pablo
+        public bool readProductos(ENProductos en) { return false; }//Pablo
     }
 }

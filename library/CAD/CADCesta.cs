@@ -8,8 +8,9 @@ using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
+using library.EN;
 
-namespace library
+namespace library.CAD
 {
     class CADCesta
     {
@@ -20,15 +21,15 @@ namespace library
             constring = ConfigurationManager.ConnectionStrings["conexion"].ToString();
         }
 
-        public bool addProduct(ENCesta c, Producto p) {}
+        /*public bool addProduct(ENCesta c, Producto p) { return false; }
 
-        public bool removeProduct(ENCesta c, Producto p) {}
+        public bool removeProduct(ENCesta c, Producto p) { return false; }
 
-        public bool addUnit(ENCesta c, Producto p) {}
+        public bool addUnit(ENCesta c, Producto p) { return false; }
 
-        public bool removeUnit(ENCesta c, Producto p) {}
+        public bool removeUnit(ENCesta c, Producto p) { return false; }
 
-        public bool proceedToBuy(ENCesta c) {}
+        public bool proceedToBuy(ENCesta c) { return false; }*/
 
     }
 }

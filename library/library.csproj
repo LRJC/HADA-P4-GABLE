@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,24 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CAD\CADBuscador.cs" />
-    <Compile Include="CAD\CADModificarCuenta.cs" />
-    <Compile Include="EN\ENBuscador.cs" />
-    <Compile Include="EN\ENModificarCuenta.cs" />
     <Compile Include="CAD\CADSubProd.cs" />
-    <Compile Include="CAD\CADSalirCuenta.cs" />
-    <Compile Include="EN\ENSalirCuenta.cs" />
     <Compile Include="EN\ENSubProd.cs" />
     <Compile Include="CAD\CADCesta.cs" />
-    <Compile Include="CAD\CADLogin.cs" />
     <Compile Include="CAD\CADProductos.cs" />
     <Compile Include="CAD\CADValoraciones.cs" />
     <Compile Include="EN\ENCesta.cs" />
-    <Compile Include="EN\ENLogin.cs" />
     <Compile Include="EN\ENProductos.cs" />
     <Compile Include="EN\ENValoraciones.cs" />
-    <Compile Include="CAD\CADInfoPagos.cs" />
-    <Compile Include="EN\ENInfoPagos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

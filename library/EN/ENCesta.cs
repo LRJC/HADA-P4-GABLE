@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using library.CAD;
 
-namespace library
+namespace library.EN
 {
-    struct Producto
+    /*struct Producto
     {
         private ENProducto producto;
         private int unidades;
@@ -32,11 +33,11 @@ namespace library
             this.producto = producto;
             this.unidades = unidades;
         }
-    }
+    }*/
     
     public class ENCesta
     {
-
+        /*
         private ENUsuario usuario;
         private List<Producto> productos;
 
@@ -92,5 +93,6 @@ namespace library
             CADCesta c = new CADCesta();
             return c.proceedToBuy(this);
         }
+        */
     }
 }

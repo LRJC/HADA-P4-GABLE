@@ -12,19 +12,19 @@ namespace library.CAD
         public bool createProducto(ENSubProd en)
         {
             //implementacion
-            return true;
+            return false;
         }
 
         public bool deleteProducto(ENSubProd en)
         {
             //implementacion
-            return true;
+            return false;
         }
 
         public bool updateProducto(ENSubProd en)
         {
             //implementacion
-            return true;
+            return false;
         }
     }
 }
