@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GableWeb", "GableWeb\GableWeb.csproj", "{01FA17AB-392A-401A-8CD5-4DD89EC06BBF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GableWeb", "GableWeb\GableWeb.csproj", "{87722472-51B6-4EFF-B9A8-CAF73E1638D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,10 +22,10 @@ Global
 		{D9C0ED69-BDD8-4931-A873-6C289DFE91F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9C0ED69-BDD8-4931-A873-6C289DFE91F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9C0ED69-BDD8-4931-A873-6C289DFE91F0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{01FA17AB-392A-401A-8CD5-4DD89EC06BBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{01FA17AB-392A-401A-8CD5-4DD89EC06BBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{01FA17AB-392A-401A-8CD5-4DD89EC06BBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{01FA17AB-392A-401A-8CD5-4DD89EC06BBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87722472-51B6-4EFF-B9A8-CAF73E1638D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87722472-51B6-4EFF-B9A8-CAF73E1638D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87722472-51B6-4EFF-B9A8-CAF73E1638D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87722472-51B6-4EFF-B9A8-CAF73E1638D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

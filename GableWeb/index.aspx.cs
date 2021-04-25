@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace GableWeb
 {
-    public partial class Gable : System.Web.UI.MasterPage
+    public partial class index : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
