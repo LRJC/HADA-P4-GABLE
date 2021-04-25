@@ -13,5 +13,10 @@ namespace GableWeb
         {
 
         }
+
+        protected void LogoGable_Click(object sender, ImageClickEventArgs e)
+        {
+
+        }
     }
 }

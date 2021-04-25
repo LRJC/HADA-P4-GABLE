@@ -11,10 +11,16 @@
 </head>
 <body>
     <form id="form1" runat="server">
+    <header style="background-color:red;height:85px">
+        <asp:ImageButton ID="LogoGable" runat="server" ImageAlign="Left" Width="170px" Height="85px" ImageUrl="~/Images/festisite_lego.png" OnClick="LogoGable_Click" />
+        <asp:ImageButton ID="LogIn" runat="server" ImageAlign="Right" />
+        <asp:TextBox ID="Buscador" runat="server" Width="727px" vertical-align="middle"></asp:TextBox>
+        </header>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
     </form>
+    <footer></footer>
 </body>
 </html>
