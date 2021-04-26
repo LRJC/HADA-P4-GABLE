@@ -41,11 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CAD\CADSubProd.cs" />
-    <Compile Include="CAD\CADSalirCuenta.cs" />
-    <Compile Include="EN\ENSalirCuenta.cs" />
-    <Compile Include="EN\ENSubProd.cs" />
+    <Compile Include="CAD\CADMarca.cs" />
+    <Compile Include="CAD\CADUsuario.cs" />
+    <Compile Include="EN\ENMarca.cs" />
+    <Compile Include="EN\ENUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
