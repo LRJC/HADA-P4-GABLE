@@ -15,5 +15,9 @@ namespace library.CAD
 
         public bool readValoracioneses(ENValoraciones en) { return false; }
 
+        public bool deleteValoracioneses(ENValoraciones en) { return false; }
+
+        public bool updateValoracioneses(ENValoraciones en) { return false; }
+
     }
 }

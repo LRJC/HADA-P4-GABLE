@@ -125,6 +125,23 @@ namespace library.EN
             return cpro.readProductos(this);
         }
 
+        public bool createProducto()
+        {
+            CADProductos cpro = new CADProductos();
+            return cpro.createProductos(this);
+        }
+
+        public bool deleteProductos()
+        {
+            CADProductos cpro = new CADProductos();
+            return cpro.deleteProductos(this);
+        }
+
+        public bool updateProductos()
+        {
+            CADProductos cpro = new CADProductos();
+            return cpro.updateProductos(this);
+        }
 
     }
 }
