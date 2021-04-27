@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace library.EN
+namespace library
 {
     public class ENProvincia
     {
@@ -23,21 +23,41 @@ namespace library.EN
 
         bool createProvincia()
         {
+            CADProvincia pro = new CADProvincia();
+            if (pro.createProvincia(this))
+            {
+                return true;
+            }
             return false;
         }
 
         bool readProvincia()
         {
+            CADProvincia pro = new CADProvincia();
+            if (pro.readProvincia(this))
+            {
+                return true;
+            }
             return false;
         }
 
         bool updateProvincia()
         {
+            CADProvincia pro = new CADProvincia();
+            if (pro.updateProvincia(this))
+            {
+                return true;
+            }
             return false;
         }
 
         bool deleteProvincia()
         {
+            CADProvincia pro = new CADProvincia();
+            if (pro.deleteProvincia(this))
+            {
+                return true;
+            }
             return false;
         }
     }
