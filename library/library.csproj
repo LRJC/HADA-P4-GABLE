@@ -42,7 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CAD\CADAdmin.cs" />
+    <Compile Include="CAD\CADProvincia.cs" />
     <Compile Include="CAD\CADSubProd.cs" />
+    <Compile Include="EN\ENAdmin.cs" />
+    <Compile Include="EN\ENProvincia.cs" />
     <Compile Include="EN\ENSubProd.cs" />
     <Compile Include="CAD\CADCesta.cs" />
     <Compile Include="CAD\CADProductos.cs" />
