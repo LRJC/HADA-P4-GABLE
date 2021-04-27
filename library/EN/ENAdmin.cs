@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace library.EN
 {
-    class ENAdmin
+    public class ENAdmin
     {
     }
 }

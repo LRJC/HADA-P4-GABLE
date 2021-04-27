@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace library.CAD
 {
-    class CADProvincia
+    public class CADProvincia
     {
     }
 }
