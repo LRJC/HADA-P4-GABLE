@@ -86,5 +86,18 @@ namespace library.EN
             CADValoraciones cval = new CADValoraciones();
             return cval.readValoracioneses(this);
         }
+
+        public bool deleteValoraciones()
+        {
+            CADValoraciones cval = new CADValoraciones();
+            return cval.deleteValoracioneses(this);
+        }
+
+        public bool updateValoraciones()
+        {
+            CADValoraciones cval = new CADValoraciones();
+            return cval.updateValoracioneses(this);
+        }
+
     }
 }

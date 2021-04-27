@@ -10,5 +10,12 @@ namespace library.CAD
     class CADProductos
     {
         public bool readProductos(ENProductos en) { return false; }//Pablo
+
+        public bool createProductos(ENProductos en) { return false; }
+
+        public bool deleteProductos(ENProductos en) { return false; }
+
+        public bool updateProductos(ENProductos en) { return false; }
+
     }
 }
