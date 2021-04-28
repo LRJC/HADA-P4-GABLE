@@ -24,7 +24,7 @@ namespace library.CAD
             return true;
         }
 
-        public bool modifyUsuario(ENUsuario us)
+        public bool updateUsuario(ENUsuario us)
         {
             //implementación
             return true;
@@ -49,6 +49,18 @@ namespace library.CAD
         }
 
         public bool logoutUsuario(ENUsuario en)//revisar
+        {
+            //implementación
+            return true;
+        }
+
+        public bool subirProducto(ENUsuario en)//revisar
+        {
+            //implementación
+            return true;
+        }
+
+        public bool deleteProducto(ENUsuario en)//revisar
         {
             //implementación
             return true;

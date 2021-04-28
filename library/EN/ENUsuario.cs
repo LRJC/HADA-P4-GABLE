@@ -19,6 +19,7 @@ namespace library.EN
         private int _cvv;
         private string _expTarjeta;
         private DateTime _fechanac;
+        private bool _admin;
 
         public string nif
         {
@@ -90,6 +91,13 @@ namespace library.EN
             set { _fechanac = value; }
         }
 
+        public bool admin
+        {
+            get { return _admin; }
+
+            set { _admin = value; }
+        }
+
 
         public bool readUsuario()
         {
@@ -129,12 +137,12 @@ namespace library.EN
 
             en.nif = nif;
             en.nombre = nombre;
-            en.edad = edad;
+            en.apellidos = apellidos;
             if (us.readUsuario(this) == true)
             {
                 this.nif = en.nif;
                 this.nombre = en.nombre;
-                this.edad = en.edad;
+                this.apellidos = en.apellidos;
                 devolver = us.updateUsuario(this);
             }
 
@@ -144,16 +152,38 @@ namespace library.EN
 
         public bool loginUsuario()
         {
-            bool devolver;
             CADUsuario nuevo = new CADUsuario();
             return nuevo.loginUsuario(this);
         }
 
         public bool logout()//revisar
         {
-            bool devolver;
             CADUsuario nuevo = new CADUsuario();
             return nuevo.logoutUsuario(this);
+        }
+
+        public bool subirProducto()
+        {
+            bool devolver = false;
+            ENProductos en = new ENProductos();
+            CADUsuario nuevo = new CADUsuario();
+            if (en.readProducto())
+            {
+                devolver = nuevo.subirProducto(this);
+            }
+            return devolver;
+        }
+
+        public bool deleteProducto()
+        {
+            bool devolver = false;
+            ENProductos en = new ENProductos();
+            CADUsuario nuevo = new CADUsuario();
+            if (en.readProducto())
+            {
+                devolver = nuevo.deleteProducto(this);
+            }
+            return devolver;
         }
     }
 }
