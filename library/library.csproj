@@ -45,18 +45,21 @@
     <Compile Include="CAD\CADAdmin.cs" />
     <Compile Include="CAD\CADLineaCesta.cs" />
     <Compile Include="CAD\CADProvincia.cs" />
-    <Compile Include="CAD\CADSubProd.cs" />
     <Compile Include="EN\ENAdmin.cs" />
     <Compile Include="EN\ENLineaCesta.cs" />
     <Compile Include="EN\ENProvincia.cs" />
-    <Compile Include="EN\ENSubProd.cs" />
     <Compile Include="CAD\CADCesta.cs" />
     <Compile Include="CAD\CADProductos.cs" />
     <Compile Include="CAD\CADValoraciones.cs" />
     <Compile Include="EN\ENCesta.cs" />
     <Compile Include="EN\ENProductos.cs" />
     <Compile Include="EN\ENValoraciones.cs" />
+    <Compile Include="CAD\CADMarca.cs" />
+    <Compile Include="CAD\CADUsuario.cs" />
+    <Compile Include="EN\ENMarca.cs" />
+    <Compile Include="EN\ENUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
