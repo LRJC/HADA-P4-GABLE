@@ -67,10 +67,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AreaPersonal.aspx" />
     <Content Include="index.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AreaPersonal.aspx.cs">
+      <DependentUpon>AreaPersonal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaPersonal.aspx.designer.cs">
+      <DependentUpon>AreaPersonal.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Gable.Master.cs">
       <DependentUpon>Gable.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
