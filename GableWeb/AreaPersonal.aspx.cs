@@ -7,16 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace GableWeb
 {
-    public partial class Gable : System.Web.UI.MasterPage
+    public partial class AreaPersonal : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-
-      /*  protected void ShowMenu(object sender, EventArgs e)
-        {
-            lista.display = inline;
-        }*/
     }
 }
