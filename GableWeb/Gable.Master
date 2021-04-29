@@ -12,21 +12,37 @@
 </head>
 <body class="bg-dark">
     <form id="form1" runat="server">
-        <div>
+            
             <header class="bg-primary text-white" style="padding-top: 1em; padding-bottom: 1em;">
-            <div class="container text-center">
+            <div>  
                 <!-- <img src="src/gable-logo.png" class="img-responsive"/> -->
-                <asp:ImageButton ID="ImageButton1" ImageUrl="src/gable-logo.png" CssClass="img-responsive" runat="server" ImageAlign="Middle" Height="50" />
+                <asp:ImageButton ID="Menu" ImageUrl="src/hamburguer.png" CssClass="img-responsive" runat="server" Height="40" style="margin-left:3em;"/>
+                <div ID="lista" style="display:none;">
+                        <ul>
+                            <li>Inicio</li>
+                            <li>Mejor Valorados</li>
+                            <li>Más Valorados</li>
+                            <li>Rol</li>
+                            <li>Estrategia</li>
+                            <li>Azar</li>
+                            <li>Cartas</li>
+                            <li>Más generos</li>
+                        </ul>
+                </div>
+                <asp:ImageButton ID="ImageButton1" ImageUrl="src/gable-logo.png" CssClass="img-responsive" runat="server" Height="50" style="margin-left: 3em;"/>
+                <asp:TextBox ID="Buscador" runat="server" style="margin-left: 10em;" align="center" Height="25" Width="25em" />
+                <asp:Label ID="User" runat="server" Text ="Iniciar Sesión" style="margin-left: 15em;"/>
+                <asp:ImageButton ID="ImageButton2" ImageUrl="src/basket.png" runat="server" Height="50" style="margin-left: 3em;" />
             </div>
           </header>
 
-
-
-
-
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-        </div>
+
+        
+        <footer class="bg-primary footer text-white" style="padding-bottom: 1em;">
+
+        </footer>
     </form>
 </body>
 </html>
