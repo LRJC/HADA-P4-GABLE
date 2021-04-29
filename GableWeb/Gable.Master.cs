@@ -13,5 +13,10 @@ namespace GableWeb
         {
 
         }
+
+      /*  protected void ShowMenu(object sender, EventArgs e)
+        {
+            lista.display = inline;
+        }*/
     }
 }
