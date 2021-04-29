@@ -28,7 +28,12 @@
 .caja #Precio {
         color: white;
 }
-    
+
+
+.caja #Marca {
+        color: white;
+ }
+
 .caja #Nombre {
         font-size: 40px;
         color: white;
@@ -45,10 +50,11 @@
     }
 
 .boton_personalizado {
-    padding: 20px 40px;
-    margin-top: 50px;
-    margin-right:50px;
     float:right;
+    padding: 20px 40px;
+   
+    margin-right:50px;
+   
     text-decoration: none;
     font-weight: 200;
     font-size: 20px;
@@ -58,6 +64,10 @@
 }
 
 
-.comentarios{
-
+.comentarios {
+    margin-top: 100px;
+    font-weight: 200;
+    font-size: 30px;
+    color: white;
+    float: right;
 }

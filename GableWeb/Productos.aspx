@@ -17,17 +17,22 @@
               <asp:Label ID="Precio" runat="server" Text=""></asp:Label>
           </div>
            <div class="caja">
+              <asp:Label ID="Marca" runat="server" Text=""></asp:Label>
+          </div>
+           <div class="caja">
               <asp:Label ID="Descripcion" runat="server" Text=""></asp:Label>
           </div>
          
-             <a class="boton_personalizado" href="https://www.google.es/?gfe_rd=cr&ei=YWQDWY_kKozY8gfvza2YBg">Añadir al carrito</a>
-          
-
+             <a class="boton_personalizado" href="https://www.google.es/?gfe_rd=cr&ei=YWQDWY_kKozY8gfvza2YBg">Añadir al carrito</a>         
          
       </div>        
-            <div class="comentarios">
-            <asp:Label ID="comentarios" runat="server" Text=""></asp:Label>
+      <div class="comentarios">
+         
+              <textarea name="" id="" placeholder="Comentarios"></textarea>
+               
+           
         </div>
     
     
 </asp:Content>
+
