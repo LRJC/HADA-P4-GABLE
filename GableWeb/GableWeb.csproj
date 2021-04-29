@@ -70,6 +70,7 @@
     <Content Include="AreaPersonal.aspx" />
     <Content Include="index.aspx" />
     <Content Include="Productos.aspx" />
+    <Content Include="ProductoValo.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
