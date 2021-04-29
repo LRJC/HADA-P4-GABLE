@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="AreaPersonal.aspx" />
     <Content Include="index.aspx" />
+    <Content Include="HojaInicio.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
