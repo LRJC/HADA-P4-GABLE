@@ -19,9 +19,10 @@ namespace GableWeb
             Response.Redirect("Cesta.aspx");
         }
 
-        /*  protected void ShowMenu(object sender, EventArgs e)
-          {
-              lista.display = inline;
-          }*/
+        protected void btnGableLogo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("index.aspx");
+        }
+
     }
 }
