@@ -14,9 +14,14 @@ namespace GableWeb
 
         }
 
-      /*  protected void ShowMenu(object sender, EventArgs e)
+        protected void btnCesta_Click(object sender, EventArgs e)
         {
-            lista.display = inline;
-        }*/
+            Response.Redirect("Cesta.aspx");
+        }
+
+        /*  protected void ShowMenu(object sender, EventArgs e)
+          {
+              lista.display = inline;
+          }*/
     }
 }
