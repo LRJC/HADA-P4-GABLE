@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" href="HojaInicio.css"/>
+    <link rel="stylesheet" href="styles/index.css"/>
   <ul class="menu">
       <li><a href="#sec1">Más vendidos</a></li>
       <li><a href="#sec2">Mejor Valorados</a></li>
