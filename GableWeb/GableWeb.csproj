@@ -71,7 +71,7 @@
     <Content Include="index.aspx" />
     <Content Include="styles\index.css" />
     <Content Include="Productos.aspx" />
-    <Content Include="ProductoValo.css" />
+    <Content Include="styles\Productos.css" />
     <Content Include="Web.config" />
     <Content Include="Cesta.aspx" />
   </ItemGroup>

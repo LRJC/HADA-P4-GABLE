@@ -4,7 +4,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <link rel="stylesheet" href="ProductoValo.css">
+     <link rel="stylesheet" href="styles/Productos.css">
 
       <div class="contenido">
           <div class="caja">

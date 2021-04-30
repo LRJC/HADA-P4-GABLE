@@ -1,40 +1,36 @@
-﻿*{
-    margin:0px;
-    padding:0px;
+﻿* {
+    margin: 0px;
+    padding: 0px;
 }
 
-.contenido{
-
-    margin:10px;
-   
+.contenido {
+    margin: 10px;
 }
 
 .caja {
-    display:table-cell;
+    display: table-cell;
     padding: 10px;
-    
-}
-.caja #Nombre{
-
-    font-size:40px;
-    color:white;
 }
 
-.caja #Descripcion {
-        
+    .caja #Nombre {
+        font-size: 40px;
         color: white;
-}
+    }
 
-.caja #Precio {
+    .caja #Descripcion {
         color: white;
-}
+    }
 
-
-.caja #Marca {
+    .caja #Precio {
         color: white;
- }
+    }
 
-.caja #Nombre {
+
+    .caja #Marca {
+        color: white;
+    }
+
+    .caja #Nombre {
         font-size: 40px;
         color: white;
     }
@@ -50,11 +46,9 @@
     }
 
 .boton_personalizado {
-    float:right;
+    float: right;
     padding: 20px 40px;
-   
-    margin-right:50px;
-   
+    margin-right: 50px;
     text-decoration: none;
     font-weight: 200;
     font-size: 20px;
