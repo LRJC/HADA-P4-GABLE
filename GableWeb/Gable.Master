@@ -41,9 +41,9 @@
             </asp:ContentPlaceHolder>
 
         
-        <footer class="bg-primary text-black font-italic" style="bottom:0; position:fixed; width:100%; padding-top: 1.5em; padding-bottom: 1.5em; text-align:center;"  >
+        <footer class="bg-primary text-black font-italic py-2" style="bottom:0; width:100%; text-align:center; color: #fff !important;"  >
              <div>
-                 <p>copyright &copy;2021. designed by GableTeam</p>
+                 <p>Copyright &copy;2021. Designed by GableTeam</p>
              </div>
         </footer>
     </form>
