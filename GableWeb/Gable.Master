@@ -32,7 +32,7 @@
                 <asp:ImageButton ID="ImageButton1" ImageUrl="src/gable-logo.png" CssClass="img-responsive" runat="server" Height="50" style="margin-left: 3em;"/>
                 <asp:TextBox ID="Buscador" runat="server" style="margin-left: 10em;" align="center" Height="25" Width="25em" />
                 <asp:Label ID="User" runat="server" Text ="Iniciar Sesión" style="margin-left: 15em;"/>
-                <asp:ImageButton ID="ImageButton2" ImageUrl="src/basket.png" runat="server" Height="50" style="margin-left: 3em;" />
+                <asp:ImageButton ID="ImageButton2" ImageUrl="src/basket.png" OnClick="btnCesta_Click" runat="server" Height="50" style="margin-left: 3em;" />
                 </ul>
             </div>
           </header>

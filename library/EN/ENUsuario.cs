@@ -7,7 +7,7 @@ using library.CAD;
 
 namespace library.EN
 {
-    class ENUsuario
+    public class ENUsuario
     {
         private string _nif;
         private string _nombre;

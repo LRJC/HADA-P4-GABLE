@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace library.EN
 
 {
-    class ENProductos
+    public class ENProductos
     {
         public int id_producto
         {
