@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace library
+namespace library.CAD
 {
-    public class CADAdmin
+    class CADLocalidad
     {
     }
 }
