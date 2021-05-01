@@ -69,7 +69,11 @@
   <ItemGroup>
     <Content Include="AreaPersonal.aspx" />
     <Content Include="index.aspx" />
+    <Content Include="styles\index.css" />
+    <Content Include="Productos.aspx" />
+    <Content Include="styles\Productos.css" />
     <Content Include="Web.config" />
+    <Content Include="Cesta.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AreaPersonal.aspx.cs">
@@ -93,7 +97,21 @@
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Productos.aspx.cs">
+      <DependentUpon>Productos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Productos.aspx.designer.cs">
+      <DependentUpon>Productos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Cesta.aspx.cs">
+      <DependentUpon>Cesta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cesta.aspx.designer.cs">
+      <DependentUpon>Cesta.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Gable.Master" />

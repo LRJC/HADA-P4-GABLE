@@ -11,34 +11,52 @@ namespace GableWeb
 {
 
 
-    public partial class index
+    public partial class Productos
     {
 
         /// <summary>
-        /// Control most_sold.
+        /// Control Image1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink most_sold;
+        protected global::System.Web.UI.WebControls.Image Image1;
 
         /// <summary>
-        /// Control most_valued.
+        /// Control Nombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink most_valued;
+        protected global::System.Web.UI.WebControls.Label Nombre;
 
         /// <summary>
-        /// Control recommended.
+        /// Control Precio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink recommended;
+        protected global::System.Web.UI.WebControls.Label Precio;
+
+        /// <summary>
+        /// Control Marca.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Marca;
+
+        /// <summary>
+        /// Control Descripcion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Descripcion;
     }
 }

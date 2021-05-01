@@ -21,15 +21,11 @@ namespace library.CAD
             constring = ConfigurationManager.ConnectionStrings["conexion"].ToString();
         }
 
-        /*public bool addProduct(ENCesta c, Producto p) { return false; }
+        public bool addProduct(ENCesta c, ENLineaCesta p) { return false; }
 
-        public bool removeProduct(ENCesta c, Producto p) { return false; }
+        public bool removeProduct(ENCesta c, ENLineaCesta p) { return false; }
 
-        public bool addUnit(ENCesta c, Producto p) { return false; }
-
-        public bool removeUnit(ENCesta c, Producto p) { return false; }
-
-        public bool proceedToBuy(ENCesta c) { return false; }*/
+        public bool proceedToBuy(ENCesta c) { return false; }
 
     }
 }

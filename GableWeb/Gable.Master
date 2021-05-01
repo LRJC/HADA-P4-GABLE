@@ -6,27 +6,61 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Gable - Juegos de Mesa</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body class="bg-dark">
     <form id="form1" runat="server">
-        <div>
-            <header class="bg-primary text-white" style="padding-top: 1em; padding-bottom: 1em;">
-            <div class="container text-center">
-                <!-- <img src="src/gable-logo.png" class="img-responsive"/> -->
-                <asp:ImageButton ID="ImageButton1" ImageUrl="src/gable-logo.png" CssClass="img-responsive" runat="server" ImageAlign="Middle" Height="50" />
+            
+            <header class="bg-primary text-white py-2">
+            <div id="header">
+
+                <div class="container-fluid">
+                    <div class="row justify-content-center align-items-center" style="text-align: center;">
+                        <div class="col-2 col-md-1 order-sm-0">
+                            <asp:ImageButton ID="hamburger" ImageUrl="src/hamburguer.png" runat="server" Height="35" Width="38" onmouseover="submenu.style.display='block'" onmouseout ="submenu.style.display='none'"/>
+                        </div>
+                        <ul class="menu bg-primary font-italic" id="submenu" style="display:none; position:absolute; list-style-type:none; line-height:40px;">
+                            <li>Inicio</li>
+                            <li>Mejor Valorados</li>
+                            <li>Más Valorados</li>
+                            <li>Rol</li>
+                            <li>Estrategia</li>
+                            <li>Azar</li>
+                            <li>Cartas</li>
+                            <li>Más generos</li>
+                        </ul>
+                        <div class="col-8 col-md-4 order-1">
+                            <asp:ImageButton ID="gable_logo" ImageUrl="src/gable-logo.png" OnClick="btnGableLogo_Click" Height="60" runat="server"/>
+                        </div>
+                        <asp:TextBox ID="searcher" runat="server" CssClass="col-8 col-md-4 order-3 order-md-2 my-3 my-md-0" align="center" />
+                        <asp:Label ID="init_sesion" runat="server" CssClass="col-12 col-md-2 order-4 order-md-3" Text ="Iniciar Sesión"/>
+                        <div class="col-2 col-md-1 order-2 order-md-4">
+                            <asp:ImageButton ID="basket_icon" ImageUrl="src/basket.png" OnClick="btnCesta_Click" Height="53" runat="server" />
+                        </div>
+                    </div>
+                </div>
+
+                <!--<ul class="nav" style ="list-style-type:none;">
+                   
+                <asp:ImageButton ID="ImageButton1" ImageUrl="src/gable-logo.png" OnClick="btnGableLogo_Click" CssClass="img-responsive" runat="server" Height="50" style="margin-left: 3em;"/>
+                <asp:TextBox ID="Buscador" runat="server" style="margin-left: 10em;" align="center" Height="25" Width="25em" />
+                <asp:Label ID="User" runat="server" Text ="Iniciar Sesión" style="margin-left: 15em;"/>
+                <asp:ImageButton ID="ImageButton2" ImageUrl="src/basket.png" OnClick="btnCesta_Click" runat="server" Height="50" style="margin-left: 3em;" />
+                </ul>-->
             </div>
           </header>
 
-
-
-
-
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-        </div>
+
+        
+        <footer class="bg-primary text-black font-italic py-3" style="bottom:0; width:100%; text-align:center; color: #fff !important;"  >
+             <div class="align-middle">
+                 <p style="margin: 0">Copyright &copy;2021. Designed by GableTeam</p>
+             </div>
+        </footer>
     </form>
 </body>
 </html>

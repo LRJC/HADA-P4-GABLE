@@ -13,5 +13,16 @@ namespace GableWeb
         {
 
         }
+
+        protected void btnCesta_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Cesta.aspx");
+        }
+
+        protected void btnGableLogo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("index.aspx");
+        }
+
     }
 }
