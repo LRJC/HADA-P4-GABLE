@@ -13,8 +13,8 @@
     
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-1" style="background-color:antiquewhite"></div>
-            <div class="col-xs-12 col-sm-10">
+            <div class="col-sm-1" style="background-color:darkgrey"></div>
+            <div class="col-xs-12 col-sm-10" style="background-color:white;">
                 <section id="sec1">
                     <h2>MAS VENDIDOS</h2>
                     <div class="container-fluid">
@@ -55,7 +55,7 @@
                     </div>
                 </section>
             </div>
-            <div class="col-sm-1" style="background-color:antiquewhite"></div>
+            <div class="col-sm-1" style="background-color:darkgrey"></div>
         </div> 
     </div>
 </asp:Content>
