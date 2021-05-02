@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="AreaPersonal.aspx" />
     <Content Include="index.aspx" />
+    <Content Include="styles\areaPersonal.css" />
     <Content Include="styles\index.css" />
     <Content Include="Productos.aspx" />
     <Content Include="styles\Productos.css" />
