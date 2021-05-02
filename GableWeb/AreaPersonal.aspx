@@ -3,38 +3,38 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid row">
-        <div class="col-4 mx-3 my-1 pl-3">
-            <h1 class="display-4"><asp:Label ID="lab_AreaPersonal" runat="server" Text="Área Personal" class="row mx-0 my-0"></asp:Label></h1>
-            <div class="ml-3">
-                <ul class="list-unstyled ml-3">
-                    <li>
+        <div class="col-sm-12 col-md-5">
+            <h1 class="ml-1 mt-2"><asp:Label ID="lab_AreaPersonal" runat="server" Text="Área Personal" class="row mx-0 my-0"></asp:Label></h1>
+            <div class="row ml-1">
+                <div class="col ml-3">
+                    <div class="row">
                         <strong><asp:Label ID="lab_NombreApellidos_AreaPersonal" runat="server" Text="[Nombre y apellidos]" class="row"></asp:Label></strong>
-                    </li>
-                    <li>
+                    </div>
+                    <div class="row">
                         <asp:Label ID="lab_Correo_AreaPersonal" runat="server" Text="[correo]" class="row"></asp:Label>
-                    </li>
-                    <li>
+                    </div>
+                    <div class="row">
                         <asp:Label ID="lab_Dni_AreaPersonal" runat="server" Text="[dni]" class="row"></asp:Label>
-                    </li>
-                </ul>
-                <br />
-                <br />
-                <ul class="list-unstyled">
-                    <li class="mb-1">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col ml-3 mt-3">
+                    <div class="row">
                         <asp:LinkButton ID="LinkButton1" runat="server">
                             <asp:Image ID="misPedidosImg" runat="server" /> Mis pedidos
                         </asp:LinkButton>
-                    </li>
-                    <li class="mb-1">
+                    </div>
+                    <div class="row">
                         <asp:LinkButton ID="LinkButton2" runat="server">
                             <asp:Image ID="Image1" runat="server" />  Editar datos de la cuenta
                         </asp:LinkButton>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="col-6 px-4 my-1">
-            <h2 class="align-content-center display-4">Ultimos pedidos</h2>
+        <div class="col-sm-12 col-md-7">
+            <h1 class="mt-1">Ultimos pedidos</h1>
             <div class="row my-1">
                 <asp:Label ID="prod1" runat="server" Text="[Producto]"></asp:Label>
             </div>
