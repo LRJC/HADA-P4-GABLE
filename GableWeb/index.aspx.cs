@@ -13,5 +13,10 @@ namespace GableWeb
         {
 
         }
+
+        protected void img_prueba(object sender, EventArgs e)
+        {
+            Response.Redirect("Productos.aspx");
+        }
     }
 }

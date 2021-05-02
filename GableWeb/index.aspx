@@ -10,42 +10,52 @@
             <asp:HyperLink id="recommended" Text="Recomendados" NavigateUrl="#sec3" CssClass="col-xs-12 col-sm-4 py-2" runat="server"/>
         </div>
     </div>
-
-    <div style="margin-top: 20px;" class="div1">
-        <section id="sec1">
-            <h2 style="color: cadetblue; font-style: italic;">MÁS VENDIDOS</h2>
-            <img src="src/old_gable-logo.png"/>
-            <img src="src/gable-logo.png"/>
-            <br />
-            <img src="src/old_gable-logo.png"/>
-            <img src="src/gable-logo.png"/>
-            <br />
-            <img src="src/old_gable-logo.png"/>
-            <img src="src/gable-logo.png"/>
-        </section>
-
-        <section id="sec2">
-            <h2 style="color: cadetblue; font-style: italic;">MEJOR VALORADOS</h2>
-            <img src="src/old_gable-logo.png"/>
-            <img src="src/gable-logo.png"/>
-            <br />
-            <img src="src/old_gable-logo.png"/>
-            <img src="src/gable-logo.png"/>
-            <br />
-            <img src="src/old_gable-logo.png"/>
-            <img src="src/gable-logo.png"/>
-        </section>
-
-        <section id="sec3">
-            <h2 style="color: cadetblue; font-style: italic;">RECOMENDADOS</h2>
-            <img src="src/old_gable-logo.png"/>
-            <img src="src/gable-logo.png"/>
-            <br />
-            <img src="src/old_gable-logo.png"/>
-            <img src="src/gable-logo.png"/>
-            <br />
-            <img src="src/old_gable-logo.png"/>
-            <img src="src/gable-logo.png"/>
-        </section>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-1" style="background-color:antiquewhite"></div>
+            <div class="col-xs-12 col-sm-10">
+                <section id="sec1">
+                    <h2>MAS VENDIDOS</h2>
+                    <div class="container-fluid">
+                         <div class="row">
+                            <div class="col-xs-12 col-md-6">
+                                <asp:ImageButton runat="server" ImageUrl="src/parchis.png" OnClick="img_prueba" Height="300" Width="300"/>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                 <asp:ImageButton runat="server" ImageUrl="src/parchis.png" OnClick="img_prueba" Height="300" Width="300"/>
+                            </div> 
+                         </div> 
+                    </div>
+                </section>
+                <section id="sec2">
+                    <h2>MEJOR VALORADOS</h2>
+                    <div class="container-fluid">
+                         <div class="row">
+                            <div class="col-xs-12 col-md-6">
+                                <asp:ImageButton runat="server" ImageUrl="src/parchis.png" OnClick="img_prueba" Height="300" Width="300"/>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                 <asp:ImageButton runat="server" ImageUrl="src/parchis.png" OnClick="img_prueba" Height="300" Width="300"/>
+                            </div> 
+                         </div> 
+                    </div>
+                </section>
+                <section id="sec3">
+                    <h2>RECOMENDADOS</h2>
+                    <div class="container-fluid">
+                         <div class="row">
+                            <div class="col-xs-12 col-md-6">
+                                <asp:ImageButton runat="server" ImageUrl="src/parchis.png" OnClick="img_prueba" Height="300" Width="300"/>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                 <asp:ImageButton runat="server" ImageUrl="src/parchis.png" OnClick="img_prueba" Height="300" Width="300"/>
+                            </div> 
+                         </div> 
+                    </div>
+                </section>
+            </div>
+            <div class="col-sm-1" style="background-color:antiquewhite"></div>
+        </div> 
     </div>
 </asp:Content>
