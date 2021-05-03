@@ -21,7 +21,7 @@ namespace library
             set { _nombre = value; }
         }
 
-        bool createProvincia()
+        public bool createProvincia()
         {
             CADProvincia pro = new CADProvincia();
             if (pro.createProvincia(this))
@@ -31,7 +31,7 @@ namespace library
             return false;
         }
 
-        bool readProvincia()
+        public bool readProvincia()
         {
             CADProvincia pro = new CADProvincia();
             if (pro.readProvincia(this))
@@ -51,7 +51,7 @@ namespace library
             return false;
         }
 
-        bool deleteProvincia()
+        public bool deleteProvincia()
         {
             CADProvincia pro = new CADProvincia();
             if (pro.deleteProvincia(this))

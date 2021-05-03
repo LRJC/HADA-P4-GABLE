@@ -41,12 +41,37 @@
 }
 
 .btn-sugerencias {
-    background-color: #285ab5;
+    background-color: #c57e4f;
     color: #fff !important;
     border: 0;
+    transition: 0.2s;
 }
+
+    .btn-sugerencias:hover {
+        background-color: #e5ad89;
+        text-decoration: none;
+    }
 
 .btn-sugerencias a {
     color: #fff !important;
     text-decoration: none;
+}
+
+.btn-order {
+    background-color: #c57e4f;
+    color: #fff !important;
+    border: 0;
+    transition: 0.2s;
+}
+
+    .btn-order:hover {
+        background-color: #e5ad89;
+        text-decoration: none;
+    }
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+    .leftborder-lg {
+        border-left: 1px solid #e0e0e0!important;
+    }
 }
