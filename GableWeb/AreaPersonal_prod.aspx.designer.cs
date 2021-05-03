@@ -51,31 +51,31 @@ namespace GableWeb
         protected global::System.Web.UI.WebControls.Label lab_Dni_AreaPersonal;
 
         /// <summary>
-        /// Control LinkButton1.
+        /// Control LinkButtonMispedidos_prod.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
+        protected global::System.Web.UI.WebControls.LinkButton LinkButtonMispedidos_prod;
 
         /// <summary>
-        /// Control misPedidosImg.
+        /// Control misPedidosImg_prod.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image misPedidosImg;
+        protected global::System.Web.UI.WebControls.Image misPedidosImg_prod;
 
         /// <summary>
-        /// Control LinkButton2.
+        /// Control LinkButtonModData_prod.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton2;
+        protected global::System.Web.UI.WebControls.LinkButton LinkButtonModData_prod;
 
         /// <summary>
         /// Control Image1.
