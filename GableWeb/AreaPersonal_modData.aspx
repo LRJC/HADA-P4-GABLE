@@ -54,7 +54,7 @@
                                 <asp:TextBox ID="newPasswd" runat="server" MaxLength="16" TextMode="Password"></asp:TextBox>
                             </div>
                             <div class="row my-2 mx-0">
-                                <asp:Label ID="LabelrepeatNewPassword" runat="server" Text="Repite la nueva contraseña: "></asp:Label>
+                                <asp:Label ID="LabelrepeatNewPassword" runat="server" Text="Confirma la contraseña: "></asp:Label>
                                 <asp:TextBox ID="confirmNewPasswd" runat="server" MaxLength="16" TextMode="Password"></asp:TextBox>
                             </div>
                             <div class="row-2 mt-3 mx-0">
