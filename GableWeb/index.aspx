@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid" style="z-index: 1;">
-        <div class="row align-content-center" style="text-align: center;">
+        <div class="row align-content-center" style="text-align: center; z-index:1;">
             <asp:HyperLink id="most_sold" Text="Más vendidos" NavigateUrl="#sec1" CssClass="col-xs-12 col-sm-4 py-2 btn-sugerencias" runat="server"/>
             <asp:HyperLink id="most_valued" Text="Mejor valorados" NavigateUrl="#sec2" CssClass="col-xs-12 col-sm-4 py-2 btn-sugerencias" runat="server"/>
             <asp:HyperLink id="recommended" Text="Recomendados" NavigateUrl="#sec3" CssClass="col-xs-12 col-sm-4 py-2 btn-sugerencias" runat="server"/>
