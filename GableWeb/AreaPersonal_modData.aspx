@@ -21,12 +21,12 @@
             <div class="row">
                 <div class="col ml-3 mt-3">
                     <div class="row">
-                        <asp:LinkButton ID="LinkButtonMisPedidos_mod" runat="server" OnClick="LinkButtonMisPedidos_modData_Click">
+                        <asp:LinkButton ID="LinkButtonMisPedidos_mod" runat="server" PostBackUrl="~/AreaPersonal_prod.aspx">
                             <asp:Image ID="misPedidosImg" runat="server" /> Mis pedidos
                         </asp:LinkButton>
                     </div>
                     <div class="row">
-                        <asp:LinkButton ID="modDataBtn_mod" runat="server">
+                        <asp:LinkButton ID="modDataBtn_mod" runat="server" PostBackUrl="~/AreaPersonal_modData.aspx">
                             <asp:Image ID="modDataImg_mod" runat="server" />  Editar datos de la cuenta
                         </asp:LinkButton>
                     </div>

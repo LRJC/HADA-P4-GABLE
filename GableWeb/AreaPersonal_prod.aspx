@@ -34,21 +34,27 @@
             </div>
         </div>
         <div class="col-sm-12 col-md-7">
-            <h1 class="mt-1">Ultimos pedidos</h1>
-            <div class="row my-1">
-                <asp:Label ID="prod1" runat="server" Text="[Producto]"></asp:Label>
+            <div class="row-12 border-bottom">
+                <h1 class="mt-1">Ultimos pedidos</h1>
             </div>
-            <div class="row my-1">
-                <asp:Label ID="prod2" runat="server" Text="[Producto]"></asp:Label>
-            </div>
-            <div class="row my-1">
-                <asp:Label ID="prod3" runat="server" Text="[Producto]"></asp:Label>
-            </div>
-            <div class="row my-1">
-                <asp:Label ID="prod4" runat="server" Text="[Producto]"></asp:Label>
-            </div>
-            <div class="row my-1">
-                <asp:Label ID="prod5" runat="server" Text="[Producto]"></asp:Label>
+            <div class="row ml-1">
+                <div class="col">
+                    <div class="row border-top border-bottom p-3">
+                        <asp:Label ID="prod1" runat="server" Text="[Pedido]"></asp:Label>
+                    </div>
+                    <div class="row border-top border-bottom p-3">
+                        <asp:Label ID="prod2" runat="server" Text="[Pedido]"></asp:Label>
+                    </div>
+                    <div class="row border-top border-bottom p-3">
+                        <asp:Label ID="prod3" runat="server" Text="[Pedido]"></asp:Label>
+                    </div>
+                    <div class="row border-top border-bottom p-3">
+                        <asp:Label ID="prod4" runat="server" Text="[Pedido]"></asp:Label>
+                    </div>
+                    <div class="row border-top border-bottom p-3">
+                        <asp:Label ID="prod5" runat="server" Text="[Pedido]"></asp:Label>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
