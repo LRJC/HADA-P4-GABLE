@@ -10,7 +10,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body class="bg-dark">
+<body class="bg-white">
     <form id="form1" runat="server">
             
             <header class="bg-primary text-white py-0" style="background:url('src/header_wood.png')">
