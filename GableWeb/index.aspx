@@ -19,11 +19,15 @@
                     <h2>MAS VENDIDOS</h2>
                     <div class="container-fluid">
                          <div class="row">
-                            <div class="col-xs-12 col-md-6">
+                            <div class="col-xs-12 col-md-6" style="text-align:center;">
                                 <asp:ImageButton runat="server" ImageUrl="src/parchis.png" OnClick="img_prueba" Height="300" Width="300"/>
+                                <p> Parchis-chis-chis</p>
+                                <p> 240,00€</p>
                             </div>
-                            <div class="col-xs-12 col-md-6">
+                            <div class="col-xs-12 col-md-6" style="text-align:center;">
                                  <asp:ImageButton runat="server" ImageUrl="src/parchis.png" OnClick="img_prueba" Height="300" Width="300"/>
+                                <p> Parchis-chis-chis</p>
+                                <p> 240,00€</p>
                             </div> 
                          </div> 
                     </div>
@@ -32,11 +36,15 @@
                     <h2>MEJOR VALORADOS</h2>
                     <div class="container-fluid">
                          <div class="row">
-                            <div class="col-xs-12 col-md-6">
+                            <div class="col-xs-12 col-md-6" style="text-align:center;">
                                 <asp:ImageButton runat="server" ImageUrl="src/parchis.png" OnClick="img_prueba" Height="300" Width="300"/>
+                                <p> Parchis-chis-chis</p>
+                                <p> 240,00€</p>
                             </div>
-                            <div class="col-xs-12 col-md-6">
+                            <div class="col-xs-12 col-md-6" style="text-align:center;">
                                  <asp:ImageButton runat="server" ImageUrl="src/parchis.png" OnClick="img_prueba" Height="300" Width="300"/>
+                                <p> Parchis-chis-chis</p>
+                                <p> 240,00€</p>
                             </div> 
                          </div> 
                     </div>
@@ -45,11 +53,15 @@
                     <h2>RECOMENDADOS</h2>
                     <div class="container-fluid">
                          <div class="row">
-                            <div class="col-xs-12 col-md-6">
+                            <div class="col-xs-12 col-md-6" style="text-align:center;">
                                 <asp:ImageButton runat="server" ImageUrl="src/parchis.png" OnClick="img_prueba" Height="300" Width="300"/>
+                                <p> Parchis-chis-chis</p>
+                                <p> 240,00€</p>
                             </div>
-                            <div class="col-xs-12 col-md-6">
+                            <div class="col-xs-12 col-md-6" style="text-align:center;">
                                  <asp:ImageButton runat="server" ImageUrl="src/parchis.png" OnClick="img_prueba" Height="300" Width="300"/>
+                                <p> Parchis-chis-chis</p>
+                                <p> 240,00€</p>
                             </div> 
                          </div> 
                     </div>
