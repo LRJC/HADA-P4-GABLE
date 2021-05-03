@@ -24,5 +24,9 @@ namespace GableWeb
             Response.Redirect("index.aspx");
         }
 
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("login.aspx");
+        }
     }
 }

@@ -75,6 +75,7 @@
     <Content Include="styles\Productos.css" />
     <Content Include="Web.config" />
     <Content Include="Cesta.aspx" />
+    <Content Include="Login.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AreaPersonal_modData.aspx.cs">
@@ -119,6 +120,13 @@
     </Compile>
     <Compile Include="Cesta.aspx.designer.cs">
       <DependentUpon>Cesta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
