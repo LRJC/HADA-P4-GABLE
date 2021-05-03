@@ -14,9 +14,19 @@ namespace GableWeb
 
         }
 
-        protected void LinkButtonMisPedidos_modData_Click(object sender, EventArgs e)
+        protected void ButtonCambiarContra_Click(object sender, EventArgs e)
         {
+            //actualizar la contraseña en la bbdd
+        }
 
+        protected void ButtonCambiarDatosPersonales_Click(object sender, EventArgs e)
+        {
+            //actualizar los datos personales en la bbdd
+        }
+
+        protected void ButtonCambiarInfoPagos_Click(object sender, EventArgs e)
+        {
+            //actualizar la informacion de pago en la bbdd
         }
     }
 }

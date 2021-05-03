@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid row">
-        <div class="col-sm-12 col-md-5">
+        <div class="col-sm-12 col-md-3">
             <h1 class="ml-1 mt-2"><asp:Label ID="lab_AreaPersonal" runat="server" Text="Área Personal" class="row mx-0 my-0"></asp:Label></h1>
             <div class="row ml-1">
                 <div class="col ml-3">
@@ -33,7 +33,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-12 col-md-7">
+        <div class="col-sm-12 col-md-9 pl-xs-0 pl-md-5">
             <div class="row-12 border-bottom">
                 <h1 class="mt-1">Ultimos pedidos</h1>
             </div>
