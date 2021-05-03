@@ -13,24 +13,21 @@
 <body class="bg-dark">
     <form id="form1" runat="server">
             
-            <header class="bg-primary text-white py-0" style="background:url('src/header_wood.png')">
+            <header class="bg-primary text-white py-0" style="background:url('src/header_wood.png'); z-index: 1;">
             <div id="header">
 
                 <div class="container-fluid">
                     <div class="row justify-content-center align-items-center">
-                        <div class="col-2 col-md-1 order-sm-0" style="text-align: left;">
-                            <asp:ImageButton ID="hamburger" ImageUrl="src/hamburguer.png" runat="server" Height="32" onmouseover="submenu.style.display='block'" onmouseout ="submenu.style.display='none'"/>
+                        <div class="dropdown col-1" style="z-index: 2;">
+                               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+                                     Menú
+                                </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
                         </div>
-                        <ul class="menu bg-primary font-italic" id="submenu" style="display:none; position:absolute; list-style-type:none; line-height:40px;">
-                            <li>Inicio</li>
-                            <li>Mejor Valorados</li>
-                            <li>Más Valorados</li>
-                            <li>Rol</li>
-                            <li>Estrategia</li>
-                            <li>Azar</li>
-                            <li>Cartas</li>
-                            <li>Más generos</li>
-                        </ul>
                         <div class="col-8 col-md-4 order-1 pb-2"  style="text-align: center;">
                             <asp:ImageButton ID="gable_logo" ImageUrl="src/gable-logo.png" OnClick="btnGableLogo_Click" Height="60" runat="server"/>
                         </div>
