@@ -42,9 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CAD\CADDirEnvio.cs" />
     <Compile Include="CAD\CADLocalidad.cs" />
     <Compile Include="CAD\CADLineaCesta.cs" />
     <Compile Include="CAD\CADProvincia.cs" />
+    <Compile Include="CAD\CADTipoProducto.cs" />
+    <Compile Include="EN\ENDirEnvio.cs" />
     <Compile Include="EN\ENLineaCesta.cs" />
     <Compile Include="EN\ENLocalidad.cs" />
     <Compile Include="EN\ENProvincia.cs" />
@@ -53,6 +56,7 @@
     <Compile Include="CAD\CADValoraciones.cs" />
     <Compile Include="EN\ENCesta.cs" />
     <Compile Include="EN\ENProductos.cs" />
+    <Compile Include="EN\ENTipoProducto.cs" />
     <Compile Include="EN\ENValoraciones.cs" />
     <Compile Include="CAD\CADMarca.cs" />
     <Compile Include="CAD\CADUsuario.cs" />
