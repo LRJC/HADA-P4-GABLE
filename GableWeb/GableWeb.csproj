@@ -73,7 +73,6 @@
     <Content Include="App_Data\BBDD_log.ldf">
       <DependentUpon>BBDD.mdf</DependentUpon>
     </Content>
-    <Content Include="AreaPersonal.aspx" />
     <Content Include="index.aspx" />
     <Content Include="styles\index.css" />
     <Content Include="Productos.aspx" />
