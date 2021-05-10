@@ -164,26 +164,39 @@ namespace library.EN
 
         public bool subirProducto()
         {
-            bool devolver = false;
             ENProductos en = new ENProductos();
-            CADUsuario nuevo = new CADUsuario();
-            if (en.readProducto())
-            {
-                devolver = nuevo.subirProducto(this);
-            }
-            return devolver;
+            return en.createProducto();
         }
 
         public bool deleteProducto()
         {
-            bool devolver = false;
             ENProductos en = new ENProductos();
-            CADUsuario nuevo = new CADUsuario();
-            if (en.readProducto())
-            {
-                devolver = nuevo.deleteProducto(this);
-            }
-            return devolver;
+            return en.deleteProductos();
         }
+
+        public bool createLocalidad()
+        {
+            ENLocalidad en = new ENLocalidad();
+            return en.createLocalidad();
+        }
+
+        public bool deleteLocalidad()
+        {
+            ENLocalidad en = new ENLocalidad();
+            return en.deleteLocalidad();
+        }
+
+        public bool createProvincia()
+        {
+            ENProvincia en = new ENProvincia();
+            return en.createProvincia();
+        }
+
+        public bool deleteProvincia()
+        {
+            ENProvincia en = new ENProvincia();
+            return en.deleteProvincia();
+        }
+
     }
 }

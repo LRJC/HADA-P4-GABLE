@@ -69,12 +69,17 @@
   <ItemGroup>
     <Content Include="AreaPersonal_modData.aspx" />
     <Content Include="AreaPersonal_prod.aspx" />
+    <Content Include="App_Data\BBDD.mdf" />
+    <Content Include="App_Data\BBDD_log.ldf">
+      <DependentUpon>BBDD.mdf</DependentUpon>
+    </Content>
     <Content Include="index.aspx" />
     <Content Include="styles\index.css" />
     <Content Include="Productos.aspx" />
     <Content Include="styles\Productos.css" />
     <Content Include="Web.config" />
     <Content Include="Cesta.aspx" />
+    <Content Include="Login.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AreaPersonal_modData.aspx.cs">
@@ -119,6 +124,13 @@
     </Compile>
     <Compile Include="Cesta.aspx.designer.cs">
       <DependentUpon>Cesta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
