@@ -15,7 +15,7 @@
                         <!--Imagen-->
 
                         <div class="col-xs-12 col-md-6">
-                            <img src="src/parchis.png" Height="300" Width="300" />
+                            <img src="src/game_images/parchis.png" Height="300" Width="300" />
                         </div>
                        <!--Titulo, precio, descripcion-->
                         <div class="col-xs-12 col-md-6">

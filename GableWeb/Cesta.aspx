@@ -22,7 +22,7 @@
                     </HeaderTemplate>
                     <ItemTemplate>
                         <div class="row py-3 align-items-center">
-                            <div class="col-3"><asp:ImageButton CssClass="img-fluid" id="game_img" runat="server" ImageUrl='<%# Eval("imagen") %>'/></div>
+                            <div class="col-3 text-center"><asp:ImageButton CssClass="img-fluid" id="game_img" runat="server" ImageUrl='<%# Eval("imagen") %>'/></div>
                             <div class="col-2 font-weight-bold" style="color: black; text-align:center;"><%# Eval("nombre") %></div>
                             <div class="col-2" style="color: #5e5e5e!important; text-align:center;"><%# Eval("importe") %></div>
                             <div class="col-2">
@@ -57,7 +57,8 @@
                                     </div>
                                     <div class="row justify-content-center">
                                         <div class="col-4 col-lg-12 px-0 mt-2">
-                                            <asp:Button id="btnLogout"  runat="server" Text="Realizar pedido" CssClass="btn btn-block btn-order" style="text-align:center;"></asp:Button>
+                                             <!--TO DO: Use session's user id in CommandArgument -->
+                                            <asp:Button id="btnProceed"  runat="server" OnCommand="ProceedToBuy" CommandArgument='<%# Eval("numCesta") %>' Text="Realizar pedido" CssClass="btn btn-block btn-order" style="text-align:center;"></asp:Button>
                                         </div>
                                     </div>
                                 </div>
