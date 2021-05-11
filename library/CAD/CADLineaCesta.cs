@@ -14,7 +14,7 @@ namespace library.CAD
 
         public CADLineaCesta()
         {
-            constring = ConfigurationManager.ConnectionStrings["conexion"].ToString();
+            constring = ConfigurationManager.ConnectionStrings["bbdd"].ToString();
         }
 
         public bool addUnit(ENLineaCesta lc) { return false; }

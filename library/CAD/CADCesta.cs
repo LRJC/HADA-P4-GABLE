@@ -18,7 +18,7 @@ namespace library.CAD
 
         public CADCesta()
         {
-            constring = ConfigurationManager.ConnectionStrings["conexion"].ToString();
+            constring = ConfigurationManager.ConnectionStrings["bbdd"].ToString();
         }
 
         public bool addProduct(ENCesta c, ENLineaCesta p) { return false; }
