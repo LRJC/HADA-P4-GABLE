@@ -35,12 +35,6 @@ namespace library.EN
             Productos = productos;
         }
 
-        public bool addProduct(ENLineaCesta producto)
-        {
-            CADCesta c = new CADCesta();
-            return c.addProduct(this, producto);
-        }
-
         public bool removeProduct(ENLineaCesta producto)
         {
             CADCesta c = new CADCesta();

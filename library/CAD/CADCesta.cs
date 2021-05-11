@@ -21,8 +21,6 @@ namespace library.CAD
             constring = ConfigurationManager.ConnectionStrings["bbdd"].ToString();
         }
 
-        public bool addProduct(ENCesta c, ENLineaCesta p) { return false; }
-
         public bool removeProduct(ENCesta c, ENLineaCesta p) { return false; }
 
         public bool proceedToBuy(ENCesta c) { return false; }
