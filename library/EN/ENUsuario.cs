@@ -18,7 +18,7 @@ namespace library.EN
         private int _numTarjeta;
         private int _cvv;
         private string _expTarjeta;
-        private DateTime _fechanac;
+        private string _fechanac;//comprobar
         private bool _admin;
 
         public string nif
@@ -84,7 +84,7 @@ namespace library.EN
             set { _expTarjeta = value; }
         }
 
-        public DateTime fechanac
+        public string fechanac//comprobar
         {
             get { return _fechanac; }
 
