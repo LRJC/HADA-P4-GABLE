@@ -67,21 +67,34 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AreaPersonal.aspx" />
+    <Content Include="AreaPersonal_modData.aspx" />
+    <Content Include="AreaPersonal_prod.aspx" />
+    <Content Include="App_Data\BBDD.mdf" />
+    <Content Include="App_Data\BBDD_log.ldf">
+      <DependentUpon>BBDD.mdf</DependentUpon>
+    </Content>
     <Content Include="index.aspx" />
     <Content Include="styles\index.css" />
     <Content Include="Productos.aspx" />
     <Content Include="styles\Productos.css" />
     <Content Include="Web.config" />
     <Content Include="Cesta.aspx" />
+    <Content Include="Login.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AreaPersonal.aspx.cs">
-      <DependentUpon>AreaPersonal.aspx</DependentUpon>
+    <Compile Include="AreaPersonal_modData.aspx.cs">
+      <DependentUpon>AreaPersonal_modData.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AreaPersonal.aspx.designer.cs">
-      <DependentUpon>AreaPersonal.aspx</DependentUpon>
+    <Compile Include="AreaPersonal_modData.aspx.designer.cs">
+      <DependentUpon>AreaPersonal_modData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaPersonal_prod.aspx.cs">
+      <DependentUpon>AreaPersonal_prod.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaPersonal_prod.aspx.designer.cs">
+      <DependentUpon>AreaPersonal_prod.aspx</DependentUpon>
     </Compile>
     <Compile Include="Gable.Master.cs">
       <DependentUpon>Gable.Master</DependentUpon>
@@ -111,6 +124,13 @@
     </Compile>
     <Compile Include="Cesta.aspx.designer.cs">
       <DependentUpon>Cesta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

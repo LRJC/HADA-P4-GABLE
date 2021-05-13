@@ -9,42 +9,28 @@ namespace library.EN
 {   
     public class ENCesta
     {
-        private ENUsuario usuario;
-        private List<ENLineaCesta> productos;
+        private int numCesta;
 
-        public ENUsuario Usuario
+        public int NumCesta
         {
-            get { return usuario; }
-            set { usuario = value; }
-        }
-        public List<ENLineaCesta> Productos
-        {
-            get { return productos; }
-            set { productos = value; }
+            get { return numCesta; }
+            set { numCesta = value; }
         }
 
         public ENCesta()
         {
-            Usuario = null;
-            Productos = new List<ENLineaCesta>();
+            numCesta = -1;
         }
 
-        public ENCesta(ENUsuario usuario, List<ENLineaCesta> productos)
+        public ENCesta(int numCesta)
         {
-            Usuario = usuario;
-            Productos = productos;
+            NumCesta = numCesta;
         }
 
-        public bool addProduct(ENLineaCesta producto)
+        public string getUserID()
         {
             CADCesta c = new CADCesta();
-            return c.addProduct(this, producto);
-        }
-
-        public bool removeProduct(ENLineaCesta producto)
-        {
-            CADCesta c = new CADCesta();
-            return c.removeProduct(this, producto);
+            return c.getUserID(this);
         }
 
         public bool proceedToBuy()

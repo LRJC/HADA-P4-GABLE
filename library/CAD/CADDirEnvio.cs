@@ -4,8 +4,9 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using library.EN;
 
-namespace library
+namespace library.CAD
 {
 	public class CADDirEnvio
 	{
