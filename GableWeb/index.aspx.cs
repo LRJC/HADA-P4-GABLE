@@ -17,23 +17,24 @@ namespace GableWeb
             if (!this.IsPostBack)
             {
                 this.getMostSold();
+                this.getRecommended();
             }
         }
 
-        /*private void getListView()
+        private void getRecommended()
         {
             String conn = ConfigurationManager.ConnectionStrings["bbdd"].ConnectionString;
             SqlConnection sqlconn = new SqlConnection(conn);
-            string sqlquery = "select * from producto";
+            string sqlquery = "select top 6 * from producto";
             sqlconn.Open();
             SqlCommand command = new SqlCommand(sqlquery, sqlconn);
             SqlDataAdapter sqlda = new SqlDataAdapter(command);
             DataTable tab = new DataTable();
             sqlda.Fill(tab);
-            gv1.DataSource = tab;
-            gv1.DataBind();
+            gv2.DataSource = tab;
+            gv2.DataBind();
             sqlconn.Close();
-        }*/
+        }
 
         private void getMostSold()
         {
@@ -59,5 +60,11 @@ namespace GableWeb
                 sqlconn.Close();
             }
         }
+
+        private void getBetteReviewed()
+        {
+            //implementar
+        }
+
     }
 }

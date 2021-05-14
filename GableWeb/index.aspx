@@ -38,6 +38,21 @@
                 </section>
                 <section id="sec3">
                     <h2>RECOMENDADOS</h2>
+                    <asp:DataList ID="gv2" runat="server" RepeatColumns="3" CellPadding="2" Width="100%" ItemStyle-HorizontalAlign="Center">
+                        <ItemTemplate>
+                            <table>
+                                <tr>
+                                    <td><image style="height: 200px; width: 200px;" src="<%#Eval("imagen") %>" /></td>
+                                </tr>
+                                <tr>
+                                    <td><p style="text-align:center; font-family: Lucida Console, Courier New, monospace;"><%#Eval("nombre") %></p></td>
+                                </tr>
+                                <tr>
+                                    <td><p style="text-align:center; font-family: Lucida Console, Courier New, monospace;"><%#Eval("precio") %>€</p></td>
+                                </tr>
+                            </table>
+                        </ItemTemplate>
+                    </asp:DataList>
                 </section>
             </div>
             <div class="col-sm-1" style="background-color:#e0e0e0!important"></div>
