@@ -39,7 +39,7 @@ namespace library.CAD
                         en.cvv = int.Parse(data["cvv_tarjeta"].ToString());
                         en.tlf = int.Parse(data["tlf"].ToString());
                         en.expTarjeta = data["fecha_exp_tarjeta"].ToString();
-                        en.fechanac= data["fechanac"].ToString();//comprobar
+                        en.fechanac = data["fechanac"].ToString();//comprobar
                         devolver = true;
                         break;
                     }
@@ -76,7 +76,7 @@ namespace library.CAD
         {
             using (SqlConnection c = new SqlConnection(dbd))
             {
-                using (SqlCommand comando = new SqlCommand("Insert into usuario(dni, nombre, apellidos, email, tlf, cvv_tarjeta, fecha_exp_tarjeta, fecha_nac, tarjeta, contraseña ) values('" + en.nif + "', '" + en.nombre + "', '" + en.apellidos + "', "+en.email + "', '" + en.tlf + "', '" + en.cvv + "', '" + en.expTarjeta + "', '" + en.fechanac + "', '" + en.numTarjeta + "', " + en.contraseña+"')", c))
+                using (SqlCommand comando = new SqlCommand("Insert into usuario(dni, nombre, apellidos, email, tlf, cvv_tarjeta, fecha_exp_tarjeta, fecha_nac, tarjeta, contraseña ) values('" + en.nif + "', '" + en.nombre + "', '" + en.apellidos + "', " + en.email + "', '" + en.tlf + "', '" + en.cvv + "', '" + en.expTarjeta + "', '" + en.fechanac + "', '" + en.numTarjeta + "', " + en.contraseña + "')", c))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(comando))
                     {
@@ -100,7 +100,7 @@ namespace library.CAD
         {
             using (SqlConnection c = new SqlConnection(dbd))
             {
-                using (SqlCommand comando = new SqlCommand("Update marca set origen='" + en.origen + "', logo='" + en.imagen + "' where nombre='" + en.nombre + "'"))
+                using (SqlCommand comando = new SqlCommand("Update marca set contraseña='" + en.contraseña + "', email='" + en.email + "cvv_tarjeta = '" + en.cvv + "' , tlf = '" + en.tlf + "' where dni='" + en.nif + "'"))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(comando))
                     {
@@ -119,9 +119,9 @@ namespace library.CAD
                 }
             }
         }
-    }
 
-    public bool loginUsuario(ENUsuario en)
+
+        public bool loginUsuario(ENUsuario en)
         {
             //implementación(validación de contraseña y usuario, ...)
             return true;

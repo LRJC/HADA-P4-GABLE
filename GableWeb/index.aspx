@@ -17,54 +17,24 @@
             <div class="col-xs-12 col-sm-10" style="background-color:white; border-left: 1px solid #75777d!important; border-right: 1px solid #75777d!important;">
                 <section id="sec1">
                     <h2>MAS VENDIDOS</h2>
-                    <div class="container-fluid">
-                         <div class="row">
-                            <div class="col-xs-12 col-md-6" style="text-align:center;">
-                                <asp:ImageButton runat="server" ImageUrl="src/game_images/parchis.png" OnClick="img_prueba" Height="300" Width="300"/>
-                                <p> Parchis-chis-chis</p>
-                                <p> 240,00€</p>
-                            </div>
-                            <div class="col-xs-12 col-md-6" style="text-align:center;">
-                                 <asp:ImageButton runat="server" ImageUrl="src/game_images/parchis.png" OnClick="img_prueba" Height="300" Width="300"/>
-                                <p> Parchis-chis-chis</p>
-                                <p> 240,00€</p>
-                            </div> 
-                         </div> 
-                    </div>
+                    <asp:DataList ID="gv1" runat="server" RepeatColumns="3" CellPadding="2" Width="100%" ItemStyle-HorizontalAlign="Center">
+                        <ItemTemplate>
+                            <table>
+                                <tr>
+                                    <td><image style="height: 200px; width: 200px;" src="<%#Eval("imagen") %>" /></td>
+                                </tr>
+                                <tr>
+                                    <td><h1><%#Eval("precio") %></h1></td>
+                                </tr>
+                            </table>
+                        </ItemTemplate>
+                    </asp:DataList>
                 </section>
                 <section id="sec2">
                     <h2>MEJOR VALORADOS</h2>
-                    <div class="container-fluid">
-                         <div class="row">
-                            <div class="col-xs-12 col-md-6" style="text-align:center;">
-                                <asp:ImageButton runat="server" ImageUrl="src/game_images/parchis.png" OnClick="img_prueba" Height="300" Width="300"/>
-                                <p> Parchis-chis-chis</p>
-                                <p> 240,00€</p>
-                            </div>
-                            <div class="col-xs-12 col-md-6" style="text-align:center;">
-                                 <asp:ImageButton runat="server" ImageUrl="src/game_images/parchis.png" OnClick="img_prueba" Height="300" Width="300"/>
-                                <p> Parchis-chis-chis</p>
-                                <p> 240,00€</p>
-                            </div> 
-                         </div> 
-                    </div>
                 </section>
                 <section id="sec3">
                     <h2>RECOMENDADOS</h2>
-                    <div class="container-fluid">
-                         <div class="row">
-                            <div class="col-xs-12 col-md-6" style="text-align:center;">
-                                <asp:ImageButton runat="server" ImageUrl="src/game_images/parchis.png" OnClick="img_prueba" Height="300" Width="300"/>
-                                <p> Parchis-chis-chis</p>
-                                <p> 240,00€</p>
-                            </div>
-                            <div class="col-xs-12 col-md-6" style="text-align:center;">
-                                 <asp:ImageButton runat="server" ImageUrl="src/game_images/parchis.png" OnClick="img_prueba" Height="300" Width="300"/>
-                                <p> Parchis-chis-chis</p>
-                                <p> 240,00€</p>
-                            </div> 
-                         </div> 
-                    </div>
                 </section>
             </div>
             <div class="col-sm-1" style="background-color:#e0e0e0!important"></div>
