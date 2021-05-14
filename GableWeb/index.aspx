@@ -24,7 +24,10 @@
                                     <td><image style="height: 200px; width: 200px;" src="<%#Eval("imagen") %>" /></td>
                                 </tr>
                                 <tr>
-                                    <td><h1><%#Eval("precio") %></h1></td>
+                                    <td><p style="text-align:center; font-family: Lucida Console, Courier New, monospace;"><%#Eval("nombre") %></p></td>
+                                </tr>
+                                <tr>
+                                    <td><p style="text-align:center; font-family: Lucida Console, Courier New, monospace;"><%#Eval("precio") %>€</p></td>
                                 </tr>
                             </table>
                         </ItemTemplate>
