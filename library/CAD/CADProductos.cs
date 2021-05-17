@@ -117,6 +117,10 @@ namespace library.CAD
                 Console.WriteLine("Product operation failed. Error:{0}", ex.Message);
                 throw new Exception("Product operation failed. Error: " + ex.Message);
             }
+            finally
+            {
+                if (con != null) con.Close();
+            }
 
             return true; 
         }
@@ -135,7 +139,7 @@ namespace library.CAD
                     throw new Exception("ERROR: Ya hay un producto con el mismo id");
                 }
                 SqlDataAdapter data = new SqlDataAdapter();
-               // data.UpdateCommand = new SqlCommand("Update producto set nombre='"+en.nom_producto+"',descripcion="+en.desc_producto+",precio="+en.pre_producto"'", con);
+                data.UpdateCommand = new SqlCommand("Update producto set nombre='"+en.nom_producto+"',descripcion="+en.desc_producto+"', precio="+en.pre_producto+"',imagen="+en.ImageLocation+ "',tipo_producto="+en.tipo_producto+"', marca="+en.marca_producto+"' where id= "+en.id_producto+"'", con);
                 data.UpdateCommand.ExecuteNonQuery();
 
 
@@ -144,6 +148,10 @@ namespace library.CAD
             {
                 Console.WriteLine("Product operation failed. Error:{0}", ex.Message);
                 throw new Exception("Product operation failed. Error: " + ex.Message);
+            }
+            finally
+            {
+                if (con != null) con.Close();
             }
 
             return true; 
