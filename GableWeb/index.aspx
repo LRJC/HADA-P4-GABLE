@@ -16,12 +16,32 @@
             <div class="col-sm-1" style="background-color:#e0e0e0!important"></div>
             <div class="col-xs-12 col-sm-10" style="background-color:white; border-left: 1px solid #75777d!important; border-right: 1px solid #75777d!important;">
                 <section id="sec1">
+                    <br />
                     <h2>MAS VENDIDOS</h2>
                     <asp:DataList ID="gv1" runat="server" RepeatColumns="3" CellPadding="2" Width="100%" ItemStyle-HorizontalAlign="Center">
                         <ItemTemplate>
                             <table>
                                 <tr>
-                                    <td><image style="height: 200px; width: 200px;" src="<%#Eval("imagen") %>" /></td>
+                                    <td><asp:ImageButton ID="im1" runat="server" CommandArgument='<%#Eval("nombre") %>' OnCommand="click_productos" style="height: 200px; width: 200px;" ImageUrl='<%# Eval("imagen") %>' /></td>
+                                </tr>
+                                <tr>
+                                    <td><p id="nombre1" style="text-align:center; font-family: Lucida Console, Courier New, monospace;"><%#Eval("nombre") %></p></td>
+                                </tr>
+                                <tr>
+                                    <td><p id="precio1" style="text-align:center; font-family: Lucida Console, Courier New, monospace;"><%#Eval("precio") %>€</p></td>
+                                </tr>
+                            </table>
+                        </ItemTemplate>
+                    </asp:DataList>
+                </section>
+                <section id="sec2">
+                    <br />
+                    <h2>MEJOR VALORADOS</h2>
+                    <asp:DataList ID="gv3" runat="server" RepeatColumns="3" CellPadding="2" Width="100%" ItemStyle-HorizontalAlign="Center">
+                        <ItemTemplate>
+                            <table>
+                                <tr>
+                                    <td><asp:ImageButton runat="server" CommandArgument='<%#Eval("nombre") %>' OnCommand="click_productos" style="height: 200px; width: 200px;" ImageUrl='<%# Eval("imagen") %>' /></td>
                                 </tr>
                                 <tr>
                                     <td><p style="text-align:center; font-family: Lucida Console, Courier New, monospace;"><%#Eval("nombre") %></p></td>
@@ -33,16 +53,14 @@
                         </ItemTemplate>
                     </asp:DataList>
                 </section>
-                <section id="sec2">
-                    <h2>MEJOR VALORADOS</h2>
-                </section>
                 <section id="sec3">
+                    <br />
                     <h2>RECOMENDADOS</h2>
                     <asp:DataList ID="gv2" runat="server" RepeatColumns="3" CellPadding="2" Width="100%" ItemStyle-HorizontalAlign="Center">
                         <ItemTemplate>
                             <table>
                                 <tr>
-                                    <td><image style="height: 200px; width: 200px;" src="<%#Eval("imagen") %>" /></td>
+                                    <td><asp:ImageButton runat="server" CommandArgument='<%#Eval("nombre") %>' OnCommand="click_productos" style="height: 200px; width: 200px;" ImageUrl='<%# Eval("imagen") %>' /></td>
                                 </tr>
                                 <tr>
                                     <td><p style="text-align:center; font-family: Lucida Console, Courier New, monospace;"><%#Eval("nombre") %></p></td>

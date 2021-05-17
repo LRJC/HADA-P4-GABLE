@@ -17,6 +17,7 @@ namespace GableWeb
             if (!this.IsPostBack)
             {
                 this.getMostSold();
+                this.getBetteReviewed();
                 this.getRecommended();
             }
         }
@@ -25,15 +26,25 @@ namespace GableWeb
         {
             String conn = ConfigurationManager.ConnectionStrings["bbdd"].ConnectionString;
             SqlConnection sqlconn = new SqlConnection(conn);
-            string sqlquery = "select top 6 * from producto";
-            sqlconn.Open();
-            SqlCommand command = new SqlCommand(sqlquery, sqlconn);
-            SqlDataAdapter sqlda = new SqlDataAdapter(command);
-            DataTable tab = new DataTable();
-            sqlda.Fill(tab);
-            gv2.DataSource = tab;
-            gv2.DataBind();
-            sqlconn.Close();
+            try
+            {
+                string sqlquery = "select top 6 * from producto";
+                sqlconn.Open();
+                SqlCommand command = new SqlCommand(sqlquery, sqlconn);
+                SqlDataAdapter sqlda = new SqlDataAdapter(command);
+                DataTable tab = new DataTable();
+                sqlda.Fill(tab);
+                gv2.DataSource = tab;
+                gv2.DataBind();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Fallo en el programa, ha saltado excepción...");
+            }
+            finally
+            {
+                sqlconn.Close();
+            }
         }
 
         private void getMostSold()
@@ -53,7 +64,7 @@ namespace GableWeb
             }
             catch (Exception e)
             {
-                Console.WriteLine("Excepcion");
+                Console.WriteLine("Fallo en el programa, ha saltado excepción...");
             }
             finally
             {
@@ -63,7 +74,32 @@ namespace GableWeb
 
         private void getBetteReviewed()
         {
-            //implementar
+            String conn = ConfigurationManager.ConnectionStrings["bbdd"].ConnectionString;
+            SqlConnection sqlconn = new SqlConnection(conn);
+            try
+            {
+                string sqlquery = "select top 6 p.nombre, p.precio, p.imagen, avg(v.puntuación) from producto p, valoracion v where v.producto=p.id_producto group by p.id_producto, p.imagen, p.nombre, p.precio order by avg(v.puntuación) desc";
+                sqlconn.Open();
+                SqlCommand command = new SqlCommand(sqlquery, sqlconn);
+                SqlDataAdapter sqlda = new SqlDataAdapter(command);
+                DataTable tab = new DataTable();
+                sqlda.Fill(tab);
+                gv3.DataSource = tab;
+                gv3.DataBind();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Fallo en el programa, ha saltado excepción...");
+            }
+            finally
+            {
+                sqlconn.Close();
+            }
+        }
+
+        protected void click_productos(object sender, CommandEventArgs e)
+        {
+            Response.Redirect("Productos.aspx?id_prod="+e.CommandArgument);
         }
 
     }
