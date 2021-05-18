@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Gable.Master" AutoEventWireup="true" CodeBehind="AreaPersonal_prod.aspx.cs" Inherits="GableWeb.AreaPersonal" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Gable.Master" AutoEventWireup="true" CodeBehind="AreaPersonal_ped.aspx.cs" Inherits="GableWeb.AreaPersonal" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -21,7 +21,7 @@
             <div class="row">
                 <div class="col ml-3 mt-3">
                     <div class="row">
-                        <asp:LinkButton ID="LinkButtonMispedidos_prod" runat="server" PostBackUrl="~/AreaPersonal_prod.aspx">
+                        <asp:LinkButton ID="LinkButtonMispedidos_prod" runat="server" PostBackUrl="~/AreaPersonal_ped.aspx">
                             <asp:Image ID="misPedidosImg_prod" runat="server" /> Mis pedidos
                         </asp:LinkButton>
                     </div>

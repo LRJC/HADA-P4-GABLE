@@ -69,7 +69,7 @@
   <ItemGroup>
     <Content Include="admin.aspx" />
     <Content Include="AreaPersonal_modData.aspx" />
-    <Content Include="AreaPersonal_prod.aspx" />
+    <Content Include="AreaPersonal_ped.aspx" />
     <Content Include="App_Data\BBDD.mdf" />
     <Content Include="App_Data\BBDD_log.ldf">
       <DependentUpon>BBDD.mdf</DependentUpon>
@@ -98,12 +98,12 @@
     <Compile Include="AreaPersonal_modData.aspx.designer.cs">
       <DependentUpon>AreaPersonal_modData.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AreaPersonal_prod.aspx.cs">
-      <DependentUpon>AreaPersonal_prod.aspx</DependentUpon>
+    <Compile Include="AreaPersonal_ped.aspx.cs">
+      <DependentUpon>AreaPersonal_ped.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AreaPersonal_prod.aspx.designer.cs">
-      <DependentUpon>AreaPersonal_prod.aspx</DependentUpon>
+    <Compile Include="AreaPersonal_ped.aspx.designer.cs">
+      <DependentUpon>AreaPersonal_ped.aspx</DependentUpon>
     </Compile>
     <Compile Include="Gable.Master.cs">
       <DependentUpon>Gable.Master</DependentUpon>
