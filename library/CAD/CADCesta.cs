@@ -18,12 +18,31 @@ namespace library.CAD
 
         public CADCesta()
         {
-            constring = ConfigurationManager.ConnectionStrings["conexion"].ToString();
+            constring = ConfigurationManager.ConnectionStrings["bbdd"].ToString();
         }
 
-        public bool addProduct(ENCesta c, ENLineaCesta p) { return false; }
+        public string getUserID(ENCesta c) 
+        {
+            using (SqlConnection con = new SqlConnection(constring))
+            {
+                using (SqlCommand cmd = new SqlCommand("" +
+                    "select usuario " +
+                    "from cesta " +
+                    "where numCesta = " + c.NumCesta +
+                    "", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable linCestData = new DataTable();
+                        sda.Fill(linCestData);
 
-        public bool removeProduct(ENCesta c, ENLineaCesta p) { return false; }
+                        if (linCestData.Rows.Count > 0)
+                            return linCestData.Rows[0][0].ToString();
+                        return null;
+                    }
+                }
+            }
+        }
 
         public bool proceedToBuy(ENCesta c) { return false; }
 

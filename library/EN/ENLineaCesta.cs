@@ -9,50 +9,64 @@ namespace library.EN
 {
     public class ENLineaCesta
     {
-        private ENProductos producto;
-        private int unidades;
+        private int numCesta, linea;
 
-        public ENProductos Producto
+        public int NumCesta
         {
-            get { return this.producto; }
-            set { this.producto = value; }
+            get { return this.numCesta; }
+            set { this.numCesta = value; }
         }
-        public int Unidades
+        public int Linea
         {
-            get { return this.unidades; }
-            set { this.unidades = value; }
+            get { return this.linea; }
+            set { this.linea = value; }
         }
 
         public ENLineaCesta()
         {
-            this.producto = null;
-            this.unidades = 0;
+            this.numCesta = 0;
+            this.linea = 0;
         }
-        public ENLineaCesta(ENProductos producto, int unidades)
+        public ENLineaCesta(int numCesta, int linea)
         {
-            this.producto = producto;
-            this.unidades = unidades;
+            this.numCesta = numCesta;
+            this.linea = linea;
         }
 
         public bool addUnit()
         {
-            this.unidades += 1;
-
-            CADLineaCesta lc = new CADLineaCesta();
-            return lc.addUnit(this);
-        }
-
-        public bool removeUnit()
-        {
-            if (this.unidades > 0)
+            int units = this.getUnits();
+            if (units < 9999)
             {
-                this.unidades += 1;
-
                 CADLineaCesta lc = new CADLineaCesta();
-                return lc.removeUnit(this);
+                return lc.setUnit(this, units + 1);
             }
 
             return false;
+        }
+
+        public bool substrUnit()
+        {
+            int units = this.getUnits();
+            if (units > 1)
+            {
+                CADLineaCesta lc = new CADLineaCesta();
+                return lc.setUnit(this, units - 1);
+            }
+
+            return false;
+        }
+
+        public bool removeItem()
+        {
+            CADLineaCesta lc = new CADLineaCesta();
+            return lc.removeItem(this);
+        }
+
+        private int getUnits()
+        {
+            CADLineaCesta lc = new CADLineaCesta();
+            return lc.getUnits(this);
         }
     }
 }
