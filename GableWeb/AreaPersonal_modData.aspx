@@ -21,7 +21,7 @@
             <div class="row">
                 <div class="col ml-3 mt-3">
                     <div class="row">
-                        <asp:LinkButton ID="LinkButtonMisPedidos_mod" runat="server" PostBackUrl="~/AreaPersonal_prod.aspx">
+                        <asp:LinkButton ID="LinkButtonMisPedidos_mod" runat="server" PostBackUrl="~/AreaPersonal_ped.aspx">
                             <asp:Image ID="misPedidosImg" runat="server" /> Mis pedidos
                         </asp:LinkButton>
                     </div>
