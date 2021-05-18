@@ -17,8 +17,33 @@ namespace library.CAD
 			constring = ConfigurationManager.ConnectionStrings["miConexion"].ToString();
 		}
 
-		public bool createDirEnvio(ENDirEnvio dir) { return false; }
-		public bool readDirEnvio(ENDirEnvio dir) { return false; }
+		public bool createDirEnvio(ENDirEnvio dir) {	//Tenemos un checkeo antes a priori
+			retorno = false;
+			using (SqlConnection c = new SqlConnection(constring))
+            {
+				SqlCommand com = new SqlCommand("");
+            }
+
+			return retorno;
+		}
+		public bool readDirEnvio(ENDirEnvio dir) {
+			retorno = false;
+			using (SqlConnection c = new SqlConnection(constring))
+            {
+				SqlCommand com = new SqlCommand("");
+				SqlDataReader data = com.ExecuteReader();
+
+                while (data.Read())
+                {
+
+                }
+
+				data.Close();
+
+            }
+			return retorno;
+		}
+
 		public bool updateDirEnvio(ENDirEnvio dir) { return false; }
 		public bool deleteDirEnvio(ENDirEnvio dir) { return false; }
 
