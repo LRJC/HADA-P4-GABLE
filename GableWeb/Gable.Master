@@ -11,38 +11,6 @@
     </asp:ContentPlaceHolder>
 </head>
 <body class="bg-white">
-    <form id="form1" runat="server">
-            
-            <header class="bg-primary text-white py-0" style="background:url('src/header_wood.png')">
-            <div id="header">
 
-                <div class="container-fluid">
-                    <div class="row justify-content-center align-items-center">
-                        
-                        <div class="col-8 col-md-4 order-1 pb-2"  style="text-align: center; z-index: 1;">
-                            <asp:ImageButton ID="gable_logo" ImageUrl="src/gable-logo.png" OnClick="btnGableLogo_Click" Height="60" runat="server"/>
-                        </div>
-                        <asp:TextBox ID="searcher" runat="server" CssClass="col-8 col-md-4 order-3 order-md-2 my-3 my-md-0" align="left" />
-                        <asp:Label ID="init_sesion" runat="server" CssClass="col-12 col-md-2 order-4 order-md-3 pb-3 pb-md-0 font-weight-bold" Text ="Iniciar Sesión" align="center"/>
-                        <div class="col-2 col-md-1 order-2 order-md-4"  style="text-align: center;">
-                            <asp:ImageButton ID="basket_icon" ImageUrl="src/basket.png" OnClick="btnCesta_Click" Height="36" runat="server" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </header>
-
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-
-        
-        <footer class="font-italic py-3" style="background-color:#c57e4f; bottom:0; width:100%; text-align:center; color: #fff !important;"  >
-             <div class="align-middle">
-                 <p style="margin: 0">Copyright &copy;2021. Designed by GableTeam</p>
-             </div>
-        </footer>
-
-        <script>> </script> <!-- Avoids Chrome's transition bug -->
-    </form>
 </body>
 </html>
