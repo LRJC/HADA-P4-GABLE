@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 using library.EN;
 
 namespace library.CAD
@@ -18,7 +19,7 @@ namespace library.CAD
 		}
 
 		public bool createDirEnvio(ENDirEnvio dir) {	//Tenemos un checkeo antes a priori
-			retorno = false;
+			bool retorno = false;
 			using (SqlConnection c = new SqlConnection(constring))
             {
 				SqlCommand com = new SqlCommand("");
@@ -27,7 +28,7 @@ namespace library.CAD
 			return retorno;
 		}
 		public bool readDirEnvio(ENDirEnvio dir) {
-			retorno = false;
+			bool retorno = false;
 			using (SqlConnection c = new SqlConnection(constring))
             {
 				SqlCommand com = new SqlCommand("");

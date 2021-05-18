@@ -10,7 +10,7 @@ namespace library.EN
 	public class ENTipoProducto
 	{
 		public string _tipo_producto;
-		private string tipo_producto
+		public string tipo_producto
 		{
 			get { return tipo_producto; }
 			set { tipo_producto = value; }
