@@ -156,18 +156,12 @@ namespace library
             try
             {
                 c.Open();
-                if (!loc.pueblo.Length() > 0) {//comprobamos que no esté vacío el campo
+                if (loc.pueblo.ToString() != "") {//comprobamos que no esté vacío el campo
                     SqlCommand com1 = new SqlCommand("update localidad set pueblo = '" + loc.pueblo + "' where codm = '" + loc.codm + "' AND provincia = '" + loc.provincia + "';", c);
-                    if (com1.ExecuteNonQuery() == 0) return false;
+                    if (com1.ExecuteNonQuery() != 0) return true;
                 }
-                if(loc.provincia.Length() > 0)
-                {
-                    SqlCommand com2 = new SqlCommand("update localidad set provincia = '" + loc.provincia + "' where codm = '" + loc.codm + "' AND provincia = '" + loc.provincia + "';", c);
-                    if (com2.ExecuteNonQuery() == 0) return false;
-                }
-                
 
-                return true;
+                return false;
             }
             catch (Exception ex)
             {
