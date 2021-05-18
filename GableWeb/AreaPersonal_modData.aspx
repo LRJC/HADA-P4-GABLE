@@ -68,19 +68,19 @@
                                 <h4><asp:Label ID="modPersonalData" runat="server" Text="Editar datos personales"></asp:Label></h4>
                             </div>
                             <div class="row my-2 mx-0">
-                                <asp:TextBox ID="TextBoxModEmail" runat="server" Text="Email"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxModEmail" runat="server" placeholder="Email"></asp:TextBox>
                             </div>
                             <div class="row my-2 mx-0">
-                                <asp:TextBox ID="TextBoxModNombre" runat="server" Text="Nombre"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxModNombre" runat="server" placeholder="Nombre"></asp:TextBox>
                             </div>
                             <div class="row my-2 mx-0">
-                                <asp:TextBox ID="TextBoxModApellidos" runat="server" Text="Apellidos"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxModApellidos" runat="server" placeholder="Apellidos"></asp:TextBox>
                             </div>
                             <div class="row my-2 mx-0">
-                                <asp:TextBox ID="TextBoxModFecNac" runat="server" Text="Fecha nacimiento(DD/MM/YYYY)" TextMode="Date"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxModFecNac" runat="server" placeholder="Fecha nacimiento(DD/MM/YYYY)" TextMode="Date"></asp:TextBox>
                             </div>
                             <div class="row my-2 mx-0">
-                                <asp:TextBox ID="TextBoxModTlf" runat="server" Text="Teléfono"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxModTlf" runat="server" placeholder="Teléfono"></asp:TextBox>
                             </div>
                             <div class="row-2 mt-3 mx-0">
                                 <asp:Button ID="ButtonCambiarDatosPersonales" runat="server" Text="Guardar" OnClick="ButtonCambiarDatosPersonales_Click" />
