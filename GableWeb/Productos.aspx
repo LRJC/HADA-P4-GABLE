@@ -15,13 +15,13 @@
                         <!--Imagen  "src/game_images/parchis.png"-->
                        
                         <div class="col-xs-12 col-md-6">
-                            <img src='<%# Eval("imagen") %>' Height="300" Width="300" />
-                           <!-- <asp:Image ID="Image1" runat="server" CssClass="img-fluid" ImageUrl='<%# Eval("imagen") %>'/>-->
+                           <!-- <img ID="Image1" src="src/game_images/parchis.png" Height="300" Width="300" />-->
+                            <asp:Image ID="Image1" runat="server" CssClass="img-fluid"  Height="300" Width="300"/>
                         </div>
                        <!--Titulo, precio, descripcion   maxlength-->
                         <div class="col-xs-12 col-md-6">
-                           <!-- <h2>Parchis-chis-chis</h2>-->
-                            <h2><%# Eval("nombre") %></h2>
+                            <h2>Parchis-chis-chis</h2>  
+                            <asp:Label ID="nombreP" runat="server" Text="" ></asp:Label>
                             <!-- <div style="color: black; text-align:center;"><%# Eval("nombre") %></div>-->
                            <div class="form-group precio_elem row">
                                <label class="col-sm-3 form-control-lebel nopaddingtop">
@@ -72,7 +72,7 @@
                                         <form>
                                             <textarea placeholder="Comenta" cols="35"></textarea>
                                              <input type="number" class="qty form-control" id="input-coment" name="qty"  min="1" max="5"value="1" />
-                                            <button type="submit" class="btn btn-success green"><i class="fa fa-share"></i> Comentar</button>
+                                            <button type="submit" class="btn btn-success green" OnClick="comentario"><i class="fa fa-share"></i> Comentar</button>
                                         </form>
                                     </div>
                                 </div>
