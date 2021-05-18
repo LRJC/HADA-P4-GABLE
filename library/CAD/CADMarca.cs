@@ -15,29 +15,100 @@ namespace library.CAD
 
         public CADMarca()
         {
-            //revisar->dbd = ConfigurationManager.ConnectionStrings["miconexion"].ToString();
+            dbd = ConfigurationManager.ConnectionStrings["miconexion"].ToString();
         }
         public bool readMarca(ENMarca en)
         {
-            //implementación
-            return true;
+            bool devolver = false;
+            using (SqlConnection c = new SqlConnection(dbd)) {
+                String s = "Select * from marca";
+                SqlCommand comando = new SqlCommand(s, c);
+                SqlDataReader data = comando.ExecuteReader();
+                while (data.Read())
+                {
+                    if (data["nombre"].ToString() == en.nombre)
+                    {
+                        en.nombre = data["nombre"].ToString();
+                        en.origen = data["origen"].ToString();
+                        en.imagen = data["logo"].ToString();
+                        devolver = true;
+                        break;
+                    }
+                }
+                data.Close();
+            }
+            return devolver;
         }
 
         public bool deleteMarca(ENMarca en)
         {
-            //implementación
-            return true;
+            using (SqlConnection c = new SqlConnection(dbd))
+            {
+                using (SqlCommand comando = new SqlCommand("Delete * from marca where nombre="+en.nombre))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(comando))
+                    {
+                        try
+                        {
+                            c.Open();
+                            comando.ExecuteNonQuery();
+                            c.Close();
+                            return true;
+                        }
+                        catch (Exception e)
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
         }
         public bool createMarca(ENMarca en)
         {
-            //implementación
-            return true;
+            using (SqlConnection c = new SqlConnection(dbd))
+            {
+                using (SqlCommand comando = new SqlCommand("Insert into marca(nombre, origen, logo) values('" + en.nombre + "', '" + en.origen + "', '" + en.imagen + "')", c))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(comando))
+                    {
+                        try
+                        {
+                            c.Open();
+                            comando.ExecuteNonQuery();
+                            c.Close();
+                            return true;
+                        }
+                        catch (Exception e)
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
         }
 
         public bool modifyMarca(ENMarca en)
         {
-            //implementación
-            return true;
+            using (SqlConnection c = new SqlConnection(dbd))
+            {
+                using (SqlCommand comando = new SqlCommand("Update marca set origen='"+en.origen+"', logo='"+en.imagen+"' where nombre='"+en.nombre+"'"))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(comando))
+                    {
+                        try
+                        {
+                            c.Open();
+                            comando.ExecuteNonQuery();
+                            c.Close();
+                            return true;
+                        }
+                        catch (Exception e)
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
         }
     }
 }

@@ -75,6 +75,7 @@
       <DependentUpon>BBDD.mdf</DependentUpon>
     </Content>
     <Content Include="index.aspx" />
+    <Content Include="Resultado_busqueda.aspx" />
     <Content Include="styles\index.css" />
     <Content Include="Productos.aspx" />
     <Content Include="styles\Productos.css" />
@@ -139,6 +140,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Resultado_busqueda.aspx.cs">
+      <DependentUpon>Resultado_busqueda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Resultado_busqueda.aspx.designer.cs">
+      <DependentUpon>Resultado_busqueda.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

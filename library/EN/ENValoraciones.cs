@@ -84,19 +84,19 @@ namespace library.EN
         public bool readValoraciones()
         {
             CADValoraciones cval = new CADValoraciones();
-            return cval.readValoracioneses(this);
+            return cval.readValoraciones(this);
         }
 
         public bool deleteValoraciones()
         {
             CADValoraciones cval = new CADValoraciones();
-            return cval.deleteValoracioneses(this);
+            return cval.deleteValoraciones(this);
         }
 
         public bool updateValoraciones()
         {
             CADValoraciones cval = new CADValoraciones();
-            return cval.updateValoracioneses(this);
+            return cval.updateValoraciones(this);
         }
 
     }

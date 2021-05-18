@@ -4,20 +4,166 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace library.CAD
 {
     class CADValoraciones
     {
-        public CADValoraciones() { }
 
-        public bool createValoraciones(ENValoraciones en) { return false; }
+        private string constring;
 
-        public bool readValoracioneses(ENValoraciones en) { return false; }
+        public CADValoraciones()
+        {
+            constring = ConfigurationManager.ConnectionStrings["bbdd"].ToString();
+        }
 
-        public bool deleteValoracioneses(ENValoraciones en) { return false; }
+        public bool createValoraciones(ENValoraciones en) {
 
-        public bool updateValoracioneses(ENValoraciones en) { return false; }
+            SqlConnection con = new SqlConnection(constring);
+
+            try
+            {
+                con.Open();
+
+                if (exist(en, con))
+                {
+                    Console.WriteLine("Assessment operation failed. Error: Assessment already exist");
+                    throw new Exception("ERROR: Ya hay una valoración del usuario sobre el mismo producto");
+                }
+
+                string query = "Insert into valoracion (producto ,usuario, texto, puntuacion) values ('" + en.producto_id + "'" + en.usuaro_id + "'" + en.tex_val + "'" + en.pun_val + ")";
+                SqlDataAdapter data = new SqlDataAdapter();
+                data.InsertCommand = new SqlCommand(query, con);
+                data.InsertCommand.ExecuteNonQuery();
+            }
+            catch(Exception ex) {
+
+                Console.WriteLine("Assessment operation failed. Error:{0}", ex.Message);
+                throw new Exception("Assessment operation failed. Error: " + ex.Message);
+
+            }
+            finally
+            {
+                if (con != null) con.Close();
+            }
+
+            return true; 
+        }
+
+        public bool readValoraciones(ENValoraciones en) {
+
+            SqlConnection con = new SqlConnection(constring);
+
+            try
+            {
+                con.Open();
+
+                SqlDataAdapter data = new SqlDataAdapter();
+                data.SelectCommand = new SqlCommand("Select usuario, texto, punruación, from valoracion where producto='" + en.producto_id + "'and usuario="+en.usuaro_id, con);
+                SqlDataReader reader = data.SelectCommand.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    en.usuaro_id = reader.GetString(0);
+                    en.tex_val = reader.GetString(1);
+                    en.pun_val = reader.GetInt32(2);
+                }
+                else
+                {
+                    Console.WriteLine("Assessment operation failed. Error:Cant found the id");
+                    throw new Exception("ERROR: Valoracion no encontrada ");
+                }
+                reader.Close();
+
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("Assessment operation failed. Error:{0}", ex.Message);
+                throw new Exception("Assessment operation failed. Error: " + ex.Message);
+
+            }
+            finally
+            {
+                if (con != null) con.Close();
+            }
+
+
+            return true; 
+        }
+
+        public bool deleteValoraciones(ENValoraciones en) {
+
+            SqlConnection con = new SqlConnection(constring);
+
+            try
+            {
+                con.Open();
+                if (!exist(en, con))
+                {
+                    Console.WriteLine("Assessment operation failed. Error: Assessment already exist");
+                    throw new Exception("ERROR: Ya hay una valoracion con el mismo id");
+                }
+                SqlDataAdapter data = new SqlDataAdapter();
+                data.DeleteCommand = new SqlCommand("Delete valoracion where producto='" + en.producto_id + "'and usuario="+en.usuaro_id+"'", con);
+                data.DeleteCommand.ExecuteNonQuery();
+
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("Assessment operation failed. Error:{0}", ex.Message);
+                throw new Exception("Assessment operation failed. Error: " + ex.Message);
+            }
+            finally
+            {
+                if (con != null) con.Close();
+            }
+
+
+            return true; 
+        }
+
+        public bool updateValoraciones(ENValoraciones en) {
+
+            SqlConnection con = new SqlConnection(constring);
+
+            try
+            {
+                con.Open();
+                if (!exist(en, con))
+                {
+                    Console.WriteLine("Assessment operation failed. Error: Assessment already exist");
+                    throw new Exception("ERROR: Ya hay una valoracion con el mismo id");
+                }
+                SqlDataAdapter data = new SqlDataAdapter();
+                data.UpdateCommand = new SqlCommand("Update valoracion set texto='" + en.tex_val + "',puntuacion=" + en.pun_val + "' where producto= " + en.producto_id + "'and usuario="+en.usuaro_id+"'", con);
+                data.UpdateCommand.ExecuteNonQuery();
+
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("Assessment operation failed. Error:{0}", ex.Message);
+                throw new Exception("Assessment operation failed. Error: " + ex.Message);
+            }
+            finally
+            {
+                if (con != null) con.Close();
+            }
+
+
+            return true; 
+        }
+
+
+        private bool exist(ENValoraciones en, SqlConnection con)
+        {
+            SqlDataAdapter data = new SqlDataAdapter();
+            data.SelectCommand = new SqlCommand("Select * from valoracion where usuario='" + en.usuaro_id + "'and producto ="+en.producto_id, con);
+            int i = data.SelectCommand.ExecuteNonQuery();
+            return (null != data.SelectCommand.ExecuteScalar());
+        }
 
     }
 }

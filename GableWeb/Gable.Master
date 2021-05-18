@@ -18,20 +18,14 @@
 
                 <div class="container-fluid">
                     <div class="row justify-content-center align-items-center">
-                        <div class="col-2 col-md-1 order-sm-0" style="text-align: left;">
-                            <asp:ImageButton ID="hamburger" ImageUrl="src/hamburguer.png" runat="server" Height="32" onmouseover="submenu.style.display='block'" onmouseout ="submenu.style.display='none'"/>
-                        </div>
-                        <ul class="menu bg-primary font-italic" id="submenu" style="display:none; position:absolute; list-style-type:none; line-height:40px;">
-                            <li>Inicio</li>
-                            <li>Mejor Valorados</li>
-                            <li>Más Valorados</li>
-                            <li>Rol</li>
-                            <li>Estrategia</li>
-                            <li>Azar</li>
-                            <li>Cartas</li>
-                            <li>Más generos</li>
-                        </ul>
-                        <div class="col-8 col-md-4 order-1 pb-2"  style="text-align: center;">
+                        <asp:Menu runat="server" CssClass="col-1">
+                            <Items>
+                                <asp:MenuItem Text="ESTRATEGIA"></asp:MenuItem>
+                                <asp:MenuItem Text="FANTASIA"></asp:MenuItem>
+                                <asp:MenuItem Text="TRADICIONALES"></asp:MenuItem>
+                            </Items>
+                        </asp:Menu>
+                        <div class="col-8 col-md-4 order-1 pb-2"  style="text-align: center; z-index: 1;">
                             <asp:ImageButton ID="gable_logo" ImageUrl="src/gable-logo.png" OnClick="btnGableLogo_Click" Height="60" runat="server"/>
                         </div>
                         <asp:TextBox ID="searcher" runat="server" CssClass="col-8 col-md-4 order-3 order-md-2 my-3 my-md-0" align="left" />
