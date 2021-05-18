@@ -6,7 +6,10 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Gable - Juegos de Mesa</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -17,25 +20,32 @@
             <div id="header">
 
                 <div class="container-fluid">
-                    <div class="row justify-content-center align-items-center">
-                        <div class="col-2 col-md-1 order-sm-0" style="text-align: left;">
-                            <asp:ImageButton ID="hamburger" ImageUrl="src/hamburguer.png" runat="server" Height="32" onmouseover="submenu.style.display='block'" onmouseout ="submenu.style.display='none'"/>
+                    <div class="row align-items-center">
+                        <div class=" btn-group col-2 col-md-1 order-sm-0" style="text-align: center;">
+                            <button type="button" class="btn btn-default" data-toggle="dropdown" style="background:none;">
+                                <img src="src/hamburguer.png" />
+                                <i class="font-weight-bold text-white">&nbsp;MENU</i>
+                            </button>
+
+                            <ul class="dropdown-menu" role="menu" style="background:url('src/header_wood.png');">
+                                <li><a href="#" style="color:white; margin-left:10px; line-height:28px;">Inicio</a></li>
+                                <li><a href="#" style="color:white; margin-left:10px; line-height:28px;">Mejor Valorados</a></li>
+                                <li><a href="#" style="color:white; margin-left:10px; line-height:28px;">Más Valorados</a></li>
+                                <li><a href="#" style="color:white; margin-left:10px; line-height:28px;">Rol</a></li>
+                                <li><a href="#" style="color:white; margin-left:10px; line-height:28px;">Estrategia</a></li>
+                                <li><a href="#" style="color:white; margin-left:10px; line-height:28px;">Azar</a></li>
+                                <li><a href="#" style="color:white; margin-left:10px; line-height:28px;">Cartas</a></li>
+                                <li><a href="#" style="color:white; margin-left:10px; line-height:28px;">Más Generos</a></li> 
+                            </ul>
                         </div>
-                        <ul class="menu bg-primary font-italic" id="submenu" style="display:none; position:absolute; list-style-type:none; line-height:40px;">
-                            <li>Inicio</li>
-                            <li>Mejor Valorados</li>
-                            <li>Más Valorados</li>
-                            <li>Rol</li>
-                            <li>Estrategia</li>
-                            <li>Azar</li>
-                            <li>Cartas</li>
-                            <li>Más generos</li>
-                        </ul>
-                        <div class="col-8 col-md-4 order-1 pb-2"  style="text-align: center;">
+
+                        <div class="col-8 col-md-3 order-1 pb-2" style="text-align: center;">
                             <asp:ImageButton ID="gable_logo" ImageUrl="src/gable-logo.png" OnClick="btnGableLogo_Click" Height="60" runat="server"/>
                         </div>
                         <asp:TextBox ID="searcher" runat="server" CssClass="col-8 col-md-4 order-3 order-md-2 my-3 my-md-0" align="left" />
-                        <asp:Label ID="init_sesion" runat="server" CssClass="col-12 col-md-2 order-4 order-md-3 pb-3 pb-md-0 font-weight-bold" Text ="Iniciar Sesión" align="center"/>
+                        <div class ="col-12 col-md-2 order-4 order-md-3 pb-3 pb-md-0" style="text-align: center;">
+                        <asp:LinkButton ID="init_sesion" runat="server" CssClass="font-weight-bold text-white" Text ="Iniciar Sesión" align="center" OnClick="btnLogin_Click" />
+                        </div>
                         <div class="col-2 col-md-1 order-2 order-md-4"  style="text-align: center;">
                             <asp:ImageButton ID="basket_icon" ImageUrl="src/basket.png" OnClick="btnCesta_Click" Height="36" runat="server" />
                         </div>
@@ -54,7 +64,9 @@
              </div>
         </footer>
 
-        <script>> </script> <!-- Avoids Chrome's transition bug -->
+        <script>> </script> <!-- Avoids Chrome's transition bug --> 
     </form>
+    <p style="margin: 0">
+        &nbsp;</p>
 </body>
 </html>
