@@ -96,15 +96,6 @@ namespace GableWeb
         protected global::System.Web.UI.WebControls.Label CambiarContra;
 
         /// <summary>
-        /// Control LabelContraAntigua.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelContraAntigua;
-
-        /// <summary>
         /// Control oldPasswd.
         /// </summary>
         /// <remarks>
@@ -114,15 +105,6 @@ namespace GableWeb
         protected global::System.Web.UI.WebControls.TextBox oldPasswd;
 
         /// <summary>
-        /// Control LabelNewPassword.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNewPassword;
-
-        /// <summary>
         /// Control newPasswd.
         /// </summary>
         /// <remarks>
@@ -130,15 +112,6 @@ namespace GableWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox newPasswd;
-
-        /// <summary>
-        /// Control LabelrepeatNewPassword.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelrepeatNewPassword;
 
         /// <summary>
         /// Control confirmNewPasswd.
