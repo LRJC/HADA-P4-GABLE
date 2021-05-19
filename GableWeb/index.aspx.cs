@@ -16,7 +16,6 @@ namespace GableWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ENMarca m = new ENMarca();
             if (!this.IsPostBack)
             {
                 this.getMostSold();
