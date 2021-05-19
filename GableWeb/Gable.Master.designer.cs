@@ -57,7 +57,7 @@ namespace GableWeb
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label init_sesion;
+        protected global::System.Web.UI.WebControls.LinkButton init_sesion;
 
         /// <summary>
         /// Control basket_icon.
