@@ -30,15 +30,13 @@ namespace GableWeb
             ENProductos a = new ENProductos();
            
             try
-            {
-              
-                a.nom_producto = nomProd;
-               
-                a.readProducto();
-                nombreP.Text = a.nom_producto;
-                Image1.ImageUrl = a.ImageLocation;
+            {           
+                 a.nom_producto = nomProd;
+                 a.readProducto();
+                 nombreP.Text = a.nom_producto;
+                 Image1.ImageUrl = a.ImageLocation;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 
                 Console.WriteLine("Fallo en el programa, ha saltado excepción...");
