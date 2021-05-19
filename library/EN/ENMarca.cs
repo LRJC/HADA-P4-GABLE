@@ -7,11 +7,25 @@ using library.CAD;
 
 namespace library.EN
 {
-    class ENMarca
+    public class ENMarca
     {
         private string _nombre;
         private string _origen;
         private string _url;
+
+        public ENMarca(string nombre, string origen, string imagen)
+        {
+            this.nombre = nombre;
+            this.origen = origen;
+            this.imagen = imagen;
+        }
+
+        public ENMarca()
+        {
+            this.nombre = "";
+            this.origen = "";
+            this.imagen = "";
+        }
 
         public string nombre
         {
