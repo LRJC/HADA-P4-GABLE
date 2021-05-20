@@ -15,13 +15,13 @@
                         <!--Imagen  "src/game_images/parchis.png"-->
                        
                         <div class="col-xs-12 col-md-6">
-                            <img src='<%# Eval("imagen") %>' Height="300" Width="300" />
-                           <!-- <asp:Image ID="Image1" runat="server" CssClass="img-fluid" ImageUrl='<%# Eval("imagen") %>'/>-->
+                           <!-- <img ID="Image1" src="src/game_images/parchis.png" Height="300" Width="300" />-->
+                            <asp:Image ID="Image1" runat="server" CssClass="img-fluid"  Height="300" Width="300"/>
                         </div>
                        <!--Titulo, precio, descripcion   maxlength-->
                         <div class="col-xs-12 col-md-6">
-                           <!-- <h2>Parchis-chis-chis</h2>-->
-                            <h2><%# Eval("nombre") %></h2>
+                           <!-- <h2>Parchis-chis-chis</h2> --> 
+                            <asp:Label ID="nombreP" runat="server" Text="" Font-Size="250%"  ></asp:Label>
                             <!-- <div style="color: black; text-align:center;"><%# Eval("nombre") %></div>-->
                            <div class="form-group precio_elem row">
                                <label class="col-sm-3 form-control-lebel nopaddingtop">
@@ -32,7 +32,7 @@
                                <div class="col-sm-8 col-md-9">
                                    <span class="precio-producto font-weight-bold" id="precio-producto">
                                        <font style="vertical-align:inherit;">
-                                       <font style="vertical-align:inherit " ><%# Eval("precio") %></font>
+                                       <font style="vertical-align:inherit " ><asp:Label ID="Precio" runat="server" Text=""></asp:Label></font>
                                         </font>
                                    </span>
                                </div>
@@ -53,13 +53,14 @@
                                 <label class="col-sm-3 col-md-3 form-control-label">Descripción:</label>
                                 <div class="col-sm-8 col-md-9 descripcion">
                                     <!--<p>Tradicional juego de mesa, el parchis</p>-->
-                                    <p><%# Eval("descripcion") %></p>
+                                    <asp:Label ID="Desc" runat="server" Text=""></asp:Label>
+                                    <!--<p><%# Eval("descripcion") %></p>-->
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-3 form-control-label">Marca:</label>
                                 <div class="col-sm-9 col-md-9">
-                                    <p><%# Eval("marca") %></p>
+                                    <asp:Label ID="Marca" runat="server" Text=""></asp:Label>
                                 </div>
                             </div>
                             <!--Comentarios-->
@@ -70,9 +71,11 @@
                                 <div class="widget-area no-padding blank">
                                     <div class="status-upload">
                                         <form>
-                                            <textarea placeholder="Comenta" cols="35"></textarea>
+                                           <textarea placeholder="Comenta" cols="45" rows="5" name="cajaComent"></textarea>
+                                            <!--<asp:TextBox ID="TextBox1" placeholder="Comenta" cols="75" runat="server"></asp:TextBox>-->
                                              <input type="number" class="qty form-control" id="input-coment" name="qty"  min="1" max="5"value="1" />
-                                            <button type="submit" class="btn btn-success green"><i class="fa fa-share"></i> Comentar</button>
+                                            <asp:Button ID="Button1" class="btn btn-success green" OnClick="comentario" runat="server" Text="Comentar" />
+                                            <!--<button type="submit" class="btn btn-success green" OnClick="comentario"><i class="fa fa-share"></i> Comentar</button>-->
                                         </form>
                                     </div>
                                 </div>

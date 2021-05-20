@@ -27,21 +27,23 @@ namespace library.CAD
                 con.Open();
 
                 SqlDataAdapter data = new SqlDataAdapter();
-                data.SelectCommand = new SqlCommand("Select nombre, descripcion,tipo_producto, precio, imagen,marca from producto where id_productos='"+ en.id_producto + "'",con);
+                data.SelectCommand = new SqlCommand("Select nombre, descripción,tipo_producto, precio, imagen,marca from producto where nombre='"+ en.nom_producto + "'",con);
                 SqlDataReader reader = data.SelectCommand.ExecuteReader();
 
                 if (reader.HasRows)
                 {
                     reader.Read();
-                    en.nom_producto = reader.GetString(0);
+                    en.nom_producto =  reader.GetString(0);
                     en.desc_producto = reader.GetString(1);
                     en.tipo_producto = reader.GetString(2);
-                    en.pre_producto = reader.GetInt32(3);
                     en.ImageLocation = reader.GetString(4);
                     en.marca_producto = reader.GetString(5);
+                    double pre = reader.GetDouble(3);
+                    en.pre_producto = Convert.ToSingle(pre);
                 }
                 else
                 {
+                    
                     Console.WriteLine("Product operation has failed. Error:Cant found the id");
                     throw new Exception("ERROR:El id del producto no ha sido encontrado");
                 }
@@ -50,6 +52,7 @@ namespace library.CAD
             }
             catch (SqlException ex)
             {
+                
                 Console.WriteLine("Product operation has failed. Error: {0}",ex.Message);
                 throw new Exception("Product operation has failed. Error: {0}"+ ex.Message);
             }
