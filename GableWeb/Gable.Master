@@ -58,7 +58,7 @@
             </asp:ContentPlaceHolder>
 
         
-        <footer class="font-italic py-3" style="background-color:#c57e4f; bottom:0; width:100%; text-align:center; color: #fff !important;"  >
+        <footer class="font-italic py-3" style="background-color:#c57e4f; bottom:0; width:100%; text-align:center; position:fixed; color: #fff !important;"  >
              <div class="align-middle">
                  <p style="margin: 0">Copyright &copy;2021. Designed by GableTeam</p>
              </div>
