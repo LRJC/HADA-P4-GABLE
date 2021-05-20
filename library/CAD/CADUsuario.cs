@@ -37,7 +37,7 @@ namespace library.CAD
                         en.email = data["email"].ToString();
                         en.numTarjeta = int.Parse(data["tarjeta"].ToString());
                         en.cvv = int.Parse(data["cvv_tarjeta"].ToString());
-                        en.tlf = int.Parse(data["tlf"].ToString());
+                        en.tlf = int.Parse(data["telefono"].ToString());
                         en.expTarjeta = data["fecha_exp_tarjeta"].ToString();
                         en.fechanac = data["nacido"].ToString();//comprobar
                         devolver = true;
@@ -74,7 +74,7 @@ namespace library.CAD
         {
             using (SqlConnection c = new SqlConnection(dbd))
             {
-                using (SqlCommand comando = new SqlCommand("Insert into usuario(dni, nombre, apellidos, email, telefono, cvv_tarjeta, fecha_exp_tarjeta, nacido, tarjeta) values('" + en.nif + "', '" + en.nombre + "', '" + en.apellidos + "', " + en.email + "', '" + en.tlf + "', '" + en.cvv + "', '" + en.expTarjeta + "', '" + en.fechanac + "', '" + en.numTarjeta + "')", c))
+                using (SqlCommand comando = new SqlCommand("Insert into usuario(dni, nombre, apellidos, email, telefono, cvv_tarjeta, fecha_exp_tarjeta, nacido, tarjeta) values('" + en.nif + "', '" + en.nombre + "', '" + en.apellidos + "', '" + en.email + "', " + en.tlf + ", " + en.cvv + ", '" + en.expTarjeta + "', '" + en.fechanac + "', " + en.numTarjeta + ")", c))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(comando))
                     {

@@ -16,8 +16,8 @@ namespace GableWeb
     {   
         protected void Page_Load(object sender, EventArgs e)
         {
-            ENUsuario jo = new ENUsuario("98765432ñ", "elver", "galarga garcía", "elverga@gmail.com", 0, 0, 0, null, "04/04/1897");
-            jo.createUsuario();
+            ENMarca en = new ENMarca("marca30", "El congo", null);
+            en.modifyMarca();
             if (!this.IsPostBack)
             {
                 this.getMostSold();
