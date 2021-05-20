@@ -24,25 +24,24 @@ namespace GableWeb
 
         private void getProduct(string nomProd ) {
 
-            String conn = ConfigurationManager.ConnectionStrings["bbdd"].ConnectionString;
-            SqlConnection sqlconn = new SqlConnection(conn);
-
             ENProductos a = new ENProductos();
-           
+            
             try
-            {           
-                 a.nom_producto = nomProd;
-                 a.readProducto();
-                 nombreP.Text = a.nom_producto;
-                 Image1.ImageUrl = a.ImageLocation;
+            {        
+                a.nom_producto = nomProd;
+                a.readProducto();
+                nombreP.Text = a.nom_producto;
+                Image1.ImageUrl = a.ImageLocation;
+                Desc.Text = a.desc_producto;
+                Marca.Text = a.marca_producto;
+                Precio.Text = Convert.ToString(a.pre_producto) + "€";
+
             }
             catch (Exception ex)
             {
                 
                 Console.WriteLine("Fallo en el programa, ha saltado excepción...");
-            }
-
-            
+            }             
 
         }
         protected void carrito(object sender, EventArgs e)
@@ -50,7 +49,20 @@ namespace GableWeb
             Response.Redirect("Cesta.aspx");
         }
 
+        protected void comentario(object sender, EventArgs e)
+        {
+            if (Session["LoggedIn"]==null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                
+            }
 
+
+
+        }
 
 
     }
