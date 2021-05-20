@@ -87,8 +87,10 @@
                    <div class="row">
                        <div class="col-xs-12 col-md-6">
                      <asp:DataList ID="gv1" runat="server" RepeatColumns="1" CellPadding="2" Width="100%" ItemStyle-HorizontalAlign="Left">
-                        <ItemTemplate>
+                                 
+                         <ItemTemplate>
                             <table>
+
                                 <tr>
                                     <td><p id="nombreUsu" style="text-align:left; font-family: Lucida Console, Courier New, monospace;"><%#Eval("nombre") %></p></td>
                                 </tr>
@@ -98,8 +100,11 @@
                                 <tr>
                                     <td><p id="valoracion" style="text-align:right; font-family: Lucida Console, Courier New, monospace;"><%#Eval("puntuación") %></p></td>
                                 </tr>
+                                
+
                             </table>
                         </ItemTemplate>
+                               
                     </asp:DataList>
                            </div>
                        </div>
