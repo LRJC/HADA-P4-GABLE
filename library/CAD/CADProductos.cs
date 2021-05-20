@@ -36,9 +36,10 @@ namespace library.CAD
                     en.nom_producto =  reader.GetString(0);
                     en.desc_producto = reader.GetString(1);
                     en.tipo_producto = reader.GetString(2);
-                    en.pre_producto = reader.GetInt32(3);
                     en.ImageLocation = reader.GetString(4);
                     en.marca_producto = reader.GetString(5);
+                    double pre = reader.GetDouble(3);
+                    en.pre_producto = Convert.ToSingle(pre);
                 }
                 else
                 {
