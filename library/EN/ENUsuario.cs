@@ -21,6 +21,34 @@ namespace library.EN
         private string _fechanac;//comprobar
         private bool _admin;
 
+        public ENUsuario(string nif, string nombre, string apellidos, string email, string contraseña, int tlf, int NT, int cvv, string expT, string fechanac)
+        {
+            this.nif = nif;
+            this.nombre = nombre;
+            this.apellidos = apellidos;
+            this.email = email;
+            this.contraseña = contraseña;
+            this.tlf = tlf;
+            this.cvv = cvv;
+            this.numTarjeta = NT;
+            this.expTarjeta = expT;
+            this.fechanac = fechanac;
+        }
+
+        public ENUsuario()
+        {
+            this.nif = "";
+            this.nombre = "";
+            this.apellidos = "";
+            this.email = "";
+            this.contraseña = "";
+            this.tlf = 0;
+            this.cvv = 0;
+            this.numTarjeta = 0;
+            this.expTarjeta = "";
+            this.fechanac = "";
+        }
+
         public string nif
         {
             get { return _nif; }
