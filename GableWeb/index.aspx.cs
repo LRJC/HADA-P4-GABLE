@@ -13,9 +13,11 @@ using library.EN;
 namespace GableWeb
 {
     public partial class index : System.Web.UI.Page
-    {
+    {   
         protected void Page_Load(object sender, EventArgs e)
         {
+            ENUsuario jo = new ENUsuario("98765432ñ", "elver", "galarga garcía", "elverga@gmail.com", 0, 0, 0, null, "04/04/1897");
+            jo.createUsuario();
             if (!this.IsPostBack)
             {
                 this.getMostSold();
