@@ -25,7 +25,7 @@ namespace library.CAD
                 try
                 {
 					c.Open();
-					SqlCommand comprobar = new SqlCommand("Select * from dirEnvio where usuario = '" + dir.usuario + "' and provincia = '" + dir.provincia + "' and pueblo = '" + dir.pueblo + "' and calle = '" + dir.calle "'", c);
+					SqlCommand comprobar = new SqlCommand("Select * from dirEnvio where usuario = '" + dir.usuario + "' and provincia = '" + dir.provincia + "' and pueblo = '" + dir.pueblo + "' and calle = '" + dir.calle+ "'", c);
 					SqlDataReader data = comprobar.ExecuteReader();
 					if(data.Read()) return false;
 					data.Close();
