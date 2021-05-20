@@ -32,7 +32,7 @@ namespace GableWeb
             SqlConnection sqlconn = new SqlConnection(conn);
             try
             {
-                string sqlquery = "select * from producto where tipo_producto like 'pr2%'";
+                string sqlquery = "select * from producto where tipo_producto like 'pr1%'";
                 sqlconn.Open();
                 SqlCommand command = new SqlCommand(sqlquery, sqlconn);
                 SqlDataAdapter sqlda = new SqlDataAdapter(command);
