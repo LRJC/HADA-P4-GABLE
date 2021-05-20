@@ -55,7 +55,7 @@ namespace library.CAD
                 try
                 {
 					c.Open();
-					SqlCommand com = new SqlCommand("Select * from dirEnvio where usuario = '" + dir.usuario + "' and provincia = '" + dir.provincia + "' and pueblo = '" + dir.pueblo + "' and calle = '" + dir.calle "'", c);
+					SqlCommand com = new SqlCommand("Select * from dirEnvio where usuario = '" + dir.usuario + "' and provincia = '" + dir.provincia + "' and pueblo = '" + dir.pueblo + "' and calle = '" + dir.calle+ "'", c);
 					SqlDataReader data = com.ExecuteReader();
                 
 					while (data.Read())
