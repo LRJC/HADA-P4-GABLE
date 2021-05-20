@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace library.EN
 {
-    class ENValoraciones
+    public class ENValoraciones
     {
         public string usuaro_id
         {
@@ -97,6 +97,12 @@ namespace library.EN
         {
             CADValoraciones cval = new CADValoraciones();
             return cval.updateValoraciones(this);
+        }
+
+        public bool readAuxValoraciones()
+        {
+            CADValoraciones cval = new CADValoraciones();
+            return cval.readAuxValoraciones(this);
         }
 
     }

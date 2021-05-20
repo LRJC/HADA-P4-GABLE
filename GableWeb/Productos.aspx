@@ -84,6 +84,25 @@
                         </div>
                   
                    </div>
+                   <div class="row">
+                       <div class="col-xs-12 col-md-6">
+                     <asp:DataList ID="gv1" runat="server" RepeatColumns="1" CellPadding="2" Width="100%" ItemStyle-HorizontalAlign="Left">
+                        <ItemTemplate>
+                            <table>
+                                <tr>
+                                    <td><p id="nombreUsu" style="text-align:left; font-family: Lucida Console, Courier New, monospace;"><%#Eval("nombre") %></p></td>
+                                </tr>
+                                <tr>
+                                    <td><p id="comentar" style="text-align:center; font-family: Lucida Console, Courier New, monospace;"><%#Eval("texto") %></p></td>
+                                </tr>
+                                <tr>
+                                    <td><p id="valoracion" style="text-align:right; font-family: Lucida Console, Courier New, monospace;"><%#Eval("puntuación") %></p></td>
+                                </tr>
+                            </table>
+                        </ItemTemplate>
+                    </asp:DataList>
+                           </div>
+                       </div>
                </div>
             </div>
             <div class="col-sm-1" style="background-color:#e0e0e0!important"></div>
@@ -92,4 +111,3 @@
     
     
 </asp:Content>
-
