@@ -8,9 +8,9 @@
             <div class="col-xs-12 col-sm-10" style="background-color:white; border-left: 1px solid #75777d!important; border-right: 1px solid #75777d!important; margin-top: 1px solid #75777d!important;">
                 <div class="container-fluid px-5 py-5">
                     <div class="panel panel-default" >
-                        <div class="header">
-                            <h3 class="font-weight-bold text-center" >Introducir Datos de Compra</h3>
-                        </div>
+                        <div class="panel-heading text-center">
+			    				<h3 class="panel-title font-weight-bold">Introducir Datos de Compra</h3>
+			 			</div>
                             <div class="row justify-content-center">
                                 <div class="col-md-3 col-sm-3 col-xs-3">
                                     <span class="help-block text-muted small-font" > Numero Tarjeta</span>
