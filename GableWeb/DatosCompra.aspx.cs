@@ -7,19 +7,21 @@ using System.Web.UI.WebControls;
 
 namespace GableWeb
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class DatosCompra : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-        protected void btnRegister_Click(object sender, EventArgs e)
+
+        protected void btnConfirm_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Registro.aspx");
+            Response.Redirect("Cesta.aspx");
         }
-        protected void btnLogin_Click(object sender, EventArgs e)
+
+        protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("index.aspx");
+            Response.Redirect("Cesta.aspx");
         }
     }
 }
