@@ -21,7 +21,7 @@ namespace library.EN
         private string _fechanac;//comprobar
         private bool _admin;
 
-        public ENUsuario(string nif, string nombre, string apellidos, string email, string contraseña, int tlf, int NT, int cvv, string expT, string fechanac)
+        public ENUsuario(string nif, string nombre, string apellidos, string email, int tlf, int NT, int cvv, string expT, string fechanac)
         {
             this.nif = nif;
             this.nombre = nombre;

@@ -50,7 +50,6 @@ namespace library.EN
 
         public bool readMarca()
         {
-            bool retornar;
             CADMarca m = new CADMarca();
             return m.readMarca(this);
         }
@@ -61,7 +60,7 @@ namespace library.EN
             CADMarca m = new CADMarca();
             if (m.readMarca(this))
             {
-                retornar = m.createMarca(this);
+                retornar = m.deleteMarca(this);
             }
             return retornar;
         }
@@ -83,7 +82,7 @@ namespace library.EN
             CADMarca m = new CADMarca();
             if (m.readMarca(this))
             {
-                retornar = m.createMarca(this);
+                retornar = m.modifyMarca(this);
             }
             return retornar;
         }

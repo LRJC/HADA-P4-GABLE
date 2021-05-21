@@ -15,7 +15,7 @@ namespace library.CAD
 
         public CADUsuario()
         {
-            //revisar->dbd = ConfigurationManager.ConnectionStrings["miconexion"].ToString();
+            dbd = ConfigurationManager.ConnectionStrings["bbdd"].ToString();
         }
 
         public bool readUsuario(ENUsuario en)
@@ -23,6 +23,7 @@ namespace library.CAD
             bool devolver = false;
             using (SqlConnection c = new SqlConnection(dbd))
             {
+                c.Open();
                 String s = "Select * from usuario";
                 SqlCommand comando = new SqlCommand(s, c);
                 SqlDataReader data = comando.ExecuteReader();
@@ -34,12 +35,11 @@ namespace library.CAD
                         en.apellidos = data["apellidos"].ToString();
                         en.nif = data["dni"].ToString();
                         en.email = data["email"].ToString();
-                        en.contraseña = data["contraseña"].ToString();
                         en.numTarjeta = int.Parse(data["tarjeta"].ToString());
                         en.cvv = int.Parse(data["cvv_tarjeta"].ToString());
-                        en.tlf = int.Parse(data["tlf"].ToString());
+                        en.tlf = int.Parse(data["telefono"].ToString());
                         en.expTarjeta = data["fecha_exp_tarjeta"].ToString();
-                        en.fechanac = data["fechanac"].ToString();//comprobar
+                        en.fechanac = data["nacido"].ToString();//comprobar
                         devolver = true;
                         break;
                     }
@@ -51,32 +51,30 @@ namespace library.CAD
 
         public bool deleteUsuario(ENUsuario en)
         {
-            using (SqlConnection c = new SqlConnection(dbd))
+            SqlConnection c = new SqlConnection(dbd);
+            try
             {
-                using (SqlCommand comando = new SqlCommand("Delete * from usuario where dni=" + en.nif))
-                {
-                    using (SqlDataAdapter sda = new SqlDataAdapter(comando))
-                    {
-                        try
-                        {
-                            c.Open();
-                            comando.ExecuteNonQuery();
-                            c.Close();
-                            return true;
-                        }
-                        catch (Exception e)
-                        {
-                            return false;
-                        }
-                    }
-                }
+                c.Open();
+                SqlCommand comando;
+                comando = new SqlCommand("Delete from usuario where dni='" + en.nif + "'", c);
+                comando.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("EXCEPCION");
+                return false;
+            }
+            finally
+            {
+                c.Close();
             }
         }
         public bool createUsuario(ENUsuario en)
         {
             using (SqlConnection c = new SqlConnection(dbd))
             {
-                using (SqlCommand comando = new SqlCommand("Insert into usuario(dni, nombre, apellidos, email, tlf, cvv_tarjeta, fecha_exp_tarjeta, fecha_nac, tarjeta, contraseña ) values('" + en.nif + "', '" + en.nombre + "', '" + en.apellidos + "', " + en.email + "', '" + en.tlf + "', '" + en.cvv + "', '" + en.expTarjeta + "', '" + en.fechanac + "', '" + en.numTarjeta + "', " + en.contraseña + "')", c))
+                using (SqlCommand comando = new SqlCommand("Insert into usuario(dni, nombre, apellidos, email, telefono, cvv_tarjeta, fecha_exp_tarjeta, nacido, tarjeta) values('" + en.nif + "', '" + en.nombre + "', '" + en.apellidos + "', '" + en.email + "', " + en.tlf + ", " + en.cvv + ", '" + en.expTarjeta + "', '" + en.fechanac + "', " + en.numTarjeta + ")", c))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(comando))
                     {

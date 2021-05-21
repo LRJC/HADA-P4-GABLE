@@ -60,7 +60,7 @@
                         <ItemTemplate>
                             <table>
                                 <tr>
-                                    <td><asp:ImageButton runat="server" CommandArgument='<%#Eval("nombre") %>' OnCommand="click_productos" style="height: 200px; width: 200px;" ImageUrl='<%# Eval("imagen") %>' /></td>
+                                    <td class="bg-image hover-zoom"><asp:ImageButton runat="server" CommandArgument='<%#Eval("nombre") %>' OnCommand="click_productos" style="height: 200px; width: 200px;" ImageUrl='<%# Eval("imagen") %>' /></td>
                                 </tr>
                                 <tr>
                                     <td><p style="text-align:center; font-family: Lucida Console, Courier New, monospace;"><%#Eval("nombre") %></p></td>
