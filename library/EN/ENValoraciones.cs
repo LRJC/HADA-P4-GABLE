@@ -61,10 +61,24 @@ namespace library.EN
             }
         }
 
+        public string estr_val
+        {
+            get
+            {
+                return new string(estrella.ToCharArray());
+            }
+
+            set
+            {
+                estrella = value;
+            }
+        }
+
         private string usuario;
         private int producto;
         private string texto;
         private int puntos;
+        private string estrella;
 
         public ENValoraciones() { }
 
@@ -74,6 +88,7 @@ namespace library.EN
             usuaro_id = usuario;
             tex_val = texto;
             pun_val = puntos;
+            estr_val = estrella;
         }
         public bool createValoracion()
         {

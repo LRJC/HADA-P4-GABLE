@@ -65,7 +65,7 @@ namespace library.CAD
                 con.Open();
 
                 SqlDataAdapter data = new SqlDataAdapter();
-                data.SelectCommand = new SqlCommand("Select usuario, texto, puntuación from valoracion where producto='" + en.producto_id + "'and usuario='" + en.usuaro_id + "'", con);
+                data.SelectCommand = new SqlCommand("Select usuario, texto, puntuación, estrella from valoracion where producto='" + en.producto_id + "'and usuario='" + en.usuaro_id + "'", con);
                 SqlDataReader reader = data.SelectCommand.ExecuteReader();
 
                 if (reader.HasRows)
@@ -74,6 +74,7 @@ namespace library.CAD
                     en.usuaro_id = reader.GetString(0);
                     en.tex_val = reader.GetString(1);
                     en.pun_val = reader.GetInt32(2);
+                    en.estr_val = reader.GetString(3);
                 }
                 else
                 {

@@ -74,7 +74,7 @@ namespace GableWeb
 
 
 
-                string sqlquery = "select u.nombre, v.texto ,v.puntuación from usuario u, valoracion v where v.usuario='" + usu + "' and u.dni='" + usu + "' and v.producto='" + id_prod + "'";
+                string sqlquery = "select (select nombre from usuario where dni= v.usuario) as nombre,texto,estrella from valoracion v where producto='"+id_prod+"'";
                 sqlconn.Open();
                 SqlCommand command = new SqlCommand(sqlquery, sqlconn);
                 SqlDataAdapter sqlda = new SqlDataAdapter(command);

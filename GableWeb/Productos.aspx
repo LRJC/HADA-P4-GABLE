@@ -86,7 +86,7 @@
                    </div>
                    <div class="row">
                        <div class="col-xs-12 col-md-6">
-                     <asp:DataList ID="gv1" runat="server" RepeatColumns="1" CellPadding="2" Width="100%" ItemStyle-HorizontalAlign="Left">
+                     <asp:DataList ID="gv1" runat="server" RepeatColumns="1" CellPadding="2"  Width="100%" ItemStyle-HorizontalAlign="Left">
                                  
                          <ItemTemplate>
                             <table>
@@ -98,8 +98,13 @@
                                     <td><p id="comentar" style="text-align:center; font-family: Lucida Console, Courier New, monospace;"><%#Eval("texto") %></p></td>
                                 </tr>
                                 <tr>
-                                    <td><p id="valoracion" style="text-align:right; font-family: Lucida Console, Courier New, monospace;"><%#Eval("puntuación") %></p></td>
+                                   
+                                    <td><asp:Image ID="estrella" runat="server" style="height: 20px; width: 90px; text-align:right;" ImageUrl='<%# Eval("estrella") %>'/></td>
                                 </tr>
+
+                                <td>
+                                    <asp:Label ID="espacio" runat="server" Text=" ------ "></asp:Label>
+                                </td>
                                 
 
                             </table>
