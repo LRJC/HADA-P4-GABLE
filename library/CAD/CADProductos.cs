@@ -210,7 +210,7 @@ namespace library.CAD
             SqlConnection sqlconn = new SqlConnection(conn);
             try
             {
-                string sqlquery = "select top 6 p.nombre, p.precio, p.imagen, sum(l.cantidad) from producto p, linPed l where l.producto=p.id_producto group by p.id_producto, p.nombre, p.precio, p.imagen order by sum(cantidad) desc";
+                string sqlquery = "select top 6 p.id_producto, p.nombre, p.precio, p.imagen, sum(l.cantidad) from producto p, linPed l where l.producto=p.id_producto group by p.id_producto, p.nombre, p.precio, p.imagen order by sum(cantidad) desc";
                 sqlconn.Open();
                 SqlCommand command = new SqlCommand(sqlquery, sqlconn);
                 SqlDataAdapter sqlda = new SqlDataAdapter(command);
@@ -236,7 +236,7 @@ namespace library.CAD
             SqlConnection sqlconn = new SqlConnection(conn);
             try
             {
-                string sqlquery = "select top 6 p.nombre, p.precio, p.imagen, avg(v.puntuación) from producto p, valoracion v where v.producto=p.id_producto group by p.id_producto, p.imagen, p.nombre, p.precio order by avg(v.puntuación) desc";
+                string sqlquery = "select top 6 p.id_producto, p.nombre, p.precio, p.imagen, avg(v.puntuación) from producto p, valoracion v where v.producto=p.id_producto group by p.id_producto, p.imagen, p.nombre, p.precio order by avg(v.puntuación) desc";
                 sqlconn.Open();
                 SqlCommand command = new SqlCommand(sqlquery, sqlconn);
                 SqlDataAdapter sqlda = new SqlDataAdapter(command);
