@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace library.EN
 
@@ -141,6 +142,24 @@ namespace library.EN
         {
             CADProductos cpro = new CADProductos();
             return cpro.updateProductos(this);
+        }
+
+        public DataTable getRecommended()
+        {
+            CADProductos p = new CADProductos();
+            return p.getRecommended();
+        }
+
+        public DataTable getMostSold()
+        {
+            CADProductos p = new CADProductos();
+            return p.getMostSold();
+        }
+
+        public DataTable getBetterReviewed()
+        {
+            CADProductos p = new CADProductos();
+            return p.getBetterReviewed();
         }
 
     }
