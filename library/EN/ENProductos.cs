@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace library.EN
 
@@ -48,7 +49,7 @@ namespace library.EN
             }
         }
 
-        public int pre_producto
+        public float pre_producto
         {
             get
             {
@@ -102,14 +103,14 @@ namespace library.EN
         private int idProducto;
         private string nomProducto;
         private string descProducto;
-        private int preProducto;
+        private float preProducto;
         private string tipoProducto;
         private string marcaProducto;
         private string imaProducto;
 
         public ENProductos() { }
 
-        public ENProductos(int idProducto, string nomProducto, string descProducto, int preProducto, string tipoProducto, string imaProducto,string marcaProducto)//Pablo
+        public ENProductos(int idProducto, string nomProducto, string descProducto, float preProducto, string tipoProducto, string imaProducto,string marcaProducto)//Pablo
         {
             id_producto = idProducto;
             nom_producto = nomProducto;
@@ -141,6 +142,24 @@ namespace library.EN
         {
             CADProductos cpro = new CADProductos();
             return cpro.updateProductos(this);
+        }
+
+        public DataTable getRecommended()
+        {
+            CADProductos p = new CADProductos();
+            return p.getRecommended();
+        }
+
+        public DataTable getMostSold()
+        {
+            CADProductos p = new CADProductos();
+            return p.getMostSold();
+        }
+
+        public DataTable getBetterReviewed()
+        {
+            CADProductos p = new CADProductos();
+            return p.getBetterReviewed();
         }
 
     }

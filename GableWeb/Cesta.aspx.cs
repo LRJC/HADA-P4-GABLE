@@ -77,11 +77,19 @@ namespace GableWeb
         }
         protected void ProceedToBuy(object sender, CommandEventArgs e)
         {
-            int numCesta = Convert.ToInt32(e.CommandArgument.ToString());
+            int numCesta = 0;
+            //te lo meto en un try catch para que no pete, pero soluciona la lógica pls
+            try {
+                numCesta = Convert.ToInt32(e.CommandArgument.ToString());
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine($"error: {0}", ex.Message);
+            }
 
             if (Session["LoggedIn"] == null)
             {
-                if(CheckIfHaveBuyData(numCesta))
+                if (CheckIfHaveBuyData(numCesta))
                 {
                     InsertItemsIntoOrders(numCesta);
                     DeleteItemsFromBasket(numCesta);

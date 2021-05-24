@@ -82,6 +82,8 @@
     <Content Include="Web.config" />
     <Content Include="Cesta.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Registro.aspx" />
+    <Content Include="DatosCompra.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="admin.aspx.cs">
@@ -148,6 +150,20 @@
     <Compile Include="Resultado_busqueda.aspx.designer.cs">
       <DependentUpon>Resultado_busqueda.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Registro.aspx.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registro.aspx.designer.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DatosCompra.aspx.cs">
+      <DependentUpon>DatosCompra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatosCompra.aspx.designer.cs">
+      <DependentUpon>DatosCompra.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Gable.Master" />
@@ -164,6 +180,9 @@
       <Project>{d9c0ed69-bdd8-4931-a873-6c289dfe91f0}</Project>
       <Name>library</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="System\Web\UI\WebControls\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

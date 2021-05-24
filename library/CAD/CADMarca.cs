@@ -15,12 +15,13 @@ namespace library.CAD
 
         public CADMarca()
         {
-            dbd = ConfigurationManager.ConnectionStrings["miconexion"].ToString();
+            dbd = ConfigurationManager.ConnectionStrings["bbdd"].ToString();
         }
         public bool readMarca(ENMarca en)
         {
             bool devolver = false;
             using (SqlConnection c = new SqlConnection(dbd)) {
+                c.Open();
                 String s = "Select * from marca";
                 SqlCommand comando = new SqlCommand(s, c);
                 SqlDataReader data = comando.ExecuteReader();
@@ -42,25 +43,22 @@ namespace library.CAD
 
         public bool deleteMarca(ENMarca en)
         {
-            using (SqlConnection c = new SqlConnection(dbd))
+            SqlConnection c = new SqlConnection(dbd);
+            try
             {
-                using (SqlCommand comando = new SqlCommand("Delete * from marca where nombre="+en.nombre))
-                {
-                    using (SqlDataAdapter sda = new SqlDataAdapter(comando))
-                    {
-                        try
-                        {
-                            c.Open();
-                            comando.ExecuteNonQuery();
-                            c.Close();
-                            return true;
-                        }
-                        catch (Exception e)
-                        {
-                            return false;
-                        }
-                    }
-                }
+                c.Open();
+                SqlCommand comando;
+                comando = new SqlCommand("Delete from marca where nombre='" + en.nombre + "'", c);
+                comando.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("EXCEPCION");
+                return false;
+            }
+            finally {
+                c.Close();
             }
         }
         public bool createMarca(ENMarca en)
@@ -89,25 +87,22 @@ namespace library.CAD
 
         public bool modifyMarca(ENMarca en)
         {
-            using (SqlConnection c = new SqlConnection(dbd))
+            SqlConnection c = new SqlConnection(dbd);
+            try
             {
-                using (SqlCommand comando = new SqlCommand("Update marca set origen='"+en.origen+"', logo='"+en.imagen+"' where nombre='"+en.nombre+"'"))
-                {
-                    using (SqlDataAdapter sda = new SqlDataAdapter(comando))
-                    {
-                        try
-                        {
-                            c.Open();
-                            comando.ExecuteNonQuery();
-                            c.Close();
-                            return true;
-                        }
-                        catch (Exception e)
-                        {
-                            return false;
-                        }
-                    }
-                }
+                c.Open();
+                SqlCommand comando = new SqlCommand("update marca set origen='"+en.origen+"' , logo='"+en.imagen+"' where nombre='"+en.nombre+"'");
+                comando.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("EXCEPCION!!!!");
+                return false;
+            }
+            finally
+            {
+                c.Close();
             }
         }
     }

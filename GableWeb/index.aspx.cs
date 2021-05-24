@@ -13,30 +13,23 @@ using library.EN;
 namespace GableWeb
 {
     public partial class index : System.Web.UI.Page
-    {
+    {   
         protected void Page_Load(object sender, EventArgs e)
         {
-            ENMarca m = new ENMarca();
             if (!this.IsPostBack)
             {
-                this.getMostSold();
-                this.getBetteReviewed();
-                this.getRecommended();
+                this.getMostSold2();
+                this.getBetteReviewed2();
+                this.getRecommended2();
             }
         }
 
-        private void getRecommended()
+        private void getRecommended2()
         {
-            String conn = ConfigurationManager.ConnectionStrings["bbdd"].ConnectionString;
-            SqlConnection sqlconn = new SqlConnection(conn);
             try
             {
-                string sqlquery = "select top 6 * from producto";
-                sqlconn.Open();
-                SqlCommand command = new SqlCommand(sqlquery, sqlconn);
-                SqlDataAdapter sqlda = new SqlDataAdapter(command);
-                DataTable tab = new DataTable();
-                sqlda.Fill(tab);
+                ENProductos p = new ENProductos();
+                DataTable tab = p.getRecommended();
                 gv2.DataSource = tab;
                 gv2.DataBind();
             }
@@ -44,24 +37,14 @@ namespace GableWeb
             {
                 Console.WriteLine("Fallo en el programa, ha saltado excepción...");
             }
-            finally
-            {
-                sqlconn.Close();
-            }
         }
 
-        private void getMostSold()
+        private void getMostSold2()
         {
-            String conn = ConfigurationManager.ConnectionStrings["bbdd"].ConnectionString;
-            SqlConnection sqlconn = new SqlConnection(conn);
             try
             {
-                string sqlquery = "select top 6 p.nombre, p.precio, p.imagen, sum(l.cantidad) from producto p, linPed l where l.producto=p.id_producto group by p.id_producto, p.nombre, p.precio, p.imagen order by sum(cantidad) desc";
-                sqlconn.Open();
-                SqlCommand command = new SqlCommand(sqlquery, sqlconn);
-                SqlDataAdapter sqlda = new SqlDataAdapter(command);
-                DataTable tab = new DataTable();
-                sqlda.Fill(tab);
+                ENProductos p = new ENProductos();
+                DataTable tab = p.getMostSold();
                 gv1.DataSource = tab;
                 gv1.DataBind();
             }
@@ -69,34 +52,20 @@ namespace GableWeb
             {
                 Console.WriteLine("Fallo en el programa, ha saltado excepción...");
             }
-            finally
-            {
-                sqlconn.Close();
-            }
         }
 
-        private void getBetteReviewed()
+        private void getBetteReviewed2()
         {
-            String conn = ConfigurationManager.ConnectionStrings["bbdd"].ConnectionString;
-            SqlConnection sqlconn = new SqlConnection(conn);
             try
             {
-                string sqlquery = "select top 6 p.nombre, p.precio, p.imagen, avg(v.puntuación) from producto p, valoracion v where v.producto=p.id_producto group by p.id_producto, p.imagen, p.nombre, p.precio order by avg(v.puntuación) desc";
-                sqlconn.Open();
-                SqlCommand command = new SqlCommand(sqlquery, sqlconn);
-                SqlDataAdapter sqlda = new SqlDataAdapter(command);
-                DataTable tab = new DataTable();
-                sqlda.Fill(tab);
+                ENProductos p = new ENProductos();
+                DataTable tab = p.getBetterReviewed();
                 gv3.DataSource = tab;
                 gv3.DataBind();
             }
             catch (Exception e)
             {
                 Console.WriteLine("Fallo en el programa, ha saltado excepción...");
-            }
-            finally
-            {
-                sqlconn.Close();
             }
         }
 

@@ -44,7 +44,10 @@
                         </div>
                         <asp:TextBox ID="searcher" runat="server" CssClass="col-8 col-md-4 order-3 order-md-2 my-3 my-md-0" align="left" />
                         <div class ="col-12 col-md-2 order-4 order-md-3 pb-3 pb-md-0" style="text-align: center;">
-                        <!--<asp:LinkButton ID="init_sesion" runat="server" CssClass="font-weight-bold text-white" Text ="Iniciar Sesión" align="center" OnClick="btnLogin_Click" />-->
+                        <asp:LinkButton ID="init_sesion" runat="server" CssClass="font-weight-bold text-white" Text ="Iniciar Sesión" align="center" OnClick="btnLogin_Click" />
+
+                       
+
                         </div>
                         <div class="col-2 col-md-1 order-2 order-md-4"  style="text-align: center;">
                             <asp:ImageButton ID="basket_icon" ImageUrl="src/basket.png" OnClick="btnCesta_Click" Height="36" runat="server" />
