@@ -89,13 +89,47 @@ namespace GableWeb
             }
             else
             {
+
                 ENValoraciones a = new ENValoraciones();
+                try
+                {
+                    a.producto_id = id_prod;
+                    a.tex_val = msg.Value;
+                    int val = Convert.ToInt32(botC.Value);
+                    a.pun_val = val;
+                    a.usuaro_id = User.Identity.Name;
 
-                a.producto_id = id_prod;
-                a.tex_val = msg.Value;
-                a.pun_val = Convert.ToInt32(botC.Value);
-                a.usuaro_id = User.Identity.Name;
+                    switch (val)
+                    {
+                        case 1:
+                            a.estr_val = "src/Estrella/estrella1.png";
+                            break;
 
+                        case 2:
+                            a.estr_val = "src/Estrella/estrella2.png";
+                            break;
+
+                        case 3:
+                            a.estr_val = "src/Estrella/estrella3.png";
+                            break;
+
+                        case 4:
+                            a.estr_val = "src/Estrella/estrella4.png";
+                            break;
+
+                        case 5:
+                            a.estr_val = "src/Estrella/estrella5.png";
+                            break;
+                    }
+
+                    a.createValoracion();
+
+                    Response.Redirect("Productos.aspx?id_prod=" + id_prod);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Fallo en los comentarios, ha saltado excepción...");
+                }
             }
 
 
