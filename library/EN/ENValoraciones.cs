@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace library.EN
 {
@@ -118,6 +119,12 @@ namespace library.EN
         {
             CADValoraciones cval = new CADValoraciones();
             return cval.readAuxValoraciones(this);
+        }
+
+        public DataTable showValo()
+        {
+            CADValoraciones p = new CADValoraciones();
+            return p.showValo(this);
         }
 
     }

@@ -99,6 +99,11 @@ namespace library.CAD
             return true;
         }
 
+        internal DataTable getValo()
+        {
+            throw new NotImplementedException();
+        }
+
         public bool readAuxValoraciones(ENValoraciones en)
         {
 
@@ -214,6 +219,34 @@ namespace library.CAD
             data.SelectCommand = new SqlCommand("Select * from valoracion where usuario='" + en.usuaro_id + "'and producto =" + en.producto_id, con);
             int i = data.SelectCommand.ExecuteNonQuery();
             return (null != data.SelectCommand.ExecuteScalar());
+        }
+
+
+        public DataTable showValo(ENValoraciones en)
+        {
+            SqlConnection con = new SqlConnection(constring);
+
+            con.Open();
+            try
+            {
+
+                string sqlquery = "select (select nombre from usuario where dni= v.usuario) as nombre,texto,estrella from valoracion v where producto='" + en.producto_id + "'";
+                SqlCommand command = new SqlCommand(sqlquery, con);
+                SqlDataAdapter sqlda = new SqlDataAdapter(command);
+                DataTable tab = new DataTable();
+                sqlda.Fill(tab);
+                return tab;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Assessment operation failed. Error:{0}", ex.Message);
+                throw new Exception("Assessment operation failed. Error: " + ex.Message);
+            }
+            finally
+            {
+                if (con != null) con.Close();
+            }
+            
         }
 
     }

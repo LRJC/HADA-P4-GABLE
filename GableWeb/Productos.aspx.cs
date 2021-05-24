@@ -18,19 +18,21 @@ namespace GableWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             nomProd = Request.QueryString["id_prod"];
-
-            getProduct(nomProd);
-            valo(nomProd);
+            
+            
+            int id_prod = Convert.ToInt32(nomProd);
+            getProduct(id_prod);
+            valo(id_prod);
         }
 
-        private void getProduct(string nomProd)
+        private void getProduct(int id_prod)
         {
 
             ENProductos a = new ENProductos();
 
             try
             {
-                a.nom_producto = nomProd;
+                a.id_producto = id_prod;
                 a.readProducto();
                 nombreP.Text = a.nom_producto;
                 Image1.ImageUrl = a.ImageLocation;
@@ -53,38 +55,20 @@ namespace GableWeb
             Response.Redirect("Cesta.aspx");
         }
 
-        private void valo(string nomProd)
+        private void valo(int id_prod)
         {
 
             ENProductos a = new ENProductos();
             ENValoraciones b = new ENValoraciones();
 
-            String conn = ConfigurationManager.ConnectionStrings["bbdd"].ConnectionString;
-            SqlConnection sqlconn = new SqlConnection(conn);
-
             try
             {
-                a.nom_producto = nomProd;
+                a.id_producto = id_prod;
                 a.readProducto();
-                int id_prod = a.id_producto;
-
                 b.producto_id = id_prod;
-                b.readAuxValoraciones();
-                string usu = b.usuaro_id;
-
-
-
-                string sqlquery = "select (select nombre from usuario where dni= v.usuario) as nombre,texto,estrella from valoracion v where producto='"+id_prod+"'";
-                sqlconn.Open();
-                SqlCommand command = new SqlCommand(sqlquery, sqlconn);
-                SqlDataAdapter sqlda = new SqlDataAdapter(command);
-                DataTable tab = new DataTable();
-                sqlda.Fill(tab);
+                DataTable tab = b.showValo();            
                 gv1.DataSource = tab;
                 gv1.DataBind();
-
-
-
 
             }
             catch (Exception ex)

@@ -29,7 +29,7 @@ namespace library.CAD
                 con.Open();
 
                 SqlDataAdapter data = new SqlDataAdapter();
-                data.SelectCommand = new SqlCommand("Select nombre, descripción,tipo_producto, precio, imagen,marca,id_producto from producto where nombre='" + en.nom_producto + "'", con);
+                data.SelectCommand = new SqlCommand("Select nombre, descripción,tipo_producto, precio, imagen,marca,id_producto from producto where id_producto='" + en.id_producto + "'", con);
                 SqlDataReader reader = data.SelectCommand.ExecuteReader();
 
                 if (reader.HasRows)
@@ -255,5 +255,7 @@ namespace library.CAD
                 sqlconn.Close();
             }
         }
+
+
     }
 }
