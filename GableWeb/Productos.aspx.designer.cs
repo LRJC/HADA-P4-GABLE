@@ -69,6 +69,15 @@ namespace GableWeb
         protected global::System.Web.UI.WebControls.Label Marca;
 
         /// <summary>
+        /// Control msg.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea msg;
+
+        /// <summary>
         /// Control TextBox1.
         /// </summary>
         /// <remarks>
@@ -76,6 +85,15 @@ namespace GableWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox1;
+
+        /// <summary>
+        /// Control botC.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl botC;
 
         /// <summary>
         /// Control Button1.

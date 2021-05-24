@@ -14,13 +14,13 @@ namespace GableWeb
     public partial class Productos : System.Web.UI.Page
     {
         private string nomProd;
-
+        private int id_prod;
         protected void Page_Load(object sender, EventArgs e)
         {
             nomProd = Request.QueryString["id_prod"];
             
             
-            int id_prod = Convert.ToInt32(nomProd);
+             id_prod = Convert.ToInt32(nomProd);
             getProduct(id_prod);
             valo(id_prod);
         }
@@ -89,6 +89,12 @@ namespace GableWeb
             }
             else
             {
+                ENValoraciones a = new ENValoraciones();
+
+                a.producto_id = id_prod;
+                a.tex_val = msg.Value;
+                a.pun_val = Convert.ToInt32(botC.Value);
+                a.usuaro_id = User.Identity.Name;
 
             }
 
