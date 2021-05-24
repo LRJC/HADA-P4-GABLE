@@ -15,7 +15,7 @@ namespace GableWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if(!IsPostBack && CheckIfSomeItem())
             {
                 ShowBasketItems();
             }
@@ -151,6 +151,27 @@ namespace GableWeb
 
                             rowCmd.ExecuteNonQuery();
                         }
+                    }
+                }
+            }
+        }
+
+        private bool CheckIfSomeItem()
+        {
+            string constring = ConfigurationManager.ConnectionStrings["bbdd"].ToString();
+            using (SqlConnection con = new SqlConnection(constring))
+            {
+                using (SqlCommand cmd = new SqlCommand("" +
+                    "select * " +
+                    "from linCest " +
+                    "", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable linCestData = new DataTable();
+                        sda.Fill(linCestData);
+
+                        return linCestData.Rows.Count > 0;
                     }
                 }
             }
