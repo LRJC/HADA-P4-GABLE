@@ -21,7 +21,7 @@
             <div class="row">
                 <div class="col ml-3 mt-3">
                     <div class="row">
-                        <asp:LinkButton ID="LinkButtonMisPedidos_mod" runat="server" PostBackUrl="~/AreaPersonal_prod.aspx">
+                        <asp:LinkButton ID="LinkButtonMisPedidos_mod" runat="server" PostBackUrl="~/AreaPersonal_ped.aspx">
                             <asp:Image ID="misPedidosImg" runat="server" /> Mis pedidos
                         </asp:LinkButton>
                     </div>
@@ -46,16 +46,13 @@
                                 <h4><asp:Label ID="CambiarContra" runat="server" Text="Cambiar Contraseña"></asp:Label></h4>
                             </div>
                             <div class="row my-2 mx-0">
-                                <asp:Label ID="LabelContraAntigua" runat="server" Text="Contraseña antigua: "></asp:Label>
-                                <asp:TextBox ID="oldPasswd" runat="server" MaxLength="16" TextMode="Password"></asp:TextBox>
+                                <asp:TextBox ID="oldPasswd" runat="server" MaxLength="16" placeholder="Contraseña antigua" TextMode="Password" Columns="30"></asp:TextBox>
                             </div>
                             <div class="row my-2 mx-0">
-                                <asp:Label ID="LabelNewPassword" runat="server" Text="Nueva contraseña:   "></asp:Label>
-                                <asp:TextBox ID="newPasswd" runat="server" MaxLength="16" TextMode="Password"></asp:TextBox>
+                                <asp:TextBox ID="newPasswd" runat="server" MaxLength="16" placeholder="Nueva contraseña" TextMode="Password" Columns="30"></asp:TextBox>
                             </div>
                             <div class="row my-2 mx-0">
-                                <asp:Label ID="LabelrepeatNewPassword" runat="server" Text="Confirma la contraseña: "></asp:Label>
-                                <asp:TextBox ID="confirmNewPasswd" runat="server" MaxLength="16" TextMode="Password"></asp:TextBox>
+                                <asp:TextBox ID="confirmNewPasswd" runat="server" MaxLength="16" placeholder="Confirmar contraseña" TextMode="Password" Columns="30"></asp:TextBox>
                             </div>
                             <div class="row-2 mt-3 mx-0">
                                 <asp:Button ID="ButtonCambiarContra" runat="server" Text="Guardar" OnClick="ButtonCambiarContra_Click" />
@@ -68,19 +65,19 @@
                                 <h4><asp:Label ID="modPersonalData" runat="server" Text="Editar datos personales"></asp:Label></h4>
                             </div>
                             <div class="row my-2 mx-0">
-                                <asp:TextBox ID="TextBoxModEmail" runat="server" Text="Email"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxModEmail" runat="server" placeholder="Email" Columns="30"></asp:TextBox>
                             </div>
                             <div class="row my-2 mx-0">
-                                <asp:TextBox ID="TextBoxModNombre" runat="server" Text="Nombre"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxModNombre" runat="server" placeholder="Nombre" Columns="30"></asp:TextBox>
                             </div>
                             <div class="row my-2 mx-0">
-                                <asp:TextBox ID="TextBoxModApellidos" runat="server" Text="Apellidos"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxModApellidos" runat="server" placeholder="Apellidos" Columns="30"></asp:TextBox>
                             </div>
                             <div class="row my-2 mx-0">
-                                <asp:TextBox ID="TextBoxModFecNac" runat="server" Text="Fecha nacimiento(DD/MM/YYYY)" TextMode="Date"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxModFecNac" runat="server" placeholder="Fecha nacimiento(dd/mm/yyyy)" Columns="30"></asp:TextBox>
                             </div>
                             <div class="row my-2 mx-0">
-                                <asp:TextBox ID="TextBoxModTlf" runat="server" Text="Teléfono"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxModTlf" runat="server" placeholder="Teléfono" Columns="30"></asp:TextBox>
                             </div>
                             <div class="row-2 mt-3 mx-0">
                                 <asp:Button ID="ButtonCambiarDatosPersonales" runat="server" Text="Guardar" OnClick="ButtonCambiarDatosPersonales_Click" />

@@ -69,7 +69,7 @@
   <ItemGroup>
     <Content Include="admin.aspx" />
     <Content Include="AreaPersonal_modData.aspx" />
-    <Content Include="AreaPersonal_prod.aspx" />
+    <Content Include="AreaPersonal_ped.aspx" />
     <Content Include="App_Data\BBDD.mdf" />
     <Content Include="App_Data\BBDD_log.ldf">
       <DependentUpon>BBDD.mdf</DependentUpon>
@@ -82,6 +82,8 @@
     <Content Include="Web.config" />
     <Content Include="Cesta.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Registro.aspx" />
+    <Content Include="DatosCompra.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="admin.aspx.cs">
@@ -98,12 +100,12 @@
     <Compile Include="AreaPersonal_modData.aspx.designer.cs">
       <DependentUpon>AreaPersonal_modData.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AreaPersonal_prod.aspx.cs">
-      <DependentUpon>AreaPersonal_prod.aspx</DependentUpon>
+    <Compile Include="AreaPersonal_ped.aspx.cs">
+      <DependentUpon>AreaPersonal_ped.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AreaPersonal_prod.aspx.designer.cs">
-      <DependentUpon>AreaPersonal_prod.aspx</DependentUpon>
+    <Compile Include="AreaPersonal_ped.aspx.designer.cs">
+      <DependentUpon>AreaPersonal_ped.aspx</DependentUpon>
     </Compile>
     <Compile Include="Gable.Master.cs">
       <DependentUpon>Gable.Master</DependentUpon>
@@ -148,6 +150,20 @@
     <Compile Include="Resultado_busqueda.aspx.designer.cs">
       <DependentUpon>Resultado_busqueda.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Registro.aspx.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registro.aspx.designer.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DatosCompra.aspx.cs">
+      <DependentUpon>DatosCompra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatosCompra.aspx.designer.cs">
+      <DependentUpon>DatosCompra.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Gable.Master" />
@@ -164,6 +180,9 @@
       <Project>{d9c0ed69-bdd8-4931-a873-6c289dfe91f0}</Project>
       <Name>library</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="System\Web\UI\WebControls\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -197,10 +216,10 @@
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
+       Other similar extension points exist, see Microsoft.Common.targets. 
+  <Target Name="BeforeBuild"> 
   </Target>
   <Target Name="AfterBuild">
   </Target>
-  -->
+ -->
 </Project>

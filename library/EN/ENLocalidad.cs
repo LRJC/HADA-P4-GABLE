@@ -43,6 +43,20 @@ namespace library
             else return false;
         }
 
+        public bool readFirstLocalidad()
+        {
+            CADLocalidad loc = new CADLocalidad();
+            if (loc.readFirstLocalidad(this)) return true;
+            else return false;
+        }
+
+        public bool readNextLocalidad()
+        {
+            CADLocalidad loc = new CADLocalidad();
+            if (loc.readNextLocalidad(this)) return true;
+            else return false;
+        }
+
         public bool updateLocalidad()
         {
             CADLocalidad loc = new CADLocalidad();
