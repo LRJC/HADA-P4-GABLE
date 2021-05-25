@@ -45,6 +45,7 @@ namespace library.CAD
         }
 
         public bool ProceedToBuy(ENCesta c) { return false; }
+        
         public DataTable ShowBasketItems() {
             string constring = ConfigurationManager.ConnectionStrings["bbdd"].ToString();
             using (SqlConnection con = new SqlConnection(constring))
@@ -64,6 +65,41 @@ namespace library.CAD
                         DataTable linCestData = new DataTable();
                         sda.Fill(linCestData);
                         return linCestData;
+                    }
+                }
+            }
+        }
+
+        public void InsertItemsIntoBasket(int numCesta, int producto, float importe, int cantidad)
+        {
+            string constring = ConfigurationManager.ConnectionStrings["bbdd"].ToString();
+            using (SqlConnection con = new SqlConnection(constring))
+            {
+                using (SqlCommand cmd = new SqlCommand("" +
+                    "select *" +
+                    "from linCest " +
+                    "where numCesta = " + numCesta +
+                    "", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable linCestData = new DataTable();
+                        sda.Fill(linCestData);
+                        int maxIndex = -1;
+
+                        foreach (DataRow row in linCestData.Rows)
+                        {
+                            int linIndex = int.Parse(row[1].ToString());
+                            if (linIndex > maxIndex)
+                                maxIndex = linIndex;
+                        }
+
+                        SqlCommand rowCmd = new SqlCommand("" +
+                            "insert into linCest values (" +
+                            numCesta.ToString() + "," + (maxIndex + 1).ToString() + "," + producto.ToString() +
+                            "," + importe.ToString() + "," + cantidad.ToString(), con);
+
+                        rowCmd.ExecuteNonQuery();
                     }
                 }
             }

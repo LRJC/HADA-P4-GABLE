@@ -76,5 +76,11 @@ namespace library.EN
             string userID = this.getUserID();
             return c.CheckIfHaveBuyData(userID, numCesta);
         }
+
+        public void InsertItemsIntoBasket(int numCesta, int producto, float importe, int cantidad)
+        {
+            CADCesta c = new CADCesta();
+            c.InsertItemsIntoBasket(numCesta, producto, importe, cantidad);
+        }
     }
 }
