@@ -13,5 +13,10 @@ namespace GableWeb
         {
 
         }
+
+        protected void clickado(object sender, CommandEventArgs e)
+        {
+            Response.Redirect("Productos.aspx?id_prod=" + e.CommandArgument);
+        }
     }
 }
