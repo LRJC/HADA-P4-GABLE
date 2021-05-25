@@ -21,7 +21,7 @@
                     <asp:DataList ID="gv1" runat="server" RepeatColumns="3" RepeatDirection="Horizontal" CellPadding="2" Width="100%" ItemStyle-HorizontalAlign="Center">
                         <ItemTemplate>
                             <div class="card" style="width: 18rem;">
-                                <asp:ImageButton CssClass="card-img-top w-100 imgb" runat="server" CommandArgument='<%#Eval("id_producto") %>' OnCommand="click_productos" style="height: 200px; width: 200px;" ImageUrl='<%# Eval("imagen") %>' />
+                                <asp:ImageButton CssClass="card-img-top w-100" runat="server" CommandArgument='<%#Eval("id_producto") %>' OnCommand="click_productos" style="height: 200px; width: 200px;" ImageUrl='<%# Eval("imagen") %>' />
                                 <!--<img class="card-img-top" src="src/old_gable-logo.png" alt="Card image cap">-->
                                     <div class="card-body">
                                      <h5 class="card-title"><%#Eval("nombre") %></h5>
