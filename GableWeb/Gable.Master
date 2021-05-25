@@ -30,13 +30,13 @@
            
                                 <Items>
                                     <asp:MenuItem ImageUrl="src/hamburguer.png">
-                                        <asp:MenuItem Text ="Inicio" NavigateUrl="#"></asp:MenuItem>
+                                        <asp:MenuItem Text ="Inicio" NavigateUrl="Index.aspx"></asp:MenuItem>
                                         <asp:MenuItem Text ="Mejor Valorados" NavigateUrl="#"></asp:MenuItem>
                                         <asp:MenuItem Text ="Más Valorados" NavigateUrl="#"></asp:MenuItem>
-                                        <asp:MenuItem Text ="Rol" NavigateUrl="#"></asp:MenuItem>
-                                        <asp:MenuItem Text ="Estrategia" NavigateUrl="#"></asp:MenuItem>
-                                        <asp:MenuItem Text ="Azar" NavigateUrl="#"></asp:MenuItem>
-                                        <asp:MenuItem Text ="Cartas" NavigateUrl="#"></asp:MenuItem>
+                                        <asp:MenuItem Text ="Rol" NavigateUrl="Resultado_busqueda.aspx?cat_prod=rol"></asp:MenuItem>
+                                        <asp:MenuItem Text ="Estrategia" NavigateUrl="Resultado_busqueda.aspx?cat_prod=estrategia"></asp:MenuItem>
+                                        <asp:MenuItem Text ="Azar" NavigateUrl="Resultado_busqueda.aspx?cat_prod=azar"></asp:MenuItem>
+                                        <asp:MenuItem Text ="Cartas" NavigateUrl="Resultado_busqueda.aspx?cat_prod=cartas"></asp:MenuItem>
                                         <asp:MenuItem Text ="Más Generos" NavigateUrl="#"></asp:MenuItem>
                                     </asp:MenuItem>
                                 </Items>   
