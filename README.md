@@ -13,41 +13,40 @@
 Como cliente, navega por nuestra página y descubre miles de juegos.
 
 ### PARTE PUBLICA
--En la parte pública de la pagina, podras loggearte como usuario, o registrarte si no lo estás. Habrá un buscador donde podras teclear tu solicitud. Tambien habra una opción de carrito. Se mostraran los productos con mejor valoración del portal.
+-En esta parte podrás ver todos los productos disponibles en la página, con sus precios, valoraciones y marcas. Además podrás añadir al carrito tus productos favoritos. Estando en la parte pública, podrás tanto registrarte como iniciar sesión. 
 
 ### LISTADO ENTIDADES PUBLICAS
-* Registrarse: En la página principal habría un botón para registrarse. Al hacer click, nos llevará a una página donde tendremos que rellenar un formulario con los datos del usuario. Estos datos serán del tipo nombre, apellidos, mail, dirección, fecha nacimiento, contraseña de usuario, ...
+-ENProducto -> Esta entidad representa a los productos. Estos contienen, marca, imagen, un precio, un género y descripción, y una serie de valoraciones representadas por la ENValoracion. Las funcionalidades implementadas son las siguientes: leer, crear, eliminar, modificar. 
 
-* Loggear en la página: En la página principal habría un botón para loggearte como usuario, que nos dirigirá a un formulario donde tendremos que introducir el mail y la contraseña del usuario. Si los datos son correctos, se te redirige a la página principal, teniendo acceso también a la parte privada. Habrá un botón que te redirigirá al formulario de registro, en el caso de que no estés registrado.
+-ENCesta -> La ENCesta representa el carrito o cesta de la compra. Cuando estás navegando como usuario público sin estar registrado en nuestra página, puedes seleccionar un producto y meterlo en el carrito, para posteriormente comprarlo. Eso sí, para comprar un producto deberás registrarte como usuario de la página obligatoriamente. Las funcionalidades implementadas son las siguientes: añadir producto, quitar producto, y proceder a compra. 
 
-* Buscador: En todas las páginas habrá un buscador, donde se podrá buscar por filtros y etiquetas, redireccionandote a las páginas correspondientes según la búsqueda.
+-ENLineaCesta -> La línea de la cesta sirve para enumerar los productos dentro de la cesta. Cada línea tiene un producto concreto con su cantidad y precio. Las dos funcionalidades que tiene son las de añadir y quitar productos de la cesta. 
 
-* Carrito: En la página principal hay un botón donde te redirecciona al carrito. Además, en las páginas de los productos, habrá un botón "añadir al carrito", que añadirá el producto. En el caso de que intentes comprar, se te redirigirá a una página de login.
+-EnTipoProducto -> Esta entidad representa la categoría del producto, o su género. Como funcionalidades, se implementan las CRUD. 
 
-* Producto: En la página principal se mostrarán varias listas de productos en forma de imagen, en los cuales podremos hacer click, redireccionándonos a otra página donde se muestra una descripción del producto, una serie de valoraciones, y el precio del mismo.
-
-* Volver a página de inicio: Se volverá a la página de inicio pinchando en el logo/título de la misma.
+-ENMarca -> Esta entidad representa la marca de los productos. Tenemos su nombre, origen y logo. Las funcionalidades que se implementan son las CRUD. 
 
 ### PARTE PRIVADA
--En esta parte puedes comprar lo que has metido en el carrito, modificar tus datos personales de la cuenta, ... Además, si estás registrado como vendedor, tendrás la opción de poder subir tu producto al portal. También podrás valorar los productos que has comprado. Puedes cerrar sesión para volver a la parte pública del portal. Al hacer una compra, aparecerá un formulario donde se piden los datos de compra, como la dirección de envío, el número de tarjeta, ...
+-En esta parte es donde se hacen todas las gestiones relacionadas con los usuarios registrados en la página, como puede ser comprar, modificar la cuenta, dejar valoraciones, ...
+Además, siendo ADMIN, habrá la opción de añadir y quitar productos a la página web. Siendo ADMIN, gestionas los productos, las provincias, las localidades, borrar valoraciones, ... 
 
 ### LISTADO ENTIDADES PRIVADAS
-* Comprar: Una vez accedido al carrito, habrá un botón de comprar, que te redirige a una página, donde tendrás que introducir los datos bancarios o no según hayas comprado anteriormente en el portal.
+-ENUsuario -> Esta entidad representa al usuario registrado en la página web, es decir, que puede comprar en la página. Las funcionalidades que tiene, a parte de las CRUD, son las de login y logout. Siendo admin, estan las funcionalidades de añadir y quitar productos a la página, y añadir y quitar provincias y localidades de la base de datos de la página.
 
-* Modificar/Eliminar cuenta: En esta opción se podrá cambiar contraseña, mail, datos bancarios, ... Tendremos la opción de eliminar la cuenta.
+-ENLocalidad -> Esta entidad representa las localidades del mundo real, y se utiliza para da veracidad a las direcciones de los usuarios. Las funcionalidades que tiene son las CRUD.  
 
-* Salir de la cuenta: Botón para cerrar la sesión. Te redirige a la parte pública, a la página principal.
+-ENPedido -> Representa cuando un usuario ha hecho una compra, que entonces se registra como un pedido. 
 
-* Vender: Aparece un botón para subir productos a la página. Al hacer click se chequea que el usuario tenga cuenta bancaria anexada. De no tenerla, se te redirige a un formulario donde debes introducirla.
+-ENLineaPedido -> La línea del pedido sirve para enumerar los productos dentro de un pedido. Cada linea de pedido tiene un producto concreto con su cantidad y precio. 
 
-* Valoración del producto: Constará de comentarios de usuarios y de una valoración numérica del 1 al 5.
+-ENValoracion -> Esta entidad representa una opinión de un usuario sobre un producto. Esta opinión es representada por una nota numérica del 1 al 5, y un mensaje opcional. Las funcionalidades que tiene son las CRUD. 
 
-* Datos de compra y venta: Como ya hemos mencionado anteriormente, los datos serian la cuenta bancaria, la tarjeta de crédito/débito, dirección de envío, dirección de facturación.
+-ENDirEnvio -> ENDirEnvio representa la dirección de envío de los usuarios registrados en la página. Esta entidad tiene como funcinalidades las CRUD. 
 
-### FUTURAS MEJORAS
-* Historial de compras
-* Pasar de página(opcional) o scroll
-* Imagen usuario
-* Anuncios
+-ENProvincia -> Esta entidad representa las provincias del mundo real, y se utiliza para da veracidad a las direcciones de los usuarios. Las funcionalidades que tiene son las CRUD. 
+
+###PROBLEMAS
+
+###REPARTO DEL TRABAJO
 
 ## LAS BASE DE DATOS ESTA SUBIDA AL REPO EN LA RAMA DEVELOP
