@@ -69,6 +69,18 @@
         text-decoration: none;
     }
 
+.imagenes{
+    overflow: hidden;
+}
+
+.imagenes imgb{
+    transition: all 1.5s ease;
+}
+
+.imagenes:hover imgb{
+    transform: scale(1.5);
+}
+
    
 
 /* Medium Devices, Desktops */

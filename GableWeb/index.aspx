@@ -18,9 +18,20 @@
                 <section id="sec1">
                     <br />
                     <h2>MAS VENDIDOS</h2>
-                    <asp:DataList ID="gv1" runat="server" RepeatColumns="3" CellPadding="2" Width="100%" ItemStyle-HorizontalAlign="Center">
+                    <asp:DataList ID="gv1" runat="server" RepeatColumns="3" RepeatDirection="Horizontal" CellPadding="2" Width="100%" ItemStyle-HorizontalAlign="Center">
                         <ItemTemplate>
-                            <table>
+                            <div class="card" style="width: 18rem;">
+                                <div class="imagenes">
+                                <asp:ImageButton ID="imgb" CssClass="card-img-top w-100" runat="server" CommandArgument='<%#Eval("id_producto") %>' OnCommand="click_productos" style="height: 200px; width: 200px;" ImageUrl='<%# Eval("imagen") %>' />
+                                </div>
+                                <!--<img class="card-img-top" src="src/old_gable-logo.png" alt="Card image cap">-->
+                                    <div class="card-body">
+                                     <h5 class="card-title"><%#Eval("nombre") %></h5>
+                                        <p class="card-text"><%#Eval("precio") %>€</p>
+                                        <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
+                                    </div>
+                            </div>
+                           <!-- <table>
                                 <tr>
                                     <td><asp:ImageButton ID="im1" runat="server" CommandArgument='<%#Eval("id_producto") %>' OnCommand="click_productos" style="height: 200px; width: 200px;" ImageUrl='<%# Eval("imagen") %>' /></td>
                                 </tr>
@@ -30,7 +41,7 @@
                                 <tr>
                                     <td><p id="precio1" style="text-align:center; font-family: Lucida Console, Courier New, monospace;"><%#Eval("precio") %>€</p></td>
                                 </tr>
-                            </table>
+                            </table>-->
                         </ItemTemplate>
                     </asp:DataList>
                 </section>
