@@ -52,7 +52,20 @@ namespace GableWeb
 
         protected void carrito(object sender, EventArgs e)
         {
-            Response.Redirect("Cesta.aspx");
+
+            ENLineaCesta lc = new ENLineaCesta();
+
+            try
+            {
+                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Fallo al añadir producto en la cesta, ha saltado excepción...");
+            }
+
+
+            //Response.Redirect("Cesta.aspx");
         }
 
         private void valo(int id_prod)
