@@ -22,21 +22,26 @@
                 <div class="container-fluid">
                     <div class="row align-items-center">
                         <div class=" btn-group col-2 col-md-1 order-sm-0" style="text-align: center;">
-                            <button type="button" class="btn btn-default" data-toggle="dropdown" style="background:none;">
-                                <img src="src/hamburguer.png" />
-                                <i class="font-weight-bold text-white">&nbsp;MENU</i>
-                            </button>
+                                                       
+                            <asp:Menu ID="Menu" runat="server" CssClass="menu" Orientation="Horizontal">
+                                <StaticMenuItemStyle CssClass="font-weight-bold text-white"/>
+                                <DynamicMenuItemStyle Font-Italic="true" CssClass="col-sm-12 pb-1 text-white border-bottom border-dark" BackColor="#bb5e00" />
+                                <DynamicHoverStyle BackColor="black"/>
+           
+                                <Items>
+                                    <asp:MenuItem ImageUrl="src/hamburguer.png">
+                                        <asp:MenuItem Text ="Inicio" NavigateUrl="#"></asp:MenuItem>
+                                        <asp:MenuItem Text ="Mejor Valorados" NavigateUrl="#"></asp:MenuItem>
+                                        <asp:MenuItem Text ="Más Valorados" NavigateUrl="#"></asp:MenuItem>
+                                        <asp:MenuItem Text ="Rol" NavigateUrl="#"></asp:MenuItem>
+                                        <asp:MenuItem Text ="Estrategia" NavigateUrl="#"></asp:MenuItem>
+                                        <asp:MenuItem Text ="Azar" NavigateUrl="#"></asp:MenuItem>
+                                        <asp:MenuItem Text ="Cartas" NavigateUrl="#"></asp:MenuItem>
+                                        <asp:MenuItem Text ="Más Generos" NavigateUrl="#"></asp:MenuItem>
+                                    </asp:MenuItem>
+                                </Items>   
+                            </asp:Menu>
 
-                            <ul class="dropdown-menu" role="menu" style="background:url('src/header_wood.png');">
-                                <li><a href="#" style="color:white; margin-left:10px; line-height:28px;">Inicio</a></li>
-                                <li><a href="#" style="color:white; margin-left:10px; line-height:28px;">Mejor Valorados</a></li>
-                                <li><a href="#" style="color:white; margin-left:10px; line-height:28px;">Más Valorados</a></li>
-                                <li><a href="#" style="color:white; margin-left:10px; line-height:28px;">Rol</a></li>
-                                <li><a href="#" style="color:white; margin-left:10px; line-height:28px;">Estrategia</a></li>
-                                <li><a href="#" style="color:white; margin-left:10px; line-height:28px;">Azar</a></li>
-                                <li><a href="#" style="color:white; margin-left:10px; line-height:28px;">Cartas</a></li>
-                                <li><a href="#" style="color:white; margin-left:10px; line-height:28px;">Más Generos</a></li> 
-                            </ul>
                         </div>
 
                         <div class="col-8 col-md-3 order-1 pb-2" style="text-align: center;">
