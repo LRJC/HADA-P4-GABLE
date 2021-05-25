@@ -14,52 +14,34 @@ namespace GableWeb
 {
     public partial class Resultado_busqueda : System.Web.UI.Page
     {
+        private string categoria;
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            if (!this.IsPostBack)
+            categoria = Request.QueryString["categoria_prod"];
+            if (!IsPostBack)
             {
-                getProduct();
+                loadProducts(categoria);
             }
-            
-        }
-
-
-        private void getProduct()
-        {
-
-            String conn = ConfigurationManager.ConnectionStrings["bbdd"].ConnectionString;
-            SqlConnection sqlconn = new SqlConnection(conn);
-            try
-            {
-                string sqlquery = "select * from producto where tipo_producto like 'pr1%'";
-                sqlconn.Open();
-                SqlCommand command = new SqlCommand(sqlquery, sqlconn);
-                SqlDataAdapter sqlda = new SqlDataAdapter(command);
-                DataTable tab = new DataTable();
-                sqlda.Fill(tab);
-                gv1.DataSource = tab;
-                gv1.DataBind();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Fallo en el programa, ha saltado excepción...");
-            }
-            finally
-            {
-                sqlconn.Close();
-            }
-        }
-
-
-        protected void click_productos(object sender, CommandEventArgs e)
-        {
-            Response.Redirect("Productos.aspx?id_prod=" + e.CommandArgument);
         }
 
         protected void clickado(object sender, CommandEventArgs e)
         {
             Response.Redirect("Productos.aspx?id_prod=" + e.CommandArgument);
+        }
+
+        protected void loadProducts(string categoria)
+        {
+            try
+            {
+                ENProductos en = new ENProductos();
+                DataTable tab = en.getProductTypeX(categoria);
+                DataList1.DataSource = tab;
+                DataList1.DataBind();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("EXCEPCIÓN...");
+            }
         }
     }
 }
