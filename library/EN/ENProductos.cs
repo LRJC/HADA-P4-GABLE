@@ -162,5 +162,11 @@ namespace library.EN
             return p.getBetterReviewed();
         }
 
+        public DataTable getProductTypeX(string categoria)
+        {
+            CADProductos p = new CADProductos();
+            return p.getProductTypeX(categoria);
+        }
+
     }
 }

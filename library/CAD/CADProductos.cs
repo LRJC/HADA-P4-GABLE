@@ -256,6 +256,32 @@ namespace library.CAD
             }
         }
 
+        public DataTable getProductTypeX(string categoria)
+        {
+            String conn = ConfigurationManager.ConnectionStrings["bbdd"].ConnectionString;
+            SqlConnection sqlconn = new SqlConnection(conn);
+            try
+            {
+                string sqlquery = "select * from producto where tipo_producto like '%"+categoria+"%'";
+                sqlconn.Open();
+                SqlCommand command = new SqlCommand(sqlquery, sqlconn);
+                SqlDataAdapter sqlda = new SqlDataAdapter(command);
+                DataTable tab = new DataTable();
+                sqlda.Fill(tab);
+                return tab;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Fallo en el programa, ha saltado excepción...");
+                DataTable tab1 = new DataTable();
+                return tab1;
+            }
+            finally
+            {
+                sqlconn.Close();
+            }
+        }
+
 
     }
 }
