@@ -40,7 +40,10 @@
                             <div class="form-row">
                                 <label for="Cantidad" class="col-sm-3 col-md-3 form-control-label">Cantidad:</label>
                                 <div class="col-sm-8 col-md-9">
-                                    <input type="number" class="qty form-control" id="input-cant" UseSubmitBehavior="false" runat="server" name="qty" min="1"value="1" />
+                                    <form>
+                                  
+                                         <input type="number" class="qty form-control"  id="Number1" name="qty"  UseSubmitBehavior="false" runat="server"  min="1" max="9999" value="1" />
+                                    </form>
                                 </div>
                             </div>
                             <div class="form-group row visible">
