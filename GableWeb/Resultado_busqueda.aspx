@@ -9,7 +9,7 @@
                 <asp:DataList ID="DataList1" runat="server" RepeatColumns="3" RepeatDirection="Horizontal" CellPadding="2" Width="100%" ItemStyle-HorizontalAlign="Center">
                         <ItemTemplate>
                             <div class="card btn-outline-dark" style="width: 18rem;">
-                                <asp:ImageButton CssClass="card-img-top w-100" runat="server" CommandArgument='<%#Eval("id_producto") %>' OnCommand="click_productos" style="height: 200px; width: 200px;" ImageUrl='<%# Eval("imagen") %>' />
+                                <asp:ImageButton CssClass="card-img-top w-100" runat="server" CommandArgument='<%#Eval("id_producto") %>' OnCommand="clickado" style="height: 200px; width: 200px;" ImageUrl='<%# Eval("imagen") %>' />
                                     <div class="card-body">
                                      <h5 class="card-title"><%#Eval("nombre") %></h5>
                                         <p class="card-text"><strong><%#Eval("precio") %>€</strong></p>
