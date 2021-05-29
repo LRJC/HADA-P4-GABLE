@@ -60,7 +60,7 @@ namespace library
 
                 if (dr.Read())
                 {
-                    en.codp = dr["codp"].ToString();
+                    en.codp =  dr["codp"].ToString();
                     en.nombre= dr["nombre"].ToString();
                     return true;
 

@@ -8,8 +8,8 @@ namespace library
 {
     public class ENProvincia
     {
-        private int _codp;
-        public int codp
+        private string _codp;
+        public string codp
         {
             get { return _codp; }
             set { _codp = value; }
