@@ -27,7 +27,15 @@ namespace library
             try
             {
                 c.Open();
-                return false;
+                //comprobamos que no exista
+                SqlCommand com1 = new SqlCommand("select * from provincia where codp = '" + en.codp.ToString() + "'", c);
+                SqlDataReader dr = com1.ExecuteReader();
+
+                if (dr.Read()) return false; //ya existia
+
+                SqlCommand com2 = new SqlCommand("insert into provincia(codp,nombre) values ('" + en.codp.ToString() + "','" + en.nombre.ToString() + "')", c);
+                com2.ExecuteNonQuery();
+                return true;
             }
             catch(Exception ex)
             {
@@ -46,6 +54,18 @@ namespace library
             try
             {
                 c.Open();
+                SqlCommand com = new SqlCommand("select * from provincia where codp = '" + en.codp + "';", c);
+
+                SqlDataReader dr = com.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    en.codp = dr["codp"].ToString();
+                    en.nombre= dr["nombre"].ToString();
+                    return true;
+
+                }
+
                 return false;
             }
             catch (Exception ex)
@@ -65,6 +85,12 @@ namespace library
             try
             {
                 c.Open();
+                if (en.codp.ToString() != "")//comprobamos que no esté vacío el campo
+                {
+                    SqlCommand com1 = new SqlCommand("update provincia set nombre = '" + en.nombre.ToString() + "' where codp = '" + en.codp.ToString() + "';", c);
+                    if (com1.ExecuteNonQuery() != 0) return true;
+                }
+
                 return false;
             }
             catch (Exception ex)
@@ -84,7 +110,10 @@ namespace library
             try
             {
                 c.Open();
-                return false;
+                SqlCommand com = new SqlCommand("delete from provincia where codp = '" + en.codp.ToString() + "';", c);
+
+                if (com.ExecuteNonQuery() == 0) return false;
+                return true;
             }
             catch (Exception ex)
             {
