@@ -97,7 +97,7 @@ namespace library
         {
             using (SqlConnection c = new SqlConnection(dbd))
             {
-                using (SqlCommand comando = new SqlCommand("Update marca set contraseña='" + en.contraseña + "', email='" + en.email + "cvv_tarjeta = '" + en.cvv + "' , tlf = '" + en.tlf + "' where dni='" + en.nif + "'"))
+                using (SqlCommand comando = new SqlCommand("Update usuario set contraseña='" + en.contraseña + "', email='" + en.email + "cvv_tarjeta = '" + en.cvv + "' , tlf = '" + en.tlf + "' where dni='" + en.nif + "'"))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(comando))
                     {

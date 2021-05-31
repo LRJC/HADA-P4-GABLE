@@ -37,22 +37,71 @@ namespace GableWeb
                 lab_NombreApellidos_AreaPersonal_mod.Text = usu.nombre.ToString() + " " + usu.apellidos.ToString();
                 lab_Dni_AreaPersonal_mod.Text = usu.nif.ToString();
                 lab_Correo_AreaPersonal_mod.Text = usu.email.ToString();
+                if(usu.numTarjeta.ToString() != "")
+                {
+                    LabelTarjeta.Text = usu.numTarjeta.ToString();
+                }
+                else
+                {
+                    LabelTarjeta.Text = "No tienes tarjeta todavía";
+                }
             }
         }
 
         protected void ButtonCambiarContra_Click(object sender, EventArgs e)
         {
-            //actualizar la contraseña en la bbdd
+            if (Page.IsValid)//maybe solo checkear los campos de contra
+            {
+                ENUsuario usu = new ENUsuario();
+                usu.nif = Session["dni"].ToString();
+                usu.readUsuario();
+                usu.contraseña = newPasswd.Text;
+                usu.updateUsuario();
+
+                //notificar que todo ha ido bien
+            }
         }
 
         protected void ButtonCambiarDatosPersonales_Click(object sender, EventArgs e)
         {
-            //actualizar los datos personales en la bbdd
+            ENUsuario usu = new ENUsuario();
+            usu.nif = Session["dni"].ToString();
+            usu.readUsuario();
+
+            if(TextBoxModEmail.Text.ToString() != "")
+            {
+                usu.email = TextBoxModEmail.Text.ToString();
+            }
+
+            if (TextBoxModEmail.Text.ToString() != "")
+            {
+                usu.nombre = TextBoxModNombre.Text.ToString();
+            }
+
+            if (TextBoxModApellidos.Text.ToString() != "")
+            {
+                usu.apellidos = TextBoxModApellidos.Text.ToString();
+            }
+
+            if (TextBoxModFecNac.Text.ToString() != "")
+            {
+                usu.fechanac = TextBoxModFecNac.Text.ToString();
+            }
+
+            if (TextBoxModTlf.Text.ToString() != "")
+            {
+                usu.tlf = Convert.ToInt32(TextBoxModTlf.Text);
+            }
+
+            usu.updateUsuario();
+
+            //notificar que todo ha ido bien
+
         }
 
         protected void ButtonCambiarInfoPagos_Click(object sender, EventArgs e)
         {
-            //actualizar la informacion de pago en la bbdd
+            Response.Redirect("DatosCompra.aspx");
         }
     }
 }
