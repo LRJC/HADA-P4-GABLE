@@ -1,5 +1,4 @@
 ﻿using System;
-using library.EN;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +7,7 @@ using System.Data;
 using System.Configuration;
 using System.Threading.Tasks;
 
-namespace library.CAD
+namespace library
 {
     class CADProductos
     {
@@ -237,6 +236,32 @@ namespace library.CAD
             try
             {
                 string sqlquery = "select top 6 p.id_producto, p.nombre, p.precio, p.imagen, avg(v.puntuación) from producto p, valoracion v where v.producto=p.id_producto group by p.id_producto, p.imagen, p.nombre, p.precio order by avg(v.puntuación) desc";
+                sqlconn.Open();
+                SqlCommand command = new SqlCommand(sqlquery, sqlconn);
+                SqlDataAdapter sqlda = new SqlDataAdapter(command);
+                DataTable tab = new DataTable();
+                sqlda.Fill(tab);
+                return tab;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Fallo en el programa, ha saltado excepción...");
+                DataTable tab1 = new DataTable();
+                return tab1;
+            }
+            finally
+            {
+                sqlconn.Close();
+            }
+        }
+
+        public DataTable getProductTypeX(string categoria)
+        {
+            String conn = ConfigurationManager.ConnectionStrings["bbdd"].ConnectionString;
+            SqlConnection sqlconn = new SqlConnection(conn);
+            try
+            {
+                string sqlquery = "select * from producto where tipo_producto like '%"+categoria+"%'";
                 sqlconn.Open();
                 SqlCommand command = new SqlCommand(sqlquery, sqlconn);
                 SqlDataAdapter sqlda = new SqlDataAdapter(command);

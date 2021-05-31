@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using library.CAD;
 
-namespace library.EN
+namespace library
 {
     public class ENUsuario
     {
-        private string _nif;
+        private string _dni;
         private string _nombre;
         private string _apellidos;
         private string _email;
@@ -21,9 +20,9 @@ namespace library.EN
         private string _fechanac;//comprobar
         private bool _admin;
 
-        public ENUsuario(string nif, string nombre, string apellidos, string email, int tlf, int NT, int cvv, string expT, string fechanac)
+        public ENUsuario(string dni, string nombre, string apellidos, string email, int tlf, int NT, int cvv, string expT, string fechanac)
         {
-            this.nif = nif;
+            this.dni = dni;
             this.nombre = nombre;
             this.apellidos = apellidos;
             this.email = email;
@@ -37,7 +36,7 @@ namespace library.EN
 
         public ENUsuario()
         {
-            this.nif = "";
+            this.dni = "";
             this.nombre = "";
             this.apellidos = "";
             this.email = "";
@@ -49,11 +48,11 @@ namespace library.EN
             this.fechanac = "";
         }
 
-        public string nif
+        public string dni
         {
-            get { return _nif; }
+            get { return _dni; }
 
-            set { _nif = value; }
+            set { _dni = value; }
         }
 
         public string nombre
@@ -163,67 +162,18 @@ namespace library.EN
             CADUsuario us = new CADUsuario();
             ENUsuario en = new ENUsuario();
 
-            en.nif = nif;
+            en.dni = dni;
             en.nombre = nombre;
             en.apellidos = apellidos;
             if (us.readUsuario(this) == true)
             {
-                this.nif = en.nif;
+                this.dni = en.dni;
                 this.nombre = en.nombre;
                 this.apellidos = en.apellidos;
                 devolver = us.updateUsuario(this);
             }
 
             return devolver;
-        }
-
-
-        public bool loginUsuario()
-        {
-            CADUsuario nuevo = new CADUsuario();
-            return nuevo.loginUsuario(this);
-        }
-
-        public bool logout()//revisar
-        {
-            CADUsuario nuevo = new CADUsuario();
-            return nuevo.logoutUsuario(this);
-        }
-
-        public bool subirProducto()
-        {
-            ENProductos en = new ENProductos();
-            return en.createProducto();
-        }
-
-        public bool deleteProducto()
-        {
-            ENProductos en = new ENProductos();
-            return en.deleteProductos();
-        }
-
-        public bool createLocalidad()
-        {
-            ENLocalidad en = new ENLocalidad();
-            return en.createLocalidad();
-        }
-
-        public bool deleteLocalidad()
-        {
-            ENLocalidad en = new ENLocalidad();
-            return en.deleteLocalidad();
-        }
-
-        public bool createProvincia()
-        {
-            ENProvincia en = new ENProvincia();
-            return en.createProvincia();
-        }
-
-        public bool deleteProvincia()
-        {
-            ENProvincia en = new ENProvincia();
-            return en.deleteProvincia();
         }
 
     }

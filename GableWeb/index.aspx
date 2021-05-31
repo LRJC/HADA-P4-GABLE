@@ -18,57 +18,45 @@
                 <section id="sec1">
                     <br />
                     <h2>MAS VENDIDOS</h2>
-                    <asp:DataList ID="gv1" runat="server" RepeatColumns="3" CellPadding="2" Width="100%" ItemStyle-HorizontalAlign="Center">
+                    <asp:DataList ID="gv1" runat="server" RepeatColumns="3" RepeatDirection="Horizontal" CellPadding="2" Width="100%" ItemStyle-HorizontalAlign="Center">
                         <ItemTemplate>
-                            <table>
-                                <tr>
-                                    <td><asp:ImageButton ID="im1" runat="server" CommandArgument='<%#Eval("id_producto") %>' OnCommand="click_productos" style="height: 200px; width: 200px;" ImageUrl='<%# Eval("imagen") %>' /></td>
-                                </tr>
-                                <tr>
-                                    <td><p id="nombre1" style="text-align:center; font-family: Lucida Console, Courier New, monospace;"><%#Eval("nombre") %></p></td>
-                                </tr>
-                                <tr>
-                                    <td><p id="precio1" style="text-align:center; font-family: Lucida Console, Courier New, monospace;"><%#Eval("precio") %>€</p></td>
-                                </tr>
-                            </table>
+                            <div class="card btn-outline-dark" style="width: 18rem;">
+                                <asp:ImageButton CssClass="card-img-top w-100" runat="server" CommandArgument='<%#Eval("id_producto") %>' OnCommand="click_productos" style="height: 200px; width: 200px;" ImageUrl='<%# Eval("imagen") %>' />
+                                    <div class="card-body">
+                                     <h5 class="card-title"><%#Eval("nombre") %></h5>
+                                        <p class="card-text"><strong><%#Eval("precio") %>€</strong></p>
+                                    </div>
+                            </div>
                         </ItemTemplate>
                     </asp:DataList>
                 </section>
                 <section id="sec2">
                     <br />
                     <h2>MEJOR VALORADOS</h2>
-                    <asp:DataList ID="gv3" runat="server" RepeatColumns="3" CellPadding="2" Width="100%" ItemStyle-HorizontalAlign="Center">
+                    <asp:DataList ID="gv3" runat="server" RepeatColumns="3" RepeatDirection="Horizontal" CellPadding="2" Width="100%" ItemStyle-HorizontalAlign="Center">
                         <ItemTemplate>
-                            <table>
-                                <tr>
-                                    <td><asp:ImageButton runat="server" CommandArgument='<%#Eval("id_producto") %>' OnCommand="click_productos" style="height: 200px; width: 200px;" ImageUrl='<%# Eval("imagen") %>' /></td>
-                                </tr>
-                                <tr>
-                                    <td><p style="text-align:center; font-family: Lucida Console, Courier New, monospace;"><%#Eval("nombre") %></p></td>
-                                </tr>
-                                <tr>
-                                    <td><p style="text-align:center; font-family: Lucida Console, Courier New, monospace;"><%#Eval("precio") %>€</p></td>
-                                </tr>
-                            </table>
+                            <div class="card btn-outline-dark" style="width: 18rem;">
+                                <asp:ImageButton CssClass="card-img-top w-100" runat="server" CommandArgument='<%#Eval("id_producto") %>' OnCommand="click_productos" style="height: 200px; width: 200px;" ImageUrl='<%# Eval("imagen") %>' />
+                                    <div class="card-body">
+                                     <h5 class="card-title"><%#Eval("nombre") %></h5>
+                                        <p class="card-text"><strong><%#Eval("precio") %>€</strong></p>
+                                    </div>
+                            </div>
                         </ItemTemplate>
                     </asp:DataList>
                 </section>
                 <section id="sec3">
                     <br />
                     <h2>RECOMENDADOS</h2>
-                    <asp:DataList ID="gv2" runat="server" RepeatColumns="3" CellPadding="2" Width="100%" ItemStyle-HorizontalAlign="Center">
+                    <asp:DataList ID="gv2" runat="server" RepeatColumns="3" RepeatDirection="Horizontal" CellPadding="2" Width="100%" ItemStyle-HorizontalAlign="Center">
                         <ItemTemplate>
-                            <table>
-                                <tr>
-                                    <td class="bg-image hover-zoom"><asp:ImageButton runat="server" CommandArgument='<%#Eval("id_producto") %>' OnCommand="click_productos" style="height: 200px; width: 200px;" ImageUrl='<%# Eval("imagen") %>' /></td>
-                                </tr>
-                                <tr>
-                                    <td><p style="text-align:center; font-family: Lucida Console, Courier New, monospace;"><%#Eval("nombre") %></p></td>
-                                </tr>
-                                <tr>
-                                    <td><p style="text-align:center; font-family: Lucida Console, Courier New, monospace;"><%#Eval("precio") %>€</p></td>
-                                </tr>
-                            </table>
+                            <div class="card btn-outline-dark" style="width: 18rem;">
+                                <asp:ImageButton CssClass="card-img-top w-100" runat="server" CommandArgument='<%#Eval("id_producto") %>' OnCommand="click_productos" style="height: 200px; width: 200px;" ImageUrl='<%# Eval("imagen") %>' />
+                                    <div class="card-body">
+                                     <h5 class="card-title"><%#Eval("nombre") %></h5>
+                                        <p class="card-text"><strong><%#Eval("precio") %>€</strong></p>
+                                    </div>
+                            </div>
                         </ItemTemplate>
                     </asp:DataList>
                 </section>

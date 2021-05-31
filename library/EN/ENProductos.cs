@@ -1,12 +1,11 @@
 ﻿using System;
-using library.CAD;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 
-namespace library.EN
+namespace library
 
 {
     public class ENProductos
@@ -160,6 +159,12 @@ namespace library.EN
         {
             CADProductos p = new CADProductos();
             return p.getBetterReviewed();
+        }
+
+        public DataTable getProductTypeX(string categoria)
+        {
+            CADProductos p = new CADProductos();
+            return p.getProductTypeX(categoria);
         }
 
     }

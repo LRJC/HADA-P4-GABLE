@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using library.CAD;
 
-namespace library.EN
+namespace library
 {
 	public class ENDirEnvio
 	{ 	
@@ -49,7 +48,7 @@ namespace library.EN
 
 		public ENDirEnvio(ENUsuario usu, ENLocalidad loc, string calle)
         {
-			usuario = usu.nif;
+			usuario = usu.dni;
 			provincia = loc.provincia;
 			pueblo = loc.pueblo;
 			this.calle = calle;

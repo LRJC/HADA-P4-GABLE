@@ -5,9 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-using library.EN;
 
-namespace library.CAD
+namespace library
 {
 	public class CADDirEnvio
 	{
