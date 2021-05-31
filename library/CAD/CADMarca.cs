@@ -31,7 +31,6 @@ namespace library.CAD
                     {
                         en.nombre = data["nombre"].ToString();
                         en.origen = data["origen"].ToString();
-                        en.imagen = data["logo"].ToString();
                         devolver = true;
                         break;
                     }
@@ -65,7 +64,7 @@ namespace library.CAD
         {
             using (SqlConnection c = new SqlConnection(dbd))
             {
-                using (SqlCommand comando = new SqlCommand("Insert into marca(nombre, origen, logo) values('" + en.nombre + "', '" + en.origen + "', '" + en.imagen + "')", c))
+                using (SqlCommand comando = new SqlCommand("Insert into marca(nombre, origen) values('" + en.nombre + "', '" + en.origen + "')", c))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(comando))
                     {
@@ -91,7 +90,7 @@ namespace library.CAD
             try
             {
                 c.Open();
-                SqlCommand comando = new SqlCommand("update marca set origen='"+en.origen+"' , logo='"+en.imagen+"' where nombre='"+en.nombre+"'");
+                SqlCommand comando = new SqlCommand("update marca set origen='"+en.origen+"' where nombre='"+en.nombre+"'");
                 comando.ExecuteNonQuery();
                 return true;
             }

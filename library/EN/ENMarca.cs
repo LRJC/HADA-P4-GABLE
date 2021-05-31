@@ -11,20 +11,18 @@ namespace library.EN
     {
         private string _nombre;
         private string _origen;
-        private string _url;
+        
 
-        public ENMarca(string nombre, string origen, string imagen)
+        public ENMarca(string nombre, string origen)
         {
             this.nombre = nombre;
             this.origen = origen;
-            this.imagen = imagen;
         }
 
         public ENMarca()
         {
             this.nombre = "";
             this.origen = "";
-            this.imagen = "";
         }
 
         public string nombre
@@ -39,13 +37,6 @@ namespace library.EN
             get { return _origen; }
 
             set { _origen = value; }
-        }
-
-        public string imagen
-        {
-            get { return _url; }
-
-            set { _url = value; }
         }
 
         public bool readMarca()
