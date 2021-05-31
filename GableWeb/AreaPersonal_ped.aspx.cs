@@ -25,7 +25,7 @@ namespace GableWeb
         protected void setClientArea(string dni)
         {
             ENUsuario usu = new ENUsuario();
-            usu.nif = dni;
+            usu.dni = dni;
             if (!usu.readUsuario())//no existe el usuario de la sesión actual
             {
                 Session.RemoveAll();
@@ -35,7 +35,7 @@ namespace GableWeb
             else
             {
                 lab_NombreApellidos_AreaPersonal.Text = usu.nombre.ToString() + " " + usu.apellidos.ToString();
-                lab_Dni_AreaPersonal.Text = usu.nif.ToString();
+                lab_Dni_AreaPersonal.Text = usu.dni.ToString();
                 lab_Correo_AreaPersonal.Text = usu.email.ToString();
             }
         }

@@ -25,7 +25,7 @@ namespace GableWeb
         protected void setClientArea(string dni)
         {
             ENUsuario usu = new ENUsuario();
-            usu.nif = dni;
+            usu.dni = dni;
             if (!usu.readUsuario())//no existe el usuario de la sesión actual
             {
                 Session.RemoveAll();
@@ -35,7 +35,7 @@ namespace GableWeb
             else
             {
                 lab_NombreApellidos_AreaPersonal_mod.Text = usu.nombre.ToString() + " " + usu.apellidos.ToString();
-                lab_Dni_AreaPersonal_mod.Text = usu.nif.ToString();
+                lab_Dni_AreaPersonal_mod.Text = usu.dni.ToString();
                 lab_Correo_AreaPersonal_mod.Text = usu.email.ToString();
                 if(usu.numTarjeta.ToString() != "")
                 {
@@ -53,7 +53,7 @@ namespace GableWeb
             if (Page.IsValid)//maybe solo checkear los campos de contra
             {
                 ENUsuario usu = new ENUsuario();
-                usu.nif = Session["dni"].ToString();
+                usu.dni = Session["dni"].ToString();
                 usu.readUsuario();
                 usu.contraseña = newPasswd.Text;
                 usu.updateUsuario();
@@ -65,7 +65,7 @@ namespace GableWeb
         protected void ButtonCambiarDatosPersonales_Click(object sender, EventArgs e)
         {
             ENUsuario usu = new ENUsuario();
-            usu.nif = Session["dni"].ToString();
+            usu.dni = Session["dni"].ToString();
             usu.readUsuario();
 
             if(TextBoxModEmail.Text.ToString() != "")
