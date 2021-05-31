@@ -49,7 +49,7 @@ namespace library.EN
 
 		public ENDirEnvio(ENUsuario usu, ENLocalidad loc, string calle)
         {
-			usuario = usu.nif;
+			usuario = usu.dni;
 			provincia = loc.provincia;
 			pueblo = loc.pueblo;
 			this.calle = calle;
