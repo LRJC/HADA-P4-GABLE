@@ -76,6 +76,14 @@
     </Content>
     <Content Include="index.aspx" />
     <Content Include="Resultado_busqueda.aspx" />
+    <Content Include="src_\basket.png" />
+    <Content Include="src_\gable-logo.png" />
+    <Content Include="src_\hamburguer.png" />
+    <Content Include="src_\header_wood.png" />
+    <Content Include="src_\iniciar sesion o registrarse.png" />
+    <Content Include="src_\items.png" />
+    <Content Include="src_\krro.png" />
+    <Content Include="src_\old_gable-logo.png" />
     <Content Include="styles\index.css" />
     <Content Include="Productos.aspx" />
     <Content Include="styles\Productos.css" />
@@ -168,6 +176,8 @@
   <ItemGroup>
     <Content Include="Gable.Master" />
     <None Include="packages.config" />
+    <Content Include="src_\design.psd" />
+    <Content Include="src_\menu.psd" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
