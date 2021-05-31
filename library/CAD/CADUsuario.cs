@@ -20,31 +20,41 @@ namespace library.CAD
 
         public bool readUsuario(ENUsuario en)
         {
-            bool devolver = false;
+            bool devolver=false;
             using (SqlConnection c = new SqlConnection(dbd))
             {
-                c.Open();
-                String s = "Select * from usuario";
-                SqlCommand comando = new SqlCommand(s, c);
-                SqlDataReader data = comando.ExecuteReader();
-                while (data.Read())
+                try
                 {
-                    if (data["dni"].ToString() == en.nif)
+                    c.Open();
+                    String s = "Select * from usuario";
+                    SqlCommand comando = new SqlCommand(s, c);
+                    SqlDataReader data = comando.ExecuteReader();
+                    while (data.Read())
                     {
-                        en.nombre = data["nombre"].ToString();
-                        en.apellidos = data["apellidos"].ToString();
-                        en.nif = data["dni"].ToString();
-                        en.email = data["email"].ToString();
-                        en.numTarjeta = int.Parse(data["tarjeta"].ToString());
-                        en.cvv = int.Parse(data["cvv_tarjeta"].ToString());
-                        en.tlf = int.Parse(data["telefono"].ToString());
-                        en.expTarjeta = data["fecha_exp_tarjeta"].ToString();
-                        en.fechanac = data["nacido"].ToString();//comprobar
-                        devolver = true;
-                        break;
+                        if (data["dni"].ToString() == en.dni)
+                        {
+                            en.nombre = data["nombre"].ToString();
+                            en.apellidos = data["apellidos"].ToString();
+                            en.dni = data["dni"].ToString();
+                            en.email = data["email"].ToString();
+                            en.numTarjeta = int.Parse(data["tarjeta"].ToString());
+                            en.cvv = int.Parse(data["cvv_tarjeta"].ToString());
+                            en.tlf = int.Parse(data["telefono"].ToString());
+                            en.expTarjeta = data["fecha_exp_tarjeta"].ToString();
+                            en.fechanac = data["nacido"].ToString();//comprobar
+                            devolver = true;
+                            break;
+                        }
                     }
                 }
-                data.Close();
+                catch (Exception e)
+                {
+                    Console.WriteLine("EXCEPCION");
+                    devolver = false;
+                }
+                finally {
+                    c.Close();
+                }
             }
             return devolver;
         }
@@ -56,7 +66,7 @@ namespace library.CAD
             {
                 c.Open();
                 SqlCommand comando;
-                comando = new SqlCommand("Delete from usuario where dni='" + en.nif + "'", c);
+                comando = new SqlCommand("Delete from usuario where dni='" + en.dni + "'", c);
                 comando.ExecuteNonQuery();
                 return true;
             }
@@ -74,7 +84,7 @@ namespace library.CAD
         {
             using (SqlConnection c = new SqlConnection(dbd))
             {
-                using (SqlCommand comando = new SqlCommand("Insert into usuario(dni, nombre, apellidos, email, telefono, cvv_tarjeta, fecha_exp_tarjeta, nacido, tarjeta) values('" + en.nif + "', '" + en.nombre + "', '" + en.apellidos + "', '" + en.email + "', " + en.tlf + ", " + en.cvv + ", '" + en.expTarjeta + "', '" + en.fechanac + "', " + en.numTarjeta + ")", c))
+                using (SqlCommand comando = new SqlCommand("Insert into usuario(dni, nombre, apellidos, email, telefono, cvv_tarjeta, fecha_exp_tarjeta, nacido, tarjeta) values('" + en.dni + "', '" + en.nombre + "', '" + en.apellidos + "', '" + en.email + "', " + en.tlf + ", " + en.cvv + ", '" + en.expTarjeta + "', '" + en.fechanac + "', " + en.numTarjeta + ")", c))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(comando))
                     {
@@ -98,7 +108,7 @@ namespace library.CAD
         {
             using (SqlConnection c = new SqlConnection(dbd))
             {
-                using (SqlCommand comando = new SqlCommand("Update marca set contraseña='" + en.contraseña + "', email='" + en.email + "cvv_tarjeta = '" + en.cvv + "' , tlf = '" + en.tlf + "' where dni='" + en.nif + "'"))
+                using (SqlCommand comando = new SqlCommand("Update usuario set contraseña='" + en.contraseña + "', email='" + en.email + "cvv_tarjeta = '" + en.cvv + "' , tlf = '" + en.tlf + "' where dni='" + en.dni + "'"))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(comando))
                     {
@@ -116,31 +126,6 @@ namespace library.CAD
                     }
                 }
             }
-        }
-
-
-        public bool loginUsuario(ENUsuario en)
-        {
-            //implementación(validación de contraseña y usuario, ...)
-            return true;
-        }
-
-        public bool logoutUsuario(ENUsuario en)//revisar
-        {
-            //implementación
-            return true;
-        }
-
-        public bool subirProducto(ENUsuario en)//revisar
-        {
-            //implementación
-            return true;
-        }
-
-        public bool deleteProducto(ENUsuario en)//revisar
-        {
-            //implementación
-            return true;
         }
     }
 }

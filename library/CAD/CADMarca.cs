@@ -19,24 +19,36 @@ namespace library.CAD
         }
         public bool readMarca(ENMarca en)
         {
-            bool devolver = false;
+            bool devolver=false;
             using (SqlConnection c = new SqlConnection(dbd)) {
-                c.Open();
                 String s = "Select * from marca";
                 SqlCommand comando = new SqlCommand(s, c);
-                SqlDataReader data = comando.ExecuteReader();
-                while (data.Read())
+                SqlDataReader data;
+                try
                 {
-                    if (data["nombre"].ToString() == en.nombre)
+                    c.Open();
+                    data = comando.ExecuteReader();
+                    while (data.Read())
                     {
-                        en.nombre = data["nombre"].ToString();
-                        en.origen = data["origen"].ToString();
-                        en.imagen = data["logo"].ToString();
-                        devolver = true;
-                        break;
+                        if (data["nombre"].ToString() == en.nombre)
+                        {
+                            en.nombre = data["nombre"].ToString();
+                            en.origen = data["origen"].ToString();
+                            en.imagen = data["logo"].ToString();
+                            devolver = true;
+                            break;
+                        }
                     }
                 }
-                data.Close();
+                catch (Exception e)
+                {
+                    Console.WriteLine("EXCEPCIÓN");
+                    devolver = false;
+                }
+                finally
+                {
+                    c.Close();
+                }
             }
             return devolver;
         }
