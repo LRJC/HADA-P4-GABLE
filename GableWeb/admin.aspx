@@ -11,28 +11,75 @@
                     <div class="row mt-xs-2 mt-md-5">
                         <div class="col-12">
                             <div class="row-10 my-2 border-bottom">
-                                        <h4><asp:Label ID="CambiarContra" runat="server" Text="Gestionar marcas"></asp:Label></h4>
+                                 <h4><asp:Label ID="GestionMarcas" runat="server" Text="Gestionar marcas"></asp:Label></h4>
                             </div>
-                            <div class="row my-2 mx-0 justify-content-center">
+                            <div class="row my-2 mx-0 justify-content-center mb-5">
                                 <div class="col-4">
                                     <div class="row my-2 mx-0">
-                                        <asp:TextBox ID="TextBox1" runat="server" MaxLength="16" placeholder="Nombre" TextMode="Password" Columns="30"></asp:TextBox>
+                                        <asp:TextBox ID="TextBox1" runat="server" MaxLength="16" placeholder="Nombre" Columns="30"></asp:TextBox>
                                     </div>
                                     <div class="row my-2 mx-0">
-                                        <asp:TextBox ID="TextBox2" runat="server" MaxLength="16" placeholder="Origen" TextMode="Password" Columns="30"></asp:TextBox>
-                                    </div>
-                                    <div class="row my-2 mx-0">
-                                        <asp:TextBox ID="TextBox3" runat="server" MaxLength="16" placeholder="URL logo" TextMode="Password" Columns="30"></asp:TextBox>
+                                        <asp:TextBox ID="TextBox2" runat="server" MaxLength="16" placeholder="Origen" Columns="30"></asp:TextBox>
                                     </div>
                                     <div class="row">
                                         <div class="col-4 px-1 mx-0">
-                                            <asp:Button ID="ButtonCambiarDatosPersonales" runat="server" Text="Crear" />
+                                            <asp:Button ID="ButtonCambiarDatosPersonales" CssClass="btn-warning rounded" runat="server" Text="Crear" />
                                         </div>
                                         <div class="col-4 px-1 mx-0">
-                                            <asp:Button ID="Button1" runat="server" Text="Eliminar" />
+                                            <asp:Button ID="Button1" CssClass="btn-warning rounded" runat="server" Text="Eliminar" />
                                         </div>
                                         <div class="col-4 px-1 mx-0">
-                                            <asp:Button ID="Button2" runat="server" Text="Modificar" />
+                                            <asp:Button ID="Button2" CssClass="btn-warning rounded" runat="server" Text="Modificar" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-10 my-2 border-bottom">
+                                 <h4><asp:Label ID="ElimUsu" runat="server" Text="Eliminar Usuarios"></asp:Label></h4>
+                            </div>
+                            <div class="row my-2 mx-0 justify-content-center mb-5">
+                                <div class="col-4">
+                                    <div class="row my-2 mx-0">
+                                        <asp:TextBox ID="TextBox4" runat="server" MaxLength="16" placeholder="DNI" Columns="30"></asp:TextBox>
+                                    </div>
+                                    <asp:Button ID="Button3" CssClass="btn-warning rounded" runat="server" Text="Eliminar" />
+                                </div>
+                            </div>
+                            <div class="row-10 my-2 border-bottom">
+                                 <h4><asp:Label ID="GestionProd" runat="server" Text="Gestionar Productos"></asp:Label></h4>
+                            </div>
+                            <div class="row my-2 mx-0 justify-content-center mb-5">
+                                <div class="col-4">
+                                    <div class="row my-2 mx-0">
+                                        <asp:TextBox ID="IDProd" runat="server" MaxLength="16" placeholder="ID Producto" Columns="30"></asp:TextBox>
+                                    </div>
+                                    <div class="row my-2 mx-0">
+                                        <asp:TextBox ID="NombreProd" runat="server" MaxLength="16" placeholder="Nombre" Columns="30"></asp:TextBox>
+                                    </div>
+                                    <div class="row my-2 mx-0">
+                                        <asp:TextBox ID="DescProd" runat="server" MaxLength="16" placeholder="Descripcion" Columns="30"></asp:TextBox>
+                                    </div>
+                                    <div class="row my-2 mx-0">
+                                        <asp:TextBox ID="PrecioProd" runat="server" MaxLength="16" placeholder="Precio" Columns="30"></asp:TextBox>
+                                    </div>
+                                    <div class="row my-2 mx-0">
+                                        <asp:TextBox ID="imagenProd" runat="server" MaxLength="16" placeholder="URL imagen" Columns="30"></asp:TextBox>
+                                    </div>
+                                    <div class="row my-2 mx-0">
+                                        <asp:TextBox ID="TipoProd" runat="server" MaxLength="16" placeholder="Tipo/Categoría" Columns="30"></asp:TextBox>
+                                    </div>
+                                    <div class="row my-2 mx-0">
+                                        <asp:TextBox ID="marcaProd" runat="server" MaxLength="16" placeholder="Marca" Columns="30"></asp:TextBox>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 px-1 mx-0">
+                                            <asp:Button ID="crearProd" CssClass="btn-warning rounded" runat="server" Text="Crear" />
+                                        </div>
+                                        <div class="col-4 px-1 mx-0">
+                                            <asp:Button ID="elimProd" CssClass="btn-warning rounded" runat="server" Text="Eliminar" />
+                                        </div>
+                                        <div class="col-4 px-1 mx-0">
+                                            <asp:Button ID="modProd" CssClass="btn-warning rounded" runat="server" Text="Modificar" />
                                         </div>
                                     </div>
                                 </div>
