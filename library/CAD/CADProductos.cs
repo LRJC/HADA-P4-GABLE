@@ -1,5 +1,4 @@
 ﻿using System;
-using library.EN;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +7,7 @@ using System.Data;
 using System.Configuration;
 using System.Threading.Tasks;
 
-namespace library.CAD
+namespace library
 {
     class CADProductos
     {

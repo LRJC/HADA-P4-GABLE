@@ -98,7 +98,7 @@
                                 </div>
                             </div>
                             <div class="row-2 mt-3 align-self-end">
-                                <asp:Button ID="ButtonCambiarInfoPagos" runat="server" Text="Guardar" OnClick="ButtonCambiarInfoPagos_Click" />
+                                <asp:Button ID="ButtonCambiarInfoPagos" runat="server" Text="Añadir tarjeta" OnClick="ButtonCambiarInfoPagos_Click" />
                             </div>
                         </div>
                     </div>

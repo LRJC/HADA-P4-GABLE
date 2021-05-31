@@ -5,9 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
 using System.Data.SqlClient;
-using library.EN;
 
-namespace library.CAD
+namespace library
 {
     class CADMarca
     {
