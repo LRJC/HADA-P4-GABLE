@@ -126,23 +126,23 @@ namespace GableWeb
                     switch (val)
                     {
                         case 1:
-                            a.estr_val = "src/Estrella/estrella1.png";
+                            a.estr_val = "'src_/estrella/estrella1.png";
                             break;
 
                         case 2:
-                            a.estr_val = "src/Estrella/estrella2.png";
+                            a.estr_val = "'src_/estrella/estrella2.png";
                             break;
 
                         case 3:
-                            a.estr_val = "src/Estrella/estrella3.png";
+                            a.estr_val = "'src_/estrella/estrella3.png";
                             break;
 
                         case 4:
-                            a.estr_val = "src/Estrella/estrella4.png";
+                            a.estr_val = "'src_/estrella/estrella4.png";
                             break;
 
                         case 5:
-                            a.estr_val = "src/Estrella/estrella5.png";
+                            a.estr_val = "'src_/estrella/estrella5.png";
                             break;
                     }
 
