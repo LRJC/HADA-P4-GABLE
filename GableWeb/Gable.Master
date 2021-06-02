@@ -21,11 +21,11 @@
 
                 <div class="container-fluid">
                     <div class="row align-items-center">
-                        <div class=" btn-group col-2 col-md-1 order-sm-0" style="text-align: center;">
+                        <div class="col-md-1 " style="margin-left:12px;">
                                                        
-                            <asp:Menu ID="Menu" runat="server" CssClass="menu" Orientation="Horizontal">
+                            <asp:Menu ID="Menu" runat="server" Orientation="Horizontal">
                                 <StaticMenuItemStyle CssClass="font-weight-bold text-white"/>
-                                <DynamicMenuItemStyle Font-Italic="true" CssClass="col-sm-12 pb-1 text-white border-bottom border-dark" BackColor="#bb5e00" />
+                                <DynamicMenuItemStyle Font-Italic="true" CssClass="pb-1 text-white border-bottom border-dark" Width="150px"  BackColor="#bb5e00" />
                                 <DynamicHoverStyle BackColor="black"/>
            
                                 <Items>
