@@ -48,7 +48,7 @@ namespace library
                 {
 
                     Console.WriteLine("Product operation has failed. Error:Cant found the id");
-                    throw new Exception("ERROR:El id del producto no ha sido encontrado");
+                    throw new Exception("ERROR:El id del producto no ha sido encontrado" + en.id_producto);
                 }
                 reader.Close();
 

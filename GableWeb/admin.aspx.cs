@@ -14,5 +14,12 @@ namespace GableWeb
         {
 
         }
+
+        protected void ButtonCambiarDatosPersonales_Click(object sender, EventArgs e)
+        {
+            ENMarca mar = new ENMarca(TextBox1.Text,TextBox2.Text);
+            mar.createMarca();
+
+        }
     }
 }

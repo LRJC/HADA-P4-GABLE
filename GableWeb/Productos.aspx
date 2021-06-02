@@ -75,12 +75,12 @@
                                     <div class="status-upload">
                                         <form>
                                            <textarea placeholder="Comenta" cols="45" rows="5" id="msg" runat="server" name="cajaComent"></textarea>
-                                            <!--<asp:TextBox ID="TextBox1" placeholder="Comenta" cols="75" runat="server"></asp:TextBox>-->
-                                             <input type="number" class="qty form-control"  id="botC" name="qty"  UseSubmitBehavior="false" runat="server"  min="1" max="5" value="1" />
-
-                                            <asp:Button ID="Button1" class="btn btn-success green" OnClick="comentario" runat="server" Text="Comentar" />
-                                            <!--<button type="submit" class="btn btn-success green" OnClick="comentario"><i class="fa fa-share"></i> Comentar</button>-->
+                                           
+                                             <input type="number" class="qty form-control"  id="botC" name="qty"  UseSubmitBehavior="false" runat="server"  min="1" max="5" value="1" />                 
+                                           
+                                           
                                         </form>
+                                         <asp:Button ID="Button1" class="btn btn-success green" OnClick="comentario" runat="server" Text="Comentar" />
                                     </div>
                                 </div>
                             </div>

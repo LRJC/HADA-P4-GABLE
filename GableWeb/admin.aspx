@@ -23,7 +23,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-4 px-1 mx-0">
-                                            <asp:Button ID="ButtonCambiarDatosPersonales" CssClass="btn-warning rounded" runat="server" Text="Crear" Columns="90" />
+                                            <asp:Button ID="ButtonCambiarDatosPersonales" CssClass="btn-warning rounded" runat="server" Text="Crear" Columns="90" OnClick="ButtonCambiarDatosPersonales_Click" />
                                         </div>
                                         <div class="col-4 px-1 mx-0">
                                             <asp:Button ID="Button1" CssClass="btn-warning rounded" runat="server" Text="Eliminar" Width="90" />
@@ -54,19 +54,19 @@
                                         <asp:TextBox ID="IDProd" runat="server" MaxLength="16" placeholder="ID Producto" Columns="35"></asp:TextBox>
                                     </div>
                                     <div class="row-12 my-2 mx-0">
-                                        <asp:TextBox ID="NombreProd" runat="server" MaxLength="16" placeholder="Nombre" Columns="35"></asp:TextBox>
+                                        <asp:TextBox ID="NombreProd" runat="server" MaxLength="50" placeholder="Nombre" Columns="35"></asp:TextBox>
                                     </div>
                                     <div class="row-12 my-2 mx-0">
-                                        <asp:TextBox ID="DescProd" runat="server" MaxLength="16" placeholder="Descripcion" Columns="35"></asp:TextBox>
+                                        <asp:TextBox ID="DescProd" runat="server" MaxLength="100" placeholder="Descripcion" Columns="35"></asp:TextBox>
                                     </div>
                                     <div class="row-12 my-2 mx-0">
                                         <asp:TextBox ID="PrecioProd" runat="server" MaxLength="16" placeholder="Precio" Columns="35"></asp:TextBox>
                                     </div>
                                     <div class="row-12 my-2 mx-0">
-                                        <asp:TextBox ID="imagenProd" runat="server" MaxLength="16" placeholder="URL imagen" Columns="35"></asp:TextBox>
+                                        <asp:TextBox ID="imagenProd" runat="server" MaxLength="50" placeholder="URL imagen" Columns="35"></asp:TextBox>
                                     </div>
                                     <div class="row-12 my-2 mx-0">
-                                        <asp:TextBox ID="TipoProd" runat="server" MaxLength="16" placeholder="Tipo/Categoría" Columns="35"></asp:TextBox>
+                                        <asp:TextBox ID="TipoProd" runat="server" MaxLength="50" placeholder="Tipo/Categoría" Columns="35"></asp:TextBox>
                                     </div>
                                     <div class="row-12 my-2 mx-0">
                                         <asp:TextBox ID="marcaProd" runat="server" MaxLength="16" placeholder="Marca" Columns="35"></asp:TextBox>

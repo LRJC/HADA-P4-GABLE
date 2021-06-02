@@ -20,7 +20,7 @@ namespace GableWeb
             nomProd = Request.QueryString["id_prod"];
             
             
-             id_prod = Convert.ToInt32(nomProd);
+            id_prod = Convert.ToInt32(nomProd);
             getProduct(id_prod);
             valo(id_prod);
         }
@@ -119,7 +119,7 @@ namespace GableWeb
                 {
                     a.producto_id = id_prod;
                     a.tex_val = msg.Value;
-                    int val = Convert.ToInt32(botC.Value);
+                    int val =Convert.ToInt32(botC.Value);
                     a.pun_val = val;
                     a.usuaro_id = User.Identity.Name;
 
