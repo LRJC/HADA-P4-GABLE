@@ -103,5 +103,22 @@ namespace GableWeb
         {
             Response.Redirect("DatosCompra.aspx");
         }
+
+        protected void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Session.RemoveAll();
+            Session.Abandon();
+            Response.Redirect("index.aspx");
+        }
+
+        protected void btnDeleteAccount_Click(object sender, EventArgs e)
+        {
+            ENUsuario usu = new ENUsuario();
+            usu.dni = Session["dni"].ToString();
+            usu.deleteUsuario();
+            Session.RemoveAll();
+            Session.Abandon();
+            Response.Redirect("index.aspx");
+        }
     }
 }
