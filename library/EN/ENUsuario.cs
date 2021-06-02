@@ -145,16 +145,24 @@ namespace library
             return devolver;
         }
 
+        /* public bool deleteUsuario()
+         {
+             bool devolver = false;
+             CADUsuario c = new CADUsuario();
+             if (c.readUsuario(this))
+             {
+                 devolver = c.deleteUsuario(this);
+             }
+             return devolver;
+         }*/
+
         public bool deleteUsuario()
         {
-            bool devolver = false;
-            CADUsuario c = new CADUsuario();
-            if (c.readUsuario(this))
-            {
-                devolver = c.deleteUsuario(this);
-            }
-            return devolver;
+            CADUsuario us = new CADUsuario();
+            return us.deleteUsuario(this);
+           
         }
+
 
         public bool updateUsuario()
         {

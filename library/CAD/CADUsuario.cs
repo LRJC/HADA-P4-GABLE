@@ -75,7 +75,7 @@ namespace library
             {
                 c.Open();
                 SqlCommand comando;
-                comando = new SqlCommand("Delete from usuario where dni='" + en.dni + "'", c);
+                comando = new SqlCommand("Delete usuario where dni='" + en.dni + "'", c);
                 comando.ExecuteNonQuery();
                 return true;
             }
