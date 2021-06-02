@@ -11,7 +11,10 @@ namespace GableWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(Session["LoggedIn"] != null)
+            {
+                init_sesion.Text ="Cuenta Usuario";
+            }
         }
 
         protected void btnCesta_Click(object sender, EventArgs e)
@@ -26,7 +29,12 @@ namespace GableWeb
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Login.aspx");
+            if(Session["LoggedIn"] == null) { 
+                Response.Redirect("Login.aspx");
+            } else
+            {
+                Response.Redirect("AreaPersonal_ped.aspx");
+            }
 
         }
         
