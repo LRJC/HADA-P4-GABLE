@@ -29,7 +29,7 @@
                                 <DynamicHoverStyle BackColor="black"/>
            
                                 <Items>
-                                    <asp:MenuItem ImageUrl="src/hamburguer.png">
+                                    <asp:MenuItem ImageUrl="src_/hamburguer.png">
                                         <asp:MenuItem Text ="Inicio" NavigateUrl="Index.aspx"></asp:MenuItem>
                                         <asp:MenuItem Text ="Mejor Valorados" NavigateUrl="#"></asp:MenuItem>
                                         <asp:MenuItem Text ="Más Valorados" NavigateUrl="#"></asp:MenuItem>
@@ -47,16 +47,18 @@
                         <div class="col-8 col-md-3 order-1 pb-2" style="text-align: center;">
                             <asp:ImageButton ID="gable_logo" ImageUrl="src/gable-logo.png" OnClick="btnGableLogo_Click" Height="60" runat="server"/>
                         </div>
-                        <asp:TextBox ID="searcher" runat="server" CssClass="col-8 col-md-4 order-3 order-md-2 my-3 my-md-0" align="left" placeholder="Busca entre nuestros juegos..." />
+
+                        <asp:TextBox ID="searcher" runat="server" CssClass="col-8 col-md-4 order-3 order-md-2 my-2 my-md-0" align="left" placeholder="Busca entre nuestros juegos..." />
+                        <asp:ImageButton ID="button_search" runat="server" CssClass="order-3" ImageUrl="src/lupa_searcher.png"  Width="28px" ImageAlign="Middle"/>
+
                         <div class ="col-12 col-md-2 order-4 order-md-3 pb-3 pb-md-0" style="text-align: center;">
-                        <asp:LinkButton ID="init_sesion" runat="server" CssClass="font-weight-bold text-white" Text ="Iniciar Sesión" align="center" OnClick="btnLogin_Click" />
-
-                       
-
+                            <asp:LinkButton ID="init_sesion" runat="server" CssClass="font-weight-bold text-white" Text ="Iniciar Sesión" align="center" OnClick="btnLogin_Click" />
                         </div>
+
                         <div class="col-2 col-md-1 order-2 order-md-4"  style="text-align: center;">
                             <asp:ImageButton ID="basket_icon" ImageUrl="src/basket.png" OnClick="btnCesta_Click" Height="36" runat="server" />
                         </div>
+
                     </div>
                 </div>
             </div>
