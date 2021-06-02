@@ -82,7 +82,7 @@ namespace library
             }
         }
 
-        public bool modifyMarca(ENMarca en)
+        public bool modifyMarca(ENMarca en, string nombrenuevo)
         {
             bool devolver;
             SqlConnection con = new SqlConnection(dbd);
@@ -90,7 +90,7 @@ namespace library
             try
             {
                 con.Open();
-                SqlCommand comando = new SqlCommand("Update marca set origen='" + en.origen + "' where nombre='" + en.nombre + "'", con);
+                SqlCommand comando = new SqlCommand("Update marca set origen='" + en.origen + "', nombre='" + nombrenuevo +  "' where nombre='" + en.nombre + "'", con);
                 comando.ExecuteNonQuery();
                 devolver = true;
             }

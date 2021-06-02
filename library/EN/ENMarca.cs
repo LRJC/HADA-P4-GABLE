@@ -66,10 +66,10 @@ namespace library
             return retornar;
         }
 
-        public bool modifyMarca()
+        public bool modifyMarca(string nombrenuevo)
         {
             CADMarca m = new CADMarca();
-            return m.modifyMarca(this);
+            return m.modifyMarca(this, nombrenuevo);
         }
 
     }
