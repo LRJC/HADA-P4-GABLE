@@ -30,6 +30,12 @@
                             <asp:Image ID="modDataImg_mod" runat="server" />  Editar datos de la cuenta
                         </asp:LinkButton>
                     </div>
+                    <div class="row">
+                        <asp:Button ID="btnLogOut" runat="server" Text="Cerrar Sesión" OnClick="btnLogOut_Click" BorderStyle="None" BackColor="White" />
+                    </div>
+                    <div class="row">
+                        <asp:Button ID="btnDeleteAccount" runat="server" style="color:red" Text="Eliminar cuenta" BorderStyle="None" OnClick="btnDeleteAccount_Click" BackColor="White" />
+                    </div>
                 </div>
             </div>
         </div>

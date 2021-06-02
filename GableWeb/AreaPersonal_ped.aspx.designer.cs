@@ -87,6 +87,24 @@ namespace GableWeb
         protected global::System.Web.UI.WebControls.Image Image1;
 
         /// <summary>
+        /// Control btnLogOut_ped.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLogOut_ped;
+
+        /// <summary>
+        /// Control btnDeleteAccount_ped.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDeleteAccount_ped;
+
+        /// <summary>
         /// Control prod1.
         /// </summary>
         /// <remarks>

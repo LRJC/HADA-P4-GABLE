@@ -30,6 +30,12 @@
                             <asp:Image ID="Image1" runat="server" />  Editar datos de la cuenta
                         </asp:LinkButton>
                     </div>
+                    <div class="row">
+                        <asp:Button ID="btnLogOut_ped" runat="server" Text="Cerrar Sesión" OnClick="btnLogOut_Click" BorderStyle="None" BackColor="White" />
+                    </div>
+                    <div class="row">
+                        <asp:Button ID="btnDeleteAccount_ped" runat="server" style="color:red" Text="Eliminar cuenta" BorderStyle="None" OnClick="btnDeleteAccount_Click" BackColor="White" />
+                    </div>
                 </div>
             </div>
         </div>
