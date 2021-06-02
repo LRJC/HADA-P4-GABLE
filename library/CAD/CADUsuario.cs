@@ -36,11 +36,21 @@ namespace library
                             en.apellidos = data["apellidos"].ToString();
                             en.dni = data["dni"].ToString();
                             en.email = data["email"].ToString();
-                            en.numTarjeta = int.Parse(data["tarjeta"].ToString());
-                            en.cvv = int.Parse(data["cvv_tarjeta"].ToString());
-                            en.tlf = int.Parse(data["telefono"].ToString());
-                            en.expTarjeta = data["fecha_exp_tarjeta"].ToString();
-                            en.fechanac = data["nacido"].ToString();//comprobar
+                            if (data["tarjeta"]!=null) {
+                                en.numTarjeta = int.Parse(data["tarjeta"].ToString());
+                            }
+                            if (data["cvv_tarjeta"] != null) {
+                                en.cvv = int.Parse(data["cvv_tarjeta"].ToString());
+                            }
+                            if (data["telefono"] != null) {
+                                en.tlf = int.Parse(data["telefono"].ToString());
+                            }
+                            if (data["fecha_exp_tarjeta"] != null) {
+                                en.expTarjeta = data["fecha_exp_tarjeta"].ToString();
+                            }
+                            if (data["nacido"] != null) {
+                                en.fechanac = data["nacido"].ToString();//comprobar
+                            }
                             devolver = true;
                             break;
                         }
