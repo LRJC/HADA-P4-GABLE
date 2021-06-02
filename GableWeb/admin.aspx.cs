@@ -64,7 +64,7 @@ namespace GableWeb
             {
 
                 ENUsuario esu = new ENUsuario();
-                esu.dni = TextBox4.Text;
+                esu.dni =Convert.ToString(  TextBox4.Text);
                 esu.deleteUsuario();
             }
             catch (Exception ex)
