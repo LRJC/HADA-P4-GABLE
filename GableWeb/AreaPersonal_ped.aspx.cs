@@ -12,14 +12,22 @@ namespace GableWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["dni"] == null)
+            if (!IsPostBack)
             {
-                Response.Redirect("Login.aspx");
+                fakeId();
+                //Session["dni"] = "45678923p";
+                if (Session["dni"] != null)
+                {
+                    setClientArea(Session["dni"].ToString());
+                }
+                else
+                {
+                    Response.Redirect("Login.aspx");
+                }
+
+
             }
-            else
-            {
-                setClientArea(Session["dni"].ToString());
-            }
+            //fakeId();
         }
 
         protected void setClientArea(string dni)
@@ -38,6 +46,13 @@ namespace GableWeb
                 lab_Dni_AreaPersonal.Text = usu.dni.ToString();
                 lab_Correo_AreaPersonal.Text = usu.email.ToString();
             }
+        }
+
+        protected void fakeId()
+        {
+            Session.Add("dni", "45678923p");
+            //Session["dni"] = "45678923p";
+            
         }
     }
 }
