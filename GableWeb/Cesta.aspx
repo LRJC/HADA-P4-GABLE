@@ -7,6 +7,15 @@
         <div class="row">
             <div class="col-0 col-md-1" style="background-color:#e0e0e0!important"></div>
             <div class="col-12 col-md-10" style="background-color:white; border-left: 1px solid #75777d!important; border-right: 1px solid #75777d!important;">
+                <asp:PlaceHolder ID="AddItemToBasket" runat="server" Visible="false">
+                    <div class="container-fluid px-5 py-5" style="min-height: 80vh!important;">
+                            <div class="row">
+                                <div class="col-12 col-lg-8 px-0 px-lg-2 text-center">
+                                    ¡Añade algún producto a la cesta!
+                                </div>
+                            </div>
+                    </div>
+                </asp:PlaceHolder>
                 <asp:Repeater ID="itemsCesta" runat="server">
                     <HeaderTemplate>
                         <div class="container-fluid px-5 py-5" style="min-height: 80vh!important;">

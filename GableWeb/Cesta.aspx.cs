@@ -30,6 +30,10 @@ namespace GableWeb
             itemsCesta.DataBind();
             double finalPrice = linCestData.Select().Sum(p => Convert.ToDouble(p["total"]));
             (itemsCesta.Controls[itemsCesta.Controls.Count - 1].Controls[0].FindControl("totalPrice") as Label).Text = finalPrice.ToString() + "€";
+            
+            bool thereAreItems = linCestData.Rows.Count > 0;
+            itemsCesta.Visible = thereAreItems;
+            AddItemToBasket.Visible = !thereAreItems;
         }
 
         protected void ItemQuery(object sender, CommandEventArgs e)
