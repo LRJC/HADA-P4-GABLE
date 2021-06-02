@@ -49,7 +49,7 @@
                         </div>
 
                         <asp:TextBox ID="searcher" runat="server" CssClass="col-8 col-md-4 order-3 order-md-2 my-2 my-md-0" align="left" placeholder="Busca entre nuestros juegos..." />
-                        <asp:ImageButton ID="button_search" runat="server" CssClass="order-3" ImageUrl="src/lupa_searcher.png"  Width="28px" ImageAlign="Middle"/>
+                        <asp:ImageButton ID="button_search" runat="server" CssClass="order-3" ImageUrl="src/lupa_searcher.png"  Width="28px" ImageAlign="Middle" OnClick="lupita"/>
 
                         <div class ="col-12 col-md-2 order-4 order-md-3 pb-3 pb-md-0" style="text-align: center;">
                             <asp:LinkButton ID="init_sesion" runat="server" CssClass="font-weight-bold text-white" Text ="Iniciar Sesión" align="center" OnClick="btnLogin_Click" />

@@ -37,6 +37,11 @@ namespace GableWeb
             }
 
         }
+
+        protected void lupita(object sender, EventArgs e)
+        {
+            Response.Redirect("Resultado_busqueda.aspx?cat_prod="+ searcher.Text);
+        }
         
     }
 }
