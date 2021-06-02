@@ -26,10 +26,10 @@
                                             <asp:Button ID="ButtonCambiarDatosPersonales" CssClass="btn-warning rounded" runat="server" Text="Crear" Columns="90" OnClick="ButtonCambiarDatosPersonales_Click" />
                                         </div>
                                         <div class="col-4 px-1 mx-0">
-                                            <asp:Button ID="Button1" CssClass="btn-warning rounded" runat="server" Text="Eliminar" Width="90" />
+                                            <asp:Button ID="Button1" CssClass="btn-warning rounded" runat="server" Text="Eliminar" Width="90" OnClick="Button1_Click" />
                                         </div>
                                         <div class="col-4 px-1 mx-0">
-                                            <asp:Button ID="Button2" CssClass="btn-warning rounded" runat="server" Text="Modificar" Width="90" />
+                                            <asp:Button ID="Button2" CssClass="btn-warning rounded" runat="server" Text="Modificar" Width="90" OnClick="Button2_Click" />
                                         </div>
                                     </div>
                                 </div>
@@ -42,7 +42,7 @@
                                     <div class="row-12 my-2 mx-0">
                                         <asp:TextBox ID="TextBox4" runat="server" MaxLength="16" placeholder="DNI" Columns="35"></asp:TextBox>
                                     </div>
-                                    <asp:Button ID="Button3" CssClass="btn-warning rounded" runat="server" Text="Eliminar" Width="90" />
+                                    <asp:Button ID="Button3" CssClass="btn-warning rounded" runat="server" Text="Eliminar" Width="90" OnClick="Button3_Click" />
                                 </div>
                             </div>
                             <div class="row-10 my-2 border-bottom">
@@ -73,7 +73,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-4 px-1 mx-0">
-                                            <asp:Button ID="crearProd" CssClass="btn-warning rounded" runat="server" Text="Crear" Width="90"/>
+                                            <asp:Button ID="crearProd" CssClass="btn-warning rounded" runat="server" Text="Crear" Width="90" OnClick="crearProd_Click"/>
                                         </div>
                                         <div class="col-4 px-1 mx-0">
                                             <asp:Button ID="elimProd" CssClass="btn-warning rounded" runat="server" Text="Eliminar" Width="90" />
