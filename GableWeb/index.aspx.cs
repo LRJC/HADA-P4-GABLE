@@ -15,6 +15,9 @@ namespace GableWeb
     {   
         protected void Page_Load(object sender, EventArgs e)
         {
+            ENMarca en = new ENMarca();
+            en.nombre = "marca1";
+            en.deleteMarca();
             if (!this.IsPostBack)
             {
                 this.getMostSold2();

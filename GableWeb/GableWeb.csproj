@@ -68,12 +68,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin.aspx" />
-    <Content Include="AreaPersonal_modData.aspx" />
-    <Content Include="AreaPersonal_ped.aspx" />
-    <Content Include="App_Data\BBDD.mdf" />
     <Content Include="App_Data\BBDD_log.ldf">
       <DependentUpon>BBDD.mdf</DependentUpon>
     </Content>
+    <Content Include="AreaPersonal_modData.aspx" />
+    <Content Include="AreaPersonal_ped.aspx" />
+    <Content Include="App_Data\BBDD.mdf" />
     <Content Include="index.aspx" />
     <Content Include="Resultado_busqueda.aspx" />
     <Content Include="src_\basket.png" />

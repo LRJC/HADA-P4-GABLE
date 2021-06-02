@@ -20,6 +20,7 @@ namespace library
         {
             bool devolver=false;
             using (SqlConnection c = new SqlConnection(dbd)) {
+                c.Open();
                 String s = "Select * from marca";
                 SqlCommand comando = new SqlCommand(s, c);
                 SqlDataReader data = comando.ExecuteReader();
