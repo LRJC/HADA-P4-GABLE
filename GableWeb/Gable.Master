@@ -47,7 +47,7 @@
                         <div class="col-8 col-md-3 order-1 pb-2" style="text-align: center;">
                             <asp:ImageButton ID="gable_logo" ImageUrl="src/gable-logo.png" OnClick="btnGableLogo_Click" Height="60" runat="server"/>
                         </div>
-                        <asp:TextBox ID="searcher" runat="server" CssClass="col-8 col-md-4 order-3 order-md-2 my-3 my-md-0" align="left" />
+                        <asp:TextBox ID="searcher" runat="server" CssClass="col-8 col-md-4 order-3 order-md-2 my-3 my-md-0" align="left" placeholder="Busca entre nuestros juegos..." />
                         <div class ="col-12 col-md-2 order-4 order-md-3 pb-3 pb-md-0" style="text-align: center;">
                         <asp:LinkButton ID="init_sesion" runat="server" CssClass="font-weight-bold text-white" Text ="Iniciar Sesión" align="center" OnClick="btnLogin_Click" />
 
