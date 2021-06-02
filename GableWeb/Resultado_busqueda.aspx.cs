@@ -17,7 +17,7 @@ namespace GableWeb
         private string categoria;
         protected void Page_Load(object sender, EventArgs e)
         {
-            categoria = Request.QueryString["categoria_prod"];
+            categoria = Request.QueryString["cat_prod"];
             if (!IsPostBack)
             {
                 loadProducts(categoria);

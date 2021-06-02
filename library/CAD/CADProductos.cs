@@ -261,7 +261,7 @@ namespace library
             SqlConnection sqlconn = new SqlConnection(conn);
             try
             {
-                string sqlquery = "select * from producto where tipo_producto like '%"+categoria+"%'";
+                string sqlquery = "select * from producto where tipo_producto like '%" + categoria + "%' or nombre like '%" + categoria + "%'";
                 sqlconn.Open();
                 SqlCommand command = new SqlCommand(sqlquery, sqlconn);
                 SqlDataAdapter sqlda = new SqlDataAdapter(command);
