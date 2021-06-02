@@ -84,23 +84,27 @@ namespace library
 
         public bool modifyMarca(ENMarca en)
         {
-            SqlConnection c = new SqlConnection(dbd);
+            bool devolver;
+            SqlConnection con = new SqlConnection(dbd);
+
             try
             {
-                c.Open();
-                SqlCommand comando = new SqlCommand("update marca set origen='"+en.origen+"' where nombre='"+en.nombre+"'");
+                con.Open();
+                SqlCommand comando = new SqlCommand("Update marca set origen='" + en.origen + "' where nombre='" + en.nombre + "'", con);
                 comando.ExecuteNonQuery();
-                return true;
+                devolver = true;
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                Console.WriteLine("EXCEPCION!!!!");
-                return false;
+                Console.WriteLine("Brand operation failed");
+                devolver = false;
             }
             finally
             {
-                c.Close();
+                if (con != null) con.Close();
             }
+
+            return devolver;
         }
     }
 }

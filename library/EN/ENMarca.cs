@@ -68,13 +68,8 @@ namespace library
 
         public bool modifyMarca()
         {
-            bool retornar = false;
             CADMarca m = new CADMarca();
-            if (m.readMarca(this))
-            {
-                retornar = m.modifyMarca(this);
-            }
-            return retornar;
+            return m.modifyMarca(this);
         }
 
     }
