@@ -16,7 +16,10 @@
                             <div class="row my-2 mx-0 justify-content-center mb-5">
                                 <div class="col-4">
                                     <div class="row-12 my-2 mx-0">
-                                        <asp:TextBox ID="TextBox1" runat="server" MaxLength="16" placeholder="Nombre" Columns="35"></asp:TextBox>
+                                        <asp:TextBox ID="TextBox3" runat="server" MaxLength="16" placeholder="Nombre Actual" Columns="35"></asp:TextBox>
+                                    </div>
+                                    <div class="row-12 my-2 mx-0">
+                                        <asp:TextBox ID="TextBox1" runat="server" MaxLength="16" placeholder="Nombre Nuevo" Columns="35"></asp:TextBox>
                                     </div>
                                     <div class="row-12 my-2 mx-0">
                                         <asp:TextBox ID="TextBox2" runat="server" MaxLength="16" placeholder="Origen" Columns="35"></asp:TextBox>

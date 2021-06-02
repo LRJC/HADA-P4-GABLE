@@ -49,8 +49,8 @@ namespace GableWeb
         {
             try
             {
-                ENMarca mar = new ENMarca(TextBox1.Text, TextBox2.Text);
-                mar.modifyMarca();
+                ENMarca mar = new ENMarca(TextBox3.Text, TextBox2.Text);
+                mar.modifyMarca(TextBox1.Text);
             }
             catch (Exception ex)
             {
