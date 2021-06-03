@@ -69,7 +69,7 @@ namespace GableWeb
                     int cantidad = Convert.ToInt32(Number1.Value);
                     //b._usuario = Session["dni"].ToString();
                     string Udni = Session["dni"].ToString();// b._usuario;
-                    int num = b.getBasketByDNI(Udni);
+                    int num = 1;// b.getBasketByDNI(Udni);
                     if ( num!= -1)
                     {
                         b.InsertItemsIntoBasket(num, id_prod, importe, cantidad);///repasar 

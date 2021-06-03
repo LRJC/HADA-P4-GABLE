@@ -105,38 +105,61 @@ namespace library
 
         public bool deleteProductos(ENProductos en)
         {
-
-            SqlConnection con = new SqlConnection(constring);
-
+            SqlConnection c = new SqlConnection(constring);
             try
             {
-
-                con.Open();
-                if (!exist(en, con))
-                {
-                    Console.WriteLine("Product operation failed. Error: Product already exist");
-                    throw new Exception("ERROR: Ya hay un producto con el mismo id");
-                }
-                SqlDataAdapter data = new SqlDataAdapter();
-                data.DeleteCommand = new SqlCommand("Delete producto where id='" + en.id_producto + "'", con);
-                data.DeleteCommand.ExecuteNonQuery();
-
-
+                c.Open();
+                SqlCommand comando;
+                comando = new SqlCommand("Delete from producto where id_producto='" + en.id_producto + "'", c);
+                comando.ExecuteNonQuery();
+                return true;
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                Console.WriteLine("Product operation failed. Error:{0}", ex.Message);
-                throw new Exception("Product operation failed. Error: " + ex.Message);
+                Console.WriteLine("EXCEPCION");
+                return false;
             }
             finally
             {
-                if (con != null) con.Close();
+                c.Close();
             }
-
-            return true;
         }
 
-        public bool updateProductos(ENProductos en)
+        /* public bool deleteProductos(ENProductos en)
+         {
+
+             SqlConnection con = new SqlConnection(constring);
+
+             try
+             {
+
+                 con.Open();
+                 if (!exist(en, con))
+                 {
+                     Console.WriteLine("Product operation failed. Error: Product already exist");
+                     throw new Exception("ERROR: Ya hay un producto con el mismo id");
+                 }
+                 SqlDataAdapter data = new SqlDataAdapter();
+                 //data.DeleteCommand = new SqlCommand("Delete producto where id_producto='" + en.id_producto + "'", con);
+                 data.DeleteCommand = new SqlCommand("Delete producto where id_producto=" +en.id_producto+ "'",con);
+                 data.DeleteCommand.ExecuteNonQuery();
+
+
+             }
+             catch (Exception ex)
+             {
+                 Console.WriteLine("Product operation failed. Error:{0}", ex.Message);
+                 throw new Exception("Product operation failed. Error: " + ex.Message);
+             }
+             finally
+             {
+                 if (con != null) con.Close();
+             }
+
+             return true;
+         }*/
+
+       /* public bool updateProductos(ENProductos en)
         {
 
             SqlConnection con = new SqlConnection(constring);
@@ -167,8 +190,32 @@ namespace library
             }
 
             return true;
-        }
+        }*/
 
+        public bool updateProductos(ENProductos en)
+        {
+            bool devolver;
+            SqlConnection con = new SqlConnection(constring);
+
+            try
+            {
+                con.Open();
+                SqlCommand comando = new SqlCommand("Update producto set nombre='" + en.nom_producto + "',descripcion=" + en.desc_producto + "', precio=" + en.pre_producto + "',imagen=" + en.ImageLocation + "',tipo_producto=" + en.tipo_producto + "', marca=" + en.marca_producto + "' where id= " + en.id_producto + "'", con);
+                comando.ExecuteNonQuery();
+                devolver = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Brand operation failed");
+                devolver = false;
+            }
+            finally
+            {
+                if (con != null) con.Close();
+            }
+
+            return devolver;
+        }
         private bool exist(ENProductos en, SqlConnection con)
         {
             SqlDataAdapter data = new SqlDataAdapter();
