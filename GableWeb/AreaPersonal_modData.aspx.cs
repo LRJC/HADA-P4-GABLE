@@ -101,7 +101,7 @@ namespace GableWeb
 
         protected void ButtonCambiarInfoPagos_Click(object sender, EventArgs e)
         {
-            Response.Redirect("DatosCompra.aspx");
+            Response.Redirect("DatosPago.aspx");
         }
 
         protected void btnLogOut_Click(object sender, EventArgs e)
