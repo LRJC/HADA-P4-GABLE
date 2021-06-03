@@ -20,11 +20,14 @@ namespace GableWeb
             try
             {
                 ENUsuario user = new ENUsuario(dni.Text, nombre.Text, apellidos.Text, email.Text, pwd.Text, Convert.ToInt32(tlf.Text), date.Text);
+                ENCesta c = new ENCesta();
 
                 if (user.createUsuario())
                 {
                     outputMsg.Text = "Usuario creado correctamente";
+                    c.AddNewBasketForUser(dni.Text);
                     Response.Redirect("index.aspx");
+                    
                 }
                 else outputMsg.Text = "No ha sido posible crear el usuario";
             }
