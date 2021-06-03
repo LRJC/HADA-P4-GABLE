@@ -166,5 +166,117 @@ namespace library
                 }
             }
         }
+
+        //eliminar dependencias para eliminar usuario. Están aquí porque al intentar llamar unas EN's con otras, salía excepción StackOverflow debido a problemas recursivos. 
+
+        public bool deletePedidoFromUsu(ENUsuario en)
+        {
+            SqlConnection c = new SqlConnection(dbd);
+            try
+            {
+                c.Open();
+                SqlCommand comando;
+                comando = new SqlCommand("Delete from pedido where usuario='" + en.dni + "'", c);
+                comando.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("EXCEPCION");
+                return false;
+            }
+            finally
+            {
+                c.Close();
+            }
+        }
+
+        public bool deleteLinPedFromUsu(ENUsuario en)
+        {
+            SqlConnection c = new SqlConnection(dbd);
+            try
+            {
+                c.Open();
+                SqlCommand comando;
+                comando = new SqlCommand("Delete from linPed where usuario='" + en.dni + "'", c);
+                comando.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("EXCEPCION");
+                return false;
+            }
+            finally
+            {
+                c.Close();
+            }
+        }
+
+        public bool deleteValUsu(ENUsuario en)
+        {
+            SqlConnection c = new SqlConnection(dbd);
+            try
+            {
+                c.Open();
+                SqlCommand comando;
+                comando = new SqlCommand("Delete from valoracion where usuario='" + en.dni + "'", c);
+                comando.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("EXCEPCION");
+                return false;
+            }
+            finally
+            {
+                c.Close();
+            }
+        }
+
+        public bool deleteCestaUsu(ENUsuario en)
+        {
+            SqlConnection c = new SqlConnection(dbd);
+            try
+            {
+                c.Open();
+                SqlCommand comando;
+                comando = new SqlCommand("Delete from cesta where usuario='" + en.dni + "'", c);
+                comando.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("EXCEPCION");
+                return false;
+            }
+            finally
+            {
+                c.Close();
+            }
+        }
+
+        public bool deleteDirEnvioUsu(ENUsuario en)
+        {
+            SqlConnection c = new SqlConnection(dbd);
+            try
+            {
+                c.Open();
+                SqlCommand comando;
+                comando = new SqlCommand("Delete from dirEnvio where usuario='" + en.dni + "'", c);
+                comando.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("EXCEPCION");
+                return false;
+            }
+            finally
+            {
+                c.Close();
+            }
+        }
     }
 }

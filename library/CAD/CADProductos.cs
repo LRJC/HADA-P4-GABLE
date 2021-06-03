@@ -83,7 +83,7 @@ namespace library
                 }
 
                 //Query
-                string query = "Insert into producto (id_producto ,nombre, descripción, precio, imagen, tipo_producto, marca) values ('" + en.id_producto + "'" + en.nom_producto + "'" + en.desc_producto + "'" + en.pre_producto + "'" + en.ImageLocation + "'" + en.tipo_producto + "'" + en.marca_producto + ")";
+                string query = "Insert into producto(id_producto ,nombre, descripción, precio, imagen, tipo_producto, marca) values('" + en.id_producto + "', '" + en.nom_producto + "', '" + en.desc_producto + "', '" + en.pre_producto + "', '" + en.ImageLocation + "', '" + en.tipo_producto + "', '" + en.marca_producto + "')";
                 SqlDataAdapter data = new SqlDataAdapter();
                 data.InsertCommand = new SqlCommand(query, con);
                 data.InsertCommand.ExecuteNonQuery();

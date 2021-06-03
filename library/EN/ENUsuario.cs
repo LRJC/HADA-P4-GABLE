@@ -167,5 +167,29 @@ namespace library
             return us.updateUsuario(this);
         }
 
+        public bool deletePedidoFromUsu()
+        {
+            CADUsuario ped = new CADUsuario();
+            return ped.deletePedidoFromUsu(this);
+        }
+
+        public bool deleteValUsu()
+        {
+            CADUsuario ped = new CADUsuario();
+            return ped.deleteValUsu(this);
+        }
+
+        public bool deleteCestaUsu()
+        {
+            CADUsuario ped = new CADUsuario();
+            return ped.deleteCestaUsu(this);
+        }
+
+        public bool deleteDirEnvioUsu()
+        {
+            CADUsuario ped = new CADUsuario();
+            return ped.deleteDirEnvioUsu(this);
+        }
+
     }
 }

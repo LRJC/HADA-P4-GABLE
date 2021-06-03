@@ -79,10 +79,10 @@
                                             <asp:Button ID="crearProd" CssClass="btn-warning rounded" runat="server" Text="Crear" Width="90" OnClick="crearProd_Click"/>
                                         </div>
                                         <div class="col-4 px-1 mx-0">
-                                            <asp:Button ID="elimProd" CssClass="btn-warning rounded" runat="server" Text="Eliminar" Width="90" />
+                                            <asp:Button ID="elimProd" CssClass="btn-warning rounded" runat="server" Text="Eliminar" Width="90" OnClick="elimProd_Click" />
                                         </div>
                                         <div class="col-4 px-1 mx-0">
-                                            <asp:Button ID="modProd" CssClass="btn-warning rounded" runat="server" Text="Modificar" Width="90" />
+                                            <asp:Button ID="modProd" CssClass="btn-warning rounded" runat="server" Text="Modificar" Width="90" OnClick="modProd_Click" />
                                         </div>
                                     </div>
                                 </div>

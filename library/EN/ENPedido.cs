@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    class ENPedido
+    public class ENPedido
     {
         private int _numPedido;
         private string _dni;
