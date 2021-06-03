@@ -43,10 +43,95 @@ namespace library
             }
         }
 
+        public bool AddNewBasketForUser(string dni)
+        {
+            using (SqlConnection con = new SqlConnection(constring))
+            {
+                using (SqlCommand cmd = new SqlCommand("" +
+                    "select *" +
+                    "from cesta " +
+                    "where usuario = " + dni +
+                    "", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable cestData = new DataTable();
+                        sda.Fill(cestData);
+
+                        if (cestData.Rows.Count > 0)
+                            return false;
+
+                        int maxIndex = -1;
+
+                        foreach (DataRow row in cestData.Rows)
+                        {
+                            int linIndex = int.Parse(row[1].ToString());
+                            if (linIndex > maxIndex)
+                                maxIndex = linIndex;
+                        }
+
+                        SqlCommand rowCmd = new SqlCommand("" +
+                            "insert into cesta (numCesta, usuario) values (" +
+                            (maxIndex + 1).ToString() + "," + dni, con);
+
+                        rowCmd.ExecuteNonQuery();
+
+                        return true;
+                    }
+                }
+            }
+        }
+
+        public int getBasketByDNI(string dni)
+        {
+            using (SqlConnection con = new SqlConnection(constring))
+            {
+                using (SqlCommand cmd = new SqlCommand("" +
+                    "select * " +
+                    "from cesta " +
+                    "where usuario = " + dni +
+                    "", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable cestData = new DataTable();
+                        sda.Fill(cestData);
+
+                        if (cestData.Rows.Count > 0)
+                            return int.Parse(cestData.Rows[0][0].ToString());
+                        return -1;
+                    }
+                }
+            }
+        }
+
+        public string getDNIByBasket(int basket)
+        {
+            using (SqlConnection con = new SqlConnection(constring))
+            {
+                using (SqlCommand cmd = new SqlCommand("" +
+                    "select * " +
+                    "from cesta " +
+                    "where numCesta = " + basket.ToString() +
+                    "", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable cestData = new DataTable();
+                        sda.Fill(cestData);
+
+                        if (cestData.Rows.Count > 0)
+                            return cestData.Rows[0][1].ToString();
+                        return null;
+                    }
+                }
+            }
+        }
+
         public bool ProceedToBuy(ENCesta c) { return false; }
         
-        public DataTable ShowBasketItems() {
-            string constring = ConfigurationManager.ConnectionStrings["bbdd"].ToString();
+        public DataTable ShowBasketItems(string dni) {
+            //string constring = ConfigurationManager.ConnectionStrings["bbdd"].ToString();
             using (SqlConnection con = new SqlConnection(constring))
             {
                 using (SqlCommand cmd = new SqlCommand("" +
@@ -56,7 +141,7 @@ namespace library
                     "inner join producto p " +
                     "on lc.producto = p.id_producto " +
                     "inner join cesta c " +
-                    "on c.numCesta = lc.numCesta and c.usuario = '20094273D'", con))
+                    "on c.numCesta = lc.numCesta and c.usuario = '" + dni + "'", con))
                 // TO DO: Detect user session in c.usuario
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
@@ -71,7 +156,7 @@ namespace library
 
         public void InsertItemsIntoBasket(int numCesta, int producto, float importe, int cantidad)
         {
-            string constring = ConfigurationManager.ConnectionStrings["bbdd"].ToString();
+            //string constring = ConfigurationManager.ConnectionStrings["bbdd"].ToString();
             using (SqlConnection con = new SqlConnection(constring))
             {
                 using (SqlCommand cmd = new SqlCommand("" +
@@ -106,7 +191,7 @@ namespace library
 
         public void InsertItemsIntoOrders(int numCesta)
         {
-            string constring = ConfigurationManager.ConnectionStrings["bbdd"].ToString();
+            //string constring = ConfigurationManager.ConnectionStrings["bbdd"].ToString();
             using (SqlConnection con = new SqlConnection(constring))
             {
                 using (SqlCommand cmd = new SqlCommand("" +
@@ -136,7 +221,7 @@ namespace library
 
         public void DeleteItemsFromBasket(int numCesta)
         {
-            string constring = ConfigurationManager.ConnectionStrings["bbdd"].ToString();
+            //string constring = ConfigurationManager.ConnectionStrings["bbdd"].ToString();
             using (SqlConnection con = new SqlConnection(constring))
             {
                 using (SqlCommand cmd = new SqlCommand("" +
@@ -166,7 +251,7 @@ namespace library
 
         public bool CheckIfSomeItem()
         {
-            string constring = ConfigurationManager.ConnectionStrings["bbdd"].ToString();
+            //string constring = ConfigurationManager.ConnectionStrings["bbdd"].ToString();
             using (SqlConnection con = new SqlConnection(constring))
             {
                 using (SqlCommand cmd = new SqlCommand("" +
@@ -187,7 +272,7 @@ namespace library
 
         public bool CheckIfItemExists(int numCesta, int linea)
         {
-            string constring = ConfigurationManager.ConnectionStrings["bbdd"].ToString();
+            //string constring = ConfigurationManager.ConnectionStrings["bbdd"].ToString();
             using (SqlConnection con = new SqlConnection(constring))
             {
                 using (SqlCommand cmd = new SqlCommand("" +
@@ -211,7 +296,7 @@ namespace library
         {
             if (userID != null)
             {
-                string constring = ConfigurationManager.ConnectionStrings["bbdd"].ToString();
+                //string constring = ConfigurationManager.ConnectionStrings["bbdd"].ToString();
                 using (SqlConnection con = new SqlConnection(constring))
                 {
                     using (SqlCommand cmd = new SqlCommand("" +

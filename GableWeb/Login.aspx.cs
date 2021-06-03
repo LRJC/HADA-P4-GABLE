@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Web.Security;
+using library;
 
 namespace GableWeb
 {
@@ -17,9 +20,22 @@ namespace GableWeb
         {
             Response.Redirect("Registro.aspx");
         }
-        protected void btnLogin_Click(object sender, EventArgs e)
+
+        protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
-            Response.Redirect("index.aspx");
+            bool auth = false;
+            auth = LoginCorrecto(Login1.UserName, Login1.Password);
+            e.Authenticated = auth;
+            if (auth)
+                Session.Add("dni", "46086105Q");
+                Response.Redirect("index.aspx");
+        }
+        private bool LoginCorrecto(string email, string pwd)
+        {
+            if (email.Equals("alex@gmail.com") && pwd.Equals("alex"))
+                return true;
+
+            return false;
         }
     }
 }
