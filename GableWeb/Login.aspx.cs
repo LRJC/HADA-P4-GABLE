@@ -14,7 +14,13 @@ namespace GableWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                if (Session["dni"] != null)
+                {
+                    Response.Redirect("index.aspx");
+                }
+            }
         }
         protected void btnRegister_Click(object sender, EventArgs e)
         {
