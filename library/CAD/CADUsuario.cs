@@ -93,7 +93,7 @@ namespace library
         {
             using (SqlConnection c = new SqlConnection(dbd))
             {
-                using (SqlCommand comando = new SqlCommand("Insert into usuario(dni, nombre, apellidos, email, telefono, cvv_tarjeta, fecha_exp_tarjeta, nacido, tarjeta) values('" + en.dni + "', '" + en.nombre + "', '" + en.apellidos + "', '" + en.email + "', " + en.tlf + ", " + en.cvv + ", '" + en.expTarjeta + "', '" + en.fechanac + "', " + en.numTarjeta + ")", c))
+                using (SqlCommand comando = new SqlCommand("Insert into usuario(dni, nombre, apellidos, email, telefono, cvv_tarjeta, fecha_exp_tarjeta, nacido, tarjeta, contraseña) values('" + en.dni + "', '" + en.nombre + "', '" + en.apellidos + "', '" + en.email + "', " + en.tlf + ", " + en.cvv + ", '" + en.expTarjeta + "', '" + en.fechanac + "', " + en.numTarjeta + ", '" + en.contraseña + "' )", c))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(comando))
                     {

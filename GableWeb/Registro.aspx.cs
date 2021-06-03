@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using library;
 
 namespace GableWeb
 {
@@ -16,7 +17,19 @@ namespace GableWeb
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-            Response.Redirect("index.aspx");
+            try
+            {
+                ENUsuario user = new ENUsuario(dni.Text, nombre.Text, apellidos.Text, email.Text, pwd.Text, Convert.ToInt32(tlf.Text), date.Text);
+
+                if (user.createUsuario())
+                    outputMsg.Text = "Usuario creado correctamente";
+                else outputMsg.Text = "No ha sido posible crear el usuario";
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Fallo al añadir el usuario");
+            }
         }
     }
 }

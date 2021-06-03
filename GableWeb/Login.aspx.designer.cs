@@ -15,31 +15,13 @@ namespace GableWeb
     {
 
         /// <summary>
-        /// Control email.
+        /// Control Login1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox email;
-
-        /// <summary>
-        /// Control pwd.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox pwd;
-
-        /// <summary>
-        /// Control b_login.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button b_login;
+        protected global::System.Web.UI.WebControls.Login Login1;
 
         /// <summary>
         /// Control b_register.

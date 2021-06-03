@@ -17,10 +17,10 @@ namespace library
         private int _numTarjeta;
         private int _cvv;
         private string _expTarjeta;
-        private string _fechanac;//comprobar
+        private string _fechanac; //comprobar
         private bool _admin;
 
-        public ENUsuario(string dni, string nombre, string apellidos, string email, int tlf, int NT, int cvv, string expT, string fechanac)
+        public ENUsuario(string dni, string nombre, string apellidos, string email, string contraseña, int tlf, string fechanac)
         {
             this.dni = dni;
             this.nombre = nombre;
@@ -28,9 +28,6 @@ namespace library
             this.email = email;
             this.contraseña = contraseña;
             this.tlf = tlf;
-            this.cvv = cvv;
-            this.numTarjeta = NT;
-            this.expTarjeta = expT;
             this.fechanac = fechanac;
         }
 
