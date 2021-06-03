@@ -23,19 +23,16 @@ namespace GableWeb
 
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
-            bool auth = false;
-            auth = LoginCorrecto(Login1.UserName, Login1.Password);
-            e.Authenticated = auth;
-            if (auth)
-                Session.Add("dni", "46086105Q");
-                Response.Redirect("index.aspx");
-        }
-        private bool LoginCorrecto(string email, string pwd)
-        {
-            if (email.Equals("alex@gmail.com") && pwd.Equals("alex"))
-                return true;
-
-            return false;
+            ENUsuario user = new ENUsuario();
+            user.email = Login1.UserName;
+            if(user.readUsuarioEmail())
+            {
+                if (user.contraseña == Login1.Password)
+                {
+                    Session.Add("dni", user.dni);
+                    Response.Redirect("index.aspx");
+                }
+            }    
         }
     }
 }

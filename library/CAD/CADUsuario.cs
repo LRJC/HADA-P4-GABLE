@@ -34,9 +34,14 @@ namespace library
                     en.apellidos = data["apellidos"].ToString();
                     en.dni = data["dni"].ToString();
                     en.email = data["email"].ToString();
+                    en.contraseña = data["contraseña"].ToString();
                     if (data["nacido"] != null)
                     {
                         en.fechanac = data["nacido"].ToString();//comprobar
+                    }
+                    if (data["telefono"] != null)
+                    {
+                        en.tlf = Convert.ToInt32(data["telefono"]);//comprobar
                     }
                     return true;
                 }
@@ -70,9 +75,14 @@ namespace library
                     en.apellidos = data["apellidos"].ToString();
                     en.dni = data["dni"].ToString();
                     en.email = data["email"].ToString();
+                    en.contraseña = data["contraseña"].ToString();
                     if (data["nacido"] != null)
                     {
                         en.fechanac = data["nacido"].ToString();//comprobar
+                    }
+                    if (data["telefono"] != null)
+                    {
+                        en.tlf = Convert.ToInt32(data["telefono"]);//comprobar
                     }
                     return true;
                 }
@@ -105,15 +115,11 @@ namespace library
                     
                     if (data["tarjeta"] != null )
                     {
-                        en.numTarjeta = (int)data["tarjeta"];
+                        en.numTarjeta = Convert.ToInt32(data["tarjeta"]);
                     }
                     if (data["cvv_tarjeta"] != null)
                     {
-                        en.cvv = (int)data["cvv_tarjeta"];
-                    }
-                    if (data["telefono"] != null)
-                    {
-                        en.tlf = (int)data["telefono"];
+                        en.cvv = Convert.ToInt32(data["cvv_tarjeta"]);
                     }
                     if (data["fecha_exp_tarjeta"] != null)
                     {
