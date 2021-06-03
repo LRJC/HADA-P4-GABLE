@@ -20,33 +20,19 @@ namespace library
         {
             bool devolver=false;
             using (SqlConnection c = new SqlConnection(dbd)) {
+                c.Open();
                 String s = "Select * from marca";
                 SqlCommand comando = new SqlCommand(s, c);
-                SqlDataReader data;
-                try
+                SqlDataReader data = comando.ExecuteReader();
+                while (data.Read())
                 {
-                    c.Open();
-                    data = comando.ExecuteReader();
-                    while (data.Read())
+                    if (data["nombre"].ToString() == en.nombre)
                     {
-                        if (data["nombre"].ToString() == en.nombre)
-                        {
-                            en.nombre = data["nombre"].ToString();
-                            en.origen = data["origen"].ToString();
-                            en.imagen = data["logo"].ToString();
-                            devolver = true;
-                            break;
-                        }
+                        en.nombre = data["nombre"].ToString();
+                        en.origen = data["origen"].ToString();
+                        devolver = true;
+                        break;
                     }
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("EXCEPCIÓN");
-                    devolver = false;
-                }
-                finally
-                {
-                    c.Close();
                 }
             }
             return devolver;
@@ -76,7 +62,7 @@ namespace library
         {
             using (SqlConnection c = new SqlConnection(dbd))
             {
-                using (SqlCommand comando = new SqlCommand("Insert into marca(nombre, origen, logo) values('" + en.nombre + "', '" + en.origen + "', '" + en.imagen + "')", c))
+                using (SqlCommand comando = new SqlCommand("Insert into marca(nombre, origen) values('" + en.nombre + "', '" + en.origen + "')", c))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(comando))
                     {
@@ -96,25 +82,29 @@ namespace library
             }
         }
 
-        public bool modifyMarca(ENMarca en)
+        public bool modifyMarca(ENMarca en, string nombrenuevo)
         {
-            SqlConnection c = new SqlConnection(dbd);
+            bool devolver;
+            SqlConnection con = new SqlConnection(dbd);
+
             try
             {
-                c.Open();
-                SqlCommand comando = new SqlCommand("update marca set origen='"+en.origen+"' , logo='"+en.imagen+"' where nombre='"+en.nombre+"'");
+                con.Open();
+                SqlCommand comando = new SqlCommand("Update marca set origen='" + en.origen + "', nombre='" + nombrenuevo +  "' where nombre='" + en.nombre + "'", con);
                 comando.ExecuteNonQuery();
-                return true;
+                devolver = true;
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                Console.WriteLine("EXCEPCION!!!!");
-                return false;
+                Console.WriteLine("Brand operation failed");
+                devolver = false;
             }
             finally
             {
-                c.Close();
+                if (con != null) con.Close();
             }
+
+            return devolver;
         }
     }
 }

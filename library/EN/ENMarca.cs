@@ -10,20 +10,18 @@ namespace library
     {
         private string _nombre;
         private string _origen;
-        private string _url;
+        
 
-        public ENMarca(string nombre, string origen, string imagen)
+        public ENMarca(string nombre, string origen)
         {
             this.nombre = nombre;
             this.origen = origen;
-            this.imagen = imagen;
         }
 
         public ENMarca()
         {
             this.nombre = "";
             this.origen = "";
-            this.imagen = "";
         }
 
         public string nombre
@@ -38,13 +36,6 @@ namespace library
             get { return _origen; }
 
             set { _origen = value; }
-        }
-
-        public string imagen
-        {
-            get { return _url; }
-
-            set { _url = value; }
         }
 
         public bool readMarca()
@@ -75,15 +66,10 @@ namespace library
             return retornar;
         }
 
-        public bool modifyMarca()
+        public bool modifyMarca(string nombrenuevo)
         {
-            bool retornar = false;
             CADMarca m = new CADMarca();
-            if (m.readMarca(this))
-            {
-                retornar = m.modifyMarca(this);
-            }
-            return retornar;
+            return m.modifyMarca(this, nombrenuevo);
         }
 
     }

@@ -48,7 +48,7 @@ namespace library
                 {
 
                     Console.WriteLine("Product operation has failed. Error:Cant found the id");
-                    throw new Exception("ERROR:El id del producto no ha sido encontrado");
+                    throw new Exception("ERROR:El id del producto no ha sido encontrado" + en.id_producto);
                 }
                 reader.Close();
 
@@ -261,7 +261,7 @@ namespace library
             SqlConnection sqlconn = new SqlConnection(conn);
             try
             {
-                string sqlquery = "select * from producto where tipo_producto like '%"+categoria+"%'";
+                string sqlquery = "select * from producto where tipo_producto like '%" + categoria + "%' or nombre like '%" + categoria + "%'";
                 sqlconn.Open();
                 SqlCommand command = new SqlCommand(sqlquery, sqlconn);
                 SqlDataAdapter sqlda = new SqlDataAdapter(command);

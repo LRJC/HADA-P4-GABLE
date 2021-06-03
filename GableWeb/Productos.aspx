@@ -40,7 +40,10 @@
                             <div class="form-row">
                                 <label for="Cantidad" class="col-sm-3 col-md-3 form-control-label">Cantidad:</label>
                                 <div class="col-sm-8 col-md-9">
-                                    <input type="number" class="qty form-control" id="input-cant" name="qty" min="1"value="1" />
+                                    <form>
+                                  
+                                         <input type="number" class="qty form-control"  id="Number1" name="qty"  UseSubmitBehavior="false" runat="server"  min="1" max="9999" value="1" />
+                                    </form>
                                 </div>
                             </div>
                             <div class="form-group row visible">
@@ -72,12 +75,12 @@
                                     <div class="status-upload">
                                         <form>
                                            <textarea placeholder="Comenta" cols="45" rows="5" id="msg" runat="server" name="cajaComent"></textarea>
-                                            <!--<asp:TextBox ID="TextBox1" placeholder="Comenta" cols="75" runat="server"></asp:TextBox>-->
-                                             <input type="number" class="qty form-control"  id="botC" name="qty"  UseSubmitBehavior="false" runat="server"  min="1" max="5" value="1" />
-
-                                            <asp:Button ID="Button1" class="btn btn-success green" OnClick="comentario" runat="server" Text="Comentar" />
-                                            <!--<button type="submit" class="btn btn-success green" OnClick="comentario"><i class="fa fa-share"></i> Comentar</button>-->
+                                           
+                                             <input type="number" class="qty form-control"  id="botC" name="qty"  UseSubmitBehavior="false" runat="server"  min="1" max="5" value="1" />                 
+                                           
+                                           
                                         </form>
+                                         <asp:Button ID="Button1" class="btn btn-success green" OnClick="comentario" runat="server" Text="Comentar" />
                                     </div>
                                 </div>
                             </div>

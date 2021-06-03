@@ -145,35 +145,29 @@ namespace library
             return devolver;
         }
 
+        /* public bool deleteUsuario()
+         {
+             bool devolver = false;
+             CADUsuario c = new CADUsuario();
+             if (c.readUsuario(this))
+             {
+                 devolver = c.deleteUsuario(this);
+             }
+             return devolver;
+         }*/
+
         public bool deleteUsuario()
         {
-            bool devolver = false;
-            CADUsuario c = new CADUsuario();
-            if (c.readUsuario(this))
-            {
-                devolver = c.deleteUsuario(this);
-            }
-            return devolver;
+            CADUsuario us = new CADUsuario();
+            return us.deleteUsuario(this);
+           
         }
+
 
         public bool updateUsuario()
         {
-            bool devolver = false;
             CADUsuario us = new CADUsuario();
-            ENUsuario en = new ENUsuario();
-
-            en.dni = dni;
-            en.nombre = nombre;
-            en.apellidos = apellidos;
-            if (us.readUsuario(this) == true)
-            {
-                this.dni = en.dni;
-                this.nombre = en.nombre;
-                this.apellidos = en.apellidos;
-                devolver = us.updateUsuario(this);
-            }
-
-            return devolver;
+            return us.updateUsuario(this);
         }
 
     }

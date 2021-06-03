@@ -20,7 +20,7 @@ namespace GableWeb
             nomProd = Request.QueryString["id_prod"];
             
             
-             id_prod = Convert.ToInt32(nomProd);
+            id_prod = Convert.ToInt32(nomProd);
             getProduct(id_prod);
             valo(id_prod);
         }
@@ -52,7 +52,31 @@ namespace GableWeb
 
         protected void carrito(object sender, EventArgs e)
         {
-            Response.Redirect("Cesta.aspx");
+            if (Session["LoggedIn"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                ENProductos a = new ENProductos();
+                ENCesta b = new ENCesta();
+                try
+                {
+                    a.id_producto = id_prod;
+                    a.readProducto();
+                    float importe = a.pre_producto;
+                    int cantidad = Convert.ToInt32(Number1.Value);
+
+                    b.InsertItemsIntoBasket(1,id_prod,importe,cantidad);///repasar
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Fallo al añadir producto en la cesta, ha saltado excepción...");
+                }
+            }
+
+            //Response.Redirect("Cesta.aspx");
         }
 
         private void valo(int id_prod)
@@ -89,13 +113,47 @@ namespace GableWeb
             }
             else
             {
+
                 ENValoraciones a = new ENValoraciones();
+                try
+                {
+                    a.producto_id = id_prod;
+                    a.tex_val = msg.Value;
+                    int val =Convert.ToInt32(botC.Value);
+                    a.pun_val = val;
+                    a.usuaro_id = User.Identity.Name;
 
-                a.producto_id = id_prod;
-                a.tex_val = msg.Value;
-                a.pun_val = Convert.ToInt32(botC.Value);
-                a.usuaro_id = User.Identity.Name;
+                    switch (val)
+                    {
+                        case 1:
+                            a.estr_val = "'src_/estrella/estrella1.png";
+                            break;
 
+                        case 2:
+                            a.estr_val = "'src_/estrella/estrella2.png";
+                            break;
+
+                        case 3:
+                            a.estr_val = "'src_/estrella/estrella3.png";
+                            break;
+
+                        case 4:
+                            a.estr_val = "'src_/estrella/estrella4.png";
+                            break;
+
+                        case 5:
+                            a.estr_val = "'src_/estrella/estrella5.png";
+                            break;
+                    }
+
+                    a.createValoracion();
+
+                    Response.Redirect("Productos.aspx?id_prod=" + id_prod);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Fallo en los comentarios, ha saltado excepción...");
+                }
             }
 
 
