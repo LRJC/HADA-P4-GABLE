@@ -25,7 +25,7 @@ namespace GableWeb
                 if (user.createUsuario())
                 {
                     outputMsg.Text = "Usuario creado correctamente";
-                    c.AddNewBasketForUser(dni.Text);
+                    Session.Add("dni", dni.Text);
                     Response.Redirect("index.aspx");
                     
                 }
