@@ -19,7 +19,7 @@ namespace GableWeb
         {
             nomProd = Request.QueryString["id_prod"];
 
-            Session["dni"] = "44556677o";
+           // Session["dni"] = "44556677o";
             id_prod = Convert.ToInt32(nomProd);
             getProduct(id_prod);
             valo(id_prod);
