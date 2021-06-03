@@ -43,7 +43,7 @@ namespace library
             {
 
                 Console.WriteLine($"Assessment operation failed. Error:{0}", ex.Message);
-               // throw new Exception("Assessment operation failed. Error: " + ex.Message);
+                throw new Exception("Assessment operation failed. Error: " + ex.Message);
 
             }
             finally
