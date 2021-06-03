@@ -18,7 +18,7 @@
                                 </div>
                                 <div class="col-md-3 col-sm-3 col-xs-3">
                                     <span class="help-block text-muted small-font" > Card Verification Value (CVV)</span>
-                                    <asp:TextBox ID="ccv" runat="server" ></asp:TextBox>
+                                    <asp:TextBox ID="cvv" runat="server" ></asp:TextBox>
                                 </div>
                             </div>
                             <div class="row justify-content-center">
