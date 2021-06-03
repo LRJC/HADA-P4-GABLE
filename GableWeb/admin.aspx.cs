@@ -90,9 +90,7 @@ namespace GableWeb
 
         protected void elimProd_Click(object sender, EventArgs e)
         {
-            ENProductos pr = new ENProductos();
-            pr.id_producto = int.Parse(IDProd.Text);
-            pr.deleteProductos();
+            
         }
 
         protected void modProd_Click(object sender, EventArgs e)
