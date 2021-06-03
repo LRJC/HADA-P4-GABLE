@@ -14,8 +14,7 @@ namespace GableWeb
         {
             if (!IsPostBack)
             {
-                fakeId();
-                //Session["dni"] = "45678923p";
+                Session.Add("dni","45678923p");
                 if (Session["dni"] != null)
                 {
                     setClientArea(Session["dni"].ToString());
@@ -27,32 +26,24 @@ namespace GableWeb
 
 
             }
-            //fakeId();
         }
 
         protected void setClientArea(string dni)
         {
             ENUsuario usu = new ENUsuario();
             usu.dni = dni;
-            if (!usu.readUsuario())//no existe el usuario de la sesión actual
-            {
-                Session.RemoveAll();
-                Session.Abandon();
-                Response.Redirect("Login.aspx");
-            }
-            else
+            if (usu.readUsuario())//existe el usuario de la sesión actual
             {
                 lab_NombreApellidos_AreaPersonal.Text = usu.nombre.ToString() + " " + usu.apellidos.ToString();
                 lab_Dni_AreaPersonal.Text = usu.dni.ToString();
                 lab_Correo_AreaPersonal.Text = usu.email.ToString();
             }
-        }
-
-        protected void fakeId()
-        {
-            Session.Add("dni", "45678923p");
-            //Session["dni"] = "45678923p";
-            
+            else
+            {
+                Session.RemoveAll();
+                Session.Abandon();
+                Response.Redirect("index.aspx");
+            }
         }
 
         protected void btnLogOut_Click(object sender, EventArgs e)

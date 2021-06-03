@@ -19,53 +19,83 @@ namespace library
 
         public bool readUsuario(ENUsuario en)
         {
-            bool devolver=false;
-            using (SqlConnection c = new SqlConnection(dbd))
+            SqlConnection c = new SqlConnection(dbd);
+
+            try
             {
-                try
+                c.Open();
+                String s = "Select * from usuario where dni = '" + en.dni.ToString() + "';";
+                SqlCommand comando = new SqlCommand(s, c);
+                SqlDataReader data = comando.ExecuteReader();
+
+                if (data.Read())
                 {
-                    c.Open();
-                    String s = "Select * from usuario";
-                    SqlCommand comando = new SqlCommand(s, c);
-                    SqlDataReader data = comando.ExecuteReader();
-                    while (data.Read())
+                    en.nombre = data["nombre"].ToString();
+                    en.apellidos = data["apellidos"].ToString();
+                    en.dni = data["dni"].ToString();
+                    en.email = data["email"].ToString();
+                    if (data["nacido"] != null)
                     {
-                        if (data["dni"].ToString() == en.dni)
-                        {
-                            en.nombre = data["nombre"].ToString();
-                            en.apellidos = data["apellidos"].ToString();
-                            en.dni = data["dni"].ToString();
-                            en.email = data["email"].ToString();
-                            if (data["tarjeta"]!=null) {
-                                en.numTarjeta = int.Parse(data["tarjeta"].ToString());
-                            }
-                            if (data["cvv_tarjeta"] != null) {
-                                en.cvv = int.Parse(data["cvv_tarjeta"].ToString());
-                            }
-                            if (data["telefono"] != null) {
-                                en.tlf = int.Parse(data["telefono"].ToString());
-                            }
-                            if (data["fecha_exp_tarjeta"] != null) {
-                                en.expTarjeta = data["fecha_exp_tarjeta"].ToString();
-                            }
-                            if (data["nacido"] != null) {
-                                en.fechanac = data["nacido"].ToString();//comprobar
-                            }
-                            devolver = true;
-                            break;
-                        }
+                        en.fechanac = data["nacido"].ToString();//comprobar
                     }
+                    return true;
                 }
-                catch (Exception e)
-                {
-                    Console.WriteLine("EXCEPCION");
-                    devolver = false;
-                }
-                finally {
-                    c.Close();
-                }
+                return false;
             }
-            return devolver;
+            catch (Exception e)
+            {
+                Console.WriteLine($"EXCEPCION. Error: {0}", e.Message);
+                return false;
+            }
+            finally
+            {
+                c.Close();
+            }
+        }
+
+        public bool readUsuarioPago(ENUsuario en)
+        {
+            SqlConnection c = new SqlConnection(dbd);
+
+            try
+            {
+                c.Open();
+                String s = "Select * from usuario where dni = '" + en.dni.ToString() + "';";
+                SqlCommand comando = new SqlCommand(s, c);
+                SqlDataReader data = comando.ExecuteReader();
+
+                if (data.Read())
+                {
+                    
+                    if (data["tarjeta"] != null )
+                    {
+                        en.numTarjeta = (int)data["tarjeta"];
+                    }
+                    if (data["cvv_tarjeta"] != null)
+                    {
+                        en.cvv = (int)data["cvv_tarjeta"];
+                    }
+                    if (data["telefono"] != null)
+                    {
+                        en.tlf = (int)data["telefono"];
+                    }
+                    if (data["fecha_exp_tarjeta"] != null)
+                    {
+                        en.expTarjeta = data["fecha_exp_tarjeta"].ToString();
+                    }
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"EXCEPCION. Error: {0}", e.Message);
+                return false;
+            }
+            finally
+            {
+                c.Close();
+            }
         }
 
         public bool deleteUsuario(ENUsuario en)
