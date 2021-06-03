@@ -87,7 +87,7 @@ namespace GableWeb
                     Response.Redirect("index.asp");
                 } else
                 {
-                    Response.Redirect("AreaPersonal_modData.aspx"); // Add data to buy
+                    Response.Redirect("DatosPago.aspx"); // Add data to buy
                 }
             } else
             {

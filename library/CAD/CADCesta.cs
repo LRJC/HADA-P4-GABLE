@@ -213,11 +213,13 @@ namespace library
                         DataTable linCestData = new DataTable();
                         sda.Fill(linCestData);
 
+                        int numPed = GenerateOrder(getDNIByBasket(numCesta));
+
                         foreach (DataRow row in linCestData.Rows)
                         {
                             SqlCommand rowCmd = new SqlCommand("" +
                                 "insert into linPed values (" +
-                                row[0] + "," + row[1] + "," + row[2] +
+                                numPed + "," + row[1] + "," + row[2] +
                                 "," + row[3] + "," + row[4], con);
 
                             rowCmd.ExecuteNonQuery();
@@ -255,6 +257,45 @@ namespace library
                             rowCmd.ExecuteNonQuery();
                         }
                         con.Close();
+                    }
+                }
+            }
+        }
+
+        public int GenerateOrder(string dni)
+        {
+            using (SqlConnection con = new SqlConnection(constring))
+            {
+                using (SqlCommand cmd = new SqlCommand("" +
+                    "select * " +
+                    "from pedido " +
+                    "", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable pedidoData = new DataTable();
+                        sda.Fill(pedidoData);
+                        int maxIndex = 0;
+
+                        foreach (DataRow row in pedidoData.Rows)
+                        {
+                            int pedIndex = int.Parse(row[1].ToString());
+                            if (pedIndex > maxIndex)
+                                maxIndex = pedIndex;
+                        }
+
+                        maxIndex++;
+
+                        using (SqlCommand rowCmd = new SqlCommand("" +
+                            "insert into pedido values (" +
+                            maxIndex.ToString() + ",'" + dni + "', '" + DateTime.Today.ToString("YYYY/MM/DD") + "')", con))
+                        {
+                            con.Open();
+                            rowCmd.ExecuteNonQuery().ToString();
+                            con.Close();
+                        }
+
+                        return maxIndex;
                     }
                 }
             }

@@ -117,7 +117,11 @@ namespace library
             DataTable data = new DataTable();
             try
             {
-                SqlCommand com = new SqlCommand("select numPedido, fecha, sum()", c);
+                SqlCommand com = new SqlCommand("select numPedido, fecha, sum(importe*cantidad) " +
+                                                "from pedido, linPed " +
+                                                "where linPed.num_pedido == pedido.numPedido and usuario = '" + dni + "'" +
+                                                "group by numPedido " +
+                                                "order by fecha DESC", c);
                 SqlDataAdapter da = new SqlDataAdapter(com);
                 da.Fill(data);
                 return data;

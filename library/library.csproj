@@ -43,11 +43,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CAD\CADDirEnvio.cs" />
+    <Compile Include="CAD\CADLineaPedido.cs" />
     <Compile Include="CAD\CADLocalidad.cs" />
     <Compile Include="CAD\CADLineaCesta.cs" />
     <Compile Include="CAD\CADPedido.cs" />
     <Compile Include="CAD\CADProvincia.cs" />
     <Compile Include="CAD\CADTipoProducto.cs" />
+    <Compile Include="EN\ENLineaPedido.cs" />
     <Compile Include="EN\ENPedido.cs" />
     <Compile Include="EN\ENDirEnvio.cs" />
     <Compile Include="EN\ENLineaCesta.cs" />

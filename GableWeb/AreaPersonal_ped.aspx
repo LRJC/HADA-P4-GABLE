@@ -45,7 +45,7 @@
             </div>
             <div class="row ml-1">
                 <div class="col">
-                    <asp:DataList ID="dataListPedidos" runat="server" RepeatColumns="5" OnSelectedIndexChanged="dataListPedidos_SelectedIndexChanged">
+                    <asp:DataList ID="dataListPedidos" runat="server" RepeatColumns="5" >
                         <ItemTemplate>
                             <div class="row-12 border-top border-bottom p-3">
                                 <div class="col-3 py-3" id="fecha">

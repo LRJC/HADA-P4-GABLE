@@ -28,7 +28,6 @@ namespace GableWeb
                     Session.Add("dni", dni.Text);
                     c.AddNewBasketForUser(dni.Text);
                     Response.Redirect("index.aspx");
-
                 }
                 else outputMsg.Text = "No ha sido posible crear el usuario";
             }

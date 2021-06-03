@@ -17,8 +17,10 @@
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort>44334</IISExpressSSLPort>
-    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
-    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressAnonymousAuthentication>
+    </IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>
+    </IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
@@ -150,7 +152,7 @@
     <Content Include="Cesta.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Registro.aspx" />
-    <Content Include="DatosCompra.aspx" />
+    <Content Include="DatosPago.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="admin.aspx.cs">
@@ -224,12 +226,12 @@
     <Compile Include="Registro.aspx.designer.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DatosCompra.aspx.cs">
-      <DependentUpon>DatosCompra.aspx</DependentUpon>
+    <Compile Include="DatosPago.aspx.cs">
+      <DependentUpon>DatosPago.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DatosCompra.aspx.designer.cs">
-      <DependentUpon>DatosCompra.aspx</DependentUpon>
+    <Compile Include="DatosPago.aspx.designer.cs">
+      <DependentUpon>DatosPago.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
