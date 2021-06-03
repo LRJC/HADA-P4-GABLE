@@ -48,9 +48,8 @@ namespace library
             using (SqlConnection con = new SqlConnection(constring))
             {
                 using (SqlCommand cmd = new SqlCommand("" +
-                    "select *" +
+                    "select * " +
                     "from cesta " +
-                    "where usuario = '" + dni + "'" + 
                     "", con))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
@@ -58,24 +57,24 @@ namespace library
                         con.Open();
                         DataTable cestData = new DataTable();
                         sda.Fill(cestData);
-
-                        if (cestData.Rows.Count > 0)
-                            return false;
-
                         int maxIndex = 0;
 
                         foreach (DataRow row in cestData.Rows)
                         {
-                            int linIndex = int.Parse(row[1].ToString());
+                            if (row.ToString() == dni)
+                                return false;
+
+                            int linIndex = int.Parse(row[0].ToString());
                             if (linIndex > maxIndex)
                                 maxIndex = linIndex;
                         }
 
                         SqlCommand rowCmd = new SqlCommand("" +
                             "insert into cesta (numCesta, usuario) values (" +
-                            (maxIndex + 1).ToString() + "," + dni, con);
+                            (maxIndex + 1).ToString() + ",'" + dni + "')", con);
 
                         rowCmd.ExecuteNonQuery();
+
                         con.Close();
 
                         return true;
@@ -214,11 +213,13 @@ namespace library
                         DataTable linCestData = new DataTable();
                         sda.Fill(linCestData);
 
+                        int numPed = GenerateOrder(getDNIByBasket(numCesta));
+
                         foreach (DataRow row in linCestData.Rows)
                         {
                             SqlCommand rowCmd = new SqlCommand("" +
                                 "insert into linPed values (" +
-                                row[0] + "," + row[1] + "," + row[2] +
+                                numPed + "," + row[1] + "," + row[2] +
                                 "," + row[3] + "," + row[4], con);
 
                             rowCmd.ExecuteNonQuery();
@@ -256,6 +257,45 @@ namespace library
                             rowCmd.ExecuteNonQuery();
                         }
                         con.Close();
+                    }
+                }
+            }
+        }
+
+        public int GenerateOrder(string dni)
+        {
+            using (SqlConnection con = new SqlConnection(constring))
+            {
+                using (SqlCommand cmd = new SqlCommand("" +
+                    "select * " +
+                    "from pedido " +
+                    "", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable pedidoData = new DataTable();
+                        sda.Fill(pedidoData);
+                        int maxIndex = 0;
+
+                        foreach (DataRow row in pedidoData.Rows)
+                        {
+                            int pedIndex = int.Parse(row[1].ToString());
+                            if (pedIndex > maxIndex)
+                                maxIndex = pedIndex;
+                        }
+
+                        maxIndex++;
+
+                        using (SqlCommand rowCmd = new SqlCommand("" +
+                            "insert into pedido values (" +
+                            maxIndex.ToString() + ",'" + dni + "', '" + DateTime.Today.ToString("YYYY/MM/DD") + "')", con))
+                        {
+                            con.Open();
+                            rowCmd.ExecuteNonQuery().ToString();
+                            con.Close();
+                        }
+
+                        return maxIndex;
                     }
                 }
             }
