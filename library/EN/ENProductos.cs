@@ -26,7 +26,7 @@ namespace library
         {
             get
             {
-                return new string(nomProducto.ToCharArray());
+                return nomProducto;
             }
 
             set
@@ -40,7 +40,7 @@ namespace library
         {
             get
             {
-                return new string(descProducto.ToCharArray());
+                return descProducto;
             }
             set
             {
@@ -64,7 +64,7 @@ namespace library
         {
             get
             {
-                return new string(tipoProducto.ToCharArray());
+                return tipoProducto;
             }
 
             set
@@ -77,7 +77,7 @@ namespace library
         {
             get
             {
-                return new string(marcaProducto.ToCharArray());
+                return marcaProducto;
             }
 
             set
@@ -90,7 +90,7 @@ namespace library
         {
             get
             {
-                return new string(imaProducto.ToCharArray());
+                return imaProducto;
             }
             set
             {

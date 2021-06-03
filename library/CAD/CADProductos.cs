@@ -69,38 +69,26 @@ namespace library
 
         public bool createProductos(ENProductos en)
         {
-
-            SqlConnection con = new SqlConnection(constring);
-
-            try
+            using (SqlConnection c = new SqlConnection(constring))
             {
-                con.Open();
-
-                if (exist(en, con))
+                using (SqlCommand comando = new SqlCommand("Insert into producto(id_producto ,nombre, descripción, precio, imagen, tipo_producto, marca) values(" + en.id_producto + ", '" + en.nom_producto + "', '" + en.desc_producto + "', " + en.pre_producto + ", '" + en.ImageLocation + "', '" + en.tipo_producto + "', '" + en.marca_producto + "')", c))
                 {
-                    Console.WriteLine("Product operation failed. Error: Product already exist");
-                    throw new Exception("ERROR: Ya hay un producto con el mismo id");
+                    using (SqlDataAdapter sda = new SqlDataAdapter(comando))
+                    {
+                        try
+                        {
+                            c.Open();
+                            comando.ExecuteNonQuery();
+                            c.Close();
+                            return true;
+                        }
+                        catch (Exception e)
+                        {
+                            return false;
+                        }
+                    }
                 }
-
-                //Query
-                string query = "Insert into producto(id_producto ,nombre, descripción, precio, imagen, tipo_producto, marca) values('" + en.id_producto + "', '" + en.nom_producto + "', '" + en.desc_producto + "', '" + en.pre_producto + "', '" + en.ImageLocation + "', '" + en.tipo_producto + "', '" + en.marca_producto + "')";
-                SqlDataAdapter data = new SqlDataAdapter();
-                data.InsertCommand = new SqlCommand(query, con);
-                data.InsertCommand.ExecuteNonQuery();
-
             }
-            catch (Exception ex)
-            {
-
-                Console.WriteLine("Product operation failed. Error:{0}", ex.Message);
-                throw new Exception("Product operation failed. Error: " + ex.Message);
-            }
-            finally
-            {
-                if (con != null) con.Close();
-            }
-
-            return true;
         }
 
         public bool deleteProductos(ENProductos en)
@@ -125,73 +113,6 @@ namespace library
             }
         }
 
-        /* public bool deleteProductos(ENProductos en)
-         {
-
-             SqlConnection con = new SqlConnection(constring);
-
-             try
-             {
-
-                 con.Open();
-                 if (!exist(en, con))
-                 {
-                     Console.WriteLine("Product operation failed. Error: Product already exist");
-                     throw new Exception("ERROR: Ya hay un producto con el mismo id");
-                 }
-                 SqlDataAdapter data = new SqlDataAdapter();
-                 //data.DeleteCommand = new SqlCommand("Delete producto where id_producto='" + en.id_producto + "'", con);
-                 data.DeleteCommand = new SqlCommand("Delete producto where id_producto=" +en.id_producto+ "'",con);
-                 data.DeleteCommand.ExecuteNonQuery();
-
-
-             }
-             catch (Exception ex)
-             {
-                 Console.WriteLine("Product operation failed. Error:{0}", ex.Message);
-                 throw new Exception("Product operation failed. Error: " + ex.Message);
-             }
-             finally
-             {
-                 if (con != null) con.Close();
-             }
-
-             return true;
-         }*/
-
-       /* public bool updateProductos(ENProductos en)
-        {
-
-            SqlConnection con = new SqlConnection(constring);
-
-            try
-            {
-
-                con.Open();
-                if (!exist(en, con))
-                {
-                    Console.WriteLine("Product operation failed. Error: Product already exist");
-                    throw new Exception("ERROR: Ya hay un producto con el mismo id");
-                }
-                SqlDataAdapter data = new SqlDataAdapter();
-                data.UpdateCommand = new SqlCommand("Update producto set nombre='" + en.nom_producto + "',descripcion=" + en.desc_producto + "', precio=" + en.pre_producto + "',imagen=" + en.ImageLocation + "',tipo_producto=" + en.tipo_producto + "', marca=" + en.marca_producto + "' where id= " + en.id_producto + "'", con);
-                data.UpdateCommand.ExecuteNonQuery();
-
-
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Product operation failed. Error:{0}", ex.Message);
-                throw new Exception("Product operation failed. Error: " + ex.Message);
-            }
-            finally
-            {
-                if (con != null) con.Close();
-            }
-
-            return true;
-        }*/
-
         public bool updateProductos(ENProductos en)
         {
             bool devolver;
@@ -200,7 +121,7 @@ namespace library
             try
             {
                 con.Open();
-                SqlCommand comando = new SqlCommand("Update producto set nombre='" + en.nom_producto + "',descripcion=" + en.desc_producto + "', precio=" + en.pre_producto + "',imagen=" + en.ImageLocation + "',tipo_producto=" + en.tipo_producto + "', marca=" + en.marca_producto + "' where id= " + en.id_producto + "'", con);
+                SqlCommand comando = new SqlCommand("Update producto set nombre='" + en.nom_producto + "',descripción='" + en.desc_producto + "', precio=" + en.pre_producto + ",imagen='" + en.ImageLocation + "',tipo_producto='" + en.tipo_producto + "', marca='" + en.marca_producto + "' where id_producto= " + en.id_producto, con);
                 comando.ExecuteNonQuery();
                 devolver = true;
             }
