@@ -18,8 +18,8 @@ namespace GableWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             nomProd = Request.QueryString["id_prod"];
-            
-            
+
+            Session["dni"] = "44556677o";
             id_prod = Convert.ToInt32(nomProd);
             getProduct(id_prod);
             valo(id_prod);
@@ -52,9 +52,10 @@ namespace GableWeb
 
         protected void carrito(object sender, EventArgs e)
         {
-            if (Session["LoggedIn"] == null)
+            if (Session["dni"] == null)
             {
-                Response.Redirect("Login.aspx");
+               Response.Redirect("Login.aspx");
+
             }
             else
             {
@@ -107,7 +108,7 @@ namespace GableWeb
 
         protected void comentario(object sender, EventArgs e)
         {
-            if (Session["LoggedIn"] == null)
+            if (Session["dni"] == null)
             {
                 Response.Redirect("Login.aspx");
             }
@@ -121,7 +122,7 @@ namespace GableWeb
                     a.tex_val = msg.Value;
                     int val =Convert.ToInt32(botC.Value);
                     a.pun_val = val;
-                    a.usuaro_id = User.Identity.Name;
+                    a.usuaro_id = Session["dni"].ToString();// User.Identity.Name;
 
                     switch (val)
                     {
