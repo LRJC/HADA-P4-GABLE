@@ -15,7 +15,6 @@ namespace GableWeb
         {
             if (!IsPostBack)
             {
-                Session.Add("dni","45678923p");
                 if (Session["dni"] != null)
                 {
                     setClientArea(Session["dni"].ToString());
