@@ -60,11 +60,13 @@ namespace GableWeb
 
         protected void Button3_Click(object sender, EventArgs e)
         {
+            ENUsuario esu = new ENUsuario();
+            esu.dni = TextBox4.Text.ToString();
             try
             {
-
-                ENUsuario esu = new ENUsuario();
-                esu.dni = TextBox4.Text;
+                esu.deleteCestaUsu();
+                esu.deleteValUsu();
+                esu.deletePedidoFromUsu();
                 esu.deleteUsuario();
             }
             catch (Exception ex)
@@ -78,19 +80,29 @@ namespace GableWeb
             try
             {
                 ENProductos pr = new ENProductos();
-                pr.id_producto = Convert.ToInt32(IDProd.Text);
+                pr.id_producto = int.Parse(IDProd.Text);
                 pr.nom_producto = NombreProd.Text;
                 pr.desc_producto = DescProd.Text;
                 pr.ImageLocation = imagenProd.Text;
                 pr.tipo_producto = TipoProd.Text;
                 pr.marca_producto = marcaProd.Text;
-                pr.pre_producto = Convert.ToSingle(PrecioProd.Text);
+                pr.pre_producto = float.Parse(PrecioProd.Text);
                 pr.createProducto();
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Fallo en el programa, ha saltado excepción...");
             }
+        }
+
+        protected void elimProd_Click(object sender, EventArgs e)
+        {
+         
+        }
+
+        protected void modProd_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
