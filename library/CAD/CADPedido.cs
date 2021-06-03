@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace library
 {
-    class CADPedido
+    public class CADPedido
     {
         private string dbd;
 
@@ -107,6 +108,29 @@ namespace library
             }
 
             return devolver;
+        }
+
+        public DataTable getPedidos(string dni)
+        {
+            SqlConnection c = new SqlConnection(dbd);
+            c.Open();
+            DataTable data = new DataTable();
+            try
+            {
+                SqlCommand com = new SqlCommand("select numPedido, fecha, sum()", c);
+                SqlDataAdapter da = new SqlDataAdapter(com);
+                da.Fill(data);
+                return data;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine($"Excepción en getPedidos. Error: {0}", ex.Message);
+            }
+            finally
+            {
+                c.Close();
+            }
+            return data;
         }
     }
 }
