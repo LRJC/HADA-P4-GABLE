@@ -18,11 +18,20 @@ namespace GableWeb
         protected void ButtonCambiarDatosPersonales_Click(object sender, EventArgs e)
         {
             ENMarca mar = new ENMarca();
+            bool dev;
             try
             {
                 mar.nombre = TextBox1.Text;
                 mar.origen = TextBox2.Text;
-                mar.createMarca();
+                dev=mar.createMarca();
+                if (dev)
+                {
+                    salidaMarcas.Text = "Marca creada correctamente.";
+                }
+                else
+                {
+                    salidaMarcas.Text = "La marca no se ha podido crear.";
+                }
             }
             catch (Exception ex)
             {
@@ -33,11 +42,20 @@ namespace GableWeb
         protected void Button1_Click(object sender, EventArgs e)
         {
             ENMarca mar = new ENMarca();
+            bool dev;
             mar.nombre = TextBox1.Text;
             try
             {
                 if (TextBox1.Text == "") throw new Exception("El campo Nombre esta vacio");
-                mar.deleteMarca();
+                dev=mar.deleteMarca();
+                if (dev)
+                {
+                    salidaMarcas.Text = "Marca Eliminada correctamente.";
+                }
+                else
+                {
+                    salidaMarcas.Text = "La marca no se ha podido eliminar.";
+                }
             }
             catch (Exception ex)
             {
@@ -47,10 +65,19 @@ namespace GableWeb
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+            bool dev;
             try
             {
                 ENMarca mar = new ENMarca(TextBox3.Text, TextBox2.Text);
-                mar.modifyMarca(TextBox1.Text);
+                dev=mar.modifyMarca(TextBox1.Text);
+                if (dev)
+                {
+                    salidaMarcas.Text = "Marca modificada correctamente.";
+                }
+                else
+                {
+                    salidaMarcas.Text = "La marca no se ha podido modificar.";
+                }
             }
             catch (Exception ex)
             {
@@ -61,13 +88,22 @@ namespace GableWeb
         protected void Button3_Click(object sender, EventArgs e)
         {
             ENUsuario esu = new ENUsuario();
+            bool dev;
             esu.dni = TextBox4.Text.ToString();
             try
             {
                 esu.deleteCestaUsu();
                 esu.deleteValUsu();
                 esu.deletePedidoFromUsu();
-                esu.deleteUsuario();
+                dev=esu.deleteUsuario();
+                if (dev)
+                {
+                    salidaElim.Text = "Usuario eliminado correctamente.";
+                }
+                else
+                {
+                    salidaElim.Text = "El usuario no se ha podido eliminar.";
+                }
             }
             catch (Exception ex)
             {
@@ -77,9 +113,10 @@ namespace GableWeb
 
         protected void crearProd_Click(object sender, EventArgs e)
         {
+            bool dev;
             try
             {
-                ENProductos pr = new ENProductos();//int.Parse(IDProd.Text), NombreProd.Text, DescProd.Text, float.Parse(PrecioProd.Text), TipoProd.Text, imagenProd.Text, marcaProd.Text);
+                ENProductos pr = new ENProductos();
                 pr.id_producto = int.Parse(IDProd.Text);
                 pr.nom_producto = NombreProd.Text;
                 pr.desc_producto = DescProd.Text;
@@ -87,7 +124,15 @@ namespace GableWeb
                 pr.tipo_producto = TipoProd.Text;
                 pr.marca_producto = marcaProd.Text;
                 pr.pre_producto = float.Parse(PrecioProd.Text);
-                pr.createProducto();
+                dev=pr.createProducto();
+                if (dev)
+                {
+                    salidaProd.Text = "Producto creado correctamente.";
+                }
+                else
+                {
+                    salidaProd.Text = "El producto no se ha podido crear.";
+                }
             }
             catch (Exception ex)
             {
@@ -98,27 +143,53 @@ namespace GableWeb
         protected void elimProd_Click(object sender, EventArgs e)
         {
             ENProductos pr = new ENProductos();
+            bool dev;
             pr.id_producto= Convert.ToInt32(IDProd.Text);
-
-
-
-
-            pr.deleteProductos();
+            try
+            {
+                dev= pr.deleteProductos();
+                if (dev)
+                {
+                    salidaProd.Text = "Producto eliminado correctamente.";
+                }
+                else
+                {
+                    salidaProd.Text = "El producto no se ha podido eliminado.";
+                }
+            }
+            catch (Exception er)
+            {
+                Console.WriteLine("EXCEPCIÓN");
+            }
         }
 
         protected void modProd_Click(object sender, EventArgs e)
         {
-            ENProductos pr = new ENProductos();
-            pr.id_producto = int.Parse(IDProd.Text);
-            pr.nom_producto = NombreProd.Text;
-            pr.desc_producto = DescProd.Text;
-            pr.ImageLocation = imagenProd.Text;
-            pr.tipo_producto = TipoProd.Text;
-            pr.marca_producto = marcaProd.Text;
-            pr.pre_producto = float.Parse(PrecioProd.Text);
-
-            pr.updateProductos();
-
+            bool dev;
+            try
+            {
+                ENProductos pr = new ENProductos();
+                pr.id_producto = int.Parse(IDProd.Text);
+                pr.nom_producto = NombreProd.Text;
+                pr.desc_producto = DescProd.Text;
+                pr.ImageLocation = imagenProd.Text;
+                pr.tipo_producto = TipoProd.Text;
+                pr.marca_producto = marcaProd.Text;
+                pr.pre_producto = float.Parse(PrecioProd.Text);
+                dev = pr.updateProductos();
+                if (dev)
+                {
+                    salidaProd.Text = "Producto eliminado correctamente.";
+                }
+                else
+                {
+                    salidaProd.Text = "El producto no se ha podido eliminado.";
+                }
+            }
+            catch (Exception er)
+            {
+                Console.WriteLine("EXCEPCIOOON");
+            }
 
         }
     }

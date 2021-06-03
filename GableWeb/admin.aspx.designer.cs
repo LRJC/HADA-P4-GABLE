@@ -24,6 +24,15 @@ namespace GableWeb
         protected global::System.Web.UI.WebControls.Label GestionMarcas;
 
         /// <summary>
+        /// Control salidaMarcas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label salidaMarcas;
+
+        /// <summary>
         /// Control TextBox3.
         /// </summary>
         /// <remarks>
@@ -87,6 +96,15 @@ namespace GableWeb
         protected global::System.Web.UI.WebControls.Label ElimUsu;
 
         /// <summary>
+        /// Control salidaElim.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label salidaElim;
+
+        /// <summary>
         /// Control TextBox4.
         /// </summary>
         /// <remarks>
@@ -112,6 +130,15 @@ namespace GableWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label GestionProd;
+
+        /// <summary>
+        /// Control salidaProd.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label salidaProd;
 
         /// <summary>
         /// Control IDProd.

@@ -12,6 +12,7 @@
                         <div class="col-12">
                             <div class="row-10 my-2 border-bottom">
                                  <h4><asp:Label ID="GestionMarcas" runat="server" Text="Gestionar marcas"></asp:Label></h4>
+                                <asp:Label runat="server" ID="salidaMarcas"></asp:Label>
                             </div>
                             <div class="row my-2 mx-0 justify-content-center mb-5">
                                 <div class="col-4">
@@ -39,6 +40,7 @@
                             </div>
                             <div class="row-10 my-2 border-bottom">
                                  <h4><asp:Label ID="ElimUsu" runat="server" Text="Eliminar Usuarios"></asp:Label></h4>
+                                <asp:Label runat="server" ID="salidaElim"></asp:Label>
                             </div>
                             <div class="row my-2 mx-0 justify-content-center mb-5">
                                 <div class="col-4">
@@ -50,6 +52,7 @@
                             </div>
                             <div class="row-10 my-2 border-bottom">
                                  <h4><asp:Label ID="GestionProd" runat="server" Text="Gestionar Productos"></asp:Label></h4>
+                                <asp:Label runat="server" ID="salidaProd"></asp:Label>
                             </div>
                             <div class="row my-2 mx-0 justify-content-center mb-5">
                                 <div class="col-4">
