@@ -79,7 +79,14 @@ namespace GableWeb
         {
             try
             {
-                ENProductos pr = new ENProductos(int.Parse(IDProd.Text), NombreProd.Text, DescProd.Text, float.Parse(PrecioProd.Text), imagenProd.Text, TipoProd.Text, marcaProd.Text);
+                ENProductos pr = new ENProductos();//int.Parse(IDProd.Text), NombreProd.Text, DescProd.Text, float.Parse(PrecioProd.Text), TipoProd.Text, imagenProd.Text, marcaProd.Text);
+                /*pr.id_producto = int.Parse(IDProd.Text);
+                pr.nom_producto = NombreProd.Text;
+                pr.desc_producto = DescProd.Text;
+                pr.ImageLocation = imagenProd.Text;
+                pr.tipo_producto = TipoProd.Text;
+                pr.marca_producto = marcaProd.Text;
+                pr.pre_producto = float.Parse(PrecioProd.Text);*/
                 pr.createProducto();
             }
             catch (Exception ex)
@@ -90,13 +97,29 @@ namespace GableWeb
 
         protected void elimProd_Click(object sender, EventArgs e)
         {
-            
+            ENProductos pr = new ENProductos();
+            pr.id_producto= Convert.ToInt32(IDProd.Text);
+
+
+
+
+            pr.deleteProductos();
         }
 
         protected void modProd_Click(object sender, EventArgs e)
         {
             ENProductos pr = new ENProductos();
+            pr.id_producto = Convert.ToInt32(IDProd.Text);
+            pr.nom_producto = NombreProd.Text;
+            pr.desc_producto = DescProd.Text;
+            pr.ImageLocation = imagenProd.Text;
+            pr.tipo_producto = TipoProd.Text;
+            pr.marca_producto = marcaProd.Text;
+            pr.pre_producto = float.Parse(PrecioProd.Text);
+
             pr.updateProductos();
+
+
         }
     }
 }
