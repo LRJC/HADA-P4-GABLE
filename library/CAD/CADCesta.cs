@@ -48,9 +48,8 @@ namespace library
             using (SqlConnection con = new SqlConnection(constring))
             {
                 using (SqlCommand cmd = new SqlCommand("" +
-                    "select *" +
+                    "select * " +
                     "from cesta " +
-                    "where usuario = '" + dni + "'" + 
                     "", con))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
@@ -58,24 +57,24 @@ namespace library
                         con.Open();
                         DataTable cestData = new DataTable();
                         sda.Fill(cestData);
-
-                        if (cestData.Rows.Count > 0)
-                            return false;
-
                         int maxIndex = 0;
 
                         foreach (DataRow row in cestData.Rows)
                         {
-                            int linIndex = int.Parse(row[1].ToString());
+                            if (row.ToString() == dni)
+                                return false;
+
+                            int linIndex = int.Parse(row[0].ToString());
                             if (linIndex > maxIndex)
                                 maxIndex = linIndex;
                         }
 
                         SqlCommand rowCmd = new SqlCommand("" +
                             "insert into cesta (numCesta, usuario) values (" +
-                            (maxIndex + 1).ToString() + "," + dni, con);
+                            (maxIndex + 1).ToString() + ",'" + dni + "')", con);
 
                         rowCmd.ExecuteNonQuery();
+
                         con.Close();
 
                         return true;
