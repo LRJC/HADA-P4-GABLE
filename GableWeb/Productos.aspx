@@ -40,9 +40,10 @@
                             <div class="form-row">
                                 <label for="Cantidad" class="col-sm-3 col-md-3 form-control-label">Cantidad:</label>
                                 <div class="col-sm-8 col-md-9">
+                                  <input type="number" class="qty form-control"  id="Number1" name="qty"  UseSubmitBehavior="false" runat="server"  min="1" max="9999" value="1" />
                                     <form>
                                   
-                                         <input type="number" class="qty form-control"  id="Number1" name="qty"  UseSubmitBehavior="false" runat="server"  min="1" max="9999" value="1" />
+                                         
                                     </form>
                                 </div>
                             </div>
@@ -73,10 +74,13 @@
                                 
                                 <div class="widget-area no-padding blank">
                                     <div class="status-upload">
+                                        <asp:TextBox id="msg" TextMode="multiline" Columns="50" Rows="5" placeholder="Comenta" runat="server" />
+
+                                        <input type="number" class="qty form-control"  id="botC" name="qty"  UseSubmitBehavior="false" runat="server"  min="1" max="5" value="1" /> 
                                         <form>
-                                           <textarea placeholder="Comenta" cols="45" rows="5" id="msg" runat="server" name="cajaComent"></textarea>
                                            
-                                             <input type="number" class="qty form-control"  id="botC" name="qty"  UseSubmitBehavior="false" runat="server"  min="1" max="5" value="1" />                 
+                                           
+                                                             
                                            
                                            
                                         </form>

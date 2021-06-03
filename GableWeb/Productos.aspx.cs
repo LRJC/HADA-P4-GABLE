@@ -119,8 +119,8 @@ namespace GableWeb
                 try
                 {
                     a.producto_id = id_prod;
-                    a.tex_val = msg.ToString();
-                    int val =Convert.ToInt32(botC.Value);
+                    a.tex_val = msg.Text;
+                    int val = Convert.ToInt32(botC.Value);
                     a.pun_val = val;
                     a.usuaro_id = Session["dni"].ToString();// User.Identity.Name;
 
