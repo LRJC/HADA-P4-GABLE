@@ -50,18 +50,19 @@ namespace library
                 using (SqlCommand cmd = new SqlCommand("" +
                     "select *" +
                     "from cesta " +
-                    "where usuario = " + dni +
+                    "where usuario = '" + dni + "'" + 
                     "", con))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                     {
+                        con.Open();
                         DataTable cestData = new DataTable();
                         sda.Fill(cestData);
 
                         if (cestData.Rows.Count > 0)
                             return false;
 
-                        int maxIndex = -1;
+                        int maxIndex = 0;
 
                         foreach (DataRow row in cestData.Rows)
                         {
@@ -75,6 +76,7 @@ namespace library
                             (maxIndex + 1).ToString() + "," + dni, con);
 
                         rowCmd.ExecuteNonQuery();
+                        con.Close();
 
                         return true;
                     }
@@ -89,17 +91,19 @@ namespace library
                 using (SqlCommand cmd = new SqlCommand("" +
                     "select * " +
                     "from cesta " +
-                    "where usuario = " + dni +
+                    "where usuario = '" + dni + "'" +
                     "", con))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                     {
+                        //con.Open();
                         DataTable cestData = new DataTable();
                         sda.Fill(cestData);
+                        //con.Close();
 
-                        if (cestData.Rows.Count > 0)
-                            return int.Parse(cestData.Rows[0][0].ToString());
-                        return -1;
+                        if (cestData.Rows.Count <= 0)
+                            return -1;
+                        return int.Parse(cestData.Rows[0][0].ToString());
                     }
                 }
             }
@@ -169,7 +173,7 @@ namespace library
                     {
                         DataTable linCestData = new DataTable();
                         sda.Fill(linCestData);
-                        int maxIndex = -1;
+                        int maxIndex = 0;
 
                         foreach (DataRow row in linCestData.Rows)
                         {
@@ -178,12 +182,16 @@ namespace library
                                 maxIndex = linIndex;
                         }
 
-                        SqlCommand rowCmd = new SqlCommand("" +
-                            "insert into linCest values (" +
+                        using (SqlCommand rowCmd = new SqlCommand("" +
+                            "insert into linCest (numCesta, linea, producto, importe, cantidad) values (" +
                             numCesta.ToString() + "," + (maxIndex + 1).ToString() + "," + producto.ToString() +
-                            "," + importe.ToString() + "," + cantidad.ToString(), con);
+                            "," + importe.ToString().Replace(',', '.') + "," + cantidad.ToString() + ")", con))
+                        {
+                            con.Open();
+                            rowCmd.ExecuteNonQuery().ToString();
+                            con.Close();
+                        }
 
-                        rowCmd.ExecuteNonQuery();
                     }
                 }
             }
@@ -202,6 +210,7 @@ namespace library
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                     {
+                        con.Open();
                         DataTable linCestData = new DataTable();
                         sda.Fill(linCestData);
 
@@ -214,6 +223,7 @@ namespace library
 
                             rowCmd.ExecuteNonQuery();
                         }
+                        con.Close();
                     }
                 }
             }
@@ -232,6 +242,7 @@ namespace library
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                     {
+                        con.Open();
                         DataTable linCestData = new DataTable();
                         sda.Fill(linCestData);
 
@@ -244,6 +255,7 @@ namespace library
 
                             rowCmd.ExecuteNonQuery();
                         }
+                        con.Close();
                     }
                 }
             }
