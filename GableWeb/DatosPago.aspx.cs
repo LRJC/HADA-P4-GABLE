@@ -23,9 +23,11 @@ namespace GableWeb
             {
                 user.cvv = Convert.ToInt32(cvv.Text);
                 user.numTarjeta = Convert.ToInt32(numTarjeta.Text);
+                user.expTarjeta = yearExp.Text + "/" + mesExp.Text;
+                user.updateUsuario();
+                Response.Redirect("Cesta.aspx");
             }
-            
-            Response.Redirect("Cesta.aspx");
+            else outputMsg.Text = "No ha sido añadir los datos";
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)

@@ -40,6 +40,9 @@
                                     <asp:Button ID="confirm" runat="server" OnClick="btnConfirm_Click" Text="CONFIRMAR" BackColor="Gold"></asp:Button>
                                 </div>
                             </div>
+                            <div class="output-text text-center">
+								<asp:Label ID="outputMsg" runat="server"></asp:Label>
+			    			</div>
                     </div>
                 </div>
             </div>
