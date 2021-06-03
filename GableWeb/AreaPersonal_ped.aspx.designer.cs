@@ -105,6 +105,15 @@ namespace GableWeb
         protected global::System.Web.UI.WebControls.Button btnDeleteAccount_ped;
 
         /// <summary>
+        /// Control dataListPedidos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataList dataListPedidos;
+
+        /// <summary>
         /// Control prod1.
         /// </summary>
         /// <remarks>

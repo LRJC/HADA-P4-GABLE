@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace library
 {
-    class ENPedido
+    public class ENPedido
     {
         private int _numPedido;
         private string _dni;
@@ -78,6 +79,13 @@ namespace library
         {
             CADPedido m = new CADPedido();
             return m.modifyPedido(this);
+        }
+
+        public DataTable getPedidos(string dni)
+        {
+            CADPedido ped = new CADPedido();
+            DataTable pedidos = ped.getPedidos(dni);
+            return pedidos;
         }
     }
 }

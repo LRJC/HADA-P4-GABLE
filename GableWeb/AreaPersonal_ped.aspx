@@ -45,7 +45,25 @@
             </div>
             <div class="row ml-1">
                 <div class="col">
-                    <div class="row border-top border-bottom p-3">
+                    <asp:DataList ID="dataListPedidos" runat="server" RepeatColumns="5" OnSelectedIndexChanged="dataListPedidos_SelectedIndexChanged">
+                        <ItemTemplate>
+                            <div class="row-12 border-top border-bottom p-3">
+                                <div class="col-3 py-3" id="fecha">
+                                    <asp:Label ID="fechaPed" runat="server" Text='<%#Eval("fecha") %>'></asp:Label>
+                                </div>
+                                <div class="col-3 py-3" id="numPedido">
+                                    <asp:Label ID="Label2" runat="server" Text='<%#Eval("numPedido") %>'></asp:Label>
+                                </div>
+                                <div class="row-3 py-3" id="precio">
+                                    <asp:Label ID="Label3" runat="server" Text='<%#Eval("total") %>'></asp:Label>
+                                </div>
+                                <div class="row-3 py-3" id="resumenPed">
+                                    <asp:LinkButton ID="verDetallesPed" runat="server" CommandArgument='<%#Eval("numPedido") %>' OnCommand="verDetallesPed_Click">Ver detalles</asp:LinkButton>
+                                </div>
+                            </div>
+                        </ItemTemplate>
+                    </asp:DataList>
+                    <!--<div class="row border-top border-bottom p-3">
                         <asp:Label ID="prod1" runat="server" Text="[Pedido]"></asp:Label>
                     </div>
                     <div class="row border-top border-bottom p-3">
@@ -59,7 +77,7 @@
                     </div>
                     <div class="row border-top border-bottom p-3">
                         <asp:Label ID="prod5" runat="server" Text="[Pedido]"></asp:Label>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>

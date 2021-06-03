@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -18,6 +19,7 @@ namespace GableWeb
                 if (Session["dni"] != null)
                 {
                     setClientArea(Session["dni"].ToString());
+                    loadPedidos();
                 }
                 else
                 {
@@ -25,6 +27,21 @@ namespace GableWeb
                 }
 
 
+            }
+        }
+
+        protected void loadPedidos()
+        {
+            try
+            {
+                ENPedido ped = new ENPedido();
+                DataTable pedidos = ped.getPedidos(Session["dni"].ToString());
+                dataListPedidos.DataSource = pedidos;
+                dataListPedidos.DataBind();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine($"Excepción en loadPedidos. Error: {0}", ex.Message);
             }
         }
 
@@ -61,6 +78,11 @@ namespace GableWeb
             Session.RemoveAll();
             Session.Abandon();
             Response.Redirect("index.aspx");
+        }
+
+        protected void verDetallesPed_Click(object sender, CommandEventArgs e)
+        {
+            Response.Redirect("pedidos.aspx?pedido=" + e.CommandArgument);
         }
     }
 }
