@@ -34,7 +34,8 @@ namespace library
                     throw new Exception("ERROR: Ya hay una valoración del usuario sobre el mismo producto");
                 }
 
-                string query = "Insert into valoracion (producto ,usuario, texto, puntuacion,estrella) values ('" + en.producto_id + "'," + en.usuaro_id + "'," + en.tex_val + "'," + en.pun_val + "',"+ en.estr_val + "')'";
+               string query = "Insert into valoracion (usuario ,producto, texto, puntuación,estrella) values ('" + en.usuaro_id + "','" + en.producto_id + "','" + en.tex_val + "','" + en.pun_val + "'," + en.estr_val + "')";
+              //  string query = "Insert into valoracion (usuario, producto, texto, puntuacion,estrella) values (" +en.usuaro_id+ "," +en.producto_id+ "," +en.tex_val+ ","+ en.pun_val+ "," +en.estr_val+ "')";
                 SqlDataAdapter data = new SqlDataAdapter();
                 data.InsertCommand = new SqlCommand(query, con);
                 data.InsertCommand.ExecuteNonQuery();
