@@ -53,6 +53,42 @@ namespace library
             }
         }
 
+        public bool readUsuarioEmail(ENUsuario en)
+        {
+            SqlConnection c = new SqlConnection(dbd);
+
+            try
+            {
+                c.Open();
+                String s = "Select * from usuario where email = '" + en.email.ToString() + "';";
+                SqlCommand comando = new SqlCommand(s, c);
+                SqlDataReader data = comando.ExecuteReader();
+
+                if (data.Read())
+                {
+                    en.nombre = data["nombre"].ToString();
+                    en.apellidos = data["apellidos"].ToString();
+                    en.dni = data["dni"].ToString();
+                    en.email = data["email"].ToString();
+                    if (data["nacido"] != null)
+                    {
+                        en.fechanac = data["nacido"].ToString();//comprobar
+                    }
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"EXCEPCION. Error: {0}", e.Message);
+                return false;
+            }
+            finally
+            {
+                c.Close();
+            }
+        }
+
         public bool readUsuarioPago(ENUsuario en)
         {
             SqlConnection c = new SqlConnection(dbd);

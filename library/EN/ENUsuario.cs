@@ -131,6 +131,23 @@ namespace library
             return devolver;
         }
 
+        public bool readUsuarioPago()
+        {
+            bool devolver;
+            CADUsuario usu = new CADUsuario();
+            devolver = usu.readUsuarioPago(this);
+            return devolver;
+        }
+
+        public bool readUsuarioEmail()
+        {
+            bool devolver;
+            CADUsuario usu = new CADUsuario();
+            devolver = usu.readUsuarioEmail(this);
+            return devolver;
+        }
+
+
         public bool createUsuario()//register
         {
             bool devolver = false;
