@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using library;
 
 namespace GableWeb
 {
@@ -11,9 +12,15 @@ namespace GableWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session["LoggedIn"] != null)
+            if (!IsPostBack)
             {
-                init_sesion.Text ="Cuenta Usuario";
+                if (Session["dni"] != null)
+                {
+                    ENUsuario usu = new ENUsuario();
+                    usu.dni = Session["dni"].ToString();
+                    usu.readUsuario();
+                    init_sesion.Text = "Area Personal de " + usu.nombre;
+                }
             }
         }
 
@@ -29,7 +36,7 @@ namespace GableWeb
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            if(Session["LoggedIn"] == null) { 
+            if(Session["dni"] == null) { 
                 Response.Redirect("Login.aspx");
             } else
             {

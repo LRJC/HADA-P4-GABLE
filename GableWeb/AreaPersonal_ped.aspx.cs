@@ -12,13 +12,19 @@ namespace GableWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["dni"] == null)
+            if (!IsPostBack)
             {
-                Response.Redirect("Login.aspx");
-            }
-            else
-            {
-                setClientArea(Session["dni"].ToString());
+                Session.Add("dni","45678923p");
+                if (Session["dni"] != null)
+                {
+                    setClientArea(Session["dni"].ToString());
+                }
+                else
+                {
+                    Response.Redirect("Login.aspx");
+                }
+
+
             }
         }
 
@@ -26,17 +32,17 @@ namespace GableWeb
         {
             ENUsuario usu = new ENUsuario();
             usu.dni = dni;
-            if (!usu.readUsuario())//no existe el usuario de la sesión actual
-            {
-                Session.RemoveAll();
-                Session.Abandon();
-                Response.Redirect("Login.aspx");
-            }
-            else
+            if (usu.readUsuario())//existe el usuario de la sesión actual
             {
                 lab_NombreApellidos_AreaPersonal.Text = usu.nombre.ToString() + " " + usu.apellidos.ToString();
                 lab_Dni_AreaPersonal.Text = usu.dni.ToString();
                 lab_Correo_AreaPersonal.Text = usu.email.ToString();
+            }
+            else
+            {
+                Session.RemoveAll();
+                Session.Abandon();
+                Response.Redirect("index.aspx");
             }
         }
 
