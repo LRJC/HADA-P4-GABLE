@@ -33,16 +33,34 @@ namespace library
             return c.getUserID(this);
         }
 
+        public bool AddNewBasketForUser(string dni)
+        {
+            CADCesta c = new CADCesta();
+            return c.AddNewBasketForUser(dni);
+        }
+
+        public int getBasketByDNI(string dni)
+        {
+            CADCesta c = new CADCesta();
+            return c.getBasketByDNI(dni);
+        }
+
+        public string getDNIByBasket(int basket)
+        {
+            CADCesta c = new CADCesta();
+            return c.getDNIByBasket(basket);
+        }
+
         public bool ProceedToBuy()
         {
             CADCesta c = new CADCesta();
             return c.ProceedToBuy(this);
         }
 
-        public DataTable ShowBasketItems()
+        public DataTable ShowBasketItems(string dni)
         {
             CADCesta c = new CADCesta();
-            return c.ShowBasketItems();
+            return c.ShowBasketItems(dni);
         }
 
         public void InsertItemsIntoOrders(int numCesta)

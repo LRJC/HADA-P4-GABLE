@@ -17,7 +17,11 @@ namespace GableWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             cesta = new ENCesta();
-            if(!IsPostBack && CheckIfSomeItem())
+            if (Session["dni"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            if (!IsPostBack && CheckIfSomeItem())
             {
                 ShowBasketItems();
             }
@@ -25,7 +29,7 @@ namespace GableWeb
 
         private void ShowBasketItems()
         {
-            DataTable linCestData = cesta.ShowBasketItems();
+            DataTable linCestData = cesta.ShowBasketItems(Session["dni"].ToString());
             itemsCesta.DataSource = linCestData;
             itemsCesta.DataBind();
             double finalPrice = linCestData.Select().Sum(p => Convert.ToDouble(p["total"]));
