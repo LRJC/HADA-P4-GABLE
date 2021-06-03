@@ -22,7 +22,10 @@ namespace GableWeb
                 ENUsuario user = new ENUsuario(dni.Text, nombre.Text, apellidos.Text, email.Text, pwd.Text, Convert.ToInt32(tlf.Text), date.Text);
 
                 if (user.createUsuario())
+                {
                     outputMsg.Text = "Usuario creado correctamente";
+                    Response.Redirect("index.aspx");
+                }
                 else outputMsg.Text = "No ha sido posible crear el usuario";
             }
             catch (Exception ex)

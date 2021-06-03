@@ -27,7 +27,7 @@ namespace GableWeb
             auth = LoginCorrecto(Login1.UserName, Login1.Password);
             e.Authenticated = auth;
             if (auth)
-                
+                Session.Add("dni", "46086105Q");
                 Response.Redirect("index.aspx");
         }
         private bool LoginCorrecto(string email, string pwd)
