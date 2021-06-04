@@ -41,7 +41,7 @@
 			    					<div class="form-group">
 			    						<asp:TextBox ID="dni" runat="server" placeholder="DNI" Columns="20"></asp:TextBox>
 										<asp:RequiredFieldValidator ID="DniReq" runat="server" ControlToValidate="dni" ErrorMessage="*"></asp:RequiredFieldValidator>
-										<asp:CustomValidator runat="server" ID="cusDni" ControlToValidate="dni" OnServerValidate="cusDni_ServerValidate" ErrorMessage="¡Demasiado largo! 9 máximo"></asp:CustomValidator>
+										<asp:RegularExpressionValidator ID="RegDni" runat="server" ControlToValidate="dni" ErrorMessage="¡Demasiado largo! 9 máximo" ValidationExpression="[0-9]{8}[A-Z]{1}"></asp:RegularExpressionValidator>
 			    					</div>
 			    				</div>
 							</div>
@@ -63,7 +63,7 @@
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
 			    						<asp:TextBox ID="tlf" runat="server" placeholder="Telefono" Columns="20"></asp:TextBox>
-										<asp:CustomValidator runat="server" ID="cusTlf" ControlToValidate="tlf" OnServerValidate="cusTlf_ServerValidate" ErrorMessage="¡Demasiado largo! 9 máximo"></asp:CustomValidator>
+										<asp:RegularExpressionValidator ID="RegTlf" runat="server" ControlToValidate="tlf" ErrorMessage="¡Demasiado largo! 9 máximo" ValidationExpression="[0-9]{9}"></asp:RegularExpressionValidator>
 			    					</div>
 			    				</div>
 			    			</div>

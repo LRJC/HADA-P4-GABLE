@@ -87,13 +87,13 @@ namespace GableWeb
         protected global::System.Web.UI.WebControls.RequiredFieldValidator DniReq;
 
         /// <summary>
-        /// Control cusDni.
+        /// Control RegDni.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator cusDni;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegDni;
 
         /// <summary>
         /// Control email.
@@ -150,13 +150,13 @@ namespace GableWeb
         protected global::System.Web.UI.WebControls.TextBox tlf;
 
         /// <summary>
-        /// Control cusTlf.
+        /// Control RegTlf.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator cusTlf;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegTlf;
 
         /// <summary>
         /// Control b_register.
