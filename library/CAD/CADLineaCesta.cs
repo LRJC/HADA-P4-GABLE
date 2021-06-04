@@ -33,8 +33,9 @@ namespace library
                         cmd.ExecuteNonQuery();
                         con.Close();
                         return true;
-                    } catch (Exception)
+                    } catch (Exception e)
                     {
+                        Console.WriteLine($"EXCEPCION. Error: {0}", e.Message);
                         return false;
                     }
 
@@ -53,12 +54,20 @@ namespace library
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                     {
-                        DataTable linCestData = new DataTable();
-                        sda.Fill(linCestData);
+                        try
+                        {
+                            DataTable linCestData = new DataTable();
+                            sda.Fill(linCestData);
 
-                        if (linCestData.Rows.Count > 0)
-                            return Convert.ToInt32(linCestData.Rows[0][0].ToString());
-                        return -1;
+                            if (linCestData.Rows.Count > 0)
+                                return Convert.ToInt32(linCestData.Rows[0][0].ToString());
+                            return -1;
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine($"EXCEPCION. Error: {0}", e.Message);
+                            return -1;
+                        }
                     }
                 }
             }
@@ -80,8 +89,9 @@ namespace library
                             cmd.ExecuteNonQuery();
                             con.Close();
                             return true;
-                        } catch(Exception)
+                        } catch(Exception e)
                         {
+                            Console.WriteLine($"EXCEPCION. Error: {0}", e.Message);
                             return false;
                         }
                     }

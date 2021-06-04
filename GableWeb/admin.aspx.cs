@@ -12,7 +12,21 @@ namespace GableWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                if (Session["dni"] != null)//si esta loggeado
+                {
+                    if(Session["dni"].ToString() != "00000000A")//si no es el admin
+                    {
+                        Response.Redirect("index.aspx");
+                    }
+                }
+                else//si no esta loggeado
+                {
+                    Response.Redirect("Login.aspx");
+                }
+                
+            }
         }
 
         protected void ButtonCambiarDatosPersonales_Click(object sender, EventArgs e)

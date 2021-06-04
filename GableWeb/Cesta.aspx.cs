@@ -43,10 +43,17 @@ namespace GableWeb
         protected void ItemQuery(object sender, CommandEventArgs e)
         {
             string[] args = e.CommandArgument.ToString().Split(',');
-            int numCesta = Convert.ToInt32(args[0]);
-            int linea = Convert.ToInt32(args[1]);
+            int numCesta = -1, linea = -1;
+            try
+            {
+                numCesta = Convert.ToInt32(args[0]);
+                linea = Convert.ToInt32(args[1]);
+            } catch (Exception ex)
+            {
+                Console.WriteLine($"error: {0}", ex.Message);
+            }
 
-            if(CheckIfItemExists(numCesta, linea))
+            if (CheckIfItemExists(numCesta, linea))
             {
                 ENLineaCesta lc = new ENLineaCesta(numCesta, linea);
                 switch(e.CommandName)
@@ -69,7 +76,6 @@ namespace GableWeb
         protected void ProceedToBuy(object sender, CommandEventArgs e)
         {
             int numCesta = 0;
-            //te lo meto en un try catch para que no pete, pero soluciona la lógica pls
             try {
                 numCesta = Convert.ToInt32(e.CommandArgument.ToString());
             }
@@ -78,7 +84,7 @@ namespace GableWeb
                 Console.WriteLine($"error: {0}", ex.Message);
             }
 
-            if (Session["LoggedIn"] == null)
+            if (Session["dni"] != null)
             {
                 if (CheckIfHaveBuyData(numCesta))
                 {

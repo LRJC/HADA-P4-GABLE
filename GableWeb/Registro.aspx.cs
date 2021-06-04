@@ -19,6 +19,8 @@ namespace GableWeb
         {
             try
             {
+                if(tlf.Text == "")
+                    tlf.Text = "-1";
                 ENUsuario user = new ENUsuario(dni.Text, nombre.Text, apellidos.Text, email.Text, pwd.Text, Convert.ToInt32(tlf.Text), date.Text);
                 ENCesta c = new ENCesta();
 

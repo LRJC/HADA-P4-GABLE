@@ -32,12 +32,19 @@ namespace library
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                     {
-                        DataTable linCestData = new DataTable();
-                        sda.Fill(linCestData);
+                        try
+                        {
+                            DataTable linCestData = new DataTable();
+                            sda.Fill(linCestData);
 
-                        if (linCestData.Rows.Count > 0)
-                            return linCestData.Rows[0][0].ToString();
-                        return null;
+                            if (linCestData.Rows.Count > 0)
+                                return linCestData.Rows[0][0].ToString();
+                            return null;
+                        } catch (Exception e)
+                        {
+                            Console.WriteLine($"EXCEPCION. Error: {0}", e.Message);
+                            return null;
+                        }
                     }
                 }
             }
@@ -54,30 +61,38 @@ namespace library
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                     {
-                        con.Open();
-                        DataTable cestData = new DataTable();
-                        sda.Fill(cestData);
-                        int maxIndex = 0;
-
-                        foreach (DataRow row in cestData.Rows)
+                        try
                         {
-                            if (row.ToString() == dni)
-                                return false;
+                            con.Open();
+                            DataTable cestData = new DataTable();
+                            sda.Fill(cestData);
+                            int maxIndex = 0;
 
-                            int linIndex = int.Parse(row[0].ToString());
-                            if (linIndex > maxIndex)
-                                maxIndex = linIndex;
+                            foreach (DataRow row in cestData.Rows)
+                            {
+                                if (row.ToString() == dni)
+                                    return false;
+
+                                int linIndex = int.Parse(row[0].ToString());
+                                if (linIndex > maxIndex)
+                                    maxIndex = linIndex;
+                            }
+
+                            SqlCommand rowCmd = new SqlCommand("" +
+                                "insert into cesta (numCesta, usuario) values (" +
+                                (maxIndex + 1).ToString() + ",'" + dni + "')", con);
+
+                            rowCmd.ExecuteNonQuery();
+
+                            con.Close();
+
+                            return true;
                         }
-
-                        SqlCommand rowCmd = new SqlCommand("" +
-                            "insert into cesta (numCesta, usuario) values (" +
-                            (maxIndex + 1).ToString() + ",'" + dni + "')", con);
-
-                        rowCmd.ExecuteNonQuery();
-
-                        con.Close();
-
-                        return true;
+                        catch (Exception e)
+                        {
+                            Console.WriteLine($"EXCEPCION. Error: {0}", e.Message);
+                            return false;
+                        }
                     }
                 }
             }
@@ -95,14 +110,20 @@ namespace library
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                     {
-                        //con.Open();
-                        DataTable cestData = new DataTable();
-                        sda.Fill(cestData);
-                        //con.Close();
-
-                        if (cestData.Rows.Count <= 0)
+                        try
+                        {
+                            DataTable cestData = new DataTable();
+                            sda.Fill(cestData);
+                        
+                            if (cestData.Rows.Count <= 0)
+                                return -1;
+                            return int.Parse(cestData.Rows[0][0].ToString());
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine($"EXCEPCION. Error: {0}", e.Message);
                             return -1;
-                        return int.Parse(cestData.Rows[0][0].ToString());
+                        }
                     }
                 }
             }
@@ -120,12 +141,20 @@ namespace library
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                     {
-                        DataTable cestData = new DataTable();
-                        sda.Fill(cestData);
+                        try
+                        {
+                            DataTable cestData = new DataTable();
+                            sda.Fill(cestData);
 
-                        if (cestData.Rows.Count > 0)
-                            return cestData.Rows[0][1].ToString();
-                        return null;
+                            if (cestData.Rows.Count > 0)
+                                return cestData.Rows[0][1].ToString();
+                            return null;
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine($"EXCEPCION. Error: {0}", e.Message);
+                            return null;
+                        }
                     }
                 }
             }
@@ -149,9 +178,17 @@ namespace library
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                     {
-                        DataTable linCestData = new DataTable();
-                        sda.Fill(linCestData);
-                        return linCestData;
+                        try
+                        {
+                            DataTable linCestData = new DataTable();
+                            sda.Fill(linCestData);
+                            return linCestData;
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine($"EXCEPCION. Error: {0}", e.Message);
+                            return null;
+                        }
                     }
                 }
             }
@@ -170,25 +207,32 @@ namespace library
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                     {
-                        DataTable linCestData = new DataTable();
-                        sda.Fill(linCestData);
-                        int maxIndex = 0;
-
-                        foreach (DataRow row in linCestData.Rows)
+                        try
                         {
-                            int linIndex = int.Parse(row[1].ToString());
-                            if (linIndex > maxIndex)
-                                maxIndex = linIndex;
+                            DataTable linCestData = new DataTable();
+                            sda.Fill(linCestData);
+                            int maxIndex = 0;
+
+                            foreach (DataRow row in linCestData.Rows)
+                            {
+                                int linIndex = int.Parse(row[1].ToString());
+                                if (linIndex > maxIndex)
+                                    maxIndex = linIndex;
+                            }
+
+                            using (SqlCommand rowCmd = new SqlCommand("" +
+                                "insert into linCest (numCesta, linea, producto, importe, cantidad) values (" +
+                                numCesta.ToString() + "," + (maxIndex + 1).ToString() + "," + producto.ToString() +
+                                "," + importe.ToString().Replace(',', '.') + "," + cantidad.ToString() + ")", con))
+                            {
+                                con.Open();
+                                rowCmd.ExecuteNonQuery().ToString();
+                                con.Close();
+                            }
                         }
-
-                        using (SqlCommand rowCmd = new SqlCommand("" +
-                            "insert into linCest (numCesta, linea, producto, importe, cantidad) values (" +
-                            numCesta.ToString() + "," + (maxIndex + 1).ToString() + "," + producto.ToString() +
-                            "," + importe.ToString().Replace(',', '.') + "," + cantidad.ToString() + ")", con))
+                        catch (Exception e)
                         {
-                            con.Open();
-                            rowCmd.ExecuteNonQuery().ToString();
-                            con.Close();
+                            Console.WriteLine($"EXCEPCION. Error: {0}", e.Message);
                         }
 
                     }
@@ -209,22 +253,29 @@ namespace library
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                     {
-                        con.Open();
-                        DataTable linCestData = new DataTable();
-                        sda.Fill(linCestData);
-
-                        int numPed = GenerateOrder(getDNIByBasket(numCesta));
-
-                        foreach (DataRow row in linCestData.Rows)
+                        try
                         {
-                            SqlCommand rowCmd = new SqlCommand("" +
-                                "insert into linPed values (" +
-                                numPed + "," + row[1] + "," + row[2] +
-                                "," + row[3] + "," + row[4], con);
+                            con.Open();
+                            DataTable linCestData = new DataTable();
+                            sda.Fill(linCestData);
 
-                            rowCmd.ExecuteNonQuery();
+                            int numPed = GenerateOrder(getDNIByBasket(numCesta));
+
+                            foreach (DataRow row in linCestData.Rows)
+                            {
+                                SqlCommand rowCmd = new SqlCommand("" +
+                                    "insert into linPed values (" +
+                                    numPed + "," + row[1] + "," + row[2] +
+                                    "," + row[3] + "," + row[4], con);
+
+                                rowCmd.ExecuteNonQuery();
+                            }
+                            con.Close();
                         }
-                        con.Close();
+                        catch (Exception e)
+                        {
+                            Console.WriteLine($"EXCEPCION. Error: {0}", e.Message);
+                        }
                     }
                 }
             }
@@ -243,20 +294,27 @@ namespace library
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                     {
-                        con.Open();
-                        DataTable linCestData = new DataTable();
-                        sda.Fill(linCestData);
-
-                        foreach (DataRow row in linCestData.Rows)
+                        try
                         {
-                            SqlCommand rowCmd = new SqlCommand("" +
-                                "delete from linCest " +
-                                "where numCesta = " + numCesta + " " +
-                                "and linea = " + row[1], con);
+                            con.Open();
+                            DataTable linCestData = new DataTable();
+                            sda.Fill(linCestData);
 
-                            rowCmd.ExecuteNonQuery();
+                            foreach (DataRow row in linCestData.Rows)
+                            {
+                                SqlCommand rowCmd = new SqlCommand("" +
+                                    "delete from linCest " +
+                                    "where numCesta = " + numCesta + " " +
+                                    "and linea = " + row[1], con);
+
+                                rowCmd.ExecuteNonQuery();
+                            }
+                            con.Close();
                         }
-                        con.Close();
+                        catch (Exception e)
+                        {
+                            Console.WriteLine($"EXCEPCION. Error: {0}", e.Message);
+                        }
                     }
                 }
             }
@@ -273,29 +331,37 @@ namespace library
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                     {
-                        DataTable pedidoData = new DataTable();
-                        sda.Fill(pedidoData);
-                        int maxIndex = 0;
-
-                        foreach (DataRow row in pedidoData.Rows)
+                        try
                         {
-                            int pedIndex = int.Parse(row[1].ToString());
-                            if (pedIndex > maxIndex)
-                                maxIndex = pedIndex;
+                            DataTable pedidoData = new DataTable();
+                            sda.Fill(pedidoData);
+                            int maxIndex = 0;
+
+                            foreach (DataRow row in pedidoData.Rows)
+                            {
+                                int pedIndex = int.Parse(row[1].ToString());
+                                if (pedIndex > maxIndex)
+                                    maxIndex = pedIndex;
+                            }
+
+                            maxIndex++;
+
+                            using (SqlCommand rowCmd = new SqlCommand("" +
+                                "insert into pedido values (" +
+                                maxIndex.ToString() + ",'" + dni + "', '" + DateTime.Today.ToString("YYYY/MM/DD") + "')", con))
+                            {
+                                con.Open();
+                                rowCmd.ExecuteNonQuery().ToString();
+                                con.Close();
+                            }
+
+                            return maxIndex;
                         }
-
-                        maxIndex++;
-
-                        using (SqlCommand rowCmd = new SqlCommand("" +
-                            "insert into pedido values (" +
-                            maxIndex.ToString() + ",'" + dni + "', '" + DateTime.Today.ToString("YYYY/MM/DD") + "')", con))
+                        catch (Exception e)
                         {
-                            con.Open();
-                            rowCmd.ExecuteNonQuery().ToString();
-                            con.Close();
+                            Console.WriteLine($"EXCEPCION. Error: {0}", e.Message);
+                            return -1;
                         }
-
-                        return maxIndex;
                     }
                 }
             }
@@ -313,10 +379,18 @@ namespace library
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                     {
-                        DataTable linCestData = new DataTable();
-                        sda.Fill(linCestData);
+                        try
+                        {
+                            DataTable linCestData = new DataTable();
+                            sda.Fill(linCestData);
 
-                        return linCestData.Rows.Count > 0;
+                            return linCestData.Rows.Count > 0;
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine($"EXCEPCION. Error: {0}", e.Message);
+                            return false;
+                        }
                     }
                 }
             }
@@ -335,10 +409,18 @@ namespace library
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                     {
-                        DataTable linCestData = new DataTable();
-                        sda.Fill(linCestData);
+                        try
+                        {
+                            DataTable linCestData = new DataTable();
+                            sda.Fill(linCestData);
 
-                        return linCestData.Rows.Count > 0;
+                            return linCestData.Rows.Count > 0;
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine($"EXCEPCION. Error: {0}", e.Message);
+                            return false;
+                        }
                     }
                 }
             }
@@ -359,20 +441,28 @@ namespace library
                     {
                         using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                         {
-                            DataTable userData = new DataTable();
-                            sda.Fill(userData);
-
-                            if (userData.Rows.Count > 0)
+                            try
                             {
-                                bool haveAllDependencies = true;
+                                DataTable userData = new DataTable();
+                                sda.Fill(userData);
 
-                                for (int i = 0; i < userData.Columns.Count; i++)
+                                if (userData.Rows.Count > 0)
                                 {
-                                    if (userData.Rows[0][i] == DBNull.Value)
-                                        haveAllDependencies = false;
-                                }
+                                    bool haveAllDependencies = true;
 
-                                return haveAllDependencies;
+                                    for (int i = 0; i < userData.Columns.Count; i++)
+                                    {
+                                        if (userData.Rows[0][i] == DBNull.Value)
+                                            haveAllDependencies = false;
+                                    }
+
+                                    return haveAllDependencies;
+                                }
+                            }
+                            catch (Exception e)
+                            {
+                                Console.WriteLine($"EXCEPCION. Error: {0}", e.Message);
+                                return false;
                             }
                         }
                     }

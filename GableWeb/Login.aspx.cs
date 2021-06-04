@@ -36,7 +36,9 @@ namespace GableWeb
                 if (user.contraseña == Login1.Password)
                 {
                     Session.Add("dni", user.dni);
-                    Response.Redirect("index.aspx");
+                    if (user.email == "admin@gable.com")
+                        Response.Redirect("admin.aspx");
+                    else Response.Redirect("index.aspx");
                 }
             }    
         }
