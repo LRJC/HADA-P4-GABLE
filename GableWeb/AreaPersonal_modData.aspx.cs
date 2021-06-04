@@ -50,7 +50,7 @@ namespace GableWeb
 
         protected void ButtonCambiarContra_Click(object sender, EventArgs e)
         {
-            if (Page.IsValid)//maybe solo checkear los campos de contra
+            if (requiredOldPwd.IsValid && requiredNewPwd.IsValid && requiredConfirmPwd.IsValid && compareContras.IsValid)
             {
                 ENUsuario usu = new ENUsuario();
                 usu.dni = Session["dni"].ToString();
@@ -64,36 +64,38 @@ namespace GableWeb
 
         protected void ButtonCambiarDatosPersonales_Click(object sender, EventArgs e)
         {
-            ENUsuario usu = new ENUsuario();
-            usu.dni = Session["dni"].ToString();
-            usu.readUsuario();
+            if (regexEmail.IsValid && regexFecNac.IsValid && regexTlf.IsValid) {
+                ENUsuario usu = new ENUsuario();
+                usu.dni = Session["dni"].ToString();
+                usu.readUsuario();
 
-            if(TextBoxModEmail.Text.ToString() != "")
-            {
-                usu.email = TextBoxModEmail.Text.ToString();
+                if (TextBoxModEmail.Text.ToString() != "")
+                {
+                    usu.email = TextBoxModEmail.Text.ToString();
+                }
+
+                if (TextBoxModEmail.Text.ToString() != "")
+                {
+                    usu.nombre = TextBoxModNombre.Text.ToString();
+                }
+
+                if (TextBoxModApellidos.Text.ToString() != "")
+                {
+                    usu.apellidos = TextBoxModApellidos.Text.ToString();
+                }
+
+                if (TextBoxModFecNac.Text.ToString() != "")
+                {
+                    usu.fechanac = TextBoxModFecNac.Text.ToString();
+                }
+
+                if (TextBoxModTlf.Text.ToString() != "")
+                {
+                    usu.tlf = Convert.ToInt32(TextBoxModTlf.Text);
+                }
+
+                usu.updateUsuario();
             }
-
-            if (TextBoxModEmail.Text.ToString() != "")
-            {
-                usu.nombre = TextBoxModNombre.Text.ToString();
-            }
-
-            if (TextBoxModApellidos.Text.ToString() != "")
-            {
-                usu.apellidos = TextBoxModApellidos.Text.ToString();
-            }
-
-            if (TextBoxModFecNac.Text.ToString() != "")
-            {
-                usu.fechanac = TextBoxModFecNac.Text.ToString();
-            }
-
-            if (TextBoxModTlf.Text.ToString() != "")
-            {
-                usu.tlf = Convert.ToInt32(TextBoxModTlf.Text);
-            }
-
-            usu.updateUsuario();
 
             //notificar que todo ha ido bien
 

@@ -123,6 +123,15 @@ namespace GableWeb
         protected global::System.Web.UI.WebControls.TextBox oldPasswd;
 
         /// <summary>
+        /// Control requiredOldPwd.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredOldPwd;
+
+        /// <summary>
         /// Control newPasswd.
         /// </summary>
         /// <remarks>
@@ -132,6 +141,15 @@ namespace GableWeb
         protected global::System.Web.UI.WebControls.TextBox newPasswd;
 
         /// <summary>
+        /// Control requiredNewPwd.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredNewPwd;
+
+        /// <summary>
         /// Control confirmNewPasswd.
         /// </summary>
         /// <remarks>
@@ -139,6 +157,24 @@ namespace GableWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox confirmNewPasswd;
+
+        /// <summary>
+        /// Control requiredConfirmPwd.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredConfirmPwd;
+
+        /// <summary>
+        /// Control compareContras.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator compareContras;
 
         /// <summary>
         /// Control ButtonCambiarContra.
@@ -168,6 +204,15 @@ namespace GableWeb
         protected global::System.Web.UI.WebControls.TextBox TextBoxModEmail;
 
         /// <summary>
+        /// Control regexEmail.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regexEmail;
+
+        /// <summary>
         /// Control TextBoxModNombre.
         /// </summary>
         /// <remarks>
@@ -195,6 +240,15 @@ namespace GableWeb
         protected global::System.Web.UI.WebControls.TextBox TextBoxModFecNac;
 
         /// <summary>
+        /// Control regexFecNac.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regexFecNac;
+
+        /// <summary>
         /// Control TextBoxModTlf.
         /// </summary>
         /// <remarks>
@@ -202,6 +256,15 @@ namespace GableWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxModTlf;
+
+        /// <summary>
+        /// Control regexTlf.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regexTlf;
 
         /// <summary>
         /// Control ButtonCambiarDatosPersonales.

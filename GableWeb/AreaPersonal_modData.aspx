@@ -53,12 +53,16 @@
                             </div>
                             <div class="row my-2 mx-0">
                                 <asp:TextBox ID="oldPasswd" runat="server" MaxLength="16" placeholder="Contraseña antigua" TextMode="Password" Columns="30"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="requiredOldPwd" runat="server" ErrorMessage="Campo obligatorio!" ControlToValidate="oldPasswd"></asp:RequiredFieldValidator>
                             </div>
                             <div class="row my-2 mx-0">
                                 <asp:TextBox ID="newPasswd" runat="server" MaxLength="16" placeholder="Nueva contraseña" TextMode="Password" Columns="30"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="requiredNewPwd" runat="server" ErrorMessage="Campo obligatorio!" ControlToValidate="newPasswd"></asp:RequiredFieldValidator>
                             </div>
                             <div class="row my-2 mx-0">
                                 <asp:TextBox ID="confirmNewPasswd" runat="server" MaxLength="16" placeholder="Confirmar contraseña" TextMode="Password" Columns="30"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="requiredConfirmPwd" runat="server" ErrorMessage="Campo obligatorio!" ControlToValidate="confirmNewPasswd"></asp:RequiredFieldValidator>
+                                <asp:CompareValidator ID="compareContras" runat="server" ErrorMessage="Las contraseñas no coinciden" ControlToValidate="confirmNewPasswd"></asp:CompareValidator>
                             </div>
                             <div class="row-2 mt-3 mx-0">
                                 <asp:Button ID="ButtonCambiarContra" runat="server" Text="Guardar" OnClick="ButtonCambiarContra_Click" />
@@ -72,6 +76,7 @@
                             </div>
                             <div class="row my-2 mx-0">
                                 <asp:TextBox ID="TextBoxModEmail" runat="server" placeholder="Email" Columns="30"></asp:TextBox>
+                                <asp:RegularExpressionValidator ID="regexEmail" runat="server" ErrorMessage="Introduce un correo válido" ControlToValidate="TextBoxModEmail" ValidationExpression="\S+@\S+.\S+"></asp:RegularExpressionValidator>
                             </div>
                             <div class="row my-2 mx-0">
                                 <asp:TextBox ID="TextBoxModNombre" runat="server" placeholder="Nombre" Columns="30"></asp:TextBox>
@@ -81,9 +86,11 @@
                             </div>
                             <div class="row my-2 mx-0">
                                 <asp:TextBox ID="TextBoxModFecNac" runat="server" placeholder="Fecha nacimiento(dd/mm/yyyy)" Columns="30"></asp:TextBox>
+                                <asp:RegularExpressionValidator ID="regexFecNac" runat="server" ErrorMessage="Formato de fecha incorrecto, debe ser dd/mm/yyyy." ControlToValidate="TextBoxModFecNac" ValidationExpression="[0-9]{2}/[0-9]{2}/[0-9]{4}"></asp:RegularExpressionValidator>
                             </div>
                             <div class="row my-2 mx-0">
                                 <asp:TextBox ID="TextBoxModTlf" runat="server" placeholder="Teléfono" Columns="30"></asp:TextBox>
+                                <asp:RegularExpressionValidator ID="regexTlf" runat="server" ErrorMessage="Introduce un teléfono válido." ControlToValidate="TextBoxModTlf" ValidationExpression="[0-9]{9}"></asp:RegularExpressionValidator>
                             </div>
                             <div class="row-2 mt-3 mx-0">
                                 <asp:Button ID="ButtonCambiarDatosPersonales" runat="server" Text="Guardar" OnClick="ButtonCambiarDatosPersonales_Click" />
