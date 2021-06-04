@@ -12,7 +12,7 @@ namespace GableWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            /*if (!IsPostBack)
             {
                 if (Session["dni"] != null)//si esta loggeado
                 {
@@ -26,7 +26,7 @@ namespace GableWeb
                     Response.Redirect("Login.aspx");
                 }
                 
-            }
+            }*/
         }
 
         protected void ButtonCambiarDatosPersonales_Click(object sender, EventArgs e)
@@ -99,7 +99,7 @@ namespace GableWeb
                         }
                         else
                         {
-                            salidaMarcas.Text = "La marca no se ha podido eliminar.";
+                            salidaMarcas.Text = "La marca no se ha podido eliminar o no existe.";
                         }
                     }
                 }
@@ -128,7 +128,7 @@ namespace GableWeb
                     }
                     else
                     {
-                        salidaMarcas.Text = "La marca no se ha podido modificar.";
+                        salidaMarcas.Text = "La marca no se ha podido modificar o no existe.";
                     }
                 }
                 
@@ -163,7 +163,7 @@ namespace GableWeb
                     }
                     else
                     {
-                        salidaElim.Text = "El usuario no se ha podido eliminar.";
+                        salidaElim.Text = "El usuario no se ha podido eliminar o no existe.";
                     }
                 }
             }
@@ -178,22 +178,28 @@ namespace GableWeb
             bool dev;
             try
             {
-                ENProductos pr = new ENProductos();
-                pr.id_producto = int.Parse(IDProd.Text);
-                pr.nom_producto = NombreProd.Text;
-                pr.desc_producto = DescProd.Text;
-                pr.ImageLocation = imagenProd.Text;
-                pr.tipo_producto = TipoProd.Text;
-                pr.marca_producto = marcaProd.Text;
-                pr.pre_producto = float.Parse(PrecioProd.Text);
-                dev=pr.createProducto();
-                if (dev)
+                if (IDProd.Text==""||marcaProd.Text==""|| TipoProd.Text == "" || imagenProd.Text == "" || DescProd.Text == "" || PrecioProd.Text == "")
                 {
-                    salidaProd.Text = "Producto creado correctamente.";
+                    salidaProd.Text = "Todos los campos son obligatorios.";
                 }
-                else
-                {
-                    salidaProd.Text = "El producto no se ha podido crear.";
+                else {
+                    ENProductos pr = new ENProductos();
+                    pr.id_producto = int.Parse(IDProd.Text);
+                    pr.nom_producto = NombreProd.Text;
+                    pr.desc_producto = DescProd.Text;
+                    pr.ImageLocation = imagenProd.Text;
+                    pr.tipo_producto = TipoProd.Text;
+                    pr.marca_producto = marcaProd.Text;
+                    pr.pre_producto = float.Parse(PrecioProd.Text);
+                    dev = pr.createProducto();
+                    if (dev)
+                    {
+                        salidaProd.Text = "Producto creado correctamente.";
+                    }
+                    else
+                    {
+                        salidaProd.Text = "El producto no se ha podido crear.";
+                    }
                 }
             }
             catch (Exception ex)
@@ -209,14 +215,26 @@ namespace GableWeb
             pr.id_producto= Convert.ToInt32(IDProd.Text);
             try
             {
-                dev= pr.deleteProductos();
-                if (dev)
+                if (marcaProd.Text!=""||imagenProd.Text!=""||TipoProd.Text!=""||PrecioProd.Text!=""||DescProd.Text!=""||NombreProd.Text!="")
                 {
-                    salidaProd.Text = "Producto eliminado correctamente.";
+                    salidaProd.Text = "El único campo necesario para eliminar es ID producto. Introduzca los datos en el campo mencionado.";
                 }
-                else
-                {
-                    salidaProd.Text = "El producto no se ha podido eliminado.";
+                else {
+                    if (IDProd.Text == "")
+                    {
+                        salidaProd.Text = "Campo ID producto es obligatorio.";
+                    }
+                    else {
+                        dev = pr.deleteProductos();
+                        if (dev)
+                        {
+                            salidaProd.Text = "Producto eliminado correctamente.";
+                        }
+                        else
+                        {
+                            salidaProd.Text = "El producto no se ha podido eliminar o no existe.";
+                        }
+                    }
                 }
             }
             catch (Exception er)
@@ -230,22 +248,29 @@ namespace GableWeb
             bool dev;
             try
             {
-                ENProductos pr = new ENProductos();
-                pr.id_producto = int.Parse(IDProd.Text);
-                pr.nom_producto = NombreProd.Text;
-                pr.desc_producto = DescProd.Text;
-                pr.ImageLocation = imagenProd.Text;
-                pr.tipo_producto = TipoProd.Text;
-                pr.marca_producto = marcaProd.Text;
-                pr.pre_producto = float.Parse(PrecioProd.Text);
-                dev = pr.updateProductos();
-                if (dev)
+                if (IDProd.Text == "" || marcaProd.Text == "" || TipoProd.Text == "" || imagenProd.Text == "" || DescProd.Text == "" || PrecioProd.Text == "")
                 {
-                    salidaProd.Text = "Producto eliminado correctamente.";
+                    salidaProd.Text = "Todos los campos son obligatorios.";
                 }
                 else
                 {
-                    salidaProd.Text = "El producto no se ha podido eliminado.";
+                    ENProductos pr = new ENProductos();
+                    pr.id_producto = int.Parse(IDProd.Text);
+                    pr.nom_producto = NombreProd.Text;
+                    pr.desc_producto = DescProd.Text;
+                    pr.ImageLocation = imagenProd.Text;
+                    pr.tipo_producto = TipoProd.Text;
+                    pr.marca_producto = marcaProd.Text;
+                    pr.pre_producto = float.Parse(PrecioProd.Text);
+                    dev = pr.updateProductos();
+                    if (dev)
+                    {
+                        salidaProd.Text = "Producto modificado correctamente.";
+                    }
+                    else
+                    {
+                        salidaProd.Text = "El producto no se ha podido modificar o no existe.";
+                    }
                 }
             }
             catch (Exception er)
