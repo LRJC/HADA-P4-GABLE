@@ -189,7 +189,7 @@ namespace library
         {
             using (SqlConnection c = new SqlConnection(dbd))
             {
-                using (SqlCommand comando = new SqlCommand("Update usuario set tarjeta="+en.numTarjeta+",fecha_exp_tarjeta='"+en.expTarjeta+"',nacido='"+en.fechanac+"',apellidos='" + en.apellidos + "', nombre='"+ en.nombre + "', contraseña='" + en.contraseña + "', email='" + en.email + "',cvv_tarjeta = " + en.cvv + " , telefono = " + en.tlf + " where dni='" + en.dni + "'"))
+                using (SqlCommand comando = new SqlCommand("Update usuario set tarjeta="+en.numTarjeta+",fecha_exp_tarjeta='"+en.expTarjeta+"',nacido='"+en.fechanac+"',apellidos='" + en.apellidos + "', nombre='"+ en.nombre + "', contraseña='" + en.contraseña + "', email='" + en.email + "',cvv_tarjeta = " + en.cvv + " , telefono = " + en.tlf + " where dni='" + en.dni + "'", c))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(comando))
                     {
