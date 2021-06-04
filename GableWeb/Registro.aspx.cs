@@ -12,7 +12,10 @@ namespace GableWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(Session["dni"] != null)
+            {
+                Response.Redirect("index.aspx");
+            }
         }
 
         protected void btnRegister_Click(object sender, EventArgs e)
