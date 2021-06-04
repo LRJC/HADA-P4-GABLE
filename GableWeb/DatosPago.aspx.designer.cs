@@ -11,7 +11,7 @@ namespace GableWeb
 {
 
 
-    public partial class DatosCompra
+    public partial class DatosPago
     {
 
         /// <summary>
@@ -33,6 +33,15 @@ namespace GableWeb
         protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqNumTarjeta;
 
         /// <summary>
+        /// Control RegNumTarjeta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegNumTarjeta;
+
+        /// <summary>
         /// Control cvv.
         /// </summary>
         /// <remarks>
@@ -51,6 +60,15 @@ namespace GableWeb
         protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqCvv;
 
         /// <summary>
+        /// Control RegCvv.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegCvv;
+
+        /// <summary>
         /// Control fechaExp.
         /// </summary>
         /// <remarks>
@@ -67,6 +85,15 @@ namespace GableWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqFechaExp;
+
+        /// <summary>
+        /// Control RegFechaExp.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegFechaExp;
 
         /// <summary>
         /// Control cancel.

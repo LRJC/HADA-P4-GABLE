@@ -8,7 +8,7 @@ using library;
 
 namespace GableWeb
 {
-    public partial class DatosCompra : System.Web.UI.Page
+    public partial class DatosPago : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -42,7 +42,7 @@ namespace GableWeb
 
         protected void cusDni_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            if (args.Value.Length == 8)
+            if (args.Value.Length == 9)
                 args.IsValid = true;
             else
                 args.IsValid = false;
@@ -50,7 +50,7 @@ namespace GableWeb
 
         protected void cusTlf_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            if (args.Value.Length == 8)
+            if (args.Value.Length == 9)
                 args.IsValid = true;
             else
                 args.IsValid = false;
