@@ -41,10 +41,12 @@ namespace GableWeb
                 if(usu.numTarjeta.ToString() != "")
                 {
                     LabelTarjeta.Text = usu.numTarjeta.ToString();
+                    ButtonCambiarInfoPagos.Text = "Cambiar tarjeta";
                 }
                 else
                 {
                     LabelTarjeta.Text = "No tienes tarjeta todavía";
+                    ButtonCambiarInfoPagos.Text = "Cambiar tarjeta";
                 }
             }
         }
