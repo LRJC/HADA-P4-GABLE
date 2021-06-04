@@ -122,7 +122,7 @@ namespace library
                                                 "where linPed.num_pedido == pedido.numPedido and usuario = '" + dni + "'" +
                                                 "group by numPedido, fecha " +
                                                 "order by fecha DESC", c);*/
-                SqlCommand com = new SqlCommand("select numPedido, fecha, sum(importe*cantidad) as total from pedido, linPed where linPed.num_pedido = pedido.numPedido and usuario = '" + dni + "' group by numPedido, fecha;", c);
+                SqlCommand com = new SqlCommand("select numPedido, fecha, sum(importe*cantidad) as total from pedido, linPed where linPed.num_pedido = pedido.numPedido and usuario = '" + dni + "' group by numPedido, fecha order by fecha DESC;", c);
                 SqlDataAdapter da = new SqlDataAdapter(com);
                 da.Fill(data);
                 return data;

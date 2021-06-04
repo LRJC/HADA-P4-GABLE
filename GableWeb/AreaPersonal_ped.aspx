@@ -45,16 +45,29 @@
             </div>
             <div class="row ml-1">
                 <div class="col">
-                    <asp:DataList ID="dataListPedidos" runat="server" RepeatColumns="1" RepeatDirection="Vertical" AlternatingItemStyle-HorizontalAlign="Center" AlternatingItemStyle-VerticalAlign="Middle" RepeatLayout="Table" Width="100%" ItemStyle-HorizontalAlign="Center">
+                    <asp:DataList ID="dataListPedidos" runat="server" RepeatColumns="1" RepeatDirection="Vertical" AlternatingItemStyle-HorizontalAlign="Center" AlternatingItemStyle-VerticalAlign="Middle" RepeatLayout="Table" Width="100%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
+                        <HeaderTemplate>
+                            <div class="row border-top border-bottom">
+                                <div class="col-4 py-3">
+                                    <h4>Fecha</h4>
+                                </div>
+                                <div class="col-4 py-3">
+                                    <h4>Número de Pedido</h4>
+                                </div>
+                                <div class="col-4 py-3">
+                                    <h4>Total</h4>
+                                </div>
+                            </div>
+                        </HeaderTemplate>
                         <ItemTemplate>
                             <div class="row border-top border-bottom p-3">
-                                <div class="col-3 py-3" id="fecha">
+                                <div class="col-4 py-3" id="fecha">
                                     <asp:Label ID="fechaPed" runat="server" Text='<%#Eval("fecha") %>'></asp:Label>
                                 </div>
-                                <div class="col-3 py-3" id="numPedido">
+                                <div class="col-4 py-3" id="numPedido">
                                     <asp:Label ID="Label2" runat="server" Text='<%#Eval("numPedido") %>'></asp:Label>
                                 </div>
-                                <div class="col-3 py-3" id="precio">
+                                <div class="col-4 py-3" id="precio">
                                     <asp:Label ID="Label3" runat="server" Text='<%#Eval("total") %>'></asp:Label>
                                 </div>
                                 <!--<div class="col-3 py-3" id="resumenPed">
@@ -63,39 +76,6 @@
                             </div>
                         </ItemTemplate>
                     </asp:DataList>
-                    <!--<asp:ListView ID="ListViewPed" runat="server">
-                            <ItemTemplate>
-                                <div class="row-12 border-top border-bottom p-3">
-                                <div class="col-3 py-3" id="fecha">
-                                    <asp:Label ID="fechaPed" runat="server" Text='<%#Eval("fecha") %>'></asp:Label>
-                                </div>
-                                <div class="col-3 py-3" id="numPedido">
-                                    <asp:Label ID="Label2" runat="server" Text='<%#Eval("numPedido") %>'></asp:Label>
-                                </div>
-                                <div class="col-3 py-3" id="precio">
-                                    <asp:Label ID="Label3" runat="server" Text='<%#Eval("total") %>'></asp:Label>
-                                </div>
-                                <div class="col-3 py-3" id="resumenPed">
-                                    <asp:LinkButton ID="verDetallesPed" runat="server" CommandArgument='<%#Eval("numPedido") %>' OnCommand="verDetallesPed_Click">Ver detalles</asp:LinkButton>
-                                </div>
-                            </div>
-                            </ItemTemplate>
-                    </asp:ListView>-->
-                    <!--<div class="row border-top border-bottom p-3">
-                        <asp:Label ID="prod1" runat="server" Text="[Pedido]"></asp:Label>
-                    </div>
-                    <div class="row border-top border-bottom p-3">
-                        <asp:Label ID="prod2" runat="server" Text="[Pedido]"></asp:Label>
-                    </div>
-                    <div class="row border-top border-bottom p-3">
-                        <asp:Label ID="prod3" runat="server" Text="[Pedido]"></asp:Label>
-                    </div>
-                    <div class="row border-top border-bottom p-3">
-                        <asp:Label ID="prod4" runat="server" Text="[Pedido]"></asp:Label>
-                    </div>
-                    <div class="row border-top border-bottom p-3">
-                        <asp:Label ID="prod5" runat="server" Text="[Pedido]"></asp:Label>
-                    </div>-->
                 </div>
             </div>
         </div>
