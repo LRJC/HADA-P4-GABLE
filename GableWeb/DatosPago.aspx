@@ -9,28 +9,27 @@
                 <div class="container-fluid px-5 py-5">
                     <div class="panel panel-default" >
                         <div class="panel-heading text-center">
-			    				<h3 class="panel-title font-weight-bold">Introducir Datos de Compra</h3>
+			    				<h3 class="panel-title font-weight-bold">Introducir Datos de Pago</h3>
 			 			</div>
                             <div class="row justify-content-center">
                                 <div class="col-md-3 col-sm-3 col-xs-3">
                                     <span class="help-block text-muted small-font" > Numero Tarjeta</span>
                                     <asp:TextBox ID="numTarjeta" runat="server" ></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="ReqNumTarjeta" ControlToValidate="numTarjeta" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="col-md-3 col-sm-3 col-xs-3">
                                     <span class="help-block text-muted small-font" > Card Verification Value (CVV)</span>
                                     <asp:TextBox ID="cvv" runat="server" ></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="ReqCvv" ControlToValidate="cvv" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="row justify-content-center">
-                                <div class="col-md-3 col-sm-3 col-xs-3">
-                                    <span class="help-block text-muted small-font" > Mes de Vencimiento</span>
-                                    <asp:TextBox ID="mesExp" runat="server" placeholder="MM"></asp:TextBox>
-                            </div>
-                                <div class="col-md-3 col-sm-3 col-xs-3">
-                                    <span class="help-block text-muted small-font" > Año de Vencimiento</span>
-                                    <asp:TextBox ID="yearExp" runat="server" placeholder="YYYY"></asp:TextBox>
-                                </div>
-                            </div>
+                                <div class="fecha-vencimiento">
+                                    <span class="help-block text-muted small-font" > Fecha Expiración Tarjeta</span>
+                                    <asp:TextBox ID="fechaExp" runat="server"></asp:TextBox> 
+                                    <asp:RequiredFieldValidator ID="ReqFechaExp" ControlToValidate="fechaExp" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator>
+                                </div>  
+                             </div>
                              <div class="row justify-content-center ">
                                 <div class="col-md-4 col-sm-4 col-xs-4">
                                     

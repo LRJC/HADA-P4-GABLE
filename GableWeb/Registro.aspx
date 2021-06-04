@@ -34,12 +34,14 @@
 								<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
 										<asp:TextBox ID="date" runat="server" TextMode="Date"></asp:TextBox>
+										<asp:RangeValidator runat="server" ID="rngDate" ControlToValidate="date" type="Date" MinimumValue="01-01-1900" MaximumValue="01-06-2021" ErrorMessage="¡Fecha no Válida!"></asp:RangeValidator>
 			    					</div>
 			    				</div>
 								<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
 			    						<asp:TextBox ID="dni" runat="server" placeholder="DNI" Columns="20"></asp:TextBox>
 										<asp:RequiredFieldValidator ID="DniReq" runat="server" ControlToValidate="dni" ErrorMessage="*"></asp:RequiredFieldValidator>
+										<asp:CustomValidator runat="server" ID="cusDni" ControlToValidate="dni" OnServerValidate="cusDni_ServerValidate" ErrorMessage="¡Demasiado largo! 9 máximo"></asp:CustomValidator>
 			    					</div>
 			    				</div>
 							</div>
@@ -61,6 +63,7 @@
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
 			    						<asp:TextBox ID="tlf" runat="server" placeholder="Telefono" Columns="20"></asp:TextBox>
+										<asp:CustomValidator runat="server" ID="cusTlf" ControlToValidate="tlf" OnServerValidate="cusTlf_ServerValidate" ErrorMessage="¡Demasiado largo! 9 máximo"></asp:CustomValidator>
 			    					</div>
 			    				</div>
 			    			</div>

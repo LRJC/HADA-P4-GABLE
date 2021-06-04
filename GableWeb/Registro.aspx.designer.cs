@@ -60,6 +60,15 @@ namespace GableWeb
         protected global::System.Web.UI.WebControls.TextBox date;
 
         /// <summary>
+        /// Control rngDate.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator rngDate;
+
+        /// <summary>
         /// Control dni.
         /// </summary>
         /// <remarks>
@@ -76,6 +85,15 @@ namespace GableWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator DniReq;
+
+        /// <summary>
+        /// Control cusDni.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator cusDni;
 
         /// <summary>
         /// Control email.
@@ -130,6 +148,15 @@ namespace GableWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tlf;
+
+        /// <summary>
+        /// Control cusTlf.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator cusTlf;
 
         /// <summary>
         /// Control b_register.

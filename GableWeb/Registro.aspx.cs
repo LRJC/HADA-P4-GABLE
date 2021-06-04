@@ -39,5 +39,21 @@ namespace GableWeb
                 Console.WriteLine("Fallo al añadir el usuario");
             }
         }
+
+        protected void cusDni_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (args.Value.Length == 8)
+                args.IsValid = true;
+            else
+                args.IsValid = false;
+        }
+
+        protected void cusTlf_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (args.Value.Length == 8)
+                args.IsValid = true;
+            else
+                args.IsValid = false;
+        }
     }
 }

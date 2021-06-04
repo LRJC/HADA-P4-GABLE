@@ -24,6 +24,15 @@ namespace GableWeb
         protected global::System.Web.UI.WebControls.TextBox numTarjeta;
 
         /// <summary>
+        /// Control ReqNumTarjeta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqNumTarjeta;
+
+        /// <summary>
         /// Control cvv.
         /// </summary>
         /// <remarks>
@@ -33,22 +42,31 @@ namespace GableWeb
         protected global::System.Web.UI.WebControls.TextBox cvv;
 
         /// <summary>
-        /// Control mesExp.
+        /// Control ReqCvv.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox mesExp;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqCvv;
 
         /// <summary>
-        /// Control yearExp.
+        /// Control fechaExp.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox yearExp;
+        protected global::System.Web.UI.WebControls.TextBox fechaExp;
+
+        /// <summary>
+        /// Control ReqFechaExp.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqFechaExp;
 
         /// <summary>
         /// Control cancel.
