@@ -33,18 +33,39 @@ namespace GableWeb
         {
             ENMarca mar = new ENMarca();
             bool dev;
+            bool read;
             try
             {
-                mar.nombre = TextBox1.Text;
-                mar.origen = TextBox2.Text;
-                dev=mar.createMarca();
-                if (dev)
+                if (TextBox3.Text!="")
                 {
-                    salidaMarcas.Text = "Marca creada correctamente.";
+                    salidaMarcas.Text = "El campo nombre actual no es necesario rellenarlo. Vuelva a introducir los datos";
                 }
-                else
-                {
-                    salidaMarcas.Text = "La marca no se ha podido crear.";
+                else {
+                    mar.nombre = TextBox1.Text;
+                    mar.origen = TextBox2.Text;
+                    if (TextBox1.Text == "" || TextBox2.Text == "")
+                    {
+                        salidaMarcas.Text = "Los campos nombre nuevo y origen son obligatorios.";
+                    }
+                    else {
+                        read = mar.readMarca();
+                        if (read)
+                        {
+                            salidaMarcas.Text = "La marca no se ha podido crear.";
+                        }
+                        else
+                        {
+                            dev = mar.createMarca();
+                            if (dev)
+                            {
+                                salidaMarcas.Text = "Marca creada correctamente.";
+                            }
+                            else
+                            {
+                                salidaMarcas.Text = "La marca no se ha podido crear.";
+                            }
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -57,18 +78,30 @@ namespace GableWeb
         {
             ENMarca mar = new ENMarca();
             bool dev;
-            mar.nombre = TextBox1.Text;
+            mar.nombre = TextBox3.Text;
             try
             {
-                if (TextBox1.Text == "") throw new Exception("El campo Nombre esta vacio");
-                dev=mar.deleteMarca();
-                if (dev)
+                if (TextBox2.Text!=""||TextBox1.Text!="")
                 {
-                    salidaMarcas.Text = "Marca Eliminada correctamente.";
+                    salidaMarcas.Text = "Los campos nombre nuevo y origen no son ncesarios. Introduzca los datos en nombre actual.";
                 }
-                else
-                {
-                    salidaMarcas.Text = "La marca no se ha podido eliminar.";
+                else {
+                    if (TextBox3.Text == "")
+                    {
+                        salidaMarcas.Text = "El campo nombre actual es obligatorio";
+                    }
+                    else
+                    {
+                        dev = mar.deleteMarca();
+                        if (dev)
+                        {
+                            salidaMarcas.Text = "Marca Eliminada correctamente.";
+                        }
+                        else
+                        {
+                            salidaMarcas.Text = "La marca no se ha podido eliminar.";
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -82,16 +115,23 @@ namespace GableWeb
             bool dev;
             try
             {
-                ENMarca mar = new ENMarca(TextBox3.Text, TextBox2.Text);
-                dev=mar.modifyMarca(TextBox1.Text);
-                if (dev)
-                {
-                    salidaMarcas.Text = "Marca modificada correctamente.";
+                if (TextBox1.Text==""||TextBox2.Text==""||TextBox3.Text=="") {
+                    salidaMarcas.Text = "Los tres campos son obligatorios";
                 }
                 else
                 {
-                    salidaMarcas.Text = "La marca no se ha podido modificar.";
+                    ENMarca mar = new ENMarca(TextBox3.Text, TextBox2.Text);
+                    dev = mar.modifyMarca(TextBox1.Text);
+                    if (dev)
+                    {
+                        salidaMarcas.Text = "Marca modificada correctamente.";
+                    }
+                    else
+                    {
+                        salidaMarcas.Text = "La marca no se ha podido modificar.";
+                    }
                 }
+                
             }
             catch (Exception ex)
             {
@@ -101,22 +141,30 @@ namespace GableWeb
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            ENUsuario esu = new ENUsuario();
+            
             bool dev;
-            esu.dni = TextBox4.Text.ToString();
+            
             try
             {
-                esu.deleteCestaUsu();
-                esu.deleteValUsu();
-                esu.deletePedidoFromUsu();
-                dev=esu.deleteUsuario();
-                if (dev)
+                if (TextBox4.Text=="")
                 {
-                    salidaElim.Text = "Usuario eliminado correctamente.";
+                    salidaElim.Text = "El campo DNI es obligatorio.";
                 }
-                else
-                {
-                    salidaElim.Text = "El usuario no se ha podido eliminar.";
+                else {
+                    ENUsuario esu = new ENUsuario();
+                    esu.dni = TextBox4.Text.ToString();
+                    esu.deleteCestaUsu();
+                    esu.deleteValUsu();
+                    esu.deletePedidoFromUsu();
+                    dev = esu.deleteUsuario();
+                    if (dev)
+                    {
+                        salidaElim.Text = "Usuario eliminado correctamente.";
+                    }
+                    else
+                    {
+                        salidaElim.Text = "El usuario no se ha podido eliminar.";
+                    }
                 }
             }
             catch (Exception ex)
