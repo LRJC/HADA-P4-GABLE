@@ -6,6 +6,7 @@
         <div class="row">
             <div class="col-sm-1" style="background-color:#e0e0e0!important"></div>
             <div class="col-xs-12 col-sm-10" style="background-color:white; border-left: 1px solid #75777d!important; border-right: 1px solid #75777d!important;">
+                <asp:Label runat="server" ID="noProd"></asp:Label>
                 <asp:DataList ID="DataList1" runat="server" RepeatColumns="3" RepeatDirection="Horizontal" CellPadding="2" Width="100%" ItemStyle-HorizontalAlign="Center">
                         <ItemTemplate>
                             <div class="card btn-outline-dark" style="width: 18rem;">

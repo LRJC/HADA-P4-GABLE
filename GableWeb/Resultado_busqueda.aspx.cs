@@ -35,8 +35,15 @@ namespace GableWeb
             {
                 ENProductos en = new ENProductos();
                 DataTable tab = en.getProductTypeX(categoria);
-                DataList1.DataSource = tab;
-                DataList1.DataBind();
+                if (tab.Rows.Count == 0)
+                {
+                    noProd.Text = "No se han encontrado productos con estas especificaciones.";
+                }
+                else
+                {
+                    DataList1.DataSource = tab;
+                    DataList1.DataBind();
+                }
             }
             catch (Exception e)
             {
