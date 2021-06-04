@@ -73,6 +73,10 @@ namespace GableWeb
         {
             ENUsuario usu = new ENUsuario();
             usu.dni = Session["dni"].ToString();
+            usu.deleteCestaUsu();
+            usu.deleteDirEnvioUsu();
+            usu.deletePedidoFromUsu();
+            usu.deleteValUsu();
             usu.deleteUsuario();
             Session.RemoveAll();
             Session.Abandon();

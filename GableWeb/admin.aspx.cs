@@ -12,25 +12,60 @@ namespace GableWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                if (Session["dni"] != null)//si esta loggeado
+                {
+                    if(Session["dni"].ToString() != "00000000A")//si no es el admin
+                    {
+                        Response.Redirect("index.aspx");
+                    }
+                }
+                else//si no esta loggeado
+                {
+                    Response.Redirect("Login.aspx");
+                }
+                
+            }
         }
 
         protected void ButtonCambiarDatosPersonales_Click(object sender, EventArgs e)
         {
             ENMarca mar = new ENMarca();
             bool dev;
+            bool read;
             try
             {
-                mar.nombre = TextBox1.Text;
-                mar.origen = TextBox2.Text;
-                dev=mar.createMarca();
-                if (dev)
+                if (TextBox3.Text!="")
                 {
-                    salidaMarcas.Text = "Marca creada correctamente.";
+                    salidaMarcas.Text = "El campo nombre actual no es necesario rellenarlo. Vuelva a introducir los datos";
                 }
-                else
-                {
-                    salidaMarcas.Text = "La marca no se ha podido crear.";
+                else {
+                    mar.nombre = TextBox1.Text;
+                    mar.origen = TextBox2.Text;
+                    if (TextBox1.Text == "" || TextBox2.Text == "")
+                    {
+                        salidaMarcas.Text = "Los campos nombre nuevo y origen son obligatorios.";
+                    }
+                    else {
+                        read = mar.readMarca();
+                        if (read)
+                        {
+                            salidaMarcas.Text = "La marca no se ha podido crear.";
+                        }
+                        else
+                        {
+                            dev = mar.createMarca();
+                            if (dev)
+                            {
+                                salidaMarcas.Text = "Marca creada correctamente.";
+                            }
+                            else
+                            {
+                                salidaMarcas.Text = "La marca no se ha podido crear.";
+                            }
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -43,18 +78,30 @@ namespace GableWeb
         {
             ENMarca mar = new ENMarca();
             bool dev;
-            mar.nombre = TextBox1.Text;
+            mar.nombre = TextBox3.Text;
             try
             {
-                if (TextBox1.Text == "") throw new Exception("El campo Nombre esta vacio");
-                dev=mar.deleteMarca();
-                if (dev)
+                if (TextBox2.Text!=""||TextBox1.Text!="")
                 {
-                    salidaMarcas.Text = "Marca Eliminada correctamente.";
+                    salidaMarcas.Text = "Los campos nombre nuevo y origen no son ncesarios. Introduzca los datos en nombre actual.";
                 }
-                else
-                {
-                    salidaMarcas.Text = "La marca no se ha podido eliminar.";
+                else {
+                    if (TextBox3.Text == "")
+                    {
+                        salidaMarcas.Text = "El campo nombre actual es obligatorio";
+                    }
+                    else
+                    {
+                        dev = mar.deleteMarca();
+                        if (dev)
+                        {
+                            salidaMarcas.Text = "Marca Eliminada correctamente.";
+                        }
+                        else
+                        {
+                            salidaMarcas.Text = "La marca no se ha podido eliminar o no existe.";
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -68,16 +115,23 @@ namespace GableWeb
             bool dev;
             try
             {
-                ENMarca mar = new ENMarca(TextBox3.Text, TextBox2.Text);
-                dev=mar.modifyMarca(TextBox1.Text);
-                if (dev)
-                {
-                    salidaMarcas.Text = "Marca modificada correctamente.";
+                if (TextBox1.Text==""||TextBox2.Text==""||TextBox3.Text=="") {
+                    salidaMarcas.Text = "Los tres campos son obligatorios";
                 }
                 else
                 {
-                    salidaMarcas.Text = "La marca no se ha podido modificar.";
+                    ENMarca mar = new ENMarca(TextBox3.Text, TextBox2.Text);
+                    dev = mar.modifyMarca(TextBox1.Text);
+                    if (dev)
+                    {
+                        salidaMarcas.Text = "Marca modificada correctamente.";
+                    }
+                    else
+                    {
+                        salidaMarcas.Text = "La marca no se ha podido modificar o no existe.";
+                    }
                 }
+                
             }
             catch (Exception ex)
             {
@@ -87,22 +141,30 @@ namespace GableWeb
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            ENUsuario esu = new ENUsuario();
+            
             bool dev;
-            esu.dni = TextBox4.Text.ToString();
+            
             try
             {
-                esu.deleteCestaUsu();
-                esu.deleteValUsu();
-                esu.deletePedidoFromUsu();
-                dev=esu.deleteUsuario();
-                if (dev)
+                if (TextBox4.Text=="")
                 {
-                    salidaElim.Text = "Usuario eliminado correctamente.";
+                    salidaElim.Text = "El campo DNI es obligatorio.";
                 }
-                else
-                {
-                    salidaElim.Text = "El usuario no se ha podido eliminar.";
+                else {
+                    ENUsuario esu = new ENUsuario();
+                    esu.dni = TextBox4.Text.ToString();
+                    esu.deleteCestaUsu();
+                    esu.deleteValUsu();
+                    esu.deletePedidoFromUsu();
+                    dev = esu.deleteUsuario();
+                    if (dev)
+                    {
+                        salidaElim.Text = "Usuario eliminado correctamente.";
+                    }
+                    else
+                    {
+                        salidaElim.Text = "El usuario no se ha podido eliminar o no existe.";
+                    }
                 }
             }
             catch (Exception ex)
@@ -116,22 +178,28 @@ namespace GableWeb
             bool dev;
             try
             {
-                ENProductos pr = new ENProductos();
-                pr.id_producto = int.Parse(IDProd.Text);
-                pr.nom_producto = NombreProd.Text;
-                pr.desc_producto = DescProd.Text;
-                pr.ImageLocation = imagenProd.Text;
-                pr.tipo_producto = TipoProd.Text;
-                pr.marca_producto = marcaProd.Text;
-                pr.pre_producto = float.Parse(PrecioProd.Text);
-                dev=pr.createProducto();
-                if (dev)
+                if (IDProd.Text==""||marcaProd.Text==""|| TipoProd.Text == "" || imagenProd.Text == "" || DescProd.Text == "" || PrecioProd.Text == "")
                 {
-                    salidaProd.Text = "Producto creado correctamente.";
+                    salidaProd.Text = "Todos los campos son obligatorios.";
                 }
-                else
-                {
-                    salidaProd.Text = "El producto no se ha podido crear.";
+                else {
+                    ENProductos pr = new ENProductos();
+                    pr.id_producto = int.Parse(IDProd.Text);
+                    pr.nom_producto = NombreProd.Text;
+                    pr.desc_producto = DescProd.Text;
+                    pr.ImageLocation = imagenProd.Text;
+                    pr.tipo_producto = TipoProd.Text;
+                    pr.marca_producto = marcaProd.Text;
+                    pr.pre_producto = float.Parse(PrecioProd.Text);
+                    dev = pr.createProducto();
+                    if (dev)
+                    {
+                        salidaProd.Text = "Producto creado correctamente.";
+                    }
+                    else
+                    {
+                        salidaProd.Text = "El producto no se ha podido crear.";
+                    }
                 }
             }
             catch (Exception ex)
@@ -147,14 +215,26 @@ namespace GableWeb
             pr.id_producto= Convert.ToInt32(IDProd.Text);
             try
             {
-                dev= pr.deleteProductos();
-                if (dev)
+                if (marcaProd.Text!=""||imagenProd.Text!=""||TipoProd.Text!=""||PrecioProd.Text!=""||DescProd.Text!=""||NombreProd.Text!="")
                 {
-                    salidaProd.Text = "Producto eliminado correctamente.";
+                    salidaProd.Text = "El único campo necesario para eliminar es ID producto. Introduzca los datos en el campo mencionado.";
                 }
-                else
-                {
-                    salidaProd.Text = "El producto no se ha podido eliminado.";
+                else {
+                    if (IDProd.Text == "")
+                    {
+                        salidaProd.Text = "Campo ID producto es obligatorio.";
+                    }
+                    else {
+                        dev = pr.deleteProductos();
+                        if (dev)
+                        {
+                            salidaProd.Text = "Producto eliminado correctamente.";
+                        }
+                        else
+                        {
+                            salidaProd.Text = "El producto no se ha podido eliminar o no existe.";
+                        }
+                    }
                 }
             }
             catch (Exception er)
@@ -168,22 +248,29 @@ namespace GableWeb
             bool dev;
             try
             {
-                ENProductos pr = new ENProductos();
-                pr.id_producto = int.Parse(IDProd.Text);
-                pr.nom_producto = NombreProd.Text;
-                pr.desc_producto = DescProd.Text;
-                pr.ImageLocation = imagenProd.Text;
-                pr.tipo_producto = TipoProd.Text;
-                pr.marca_producto = marcaProd.Text;
-                pr.pre_producto = float.Parse(PrecioProd.Text);
-                dev = pr.updateProductos();
-                if (dev)
+                if (IDProd.Text == "" || marcaProd.Text == "" || TipoProd.Text == "" || imagenProd.Text == "" || DescProd.Text == "" || PrecioProd.Text == "")
                 {
-                    salidaProd.Text = "Producto eliminado correctamente.";
+                    salidaProd.Text = "Todos los campos son obligatorios.";
                 }
                 else
                 {
-                    salidaProd.Text = "El producto no se ha podido eliminado.";
+                    ENProductos pr = new ENProductos();
+                    pr.id_producto = int.Parse(IDProd.Text);
+                    pr.nom_producto = NombreProd.Text;
+                    pr.desc_producto = DescProd.Text;
+                    pr.ImageLocation = imagenProd.Text;
+                    pr.tipo_producto = TipoProd.Text;
+                    pr.marca_producto = marcaProd.Text;
+                    pr.pre_producto = float.Parse(PrecioProd.Text);
+                    dev = pr.updateProductos();
+                    if (dev)
+                    {
+                        salidaProd.Text = "Producto modificado correctamente.";
+                    }
+                    else
+                    {
+                        salidaProd.Text = "El producto no se ha podido modificar o no existe.";
+                    }
                 }
             }
             catch (Exception er)

@@ -45,7 +45,7 @@
                             <div class="row my-2 mx-0 justify-content-center mb-5">
                                 <div class="col-4">
                                     <div class="row-12 my-2 mx-0">
-                                        <asp:TextBox ID="TextBox4" runat="server" MaxLength="16" placeholder="DNI" Columns="35"></asp:TextBox>
+                                        <asp:TextBox ID="TextBox4" runat="server" MaxLength="16" placeholder="DNI(9 dígitos)" Columns="35"></asp:TextBox>
                                     </div>
                                     <asp:Button ID="Button3" CssClass="btn-warning rounded" runat="server" Text="Eliminar" Width="90" OnClick="Button3_Click" />
                                 </div>
