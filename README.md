@@ -1,3 +1,36 @@
+
+###README FINAL
+
+INFORME FINAL GABLE:
+-Funcionamiento de la página:
+
+-Al cargar la página, se nos mostrará una página de inicio, que contendrá un ‘header’ con un asp:menú tipo hamburguesa con una serie de categorías de juegos de mesa, además de un buscador donde podremos buscar tanto productos por nombre o categoría. Encontramos el logo de Gable, el cual si pulsamos nos redirecciona a la página de inicio. También podemos encontrar un botón de cesta en el cual si pinchamos y estamos logueados, podemos acceder a los productos de su interior, además de un botón de inicio de sesión. 
+En la página de inicio tendremos una barra de navegación con tres categorías de productos, como más valorados, recomendados, …
+Al pinchar en un producto, nos saldrá una página específica sobre ese producto, con todos sus datos y valoraciones. 
+Estando logueados, podremos añadir al carrito y comentar sobre productos, además, pinchando en el botón de carrito, podremos proceder a hacer un pedido. El botón de Inicio de sesión se sustituirá por un botón de Área Personal, donde podremos acceder a una página donde podremos editar nuestros datos, o revisar nuestros pedidos, cerrar sesión, …
+Al realizar un pedido, se nos redirigirá a una página donde tendremos que rellenar una serie de campos con los datos bancarios. 
+Cabe destacar que existe un usuario administrador, el cual es el único que puede acceder a la página de admin con sus credenciales(email: admin@gable.com, contraseña: admin). En la página de admin podremos gestionar marcas, productos, y eliminar usuarios.
+
+LUCAS->CADPedido, ENPedido, CADUsuario, ENUsuario, ENMarca, CADMarca, Resultado_busqueda, index.aspx, parte admin, parte del buscador. Ayudas de en CADS de otras personas. 
+
+PABLO->CADProductos, ENProductos, CADLinped, ENLinped, CADValoraciones, ENValoraciones, productos.aspx, parte admin, parte Resultados_busqueda, Poblar base de datos e inserción a visual. Ayudas en CADS de otras personas. 
+
+NICO->CADProvincia,ENProvincia, CADLocalidad, ENLocalidad,AreaPersonal[aspx,aspx.cs] (Parte de datos) y (Parte de pedido),ayuda en el CADUsuario(readUsuario) , parte de admin.aspx y parte de la master.aspx. Método getPedidos de ENPedido y CADPedido.
+
+ALEJANDRO LATORRE->Register.aspx, Login.aspx, DatosPago.aspx y ayuda en la admin.aspx. Ayudas en CADS de otras personas. 
+
+ALEJANDRO OLIVARES->Diseño del logo y textura del header, CADCesta, ENCesta,CADLinCesta, ENLinCesta, Cesta.aspx y parte de la master.aspx.
+
+ANDRES MACIA-> CADDirEnvio, ENDirEnvio, CADTipoProducto, ENTipoProducto, master.aspx
+
+INCIDENCIAS:
+-Poca o nula iniciativa por parte de Alejandro Olivares y Andrés Maciá a trabajar en grupo.
+Hasta dos días  antes de la entrega no sabíamos nada de Alejandro Latorre, por problemas personales. JUSTIFICADO. Aún así, su parte(login, register, datos pago) está hecha. 
+
+Revisando que todo fuese bien al tener todo hecho(04/06/2021 ~17:00) se ha detectado que la Cesta no funcionaba bien. No se generan los pedidos correctamente. Nicolás ha intentado arreglarlo, pero era muy tarde y no era su código así que ha tenido que rehacer la función de ProceedToBuy(), pero sólo ha podido rehacer el .cs por falta de tiempo. Se ha hablado con Alejandro Olivares, pero no ha puesto de su parte y no se ha llegado a nada. Aún así, hemos añadido pedidos a los usuarios julia@gmail.com (contraseña: julia) y a pepe@gmail.com (contraseña: pepe) a mano a la BBDD para que se pueda visualizar el trabajo realizado en AreaPersonal_ped.aspx. Al loggearse con esos usuarios se puede visualizar correctamente.
+
+
+¡
 # TIENDA DE JUEGOS DE MESA
 
 ### INTEGRANTES DEL GRUPO
