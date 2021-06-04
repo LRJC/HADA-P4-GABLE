@@ -12,7 +12,7 @@ namespace GableWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*if (!IsPostBack)
+            if (!IsPostBack)
             {
                 if (Session["dni"] != null)//si esta loggeado
                 {
@@ -26,7 +26,7 @@ namespace GableWeb
                     Response.Redirect("Login.aspx");
                 }
                 
-            }*/
+            }
         }
 
         protected void ButtonCambiarDatosPersonales_Click(object sender, EventArgs e)
