@@ -38,7 +38,7 @@ namespace GableWeb
                 lab_NombreApellidos_AreaPersonal_mod.Text = usu.nombre.ToString() + " " + usu.apellidos.ToString();
                 lab_Dni_AreaPersonal_mod.Text = usu.dni.ToString();
                 lab_Correo_AreaPersonal_mod.Text = usu.email.ToString();
-                if(usu.numTarjeta.ToString() != "")
+                if(usu.numTarjeta.ToString() != "0")
                 {
                     LabelTarjeta.Text = usu.numTarjeta.ToString();
                     ButtonCambiarInfoPagos.Text = "Cambiar tarjeta";
