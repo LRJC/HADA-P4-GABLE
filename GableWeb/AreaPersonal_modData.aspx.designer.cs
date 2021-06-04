@@ -312,6 +312,15 @@ namespace GableWeb
         protected global::System.Web.UI.WebControls.Label LabelTarjeta;
 
         /// <summary>
+        /// Control fechaTarjeta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label fechaTarjeta;
+
+        /// <summary>
         /// Control ButtonCambiarInfoPagos.
         /// </summary>
         /// <remarks>

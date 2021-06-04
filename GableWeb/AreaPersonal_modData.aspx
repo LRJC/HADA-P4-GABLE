@@ -112,7 +112,10 @@
                                     <h4><asp:Label ID="LabelTarjetaActual" runat="server" Text="Tarjeta Actual:"></asp:Label></h4>
                                 </div>
                                 <div class="col-8 pl-3 border-top border-bottom">
-                                    <asp:Label ID="LabelTarjeta" runat="server" Text="[Tarjeta]"></asp:Label>
+                                    <asp:Label ID="LabelTarjeta" runat="server" Text=""></asp:Label>
+                                </div>
+                                <div class="col-8 pl-3 border-top border-bottom">
+                                    <asp:Label ID="fechaTarjeta" runat="server" Text=""></asp:Label>
                                 </div>
                             </div>
                             <div class="row-2 mt-3 align-self-end">

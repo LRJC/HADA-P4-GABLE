@@ -38,15 +38,17 @@ namespace GableWeb
                 lab_NombreApellidos_AreaPersonal_mod.Text = usu.nombre.ToString() + " " + usu.apellidos.ToString();
                 lab_Dni_AreaPersonal_mod.Text = usu.dni.ToString();
                 lab_Correo_AreaPersonal_mod.Text = usu.email.ToString();
+                usu.readUsuarioPago();
                 if(usu.numTarjeta.ToString() != "0")
                 {
-                    LabelTarjeta.Text = usu.numTarjeta.ToString();
+                    LabelTarjeta.Text = "Número: " + usu.numTarjeta.ToString();
+                    fechaTarjeta.Text = "Fecha expiración: " + usu.expTarjeta.ToString();
                     ButtonCambiarInfoPagos.Text = "Cambiar tarjeta";
                 }
                 else
                 {
                     LabelTarjeta.Text = "No tienes tarjeta todavía";
-                    ButtonCambiarInfoPagos.Text = "Cambiar tarjeta";
+                    ButtonCambiarInfoPagos.Text = "Añadir tarjeta";
                 }
             }
         }
