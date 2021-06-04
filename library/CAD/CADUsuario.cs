@@ -113,17 +113,17 @@ namespace library
                 if (data.Read())
                 {
 
-                    if (data["tarjeta"] != null)
+                    if (data["tarjeta"].ToString() != "0")
                     {
                         en.numTarjeta = Convert.ToInt32(data["tarjeta"]);
                     }
                     else return false;
-                    if (data["cvv_tarjeta"] != null)
+                    if (data["cvv_tarjeta"].ToString() != "0")
                     {
                         en.cvv = Convert.ToInt32(data["cvv_tarjeta"]);
                     }
                     else return false;
-                    if (data["fecha_exp_tarjeta"] != null)
+                    if (data["fecha_exp_tarjeta"].ToString() != "")
                     {
                         en.expTarjeta = data["fecha_exp_tarjeta"].ToString();
                     }
