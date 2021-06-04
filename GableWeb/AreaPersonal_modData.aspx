@@ -52,7 +52,12 @@
                                 <h4><asp:Label ID="CambiarContra" runat="server" Text="Cambiar Contraseña"></asp:Label></h4>
                             </div>
                             <div class="row my-2 mx-0">
-                                <asp:TextBox ID="oldPasswd" runat="server" MaxLength="16" placeholder="Contraseña antigua" TextMode="Password" Columns="30"></asp:TextBox>
+                                <div class="col no-gutters px-0">
+                                    <asp:TextBox ID="oldPasswd" runat="server" MaxLength="16" placeholder="Contraseña antigua" TextMode="Password" Columns="30"></asp:TextBox>
+                                </div>
+                                <div class="col no-gutters"
+                                    <asp:Label ID="checkOldPwd" runat="server" Text=""></asp:Label>
+                                </div>
                                 <asp:RequiredFieldValidator ID="requiredOldPwd" runat="server" ErrorMessage="Campo obligatorio!" ControlToValidate="oldPasswd"></asp:RequiredFieldValidator>
                             </div>
                             <div class="row my-2 mx-0">
