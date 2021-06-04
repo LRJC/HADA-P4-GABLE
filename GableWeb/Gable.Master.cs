@@ -12,8 +12,6 @@ namespace GableWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
                 if (Session["dni"] != null)
                 {
                     ENUsuario usu = new ENUsuario();
@@ -21,7 +19,6 @@ namespace GableWeb
                     usu.readUsuario();
                     init_sesion.Text = "Area Personal de " + usu.nombre;
                 }
-            }
         }
 
         protected void btnCesta_Click(object sender, EventArgs e)

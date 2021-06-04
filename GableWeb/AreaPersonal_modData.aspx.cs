@@ -19,6 +19,7 @@ namespace GableWeb
             else
             {
                 setClientArea(Session["dni"].ToString());
+                checkOldPwd.Text = "";
             }
         }
 
@@ -50,20 +51,44 @@ namespace GableWeb
 
         protected void ButtonCambiarContra_Click(object sender, EventArgs e)
         {
-            if (requiredOldPwd.IsValid && requiredNewPwd.IsValid && requiredConfirmPwd.IsValid && compareContras.IsValid)
+            requiredOldPwd.Validate();
+            requiredNewPwd.Validate();
+            requiredConfirmPwd.Validate();
+            compareContras.Validate();
+            if (requiredOldPwd.IsValid && requiredNewPwd.IsValid && requiredConfirmPwd.IsValid && compareContras.IsValid && newPasswd.Text != "")
             {
                 ENUsuario usu = new ENUsuario();
                 usu.dni = Session["dni"].ToString();
                 usu.readUsuario();
-                usu.contraseña = newPasswd.Text;
+                if(oldPasswd.Text == usu.contraseña)
+                {
+                    usu.contraseña = newPasswd.Text;
+                }
+                else
+                {
+                    checkOldPwd.Text = "Contraseña incorrecta";
+                }
                 usu.updateUsuario();
 
                 //notificar que todo ha ido bien
+            }
+            else
+            {
+                requiredOldPwd.Validate();
+                requiredNewPwd.Validate();
+                requiredConfirmPwd.Validate();
+                compareContras.Validate();
             }
         }
 
         protected void ButtonCambiarDatosPersonales_Click(object sender, EventArgs e)
         {
+            if (TextBoxModEmail.Text.ToString() != "")
+            {
+                regexEmail.Validate();
+            }
+            regexFecNac.Validate();
+            regexTlf.Validate();
             if (regexEmail.IsValid && regexFecNac.IsValid && regexTlf.IsValid) {
                 ENUsuario usu = new ENUsuario();
                 usu.dni = Session["dni"].ToString();
@@ -74,7 +99,7 @@ namespace GableWeb
                     usu.email = TextBoxModEmail.Text.ToString();
                 }
 
-                if (TextBoxModEmail.Text.ToString() != "")
+                if (TextBoxModNombre.Text.ToString() != "")
                 {
                     usu.nombre = TextBoxModNombre.Text.ToString();
                 }
@@ -95,6 +120,13 @@ namespace GableWeb
                 }
 
                 usu.updateUsuario();
+                Response.Redirect("AreaPersonal_modData.aspx");
+            }
+            else
+            {
+                regexEmail.Validate();
+                regexFecNac.Validate();
+                regexTlf.Validate();
             }
 
             //notificar que todo ha ido bien
