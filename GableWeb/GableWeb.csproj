@@ -17,8 +17,10 @@
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort>44334</IISExpressSSLPort>
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
+    <IISExpressAnonymousAuthentication>
+    </IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>
+    </IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
@@ -67,17 +69,99 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin.aspx" />
+    <Content Include="App_Data\BBDD_log.ldf">
+      <DependentUpon>BBDD.mdf</DependentUpon>
+    </Content>
     <Content Include="AreaPersonal_modData.aspx" />
-    <Content Include="AreaPersonal_prod.aspx" />
+    <Content Include="AreaPersonal_ped.aspx" />
+    <Content Include="App_Data\BBDD.mdf" />
     <Content Include="index.aspx" />
+    <Content Include="Resultado_busqueda.aspx" />
+    <Content Include="src_\basket.png" />
+    <Content Include="src_\btns_\add.png" />
+    <Content Include="src_\btns_\cross.png" />
+    <Content Include="src_\btns_\substr.png" />
+    <Content Include="src_\estrella\estrella1.jpg" />
+    <Content Include="src_\estrella\estrella1.png" />
+    <Content Include="src_\estrella\estrella2.png" />
+    <Content Include="src_\estrella\estrella3.png" />
+    <Content Include="src_\estrella\estrella4.png" />
+    <Content Include="src_\estrella\estrella5.png" />
+    <Content Include="src_\gable-logo.png" />
+    <Content Include="src_\game_images_\ajedrez.png" />
+    <Content Include="src_\game_images_\ajedrezCristal.png" />
+    <Content Include="src_\game_images_\bang.png" />
+    <Content Include="src_\game_images_\barajaEsp.png" />
+    <Content Include="src_\game_images_\barajaPok.png" />
+    <Content Include="src_\game_images_\catanplus2019.png" />
+    <Content Include="src_\game_images_\Catan_piratas.png" />
+    <Content Include="src_\game_images_\cobardes.png" />
+    <Content Include="src_\game_images_\damas.png" />
+    <Content Include="src_\game_images_\domino.png" />
+    <Content Include="src_\game_images_\exploding_kittens.png" />
+    <Content Include="src_\game_images_\fuck.png" />
+    <Content Include="src_\game_images_\futCart.png" />
+    <Content Include="src_\game_images_\hundir1.png" />
+    <Content Include="src_\game_images_\juegoharrypotter.jpg" />
+    <Content Include="src_\game_images_\laoca2.png" />
+    <Content Include="src_\game_images_\magicCart.png" />
+    <Content Include="src_\game_images_\magicMonoGreen.png" />
+    <Content Include="src_\game_images_\magicMonoRed.png" />
+    <Content Include="src_\game_images_\mastermind.png" />
+    <Content Include="src_\game_images_\mentiroso.png" />
+    <Content Include="src_\game_images_\monopoly-fortnite.png" />
+    <Content Include="src_\game_images_\monopoly-game-of-thrones.png" />
+    <Content Include="src_\game_images_\monopolyFriends.png" />
+    <Content Include="src_\game_images_\munchkin.png" />
+    <Content Include="src_\game_images_\mur.png" />
+    <Content Include="src_\game_images_\parchis-example.png" />
+    <Content Include="src_\game_images_\parchis.png" />
+    <Content Include="src_\game_images_\ParchisOcaCayro.jpg" />
+    <Content Include="src_\game_images_\pkmXY.png" />
+    <Content Include="src_\game_images_\pokCarts.png" />
+    <Content Include="src_\game_images_\polilla.png" />
+    <Content Include="src_\game_images_\riskConquista.png" />
+    <Content Include="src_\game_images_\riskeuropa.png" />
+    <Content Include="src_\game_images_\risk_de_los_anillos.png" />
+    <Content Include="src_\game_images_\rummikub.png" />
+    <Content Include="src_\game_images_\rush-hour.png" />
+    <Content Include="src_\game_images_\saboteur.png" />
+    <Content Include="src_\game_images_\skull-tales.png" />
+    <Content Include="src_\game_images_\starCart.png" />
+    <Content Include="src_\game_images_\the_mind.png" />
+    <Content Include="src_\game_images_\toma6.png" />
+    <Content Include="src_\game_images_\uno.png" />
+    <Content Include="src_\game_images_\unoFlip.png" />
+    <Content Include="src_\game_images_\virus.png" />
+    <Content Include="src_\game_images_\warhammerDestruction.png" />
+    <Content Include="src_\game_images_\warhammerOrder.png" />
+    <Content Include="src_\game_images_\warhammerWave.png" />
+    <Content Include="src_\game_images_\yu-gi-oh-pack.png" />
+    <Content Include="src_\game_images_\yu-gi-oh.png" />
+    <Content Include="src_\hamburguer.png" />
+    <Content Include="src_\header_wood.png" />
+    <Content Include="src_\iniciar sesion o registrarse.png" />
+    <Content Include="src_\items.png" />
+    <Content Include="src_\krro.png" />
+    <Content Include="src_\old_gable-logo.png" />
     <Content Include="styles\index.css" />
     <Content Include="Productos.aspx" />
     <Content Include="styles\Productos.css" />
     <Content Include="Web.config" />
     <Content Include="Cesta.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Registro.aspx" />
+    <Content Include="DatosPago.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin.aspx.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin.aspx.designer.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AreaPersonal_modData.aspx.cs">
       <DependentUpon>AreaPersonal_modData.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -85,12 +169,12 @@
     <Compile Include="AreaPersonal_modData.aspx.designer.cs">
       <DependentUpon>AreaPersonal_modData.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AreaPersonal_prod.aspx.cs">
-      <DependentUpon>AreaPersonal_prod.aspx</DependentUpon>
+    <Compile Include="AreaPersonal_ped.aspx.cs">
+      <DependentUpon>AreaPersonal_ped.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AreaPersonal_prod.aspx.designer.cs">
-      <DependentUpon>AreaPersonal_prod.aspx</DependentUpon>
+    <Compile Include="AreaPersonal_ped.aspx.designer.cs">
+      <DependentUpon>AreaPersonal_ped.aspx</DependentUpon>
     </Compile>
     <Compile Include="Gable.Master.cs">
       <DependentUpon>Gable.Master</DependentUpon>
@@ -128,10 +212,33 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Resultado_busqueda.aspx.cs">
+      <DependentUpon>Resultado_busqueda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Resultado_busqueda.aspx.designer.cs">
+      <DependentUpon>Resultado_busqueda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registro.aspx.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registro.aspx.designer.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DatosPago.aspx.cs">
+      <DependentUpon>DatosPago.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatosPago.aspx.designer.cs">
+      <DependentUpon>DatosPago.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Gable.Master" />
     <None Include="packages.config" />
+    <Content Include="src_\design.psd" />
+    <Content Include="src_\menu.psd" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -144,6 +251,9 @@
       <Project>{d9c0ed69-bdd8-4931-a873-6c289dfe91f0}</Project>
       <Name>library</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="System\Web\UI\WebControls\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -177,10 +287,10 @@
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
+       Other similar extension points exist, see Microsoft.Common.targets. 
+  <Target Name="BeforeBuild"> 
   </Target>
   <Target Name="AfterBuild">
   </Target>
-  -->
+ -->
 </Project>

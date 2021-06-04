@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace library
 {
 	public class ENDirEnvio
-	{
+	{ 	
+
 		private string _usuario;
 		public string usuario
         {
@@ -47,7 +48,7 @@ namespace library
 
 		public ENDirEnvio(ENUsuario usu, ENLocalidad loc, string calle)
         {
-			usuario = usu.nif;
+			usuario = usu.dni;
 			provincia = loc.provincia;
 			pueblo = loc.pueblo;
 			this.calle = calle;

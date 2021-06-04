@@ -33,13 +33,13 @@ namespace GableWeb
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control hamburger.
+        /// Control Menu.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton hamburger;
+        protected global::System.Web.UI.WebControls.Menu Menu;
 
         /// <summary>
         /// Control gable_logo.
@@ -60,13 +60,22 @@ namespace GableWeb
         protected global::System.Web.UI.WebControls.TextBox searcher;
 
         /// <summary>
+        /// Control button_search.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton button_search;
+
+        /// <summary>
         /// Control init_sesion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label init_sesion;
+        protected global::System.Web.UI.WebControls.LinkButton init_sesion;
 
         /// <summary>
         /// Control basket_icon.

@@ -1,13 +1,13 @@
 ﻿using System;
-using library.CAD;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
-namespace library.EN
+namespace library
 {
-    class ENValoraciones
+    public class ENValoraciones
     {
         public string usuaro_id
         {
@@ -61,10 +61,24 @@ namespace library.EN
             }
         }
 
+        public string estr_val
+        {
+            get
+            {
+                return new string(estrella.ToCharArray());
+            }
+
+            set
+            {
+                estrella = value;
+            }
+        }
+
         private string usuario;
         private int producto;
         private string texto;
         private int puntos;
+        private string estrella;
 
         public ENValoraciones() { }
 
@@ -74,6 +88,7 @@ namespace library.EN
             usuaro_id = usuario;
             tex_val = texto;
             pun_val = puntos;
+            estr_val = estrella;
         }
         public bool createValoracion()
         {
@@ -84,19 +99,31 @@ namespace library.EN
         public bool readValoraciones()
         {
             CADValoraciones cval = new CADValoraciones();
-            return cval.readValoracioneses(this);
+            return cval.readValoraciones(this);
         }
 
         public bool deleteValoraciones()
         {
             CADValoraciones cval = new CADValoraciones();
-            return cval.deleteValoracioneses(this);
+            return cval.deleteValoraciones(this);
         }
 
         public bool updateValoraciones()
         {
             CADValoraciones cval = new CADValoraciones();
-            return cval.updateValoracioneses(this);
+            return cval.updateValoraciones(this);
+        }
+
+        public bool readAuxValoraciones()
+        {
+            CADValoraciones cval = new CADValoraciones();
+            return cval.readAuxValoraciones(this);
+        }
+
+        public DataTable showValo()
+        {
+            CADValoraciones p = new CADValoraciones();
+            return p.showValo(this);
         }
 
     }

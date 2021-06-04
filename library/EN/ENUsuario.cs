@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using library.CAD;
 
-namespace library.EN
+namespace library
 {
     public class ENUsuario
     {
-        private string _nif;
+        private string _dni;
         private string _nombre;
         private string _apellidos;
         private string _email;
@@ -18,14 +17,39 @@ namespace library.EN
         private int _numTarjeta;
         private int _cvv;
         private string _expTarjeta;
-        private DateTime _fechanac;
+        private string _fechanac; //comprobar
         private bool _admin;
 
-        public string nif
+        public ENUsuario(string dni, string nombre, string apellidos, string email, string contraseña, int tlf, string fechanac)
         {
-            get { return _nif; }
+            this.dni = dni;
+            this.nombre = nombre;
+            this.apellidos = apellidos;
+            this.email = email;
+            this.contraseña = contraseña;
+            this.tlf = tlf;
+            this.fechanac = fechanac;
+        }
 
-            set { _nif = value; }
+        public ENUsuario()
+        {
+            this.dni = "";
+            this.nombre = "";
+            this.apellidos = "";
+            this.email = "";
+            this.contraseña = "";
+            this.tlf = 0;
+            this.cvv = 0;
+            this.numTarjeta = 0;
+            this.expTarjeta = "";
+            this.fechanac = "";
+        }
+
+        public string dni
+        {
+            get { return _dni; }
+
+            set { _dni = value; }
         }
 
         public string nombre
@@ -84,7 +108,7 @@ namespace library.EN
             set { _expTarjeta = value; }
         }
 
-        public DateTime fechanac
+        public string fechanac//comprobar
         {
             get { return _fechanac; }
 
@@ -107,6 +131,23 @@ namespace library.EN
             return devolver;
         }
 
+        public bool readUsuarioPago()
+        {
+            bool devolver;
+            CADUsuario usu = new CADUsuario();
+            devolver = usu.readUsuarioPago(this);
+            return devolver;
+        }
+
+        public bool readUsuarioEmail()
+        {
+            bool devolver;
+            CADUsuario usu = new CADUsuario();
+            devolver = usu.readUsuarioEmail(this);
+            return devolver;
+        }
+
+
         public bool createUsuario()//register
         {
             bool devolver = false;
@@ -118,84 +159,53 @@ namespace library.EN
             return devolver;
         }
 
+        /* public bool deleteUsuario()
+         {
+             bool devolver = false;
+             CADUsuario c = new CADUsuario();
+             if (c.readUsuario(this))
+             {
+                 devolver = c.deleteUsuario(this);
+             }
+             return devolver;
+         }*/
+
         public bool deleteUsuario()
         {
-            bool devolver = false;
-            CADUsuario c = new CADUsuario();
-            if (c.readUsuario(this))
-            {
-                devolver = c.deleteUsuario(this);
-            }
-            return devolver;
+            CADUsuario us = new CADUsuario();
+            return us.deleteUsuario(this);
+           
         }
+
 
         public bool updateUsuario()
         {
-            bool devolver = false;
             CADUsuario us = new CADUsuario();
-            ENUsuario en = new ENUsuario();
-
-            en.nif = nif;
-            en.nombre = nombre;
-            en.apellidos = apellidos;
-            if (us.readUsuario(this) == true)
-            {
-                this.nif = en.nif;
-                this.nombre = en.nombre;
-                this.apellidos = en.apellidos;
-                devolver = us.updateUsuario(this);
-            }
-
-            return devolver;
+            return us.updateUsuario(this);
         }
 
-
-        public bool loginUsuario()
+        public bool deletePedidoFromUsu()
         {
-            CADUsuario nuevo = new CADUsuario();
-            return nuevo.loginUsuario(this);
+            CADUsuario ped = new CADUsuario();
+            return ped.deletePedidoFromUsu(this);
         }
 
-        public bool logout()//revisar
+        public bool deleteValUsu()
         {
-            CADUsuario nuevo = new CADUsuario();
-            return nuevo.logoutUsuario(this);
+            CADUsuario ped = new CADUsuario();
+            return ped.deleteValUsu(this);
         }
 
-        public bool subirProducto()
+        public bool deleteCestaUsu()
         {
-            ENProductos en = new ENProductos();
-            return en.createProducto();
+            CADUsuario ped = new CADUsuario();
+            return ped.deleteCestaUsu(this);
         }
 
-        public bool deleteProducto()
+        public bool deleteDirEnvioUsu()
         {
-            ENProductos en = new ENProductos();
-            return en.deleteProductos();
-        }
-
-        public bool createLocalidad()
-        {
-            ENLocalidad en = new ENLocalidad();
-            return en.createLocalidad();
-        }
-
-        public bool deleteLocalidad()
-        {
-            ENLocalidad en = new ENLocalidad();
-            return en.deleteLocalidad();
-        }
-
-        public bool createProvincia()
-        {
-            ENProvincia en = new ENProvincia();
-            return en.createProvincia();
-        }
-
-        public bool deleteProvincia()
-        {
-            ENProvincia en = new ENProvincia();
-            return en.deleteProvincia();
+            CADUsuario ped = new CADUsuario();
+            return ped.deleteDirEnvioUsu(this);
         }
 
     }

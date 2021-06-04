@@ -3,15 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using library.CAD;
 
-namespace library.EN
+namespace library
 {
-    class ENMarca
+    public class ENMarca
     {
         private string _nombre;
         private string _origen;
-        private string _url;
+        
+
+        public ENMarca(string nombre, string origen)
+        {
+            this.nombre = nombre;
+            this.origen = origen;
+        }
+
+        public ENMarca()
+        {
+            this.nombre = "";
+            this.origen = "";
+        }
 
         public string nombre
         {
@@ -27,16 +38,8 @@ namespace library.EN
             set { _origen = value; }
         }
 
-        public string imagen
-        {
-            get { return _url; }
-
-            set { _url = value; }
-        }
-
         public bool readMarca()
         {
-            bool retornar;
             CADMarca m = new CADMarca();
             return m.readMarca(this);
         }
@@ -47,7 +50,7 @@ namespace library.EN
             CADMarca m = new CADMarca();
             if (m.readMarca(this))
             {
-                retornar = m.createMarca(this);
+                retornar = m.deleteMarca(this);
             }
             return retornar;
         }
@@ -63,15 +66,10 @@ namespace library.EN
             return retornar;
         }
 
-        public bool modifyMarca()
+        public bool modifyMarca(string nombrenuevo)
         {
-            bool retornar = false;
             CADMarca m = new CADMarca();
-            if (m.readMarca(this))
-            {
-                retornar = m.createMarca(this);
-            }
-            return retornar;
+            return m.modifyMarca(this, nombrenuevo);
         }
 
     }
