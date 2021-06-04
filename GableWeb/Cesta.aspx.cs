@@ -75,7 +75,7 @@ namespace GableWeb
         }
         protected void ProceedToBuy(object sender, CommandEventArgs e)
         {
-            int numCesta = 0;
+            /*int numCesta = 0;
             try {
                 numCesta = Convert.ToInt32(e.CommandArgument.ToString());
             }
@@ -96,6 +96,30 @@ namespace GableWeb
                     Response.Redirect("DatosPago.aspx"); // Add data to buy
                 }
             } else
+            {
+                Response.Redirect("Login.aspx");
+            }*/
+
+            if(Session["dni"] != null)
+            {
+                ENUsuario usu = new ENUsuario();
+                usu.dni = Session["dni"].ToString();
+                if(usu.readUsuario() && usu.readUsuarioPago())
+                {
+                    ENCesta cest = new ENCesta();
+                    int numCest = cest.getBasketByDNI(usu.dni);
+                    InsertItemsIntoOrders(numCest);
+                    DeleteItemsFromBasket(numCest);
+                    Response.Redirect("AreaPersonal_ped.aspx");
+                }
+                else
+                {
+                    Response.Redirect("DatosPago.aspx");
+                }
+
+
+            }
+            else
             {
                 Response.Redirect("Login.aspx");
             }

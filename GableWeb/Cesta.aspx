@@ -67,7 +67,7 @@
                                     <div class="row justify-content-center">
                                         <div class="col-4 col-lg-12 px-0 mt-2">
                                              <!--TO DO: Use session's user id in CommandArgument -->
-                                            <asp:Button id="btnProceed"  runat="server" OnCommand="ProceedToBuy" CommandArgument='<%# Eval("numCesta") %>' Text="Realizar pedido" CssClass="btn btn-block btn-order" style="text-align:center;"></asp:Button>
+                                            <asp:Button id="btnProceed"  runat="server" OnCommand="ProceedToBuy" Text="Realizar pedido" CssClass="btn btn-block btn-order" style="text-align:center;"></asp:Button>
                                         </div>
                                     </div>
                                 </div>
