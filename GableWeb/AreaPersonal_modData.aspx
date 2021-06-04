@@ -21,20 +21,20 @@
             <div class="row">
                 <div class="col ml-3 mt-3">
                     <div class="row">
-                        <asp:LinkButton ID="LinkButtonMisPedidos_mod" runat="server" PostBackUrl="~/AreaPersonal_ped.aspx">
+                        <asp:LinkButton ID="LinkButtonMisPedidos_mod" runat="server" PostBackUrl="~/AreaPersonal_ped.aspx" CausesValidation="False">
                             <asp:Image ID="misPedidosImg" runat="server" /> Mis pedidos
                         </asp:LinkButton>
                     </div>
                     <div class="row">
-                        <asp:LinkButton ID="modDataBtn_mod" runat="server" PostBackUrl="~/AreaPersonal_modData.aspx">
+                        <asp:LinkButton ID="modDataBtn_mod" runat="server" PostBackUrl="~/AreaPersonal_modData.aspx" CausesValidation="False">
                             <asp:Image ID="modDataImg_mod" runat="server" />  Editar datos de la cuenta
                         </asp:LinkButton>
                     </div>
                     <div class="row">
-                        <asp:Button ID="btnLogOut" runat="server" Text="Cerrar Sesión" OnClick="btnLogOut_Click" BorderStyle="None" BackColor="White" />
+                        <asp:Button ID="btnLogOut" runat="server" Text="Cerrar Sesión" OnClick="btnLogOut_Click" BorderStyle="None" BackColor="White" CausesValidation="False" />
                     </div>
                     <div class="row">
-                        <asp:Button ID="btnDeleteAccount" runat="server" style="color:red" Text="Eliminar cuenta" BorderStyle="None" OnClick="btnDeleteAccount_Click" BackColor="White" />
+                        <asp:Button ID="btnDeleteAccount" runat="server" style="color:red" Text="Eliminar cuenta" BorderStyle="None" OnClick="btnDeleteAccount_Click" BackColor="White" CausesValidation="False" />
                     </div>
                 </div>
             </div>
@@ -62,10 +62,10 @@
                             <div class="row my-2 mx-0">
                                 <asp:TextBox ID="confirmNewPasswd" runat="server" MaxLength="16" placeholder="Confirmar contraseña" TextMode="Password" Columns="30"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="requiredConfirmPwd" runat="server" ErrorMessage="Campo obligatorio!" ControlToValidate="confirmNewPasswd"></asp:RequiredFieldValidator>
-                                <asp:CompareValidator ID="compareContras" runat="server" ErrorMessage="Las contraseñas no coinciden" ControlToValidate="confirmNewPasswd"></asp:CompareValidator>
+                                <asp:CompareValidator ID="compareContras" runat="server" ErrorMessage="Las contraseñas no coinciden" ControlToValidate="confirmNewPasswd" ControlToCompare="newPasswd"></asp:CompareValidator>
                             </div>
                             <div class="row-2 mt-3 mx-0">
-                                <asp:Button ID="ButtonCambiarContra" runat="server" Text="Guardar" OnClick="ButtonCambiarContra_Click" />
+                                <asp:Button ID="ButtonCambiarContra" runat="server" Text="Guardar" OnClick="ButtonCambiarContra_Click" CausesValidation="False" />
                             </div>
                         </div>
                     </div>
@@ -93,7 +93,7 @@
                                 <asp:RegularExpressionValidator ID="regexTlf" runat="server" ErrorMessage="Introduce un teléfono válido." ControlToValidate="TextBoxModTlf" ValidationExpression="[0-9]{9}"></asp:RegularExpressionValidator>
                             </div>
                             <div class="row-2 mt-3 mx-0">
-                                <asp:Button ID="ButtonCambiarDatosPersonales" runat="server" Text="Guardar" OnClick="ButtonCambiarDatosPersonales_Click" />
+                                <asp:Button ID="ButtonCambiarDatosPersonales" runat="server" Text="Guardar" OnClick="ButtonCambiarDatosPersonales_Click" CausesValidation="False" />
                             </div>
                         </div>
                     </div>
@@ -111,7 +111,7 @@
                                 </div>
                             </div>
                             <div class="row-2 mt-3 align-self-end">
-                                <asp:Button ID="ButtonCambiarInfoPagos" runat="server" Text="Añadir tarjeta" OnClick="ButtonCambiarInfoPagos_Click" />
+                                <asp:Button ID="ButtonCambiarInfoPagos" runat="server" Text="Añadir tarjeta" OnClick="ButtonCambiarInfoPagos_Click" CausesValidation="False" />
                             </div>
                         </div>
                     </div>
